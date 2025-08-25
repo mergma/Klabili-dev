@@ -8,14 +8,13 @@
 .hero {
   text-align: center;
   padding: 80px 20px;
-  background: url('/img/hero-bg.jpg') no-repeat center center; 
-  background-size: cover; 
-  color: #fff; 
+  background: #f4f4f4; /* abu-abu muda */
+  color: #000;
   min-height: 100vh; 
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; /* vertikal tengah */
+  align-items: center;     /* horizontal tengah */
 }
 
 .hero h1 {
@@ -33,8 +32,8 @@
 .hero .btn {
   display: inline-block;
   padding: 10px 20px;
-  background: #ff6699; /* warna sementara */
-  color: #fff;
+  background: #ddd; /* abu-abu terang */
+  color: #333;      /* teks gelap biar kebaca */
   border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
@@ -42,5 +41,6 @@
 }
 
 .hero .btn:hover {
-  background: #cc3366;
+  background: #bbb; /* sedikit lebih gelap pas hover */
 }
+
