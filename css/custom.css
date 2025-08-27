@@ -76,9 +76,21 @@
 
 
 .hero-section {
-    background-image: linear-gradient(rgba(248, 249, 250, 0.7), rgba(248, 249, 250, 0.7));
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../img/IMG-20250819-WA0065.jpg');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.hero-section h1 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-weight: 700;
+}
+
+.hero-section p {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    font-size: 1.25rem;
 }
 
 .btn-primary {
