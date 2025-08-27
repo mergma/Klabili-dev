@@ -457,10 +457,20 @@ html {
   min-height: 180px;
   outline: none;
 }
+
 .highlight-card:hover, .highlight-card:focus {
   transform: translateY(-8px) scale(1.04);
-  box-shadow: 0 8px 32px -4px #0d6efd33;
+  box-shadow: 0 12px 32px -4px #19875455, 0 2px 8px #0d6efd22;
+  background: linear-gradient(120deg, #f8fff6 60%, #eaf6ff 100%);
+  border: 1.5px solid #19875433;
+  transition: 
+    transform 0.25s cubic-bezier(.4,2,.6,1),
+    box-shadow 0.25s,
+    background 0.3s,
+    border 0.3s;
+  z-index: 2;
 }
+
 .icon-wrap {
   width: 80px;
   height: 80px;
