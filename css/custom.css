@@ -5,6 +5,16 @@ html {
   scroll-padding-top: 80px; /* Adjust based on navbar height */
 }
 
+/* Set background color for the entire template */
+body {
+  background-color: #CADCAE;
+}
+
+/* Override Bootstrap's bg-primary class */
+.bg-primary {
+  background-color: #CADCAE !important;
+}
+
 
 /* Custom styles for nav buttons */
 .nav-btn {
