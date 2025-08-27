@@ -13,7 +13,7 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
         <!-- Left side: Logo -->
-        <div class="navbar-brand-container" style="flex: 1;">
+        <div class="navbar-brand-container" style="flex: 1">
           <a class="navbar-brand" href="index.html"
             ><img
               src="img/Logo_Desa_Wisata_Klabili-removebg-preview.png"
@@ -36,14 +36,28 @@
 
         <!-- Language Toggle Switch - Outside collapsible menu -->
         <div class="navbar-nav d-flex align-items-center">
-          <div class="nav-item d-flex align-items-center language-toggle-container en-active" id="languageToggleContainer">
+          <div
+            class="nav-item d-flex align-items-center language-toggle-container en-active"
+            id="languageToggleContainer"
+          >
             <!-- English Flag SVG -->
-            <svg class="me-2 flag-en" width="20" height="15" viewBox="0 0 20 15" xmlns="http://www.w3.org/2000/svg" onclick="setLanguage('en')">
-              <rect width="20" height="15" fill="#012169"/>
-              <path d="M0 0L20 15M20 0L0 15" stroke="#fff" stroke-width="2"/>
-              <path d="M0 0L20 15M20 0L0 15" stroke="#C8102E" stroke-width="1"/>
-              <path d="M10 0V15M0 7.5H20" stroke="#fff" stroke-width="3"/>
-              <path d="M10 0V15M0 7.5H20" stroke="#C8102E" stroke-width="2"/>
+            <svg
+              class="me-2 flag-en"
+              width="20"
+              height="15"
+              viewBox="0 0 20 15"
+              xmlns="http://www.w3.org/2000/svg"
+              onclick="setLanguage('en')"
+            >
+              <rect width="20" height="15" fill="#012169" />
+              <path d="M0 0L20 15M20 0L0 15" stroke="#fff" stroke-width="2" />
+              <path
+                d="M0 0L20 15M20 0L0 15"
+                stroke="#C8102E"
+                stroke-width="1"
+              />
+              <path d="M10 0V15M0 7.5H20" stroke="#fff" stroke-width="3" />
+              <path d="M10 0V15M0 7.5H20" stroke="#C8102E" stroke-width="2" />
             </svg>
             <div class="form-check form-switch">
               <input
@@ -55,18 +69,32 @@
               />
             </div>
             <!-- Indonesian Flag SVG -->
-            <svg class="ms-2 flag-id" width="20" height="15" viewBox="0 0 20 15" xmlns="http://www.w3.org/2000/svg" onclick="setLanguage('id')">
-              <rect width="20" height="7.5" fill="#FF0000"/>
-              <rect y="7.5" width="20" height="7.5" fill="#FFFFFF"/>
+            <svg
+              class="ms-2 flag-id"
+              width="20"
+              height="15"
+              viewBox="0 0 20 15"
+              xmlns="http://www.w3.org/2000/svg"
+              onclick="setLanguage('id')"
+            >
+              <rect width="20" height="7.5" fill="#FF0000" />
+              <rect y="7.5" width="20" height="7.5" fill="#FFFFFF" />
             </svg>
           </div>
         </div>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <!-- Center: Navigation items -->
-          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 justify-content-center" style="flex: 1;">
+          <ul
+            class="navbar-nav mx-auto mb-2 mb-lg-0 justify-content-center"
+            style="flex: 1"
+          >
             <li class="nav-item">
-              <button class="btn nav-btn" type="button" data-nav-url="index.html">
+              <button
+                class="btn nav-btn"
+                type="button"
+                data-nav-url="index.html"
+              >
                 Beranda
               </button>
             </li>
@@ -81,12 +109,28 @@
                 Tentang Kami
               </button>
               <ul class="dropdown-menu">
-                <li><button class="dropdown-item" type="button" data-nav-url="tentang_kami.html#profil-desa">Profil Desa</button></li>
-                <li><button class="dropdown-item" type="button" data-nav-url="tentang_kami.html#struktur-desa">Struktur Desa</button></li>
+                <li>
+                  <button
+                    class="dropdown-item"
+                    type="button"
+                    data-nav-url="tentang_kami.html#profil-desa"
+                  >
+                    Profil Desa
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="dropdown-item"
+                    type="button"
+                    data-nav-url="tentang_kami.html#struktur-desa"
+                  >
+                    Struktur Desa
+                  </button>
+                </li>
               </ul>
             </li>
 
-             <li class="nav-item dropdown">
+            <li class="nav-item dropdown">
               <button
                 class="btn nav-btn dropdown-toggle active"
                 type="button"
@@ -96,11 +140,19 @@
                 Fasilitas
               </button>
               <ul class="dropdown-menu">
-                <li><button class="dropdown-item" type="button" data-nav-url="fasilitas.html#fasilitas-umum-desa">Fasilitas Umum Desa</button></li>
+                <li>
+                  <button
+                    class="dropdown-item"
+                    type="button"
+                    data-nav-url="fasilitas.html#fasilitas-umum-desa"
+                  >
+                    Fasilitas Umum Desa
+                  </button>
+                </li>
               </ul>
             </li>
 
-             <li class="nav-item dropdown">
+            <li class="nav-item dropdown">
               <button
                 class="btn nav-btn dropdown-toggle"
                 type="button"
@@ -110,19 +162,65 @@
                 Wisata & Budaya
               </button>
               <ul class="dropdown-menu">
-                <li><button class="dropdown-item" type="button" data-nav-url="wisata_budaya.html#spot-wisata">Spot Wisata</button></li>
-                <li><button class="dropdown-item" type="button" data-nav-url="wisata_budaya.html#budaya-lokal">Budaya Lokal</button></li>
-                <li><button class="dropdown-item" type="button" data-nav-url="wisata_budaya.html#acara-tahunan">Acara Tahunan</button></li>
-                <li><button class="dropdown-item" type="button" data-nav-url="wisata_budaya.html#kerajinan-tangan">Kerajinan Tangan</button></li>
-                <li><button class="dropdown-item" type="button" data-nav-url="wisata_budaya.html#kuliner-lokal">Kuliner Lokal</button></li>
+                <li>
+                  <button
+                    class="dropdown-item"
+                    type="button"
+                    data-nav-url="wisata_budaya.html#spot-wisata"
+                  >
+                    Spot Wisata
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="dropdown-item"
+                    type="button"
+                    data-nav-url="wisata_budaya.html#budaya-lokal"
+                  >
+                    Budaya Lokal
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="dropdown-item"
+                    type="button"
+                    data-nav-url="wisata_budaya.html#acara-tahunan"
+                  >
+                    Acara Tahunan
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="dropdown-item"
+                    type="button"
+                    data-nav-url="wisata_budaya.html#kerajinan-tangan"
+                  >
+                    Kerajinan Tangan
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="dropdown-item"
+                    type="button"
+                    data-nav-url="wisata_budaya.html#kuliner-lokal"
+                  >
+                    Kuliner Lokal
+                  </button>
+                </li>
                 <li><hr class="dropdown-divider" /></li>
                 <li>
-                  <button class="dropdown-item" type="button" data-nav-url="wisata_budaya.html#souvenir">Souvenir</button>
+                  <button
+                    class="dropdown-item"
+                    type="button"
+                    data-nav-url="wisata_budaya.html#souvenir"
+                  >
+                    Souvenir
+                  </button>
                 </li>
               </ul>
             </li>
 
-             <li class="nav-item dropdown">
+            <li class="nav-item dropdown">
               <button
                 class="btn nav-btn dropdown-toggle"
                 type="button"
@@ -132,16 +230,38 @@
                 Informasi Desa
               </button>
               <ul class="dropdown-menu">
-                <li><button class="dropdown-item" type="button" data-nav-url="informasi.html#lokasi-peta">Lokasi & Peta</button></li>
-                <li><button class="dropdown-item" type="button" data-nav-url="informasi.html#kontak">Kontak</button></li>
+                <li>
+                  <button
+                    class="dropdown-item"
+                    type="button"
+                    data-nav-url="informasi.html#lokasi-peta"
+                  >
+                    Lokasi & Peta
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="dropdown-item"
+                    type="button"
+                    data-nav-url="informasi.html#kontak"
+                  >
+                    Kontak
+                  </button>
+                </li>
                 <li><hr class="dropdown-divider" /></li>
                 <li>
-                  <button class="dropdown-item" type="button" data-nav-url="informasi.html#tambahan">Tambahan</button>
+                  <button
+                    class="dropdown-item"
+                    type="button"
+                    data-nav-url="informasi.html#tambahan"
+                  >
+                    Tambahan
+                  </button>
                 </li>
               </ul>
             </li>
 
-             <li class="nav-item dropdown">
+            <li class="nav-item dropdown">
               <button
                 class="btn nav-btn dropdown-toggle"
                 type="button"
@@ -151,11 +271,33 @@
                 Gallery
               </button>
               <ul class="dropdown-menu">
-                <li><button class="dropdown-item" type="button" data-nav-url="galeri.html#dokumentasi-acara">Dokumentasi Acara</button></li>
-                <li><button class="dropdown-item" type="button" data-nav-url="galeri.html#kegiatan-masyarakat">Kegiatan Masyarakat</button></li>
+                <li>
+                  <button
+                    class="dropdown-item"
+                    type="button"
+                    data-nav-url="galeri.html#dokumentasi-acara"
+                  >
+                    Dokumentasi Acara
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="dropdown-item"
+                    type="button"
+                    data-nav-url="galeri.html#kegiatan-masyarakat"
+                  >
+                    Kegiatan Masyarakat
+                  </button>
+                </li>
                 <li><hr class="dropdown-divider" /></li>
                 <li>
-                  <button class="dropdown-item" type="button" data-nav-url="galeri.html#tambahan-galeri">Tambahan</button>
+                  <button
+                    class="dropdown-item"
+                    type="button"
+                    data-nav-url="galeri.html#tambahan-galeri"
+                  >
+                    Tambahan
+                  </button>
                 </li>
               </ul>
             </li>
@@ -166,153 +308,216 @@
 
     <!-- Page Title -->
     <div class="container-fluid bg-primary text-white py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <h1 class="display-4 fw-bold mb-3">PLACEHOLDER TITLE</h1>
-                    <p class="lead">This is a placeholder title section</p>
-                </div>
-            </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <h1 class="display-4 fw-bold mb-3">PLACEHOLDER TITLE</h1>
+            <p class="lead">This is a placeholder title section</p>
+          </div>
         </div>
+      </div>
     </div>
 
     <!-- Page Content -->
     <div class="container mt-4">
+      <!-- Fasilitas Umum Desa Section -->
+      <section id="fasilitas-umum-desa" class="py-5">
+        <div class="row">
+          <div class="col-12 text-center mb-5">
+            <h2 class="display-5 fw-bold text-primary">Fasilitas Umum Desa</h2>
+            <p class="lead text-muted">
+              Berbagai fasilitas yang tersedia untuk mendukung kenyamanan
+              wisatawan
+            </p>
+          </div>
+        </div>
 
-        <!-- Fasilitas Umum Desa Section -->
-        <section id="fasilitas-umum-desa" class="py-5">
-            <div class="row">
-                <div class="col-12 text-center mb-5">
-                    <h2 class="display-5 fw-bold text-primary">Fasilitas Umum Desa</h2>
-                    <p class="lead text-muted">Berbagai fasilitas yang tersedia untuk mendukung kenyamanan wisatawan</p>
+        <div class="row g-4">
+          <div class="col-lg-3 col-md-6">
+            <div class="card h-100 shadow-sm border-0">
+              <div class="card-body text-center p-4">
+                <div
+                  class="bg-primary rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center"
+                  style="width: 80px; height: 80px"
+                >
+                  <i class="fas fa-wifi text-white fa-2x"></i>
                 </div>
+                <h5 class="card-title">WiFi Gratis</h5>
+                <p class="card-text text-muted">
+                  Internet cepat tersedia di area publik dan homestay untuk
+                  kemudahan komunikasi wisatawan.
+                </p>
+              </div>
             </div>
+          </div>
 
-            <div class="row g-4">
-                <div class="col-lg-3 col-md-6">
-                    <div class="card h-100 shadow-sm border-0">
-                        <div class="card-body text-center p-4">
-                            <div class="bg-primary rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
-                                <i class="fas fa-wifi text-white fa-2x"></i>
-                            </div>
-                            <h5 class="card-title">WiFi Gratis</h5>
-                            <p class="card-text text-muted">Internet cepat tersedia di area publik dan homestay untuk kemudahan komunikasi wisatawan.</p>
-                        </div>
-                    </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="card h-100 shadow-sm border-0">
+              <div class="card-body text-center p-4">
+                <div
+                  class="bg-success rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center"
+                  style="width: 80px; height: 80px"
+                >
+                  <i class="fas fa-parking text-white fa-2x"></i>
                 </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <div class="card h-100 shadow-sm border-0">
-                        <div class="card-body text-center p-4">
-                            <div class="bg-success rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
-                                <i class="fas fa-parking text-white fa-2x"></i>
-                            </div>
-                            <h5 class="card-title">Area Parkir</h5>
-                            <p class="card-text text-muted">Area parkir yang aman dan luas untuk kendaraan roda dua maupun roda empat.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <div class="card h-100 shadow-sm border-0">
-                        <div class="card-body text-center p-4">
-                            <div class="bg-warning rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
-                                <i class="fas fa-restroom text-white fa-2x"></i>
-                            </div>
-                            <h5 class="card-title">Toilet Umum</h5>
-                            <p class="card-text text-muted">Fasilitas toilet umum yang bersih dan nyaman tersebar di berbagai lokasi strategis.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <div class="card h-100 shadow-sm border-0">
-                        <div class="card-body text-center p-4">
-                            <div class="bg-info rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
-                                <i class="fas fa-store text-white fa-2x"></i>
-                            </div>
-                            <h5 class="card-title">Toko Souvenir</h5>
-                            <p class="card-text text-muted">Toko yang menjual berbagai oleh-oleh khas desa dan produk kerajinan lokal.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <div class="card h-100 shadow-sm border-0">
-                        <div class="card-body text-center p-4">
-                            <div class="bg-danger rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
-                                <i class="fas fa-utensils text-white fa-2x"></i>
-                            </div>
-                            <h5 class="card-title">Warung Makan</h5>
-                            <p class="card-text text-muted">Warung makan yang menyajikan kuliner lokal autentik dengan cita rasa khas daerah.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <div class="card h-100 shadow-sm border-0">
-                        <div class="card-body text-center p-4">
-                            <div class="bg-secondary rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
-                                <i class="fas fa-first-aid text-white fa-2x"></i>
-                            </div>
-                            <h5 class="card-title">Pos Kesehatan</h5>
-                            <p class="card-text text-muted">Layanan kesehatan dasar dan pertolongan pertama untuk keamanan wisatawan.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <div class="card h-100 shadow-sm border-0">
-                        <div class="card-body text-center p-4">
-                            <div class="bg-dark rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
-                                <i class="fas fa-info-circle text-white fa-2x"></i>
-                            </div>
-                            <h5 class="card-title">Pusat Informasi</h5>
-                            <p class="card-text text-muted">Pusat informasi wisata dengan panduan lengkap dan peta lokasi wisata.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-3 col-md-6">
-                    <div class="card h-100 shadow-sm border-0">
-                        <div class="card-body text-center p-4">
-                            <div class="bg-primary rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
-                                <i class="fas fa-bicycle text-white fa-2x"></i>
-                            </div>
-                            <h5 class="card-title">Rental Sepeda</h5>
-                            <p class="card-text text-muted">Layanan penyewaan sepeda untuk menjelajahi desa dengan cara yang ramah lingkungan.</p>
-                        </div>
-                    </div>
-                </div>
+                <h5 class="card-title">Area Parkir</h5>
+                <p class="card-text text-muted">
+                  Area parkir yang aman dan luas untuk kendaraan roda dua maupun
+                  roda empat.
+                </p>
+              </div>
             </div>
+          </div>
 
-            <!-- Additional Facilities Section -->
-            <div class="row mt-5">
-                <div class="col-12">
-                    <h3 class="text-center mb-4">Fasilitas Tambahan</h3>
+          <div class="col-lg-3 col-md-6">
+            <div class="card h-100 shadow-sm border-0">
+              <div class="card-body text-center p-4">
+                <div
+                  class="bg-warning rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center"
+                  style="width: 80px; height: 80px"
+                >
+                  <i class="fas fa-restroom text-white fa-2x"></i>
                 </div>
-                <div class="col-lg-6">
-                    <div class="card border-0 shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title"><i class="fas fa-home text-primary me-2"></i>Homestay</h5>
-                            <p class="card-text">25 unit homestay yang dikelola oleh masyarakat lokal dengan fasilitas lengkap dan pelayanan ramah.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="card border-0 shadow-sm">
-                        <div class="card-body">
-                            <h5 class="card-title"><i class="fas fa-camera text-success me-2"></i>Spot Foto</h5>
-                            <p class="card-text">Berbagai spot foto menarik dengan latar belakang pemandangan alam yang indah dan instagramable.</p>
-                        </div>
-                    </div>
-                </div>
+                <h5 class="card-title">Toilet Umum</h5>
+                <p class="card-text text-muted">
+                  Fasilitas toilet umum yang bersih dan nyaman tersebar di
+                  berbagai lokasi strategis.
+                </p>
+              </div>
             </div>
-        </section>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="card h-100 shadow-sm border-0">
+              <div class="card-body text-center p-4">
+                <div
+                  class="bg-info rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center"
+                  style="width: 80px; height: 80px"
+                >
+                  <i class="fas fa-store text-white fa-2x"></i>
+                </div>
+                <h5 class="card-title">Toko Souvenir</h5>
+                <p class="card-text text-muted">
+                  Toko yang menjual berbagai oleh-oleh khas desa dan produk
+                  kerajinan lokal.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="card h-100 shadow-sm border-0">
+              <div class="card-body text-center p-4">
+                <div
+                  class="bg-danger rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center"
+                  style="width: 80px; height: 80px"
+                >
+                  <i class="fas fa-utensils text-white fa-2x"></i>
+                </div>
+                <h5 class="card-title">Warung Makan</h5>
+                <p class="card-text text-muted">
+                  Warung makan yang menyajikan kuliner lokal autentik dengan
+                  cita rasa khas daerah.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="card h-100 shadow-sm border-0">
+              <div class="card-body text-center p-4">
+                <div
+                  class="bg-secondary rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center"
+                  style="width: 80px; height: 80px"
+                >
+                  <i class="fas fa-first-aid text-white fa-2x"></i>
+                </div>
+                <h5 class="card-title">Pos Kesehatan</h5>
+                <p class="card-text text-muted">
+                  Layanan kesehatan dasar dan pertolongan pertama untuk keamanan
+                  wisatawan.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="card h-100 shadow-sm border-0">
+              <div class="card-body text-center p-4">
+                <div
+                  class="bg-dark rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center"
+                  style="width: 80px; height: 80px"
+                >
+                  <i class="fas fa-info-circle text-white fa-2x"></i>
+                </div>
+                <h5 class="card-title">Pusat Informasi</h5>
+                <p class="card-text text-muted">
+                  Pusat informasi wisata dengan panduan lengkap dan peta lokasi
+                  wisata.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="card h-100 shadow-sm border-0">
+              <div class="card-body text-center p-4">
+                <div
+                  class="bg-primary rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center"
+                  style="width: 80px; height: 80px"
+                >
+                  <i class="fas fa-bicycle text-white fa-2x"></i>
+                </div>
+                <h5 class="card-title">Rental Sepeda</h5>
+                <p class="card-text text-muted">
+                  Layanan penyewaan sepeda untuk menjelajahi desa dengan cara
+                  yang ramah lingkungan.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Additional Facilities Section -->
+        <div class="row mt-5">
+          <div class="col-12">
+            <h3 class="text-center mb-4">Fasilitas Tambahan</h3>
+          </div>
+          <div class="col-lg-6">
+            <div class="card border-0 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <i class="fas fa-home text-primary me-2"></i>Homestay
+                </h5>
+                <p class="card-text">
+                  25 unit homestay yang dikelola oleh masyarakat lokal dengan
+                  fasilitas lengkap dan pelayanan ramah.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="card border-0 shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">
+                  <i class="fas fa-camera text-success me-2"></i>Spot Foto
+                </h5>
+                <p class="card-text">
+                  Berbagai spot foto menarik dengan latar belakang pemandangan
+                  alam yang indah dan instagramable.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
 
     <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
 
     <!-- Bootstrap JS -->
     <script src="js/bootstrap/bootstrap.bundle.js"></script>
