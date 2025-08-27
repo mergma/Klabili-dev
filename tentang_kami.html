@@ -13,7 +13,7 @@
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
         <!-- Left side: Logo -->
-        <div class="navbar-brand-container" style="flex: 1;">
+        <div class="navbar-brand-container" style="flex: 1">
           <a class="navbar-brand" href="index.html"
             ><img
               src="img/Logo_Desa_Wisata_Klabili-removebg-preview.png"
@@ -36,14 +36,28 @@
 
         <!-- Language Toggle Switch - Outside collapsible menu -->
         <div class="navbar-nav d-flex align-items-center">
-          <div class="nav-item d-flex align-items-center language-toggle-container en-active" id="languageToggleContainer">
+          <div
+            class="nav-item d-flex align-items-center language-toggle-container en-active"
+            id="languageToggleContainer"
+          >
             <!-- English Flag SVG -->
-            <svg class="me-2 flag-en" width="20" height="15" viewBox="0 0 20 15" xmlns="http://www.w3.org/2000/svg" onclick="setLanguage('en')">
-              <rect width="20" height="15" fill="#012169"/>
-              <path d="M0 0L20 15M20 0L0 15" stroke="#fff" stroke-width="2"/>
-              <path d="M0 0L20 15M20 0L0 15" stroke="#C8102E" stroke-width="1"/>
-              <path d="M10 0V15M0 7.5H20" stroke="#fff" stroke-width="3"/>
-              <path d="M10 0V15M0 7.5H20" stroke="#C8102E" stroke-width="2"/>
+            <svg
+              class="me-2 flag-en"
+              width="20"
+              height="15"
+              viewBox="0 0 20 15"
+              xmlns="http://www.w3.org/2000/svg"
+              onclick="setLanguage('en')"
+            >
+              <rect width="20" height="15" fill="#012169" />
+              <path d="M0 0L20 15M20 0L0 15" stroke="#fff" stroke-width="2" />
+              <path
+                d="M0 0L20 15M20 0L0 15"
+                stroke="#C8102E"
+                stroke-width="1"
+              />
+              <path d="M10 0V15M0 7.5H20" stroke="#fff" stroke-width="3" />
+              <path d="M10 0V15M0 7.5H20" stroke="#C8102E" stroke-width="2" />
             </svg>
             <div class="form-check form-switch">
               <input
@@ -55,18 +69,32 @@
               />
             </div>
             <!-- Indonesian Flag SVG -->
-            <svg class="ms-2 flag-id" width="20" height="15" viewBox="0 0 20 15" xmlns="http://www.w3.org/2000/svg" onclick="setLanguage('id')">
-              <rect width="20" height="7.5" fill="#FF0000"/>
-              <rect y="7.5" width="20" height="7.5" fill="#FFFFFF"/>
+            <svg
+              class="ms-2 flag-id"
+              width="20"
+              height="15"
+              viewBox="0 0 20 15"
+              xmlns="http://www.w3.org/2000/svg"
+              onclick="setLanguage('id')"
+            >
+              <rect width="20" height="7.5" fill="#FF0000" />
+              <rect y="7.5" width="20" height="7.5" fill="#FFFFFF" />
             </svg>
           </div>
         </div>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <!-- Center: Navigation items -->
-          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 justify-content-center" style="flex: 1;">
+          <ul
+            class="navbar-nav mx-auto mb-2 mb-lg-0 justify-content-center"
+            style="flex: 1"
+          >
             <li class="nav-item">
-              <button class="btn nav-btn" type="button" data-nav-url="index.html">
+              <button
+                class="btn nav-btn"
+                type="button"
+                data-nav-url="index.html"
+              >
                 Beranda
               </button>
             </li>
@@ -81,12 +109,28 @@
                 Tentang Kami
               </button>
               <ul class="dropdown-menu">
-                <li><button class="dropdown-item" type="button" data-nav-url="tentang_kami.html#profil-desa">Profil Desa</button></li>
-                <li><button class="dropdown-item" type="button" data-nav-url="tentang_kami.html#struktur-desa">Struktur Desa</button></li>
+                <li>
+                  <button
+                    class="dropdown-item"
+                    type="button"
+                    data-nav-url="tentang_kami.html#profil-desa"
+                  >
+                    Profil Desa
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="dropdown-item"
+                    type="button"
+                    data-nav-url="tentang_kami.html#struktur-desa"
+                  >
+                    Struktur Desa
+                  </button>
+                </li>
               </ul>
             </li>
 
-             <li class="nav-item dropdown">
+            <li class="nav-item dropdown">
               <button
                 class="btn nav-btn dropdown-toggle"
                 type="button"
@@ -96,11 +140,19 @@
                 Fasilitas
               </button>
               <ul class="dropdown-menu">
-                <li><button class="dropdown-item" type="button" data-nav-url="fasilitas.html#fasilitas-umum-desa">Fasilitas Umum Desa</button></li>
+                <li>
+                  <button
+                    class="dropdown-item"
+                    type="button"
+                    data-nav-url="fasilitas.html#fasilitas-umum-desa"
+                  >
+                    Fasilitas Umum Desa
+                  </button>
+                </li>
               </ul>
             </li>
 
-             <li class="nav-item dropdown">
+            <li class="nav-item dropdown">
               <button
                 class="btn nav-btn dropdown-toggle"
                 type="button"
@@ -110,19 +162,65 @@
                 Wisata & Budaya
               </button>
               <ul class="dropdown-menu">
-                <li><button class="dropdown-item" type="button" data-nav-url="wisata_budaya.html#spot-wisata">Spot Wisata</button></li>
-                <li><button class="dropdown-item" type="button" data-nav-url="wisata_budaya.html#budaya-lokal">Budaya Lokal</button></li>
-                <li><button class="dropdown-item" type="button" data-nav-url="wisata_budaya.html#acara-tahunan">Acara Tahunan</button></li>
-                <li><button class="dropdown-item" type="button" data-nav-url="wisata_budaya.html#kerajinan-tangan">Kerajinan Tangan</button></li>
-                <li><button class="dropdown-item" type="button" data-nav-url="wisata_budaya.html#kuliner-lokal">Kuliner Lokal</button></li>
+                <li>
+                  <button
+                    class="dropdown-item"
+                    type="button"
+                    data-nav-url="wisata_budaya.html#spot-wisata"
+                  >
+                    Spot Wisata
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="dropdown-item"
+                    type="button"
+                    data-nav-url="wisata_budaya.html#budaya-lokal"
+                  >
+                    Budaya Lokal
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="dropdown-item"
+                    type="button"
+                    data-nav-url="wisata_budaya.html#acara-tahunan"
+                  >
+                    Acara Tahunan
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="dropdown-item"
+                    type="button"
+                    data-nav-url="wisata_budaya.html#kerajinan-tangan"
+                  >
+                    Kerajinan Tangan
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="dropdown-item"
+                    type="button"
+                    data-nav-url="wisata_budaya.html#kuliner-lokal"
+                  >
+                    Kuliner Lokal
+                  </button>
+                </li>
                 <li><hr class="dropdown-divider" /></li>
                 <li>
-                  <button class="dropdown-item" type="button" data-nav-url="wisata_budaya.html#souvenir">Souvenir</button>
+                  <button
+                    class="dropdown-item"
+                    type="button"
+                    data-nav-url="wisata_budaya.html#souvenir"
+                  >
+                    Souvenir
+                  </button>
                 </li>
               </ul>
             </li>
 
-             <li class="nav-item dropdown">
+            <li class="nav-item dropdown">
               <button
                 class="btn nav-btn dropdown-toggle"
                 type="button"
@@ -132,16 +230,38 @@
                 Informasi Desa
               </button>
               <ul class="dropdown-menu">
-                <li><button class="dropdown-item" type="button" data-nav-url="informasi.html#lokasi-peta">Lokasi & Peta</button></li>
-                <li><button class="dropdown-item" type="button" data-nav-url="informasi.html#kontak">Kontak</button></li>
+                <li>
+                  <button
+                    class="dropdown-item"
+                    type="button"
+                    data-nav-url="informasi.html#lokasi-peta"
+                  >
+                    Lokasi & Peta
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="dropdown-item"
+                    type="button"
+                    data-nav-url="informasi.html#kontak"
+                  >
+                    Kontak
+                  </button>
+                </li>
                 <li><hr class="dropdown-divider" /></li>
                 <li>
-                  <button class="dropdown-item" type="button" data-nav-url="informasi.html#tambahan">Tambahan</button>
+                  <button
+                    class="dropdown-item"
+                    type="button"
+                    data-nav-url="informasi.html#tambahan"
+                  >
+                    Tambahan
+                  </button>
                 </li>
               </ul>
             </li>
 
-             <li class="nav-item dropdown">
+            <li class="nav-item dropdown">
               <button
                 class="btn nav-btn dropdown-toggle"
                 type="button"
@@ -151,11 +271,33 @@
                 Gallery
               </button>
               <ul class="dropdown-menu">
-                <li><button class="dropdown-item" type="button" data-nav-url="galeri.html#dokumentasi-acara">Dokumentasi Acara</button></li>
-                <li><button class="dropdown-item" type="button" data-nav-url="galeri.html#kegiatan-masyarakat">Kegiatan Masyarakat</button></li>
+                <li>
+                  <button
+                    class="dropdown-item"
+                    type="button"
+                    data-nav-url="galeri.html#dokumentasi-acara"
+                  >
+                    Dokumentasi Acara
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="dropdown-item"
+                    type="button"
+                    data-nav-url="galeri.html#kegiatan-masyarakat"
+                  >
+                    Kegiatan Masyarakat
+                  </button>
+                </li>
                 <li><hr class="dropdown-divider" /></li>
                 <li>
-                  <button class="dropdown-item" type="button" data-nav-url="galeri.html#tambahan-galeri">Tambahan</button>
+                  <button
+                    class="dropdown-item"
+                    type="button"
+                    data-nav-url="galeri.html#tambahan-galeri"
+                  >
+                    Tambahan
+                  </button>
                 </li>
               </ul>
             </li>
@@ -166,114 +308,149 @@
 
     <!-- Page Title -->
     <div class="container-fluid bg-primary text-white py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <h1 class="display-4 fw-bold mb-3">Tentang Kami</h1>
-                    <p class="lead">Profil Desa Wisata Klabili</p>
-                </div>
-            </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <h1 class="display-4 fw-bold mb-3">Tentang Kami</h1>
+            <p class="lead">Profil Desa Wisata Klabili</p>
+          </div>
         </div>
+      </div>
     </div>
 
     <!-- Page Content -->
     <div class="container mt-4">
-
-        <!-- Profil Desa Section -->
-        <section id="profil-desa" class="py-5">
-            <div class="row align-items-center mb-5 flex-column flex-md-row justify-content-center">
-                <div class="col-md-6 d-flex justify-content-center mb-4 mb-md-0">
-                    <div class="rounded-circle bg-light d-flex align-items-center justify-content-center"
-                        style="width: 320px; height: 320px;">
-                        <i class="fas fa-mountain text-primary" style="font-size: 4rem;"></i>
-                    </div>
-                </div>
-                <div class="col-md-6 d-flex justify-content-center">
-                    <div class="card border-0" style="width: 320px; margin-top: 32px;">
-                        <div class="card-body">
-                            <h2 class="card-title text-primary mb-4">Profil Desa Klabili</h2>
-                            <p class="card-text mb-3">
-                                Desa Klabili terletak di dataran tinggi yang dikelilingi oleh perbukitan hijau dan sungai jernih.
-                                Dengan ketinggian 800 meter di atas permukaan laut, desa ini menawarkan udara sejuk dan pemandangan
-                                alam yang memukau sepanjang tahun.
-                            </p>
-                            <ul class="list-unstyled">
-                                <li><strong>Ketinggian:</strong> 800 mdpl</li>
-                                <li><strong>Luas Wilayah:</strong> 15.5 km²</li>
-                                <li><strong>Populasi:</strong> ~2.500 jiwa</li>
-                                <li><strong>Iklim:</strong> Tropis sejuk</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+      <!-- Profil Desa Section -->
+      <section id="profil-desa" class="py-5">
+        <div
+          class="row align-items-center mb-5 flex-column flex-md-row justify-content-center"
+        >
+          <div class="col-md-6 d-flex justify-content-center mb-4 mb-md-0">
+            <div
+              class="rounded-circle bg-light d-flex align-items-center justify-content-center icon-container"
+              style="width: 320px; height: 320px"
+            >
+              <i
+                class="fas fa-mountain text-primary fa-icon-fix"
+                style="font-size: 4rem"
+              ></i>
             </div>
-        </section>
-        <style>
-/* Responsive spacing and sizing for shape & card */
-@media (max-width: 767.98px) {
-    #profil-desa .row.align-items-center {
-        flex-direction: column !important;
-        align-items: center !important;
-    }
-    #profil-desa .rounded-circle,
-    #profil-desa .card {
-        width: 90vw !important;
-        max-width: 340px;
-        min-width: 220px;
-    }
-    #profil-desa .card {
-        margin-top: 32px !important;
-    }
-}
-@media (min-width: 768px) {
-    #profil-desa .rounded-circle,
-    #profil-desa .card {
-        width: 320px !important;
-    }
-    #profil-desa .card {
-        margin-top: 0 !important;
-    }
-}
-</style>
-
-        <!-- Struktur Desa Section -->
-        <section id="struktur-desa" class="py-5 bg-light">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 text-center mb-5">
-                        <h2 class="display-5 fw-bold text-primary">Struktur Organisasi Desa</h2>
-                        <p class="lead text-muted">Kepemimpinan dan struktur pemerintahan Desa Klabili</p>
-                    </div>
-                </div>
-                <div class="row g-4 justify-content-center">
-                    <div class="col-lg-4 col-md-6 d-flex justify-content-center">
-                        <div class="card h-100 shadow-sm border-0" style="min-width:320px;max-width:370px;">
-                            <div class="card-body p-4 text-start">
-                                <div class="bg-success rounded-circle mb-3 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
-                                    <i class="fas fa-user-tie text-white fa-2x"></i>
-                                </div>
-                                <h5 class="card-title">Kepala Desa</h5>
-                                <p class="card-text text-muted">Pemimpin tertinggi desa yang bertanggung jawab atas pengelolaan dan pengembangan desa wisata.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 d-flex justify-content-center">
-                        <div class="card h-100 shadow-sm border-0" style="min-width:320px;max-width:370px;">
-                            <div class="card-body p-4 text-start">
-                                <div class="bg-success rounded-circle mb-3 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
-                                    <i class="fas fa-users text-white fa-2x"></i>
-                                </div>
-                                <h5 class="card-title">Sekretaris Desa</h5>
-                                <p class="card-text text-muted">Mengelola administrasi dan dokumentasi kegiatan desa serta koordinasi program wisata.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          </div>
+          <div class="col-md-6 d-flex justify-content-center">
+            <div class="card border-0" style="width: 320px; margin-top: 32px">
+              <div class="card-body">
+                <h2 class="card-title text-primary mb-4">
+                  Profil Desa Klabili
+                </h2>
+                <p class="card-text mb-3">
+                  Desa Klabili terletak di dataran tinggi yang dikelilingi oleh
+                  perbukitan hijau dan sungai jernih. Dengan ketinggian 800
+                  meter di atas permukaan laut, desa ini menawarkan udara sejuk
+                  dan pemandangan alam yang memukau sepanjang tahun.
+                </p>
+                <ul class="list-unstyled">
+                  <li><strong>Ketinggian:</strong> 800 mdpl</li>
+                  <li><strong>Luas Wilayah:</strong> 15.5 km²</li>
+                  <li><strong>Populasi:</strong> ~2.500 jiwa</li>
+                  <li><strong>Iklim:</strong> Tropis sejuk</li>
+                </ul>
+              </div>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
+      <style>
+        /* Responsive spacing and sizing for shape & card */
+        @media (max-width: 767.98px) {
+          #profil-desa .row.align-items-center {
+            flex-direction: column !important;
+            align-items: center !important;
+          }
+          #profil-desa .rounded-circle,
+          #profil-desa .card {
+            width: 90vw !important;
+            max-width: 340px;
+            min-width: 220px;
+          }
+          #profil-desa .card {
+            margin-top: 32px !important;
+          }
+        }
+        @media (min-width: 768px) {
+          #profil-desa .rounded-circle,
+          #profil-desa .card {
+            width: 320px !important;
+          }
+          #profil-desa .card {
+            margin-top: 0 !important;
+          }
+        }
+      </style>
 
-        <!-- WhatsApp Chat Button -->
-        <!-- <div class="position-fixed bottom-0 end-0 mb-4 me-4">
+      <!-- Struktur Desa Section -->
+      <section id="struktur-desa" class="py-5 bg-light">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 text-center mb-5">
+              <h2 class="display-5 fw-bold text-primary">
+                Struktur Organisasi Desa
+              </h2>
+              <p class="lead text-muted">
+                Kepemimpinan dan struktur pemerintahan Desa Klabili
+              </p>
+            </div>
+          </div>
+          <div class="row g-4 justify-content-center">
+            <div class="col-lg-4 col-md-6 d-flex justify-content-center">
+              <div
+                class="card h-100 shadow-sm border-0"
+                style="min-width: 320px; max-width: 450px"
+              >
+                <div class="card-body p-4 text-start d-flex align-items-center">
+                  <div
+                    class="bg-success rounded-circle mb-3 icon-container"
+                    style="width: 80px; height: 80px"
+                  >
+                    <i class="fas fa-user-tie text-white fa-2x fa-icon-fix"></i>
+                  </div>
+                  <div>
+                    <h5 class="card-title">Kepala Desa</h5>
+                    <p class="card-text text-muted">
+                      Pemimpin tertinggi desa yang bertanggung jawab atas
+                      pengelolaan dan pengembangan desa wisata.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 d-flex justify-content-center">
+              <div
+                class="card h-100 shadow-sm border-0"
+                style="min-width: 320px; max-width: 370px"
+              >
+                <div class="card-body p-4 text-start d-flex align-items-center">
+                  <div
+                    class="bg-success rounded-circle mb-3 icon-container"
+                    style="width: 80px; height: 80px"
+                  >
+                    <i class="fas fa-users text-white fa-2x fa-icon-fix"></i>
+                  </div>
+                  <div>
+                    <h5 class="card-title">Sekretaris Desa</h5>
+                    <p class="card-text text-muted">
+                      Mengelola administrasi dan dokumentasi kegiatan desa serta
+                      koordinasi program wisata.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WhatsApp Chat Button -->
+      <!-- <div class="position-fixed bottom-0 end-0 mb-4 me-4">
             <a href="#" class="btn btn-success rounded-circle p-3">
                 <i class="bi bi-whatsapp"></i>
                 Chat Kami
@@ -282,7 +459,10 @@
     </div>
 
     <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
 
     <!-- Bootstrap JS -->
     <script src="js/bootstrap/bootstrap.bundle.js"></script>

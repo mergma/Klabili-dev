@@ -510,6 +510,38 @@ body {
   }
 }
 
+/* Fix for squished Font Awesome icons in circular containers */
+.icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icon-container i {
+  flex-shrink: 0;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* Ensure Font Awesome icons maintain aspect ratio */
+.fa-icon-fix {
+  flex-shrink: 0 !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+/* Add spacing between icons and text in cards */
+.card-body .icon-container {
+  margin-right: 1rem; /* Space between icon and text for side-by-side layout */
+}
+
+.card-body > .icon-container:not(:last-child) {
+  margin-bottom: 1rem; /* Space below icon for stacked layout */
+}
+
 /* Ensure social media links stay horizontal on all screen sizes */
 @media (max-width: 768px) {
   .card {
