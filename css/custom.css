@@ -412,3 +412,108 @@ body.navbar-sticky {
 body {
   transition: padding-top 0.3s ease-in-out;
 }
+
+
+/* From Uiverse.io by vinodjangid07 */
+.card {
+  width: fit-content;
+  height: fit-content;
+  background-color: rgb(238, 238, 238);
+  display: flex;
+  flex-direction: row; /* Ensure horizontal layout */
+  align-items: center;
+  justify-content: center;
+  padding: 25px 25px;
+  gap: 20px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
+  flex-wrap: nowrap; /* Prevent wrapping to new lines */
+}
+
+/* for all social containers*/
+.socialContainer {
+  width: 52px;
+  height: 52px;
+  background-color: rgb(44, 44, 44);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition-duration: .3s;
+}
+/* instagram*/
+.containerOne:hover {
+  background-color: #d62976;
+  transition-duration: .3s;
+}
+/* twitter*/
+.containerTwo:hover {
+  background-color: #00acee;
+  transition-duration: .3s;
+}
+/* linkdin*/
+.containerThree:hover {
+  background-color: #0072b1;
+  transition-duration: .3s;
+}
+/* Whatsapp*/
+.containerFour:hover {
+  background-color: #128C7E;
+  transition-duration: .3s;
+}
+
+.socialContainer:active {
+  transform: scale(0.9);
+  transition-duration: .3s;
+}
+
+.socialSvg {
+  width: 17px;
+}
+
+.socialSvg path {
+  fill: rgb(255, 255, 255);
+}
+
+.socialContainer:hover .socialSvg {
+  animation: slide-in-top 0.3s both;
+}
+
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Ensure social media links stay horizontal on all screen sizes */
+@media (max-width: 768px) {
+  .card {
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 15px; /* Slightly smaller gap on mobile */
+    padding: 20px 15px; /* Adjust padding for mobile */
+  }
+
+  .socialContainer {
+    width: 45px; /* Slightly smaller icons on mobile */
+    height: 45px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    gap: 10px; /* Even smaller gap on very small screens */
+    padding: 15px 10px;
+  }
+
+  .socialContainer {
+    width: 40px; /* Even smaller icons on very small screens */
+    height: 40px;
+  }
+}
+
