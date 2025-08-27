@@ -1,3 +1,11 @@
+/* Removed CSS scroll-behavior to prevent conflicts with JavaScript smooth scrolling */
+
+/* Add scroll padding to account for sticky navbar */
+html {
+  scroll-padding-top: 80px; /* Adjust based on navbar height */
+}
+
+
 /* Custom styles for nav buttons */
 .nav-btn {
   background: none;

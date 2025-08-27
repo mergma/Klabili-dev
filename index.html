@@ -548,11 +548,41 @@
     <script src="js/custom.js"></script>
 
     <script>
-      // Smooth scroll function for the "Jelajahi" button
+      // Robust smooth scroll function for the "Jelajahi" button
       function scrollToOverview() {
-        document.getElementById('village-overview').scrollIntoView({
-          behavior: 'smooth'
-        });
+        const targetElement = document.getElementById('village-overview');
+
+        if (!targetElement) {
+          console.error('Target element not found');
+          return;
+        }
+
+        // Always use JavaScript animation for consistent behavior
+        const targetPosition = targetElement.offsetTop - 80; // Account for navbar
+        const startPosition = window.pageYOffset || document.documentElement.scrollTop;
+        const distance = targetPosition - startPosition;
+        const duration = 1000; // 1 second duration
+        let start = null;
+
+        function animation(currentTime) {
+          if (start === null) start = currentTime;
+          const timeElapsed = currentTime - start;
+          const progress = Math.min(timeElapsed / duration, 1);
+
+          // Easing function (ease-in-out)
+          const easeInOutQuad = progress < 0.5
+            ? 2 * progress * progress
+            : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+
+          const currentPosition = startPosition + (distance * easeInOutQuad);
+          window.scrollTo(0, currentPosition);
+
+          if (timeElapsed < duration) {
+            requestAnimationFrame(animation);
+          }
+        }
+
+        requestAnimationFrame(animation);
       }
     </script>
   </body>
