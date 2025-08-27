@@ -202,3 +202,106 @@
   animation: switchSlide 0.3s ease-out;
 }
 
+/* Desktop navbar layout - restore proper positioning */
+@media (min-width: 992px) {
+  .navbar .container-fluid {
+    display: flex;
+    align-items: center;
+  }
+
+  /* Logo on the left */
+  .navbar-brand-container {
+    flex: 1;
+    order: 1;
+  }
+
+  /* Navigation in the center */
+  .navbar-collapse {
+    flex: 1;
+    order: 2;
+  }
+
+  /* Language toggle on the right */
+  .navbar .container-fluid > .navbar-nav {
+    flex: 1;
+    order: 3;
+    justify-content: flex-end;
+  }
+
+  /* Hide hamburger menu on desktop */
+  .navbar-toggler {
+    display: none;
+  }
+}
+
+/* Mobile navbar layout adjustments */
+@media (max-width: 991.98px) {
+  /* Container for mobile navbar layout */
+  .navbar .container-fluid {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+  }
+
+  /* Center the logo on mobile */
+  .navbar-brand-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    flex: none !important;
+    z-index: 1;
+  }
+
+  /* Position hamburger menu on the left */
+  .navbar-toggler {
+    order: 1;
+    margin-left: 0;
+    margin-right: auto;
+    z-index: 2;
+  }
+
+  /* Position language toggle on the right - now outside collapsible menu */
+  .navbar .container-fluid > .navbar-nav {
+    order: 3;
+    flex: none !important;
+    margin-left: auto;
+    z-index: 2;
+  }
+
+  /* Ensure the language toggle container is properly positioned */
+  .navbar .container-fluid > .navbar-nav .language-toggle-container {
+    margin-left: auto;
+  }
+
+  /* Adjust collapsed menu to appear below the navbar */
+  .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--bs-navbar-bg, #fff);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    order: 4;
+    width: 100%;
+  }
+
+  /* Reset the center navigation flex properties for mobile */
+  .navbar-collapse .navbar-nav.mx-auto {
+    flex: none !important;
+    margin: 0 !important;
+  }
+
+  /* Ensure proper spacing for mobile layout */
+  .navbar-brand-container {
+    max-width: calc(100% - 120px); /* Account for hamburger + language toggle */
+  }
+
+  .navbar-brand img {
+    max-width: 80px; /* Slightly smaller logo on mobile if needed */
+  }
+}
+
