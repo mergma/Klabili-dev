@@ -177,39 +177,64 @@
     </div>
 
     <!-- Page Content -->
+    <div class="container mt-4">
+
         <!-- Profil Desa Section -->
         <section id="profil-desa" class="py-5">
-  <div class="container">
-    <div class="row align-items-center justify-content-center flex-nowrap gap-4" style="overflow-x: auto;">
-      <!-- Animated Shape -->
-      <div class="col-lg-5 d-flex justify-content-center">
-        <div class="profil-shape-animate d-flex align-items-center justify-content-center shadow"
-          style="width: 350px; height: 350px;">
-          <i class="fas fa-mountain text-primary" style="font-size: 5rem;"></i>
-        </div>
-      </div>
-      <!-- Animated Card -->
-      <div class="col-lg-5 d-flex justify-content-center">
-        <div class="card profil-card-animate border-0 shadow" style="width: 350px; min-height: 350px;">
-          <div class="card-body d-flex flex-column justify-content-center text-start">
-            <h2 class="card-title text-primary mb-4">Profil Desa Klabili</h2>
-            <p class="card-text mb-3">
-              Desa Klabili terletak di dataran tinggi yang dikelilingi oleh perbukitan hijau dan sungai jernih.
-              Dengan ketinggian 800 meter di atas permukaan laut, desa ini menawarkan udara sejuk dan pemandangan
-              alam yang memukau sepanjang tahun.
-            </p>
-            <ul class="list-unstyled">
-              <li><strong>Ketinggian:</strong> 800 mdpl</li>
-              <li><strong>Luas Wilayah:</strong> 15.5 km²</li>
-              <li><strong>Populasi:</strong> ~2.500 jiwa</li>
-              <li><strong>Iklim:</strong> Tropis sejuk</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+            <div class="row align-items-center mb-5 flex-column flex-md-row justify-content-center">
+                <div class="col-md-6 d-flex justify-content-center mb-4 mb-md-0">
+                    <div class="rounded-circle bg-light d-flex align-items-center justify-content-center"
+                        style="width: 320px; height: 320px;">
+                        <i class="fas fa-mountain text-primary" style="font-size: 4rem;"></i>
+                    </div>
+                </div>
+                <div class="col-md-6 d-flex justify-content-center">
+                    <div class="card border-0" style="width: 320px; margin-top: 32px;">
+                        <div class="card-body">
+                            <h2 class="card-title text-primary mb-4">Profil Desa Klabili</h2>
+                            <p class="card-text mb-3">
+                                Desa Klabili terletak di dataran tinggi yang dikelilingi oleh perbukitan hijau dan sungai jernih.
+                                Dengan ketinggian 800 meter di atas permukaan laut, desa ini menawarkan udara sejuk dan pemandangan
+                                alam yang memukau sepanjang tahun.
+                            </p>
+                            <ul class="list-unstyled">
+                                <li><strong>Ketinggian:</strong> 800 mdpl</li>
+                                <li><strong>Luas Wilayah:</strong> 15.5 km²</li>
+                                <li><strong>Populasi:</strong> ~2.500 jiwa</li>
+                                <li><strong>Iklim:</strong> Tropis sejuk</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <style>
+/* Responsive spacing and sizing for shape & card */
+@media (max-width: 767.98px) {
+    #profil-desa .row.align-items-center {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    #profil-desa .rounded-circle,
+    #profil-desa .card {
+        width: 90vw !important;
+        max-width: 340px;
+        min-width: 220px;
+    }
+    #profil-desa .card {
+        margin-top: 32px !important;
+    }
+}
+@media (min-width: 768px) {
+    #profil-desa .rounded-circle,
+    #profil-desa .card {
+        width: 320px !important;
+    }
+    #profil-desa .card {
+        margin-top: 0 !important;
+    }
+}
+</style>
 
         <!-- Struktur Desa Section -->
         <section id="struktur-desa" class="py-5 bg-light">
@@ -221,11 +246,11 @@
                     </div>
                 </div>
 
-                <div class="row g-4 justify-content-center">
-                    <div class="col-lg-4 col-md-6 d-flex justify-content-center">
-                        <div class="card h-100 shadow-sm border-0" style="min-width: 320px;">
-                            <div class="card-body p-4 text-start">
-                                <div class="bg-primary rounded-circle mb-3 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card h-100 shadow-sm border-0">
+                            <div class="card-body text-center p-4">
+                                <div class="bg-primary rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
                                     <i class="fas fa-user-tie text-white fa-2x"></i>
                                 </div>
                                 <h5 class="card-title">Kepala Desa</h5>
@@ -234,10 +259,10 @@
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 d-flex justify-content-center">
-                        <div class="card h-100 shadow-sm border-0" style="min-width: 320px;">
-                            <div class="card-body p-4 text-start">
-                                <div class="bg-success rounded-circle mb-3 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="card h-100 shadow-sm border-0">
+                            <div class="card-body text-center p-4">
+                                <div class="bg-success rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
                                     <i class="fas fa-users text-white fa-2x"></i>
                                 </div>
                                 <h5 class="card-title">Sekretaris Desa</h5>
@@ -245,17 +270,18 @@
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
 
         <!-- WhatsApp Chat Button -->
-        <div class="position-fixed bottom-0 end-0 mb-4 me-4">
+        <!-- <div class="position-fixed bottom-0 end-0 mb-4 me-4">
             <a href="#" class="btn btn-success rounded-circle p-3">
                 <i class="bi bi-whatsapp"></i>
                 Chat Kami
             </a>
-        </div>
+        </div> -->
     </div>
 
     <!-- Font Awesome for icons -->
@@ -265,47 +291,5 @@
     <script src="js/bootstrap/bootstrap.bundle.js"></script>
     <!-- Custom JS -->
     <script src="js/custom.js"></script>
-    <style>
-/* Animasi shape */
-.profil-shape-animate {
-  background: linear-gradient(135deg, #e3f0ff 0%, #f6ffe3 100%);
-  border-radius: 50%;
-  animation: floatShape 3s ease-in-out infinite;
-  transition: box-shadow 0.3s;
-}
-@keyframes floatShape {
-  0%, 100% { transform: translateY(0);}
-  50% { transform: translateY(-18px);}
-}
-.profil-shape-animate:hover {
-  box-shadow: 0 0 32px 0 #a3d8ff;
-}
-
-/* Animasi card */
-.profil-card-animate {
-  background: #fff;
-  border-radius: 2rem;
-  animation: fadeInRight 1.2s cubic-bezier(.77,0,.18,1) both;
-  box-shadow: 0 8px 32px 0 rgba(44, 62, 80, 0.10);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-@keyframes fadeInRight {
-  0% { opacity: 0; transform: translateX(60px);}
-  100% { opacity: 1; transform: translateX(0);}
-}
-.profil-card-animate:hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 16px 48px 0 rgba(44, 62, 80, 0.18);
-}
-
-/* Responsive: tetap menyamping di layar besar, stack di mobile */
-@media (max-width: 991.98px) {
-  #profil-desa .row.flex-nowrap {
-    flex-direction: column !important;
-    gap: 2rem !important;
-    align-items: center !important;
-  }
-}
-</style>
   </body>
 </html>
