@@ -772,19 +772,14 @@ body {
   overflow: hidden;
   transition-duration: .3s;
 }
-/* instagram*/
+/* Instagram */
 .containerOne:hover {
-  background-color: #d62976;
+  background: linear-gradient(135deg, #f9ce34 0%, #ee2a7b 50%, #6228d7 100%);
   transition-duration: .3s;
 }
-/* twitter*/
+/* Facebook */
 .containerTwo:hover {
-  background-color: #00acee;
-  transition-duration: .3s;
-}
-/* linkdin*/
-.containerThree:hover {
-  background-color: #0072b1;
+  background-color: #1877F3; /* Facebook blue */
   transition-duration: .3s;
 }
 /* Whatsapp*/
