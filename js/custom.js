@@ -2,9 +2,77 @@
 function navigateTo(url) {
   if (url && url !== '#') {
     console.log('Navigating to:', url); // Debug log
-    window.location.href = url;
+
+    // Check if URL contains a hash (section anchor)
+    if (url.includes('#')) {
+      const [pageUrl, sectionId] = url.split('#');
+      const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+
+      // If we're already on the target page, just scroll to the section
+      if (pageUrl === currentPage || pageUrl === window.location.pathname) {
+        scrollToSection(sectionId);
+      } else {
+        // Navigate to the page first, then scroll to section
+        window.location.href = url;
+      }
+    } else {
+      // Regular navigation without hash
+      window.location.href = url;
+    }
   } else {
     console.log('Invalid URL or #:', url); // Debug log
+  }
+}
+
+// Function to smoothly scroll to a section
+function scrollToSection(sectionId) {
+  const targetElement = document.getElementById(sectionId);
+
+  if (!targetElement) {
+    console.error('Target section not found:', sectionId);
+    return;
+  }
+
+  // Calculate position accounting for navbar height
+  const navbarHeight = document.querySelector('.navbar')?.offsetHeight || 80;
+  const targetPosition = targetElement.offsetTop - navbarHeight - 20; // Extra 20px padding
+
+  // Smooth scroll animation
+  const startPosition = window.pageYOffset || document.documentElement.scrollTop;
+  const distance = targetPosition - startPosition;
+  const duration = 1000; // 1 second duration
+  let start = null;
+
+  function animation(currentTime) {
+    if (start === null) start = currentTime;
+    const timeElapsed = currentTime - start;
+    const progress = Math.min(timeElapsed / duration, 1);
+
+    // Easing function (ease-in-out)
+    const easeInOutQuad = progress < 0.5
+      ? 2 * progress * progress
+      : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+
+    const currentPosition = startPosition + distance * easeInOutQuad;
+    window.scrollTo(0, currentPosition);
+
+    if (timeElapsed < duration) {
+      requestAnimationFrame(animation);
+    }
+  }
+
+  requestAnimationFrame(animation);
+}
+
+// Function to handle hash navigation on page load
+function handleHashOnLoad() {
+  const hash = window.location.hash;
+  if (hash) {
+    const sectionId = hash.substring(1); // Remove the # symbol
+    // Wait a bit for the page to fully load before scrolling
+    setTimeout(() => {
+      scrollToSection(sectionId);
+    }, 500);
   }
 }
 
@@ -71,8 +139,7 @@ function addRippleEffectAndNavigation() {
       // Navigate after a short delay to show ripple effect
       if (url && url !== '#') {
         setTimeout(() => {
-          console.log('Navigating to:', url);
-          window.location.href = url;
+          navigateTo(url);
         }, 150); // Short delay for ripple effect
       } else {
         console.log('No navigation - URL is:', url);
@@ -210,4 +277,5 @@ document.addEventListener('DOMContentLoaded', function() {
   setActiveNavButton();
   addRippleEffectAndNavigation();
   initStickyNavbar();
+  handleHashOnLoad();
 });
