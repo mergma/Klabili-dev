@@ -151,8 +151,63 @@ function updateLanguageToggleState(lang) {
   }, 600);
 }
 
+// Sticky Navbar Functionality
+function initStickyNavbar() {
+  const navbar = document.querySelector('.navbar');
+  const heroSection = document.querySelector('.hero-section');
+
+  if (!navbar || !heroSection) {
+    console.log('Navbar or hero section not found');
+    return;
+  }
+
+  // Get the height of the hero section
+  const heroHeight = heroSection.offsetHeight;
+
+  function handleScroll() {
+    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollPosition > heroHeight - 100) { // Start transition 100px before hero ends
+      if (!navbar.classList.contains('sticky')) {
+        navbar.classList.add('sticky');
+        document.body.classList.add('navbar-sticky');
+      }
+    } else {
+      if (navbar.classList.contains('sticky')) {
+        navbar.classList.remove('sticky');
+        document.body.classList.remove('navbar-sticky');
+      }
+    }
+  }
+
+  // Throttle scroll events for better performance
+  let ticking = false;
+  function requestTick() {
+    if (!ticking) {
+      requestAnimationFrame(handleScroll);
+      ticking = true;
+      setTimeout(() => { ticking = false; }, 16); // ~60fps
+    }
+  }
+
+  // Add scroll event listener
+  window.addEventListener('scroll', requestTick);
+
+  // Handle window resize to recalculate hero height
+  window.addEventListener('resize', function() {
+    // Recalculate hero height on resize
+    setTimeout(() => {
+      handleScroll();
+    }, 100);
+  });
+
+  // Initial check in case page is already scrolled
+  handleScroll();
+}
+
 // Initialize when page loads
 document.addEventListener('DOMContentLoaded', function() {
   setActiveNavButton();
   addRippleEffectAndNavigation();
+  initStickyNavbar();
 });

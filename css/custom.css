@@ -345,3 +345,62 @@
   border-color: #666666;
   background: #292929;
 }
+
+/* Sticky Navbar Styles */
+.navbar {
+  transition: all 0.3s ease-in-out;
+  z-index: 1030;
+}
+
+.navbar.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(248, 249, 250, 0.95) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  animation: slideDown 0.3s ease-out;
+}
+
+.navbar.sticky .navbar-brand img {
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+.navbar.sticky .nav-btn {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.navbar.sticky .nav-btn:hover {
+  color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.navbar.sticky .nav-btn.active {
+  color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.12);
+}
+
+/* Animation for sticky navbar appearance */
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Body padding to prevent content jump when navbar becomes fixed */
+body.navbar-sticky {
+  padding-top: 76px; /* Adjust based on your navbar height */
+}
+
+/* Smooth transition for body padding */
+body {
+  transition: padding-top 0.3s ease-in-out;
+}
