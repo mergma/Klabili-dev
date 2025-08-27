@@ -272,7 +272,7 @@
       <div class="container" style="text-align: justify;">
         <div class="row">
           <div class="col-lg-12 text-center mb-5">
-            <h2 class="display-5 fw-bold text-primary">
+            <h2 class="display-5 fw-bold text-primary fade-in-on-scroll">
               Selamat Datang di Desa Klabili
             </h2>
             <p class="lead text-muted">
@@ -827,5 +827,24 @@
         requestAnimationFrame(animation);
       }
     </script>
+
+    <script>
+  // Fade in on scroll for .fade-in-on-scroll elements
+  document.addEventListener("DOMContentLoaded", function () {
+    const fadeEls = document.querySelectorAll('.fade-in-on-scroll');
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target); // animasi hanya sekali
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+    fadeEls.forEach(el => observer.observe(el));
+  });
+</script>
   </body>
 </html>
