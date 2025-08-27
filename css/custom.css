@@ -99,9 +99,12 @@ html {
 }
 
 /* Hover effect for "Desa Wisata Klabili" in hero section */
+.hero-section h1 {
+  transition: color 0.3s ease;
+}
+
 .hero-section h1:hover {
   color: #198754; /* Bootstrap primary green */
-  transition: color 0.3s;
   cursor: pointer;
 }
 
