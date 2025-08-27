@@ -334,44 +334,57 @@ html {
 }
 
 /* From Uiverse.io by iZOXVL */ 
+
 .boton-elegante {
-  padding: 15px 30px;
-  border: 2px solid #2c2c2c;
-  background-color: #1a1a1a;
-  color: #ffffff;
-  font-size: 1.2rem;
-  cursor: pointer;
-  border-radius: 30px;
-  transition: all 0.4s ease;
-  outline: none;
   position: relative;
+  display: inline-block;
+  padding: 0.75rem 2.5rem 0.75rem 2rem;
+  font-size: 1.2rem;
+  color: #fff;
+  background: transparent;
+  border: 2px solid #fff;
+  border-radius: 30px;
+  cursor: pointer;
   overflow: hidden;
-  font-weight: bold;
+  transition: color 0.3s;
+  z-index: 1;
 }
 
 .boton-elegante::after {
-  content: "";
+  content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(
-    circle,
-    rgba(255, 255, 255, 0.25) 0%,
-    rgba(255, 255, 255, 0) 70%
-  );
-  transform: scale(0);
-  transition: transform 0.5s ease;
-}
-
-.boton-elegante:hover::after {
-  transform: scale(4);
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  background: #fff;
+  border-radius: 30px;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s cubic-bezier(0.4,0,0.2,1), height 0.4s cubic-bezier(0.4,0,0.2,1);
+  z-index: -1;
 }
 
 .boton-elegante:hover {
-  border-color: #666666;
-  background: #292929;
+  color: #198754;
+  border-color: #198754;
+}
+
+.boton-elegante:hover::after {
+  width: 100%;
+  height: 100%;
+}
+
+.boton-elegante .arrow {
+  display: inline-block;
+  margin-left: 0.7em;
+  font-size: 1.2em;
+  vertical-align: middle;
+  transition: transform 0.3s;
+}
+
+.boton-elegante:hover .arrow {
+  transform: translateX(6px);
+  color: #198754;
 }
 
 /* Sticky Navbar Styles */
