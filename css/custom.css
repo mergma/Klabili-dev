@@ -443,6 +443,125 @@ html {
   box-shadow: 0 2px 8px -4px #0d6efd55;
 }
 
+/* Highlight Card Animation */
+.highlight-card {
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 4px 24px -8px #0d6efd22;
+  padding: 2.5rem 1.5rem 1.5rem 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.25s cubic-bezier(.4,2,.6,1), box-shadow 0.25s;
+  position: relative;
+  overflow: hidden;
+  min-height: 180px;
+  outline: none;
+}
+.highlight-card:hover, .highlight-card:focus {
+  transform: translateY(-8px) scale(1.04);
+  box-shadow: 0 8px 32px -4px #0d6efd33;
+}
+.icon-wrap {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  box-shadow: 0 2px 12px -4px #0d6efd33;
+  transition: box-shadow 0.3s;
+}
+.highlight-card:active .icon-wrap {
+  box-shadow: 0 1px 4px -2px #0d6efd33;
+}
+
+/* Modal Overlay */
+.highlight-modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0; top: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.25);
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s;
+}
+.highlight-modal.active {
+  display: flex;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.highlight-modal-content {
+ background: linear-gradient(135deg, rgba(255,255,255,0.85) 80%, rgba(202,220,174,0.85) 100%);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1.5px solid rgba(13,110,253,0.08);
+  border-radius: 32px;
+  box-shadow: 0 8px 40px -8px #0d6efd44;
+  padding: 2.5rem 2rem 2rem 2rem;
+  min-width: 320px;
+  max-width: 95vw;
+  max-height: 90vh;
+  position: relative;
+  text-align: center;
+  animation: modalPop 0.35s cubic-bezier(.4,2,.6,1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@keyframes modalPop {
+  0% { transform: scale(0.7); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.highlight-modal-close {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #0d6efd;
+  cursor: pointer;
+  z-index: 2;
+  transition: color 0.2s;
+}
+.highlight-modal-close:hover {
+  color: #198754;
+}
+.highlight-modal-icon {
+  margin-bottom: 1.2rem;
+  font-size: 3rem;
+}
+.highlight-modal-title {
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #198754;
+}
+.highlight-modal-desc {
+  font-size: 1.1rem;
+  color: #333;
+  min-height: 48px;
+  letter-spacing: 0.01em;
+  text-align: center;
+  margin-bottom: 0;
+  white-space: pre-line;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .highlight-modal-content {
+    padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+    min-width: 0;
+  }
+  .highlight-modal-title {
+    font-size: 1.1rem;
+  }
+}
+
 /* Sticky Navbar Styles */
 .navbar {
   transition: all 0.3s ease-in-out;

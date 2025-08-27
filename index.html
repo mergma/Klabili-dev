@@ -282,90 +282,71 @@
           </p>
         </div>
       </div>
-
-      <div class="row g-4">
+      <div class="row g-4 justify-content-center" id="village-highlights">
+        <!-- Example Card -->
         <div class="col-lg-4 col-md-6">
-          <div class="text-center p-4">
-            <div class="bg-primary rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center"
-              style="width: 80px; height: 80px">
+          <div class="highlight-card" data-title="Wisata Alam"
+            data-desc="Air terjun tersembunyi, trek hiking menantang, dan pemandangan sunrise yang spektakuler dari puncak bukit.">
+            <div class="icon-wrap bg-primary">
               <i class="fas fa-mountain text-white fa-2x"></i>
             </div>
-            <h5 class="fw-bold">Wisata Alam</h5>
-            <p class="text-muted">
-              Air terjun tersembunyi, trek hiking menantang, dan pemandangan
-              sunrise yang spektakuler dari puncak bukit.
-            </p>
+            <h5 class="fw-bold mt-3 mb-0">Wisata Alam</h5>
           </div>
         </div>
-
         <div class="col-lg-4 col-md-6">
-          <div class="text-center p-4">
-            <div class="bg-success rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center"
-              style="width: 80px; height: 80px">
+          <div class="highlight-card" data-title="Pertanian Organik"
+            data-desc="Sawah terasering yang indah dan kebun organik yang menghasilkan produk segar berkualitas tinggi.">
+            <div class="icon-wrap bg-success">
               <i class="fas fa-seedling text-white fa-2x"></i>
             </div>
-            <h5 class="fw-bold">Pertanian Organik</h5>
-            <p class="text-muted">
-              Sawah terasering yang indah dan kebun organik yang menghasilkan
-              produk segar berkualitas tinggi.
-            </p>
+            <h5 class="fw-bold mt-3 mb-0">Pertanian Organik</h5>
           </div>
         </div>
-
         <div class="col-lg-4 col-md-6">
-          <div class="text-center p-4">
-            <div class="bg-warning rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center"
-              style="width: 80px; height: 80px">
+          <div class="highlight-card" data-title="Kerajinan Tradisional"
+            data-desc="Anyaman bambu, tenun tradisional, dan keramik buatan tangan yang mencerminkan kearifan lokal.">
+            <div class="icon-wrap bg-warning">
               <i class="fas fa-palette text-white fa-2x"></i>
             </div>
-            <h5 class="fw-bold">Kerajinan Tradisional</h5>
-            <p class="text-muted">
-              Anyaman bambu, tenun tradisional, dan keramik buatan tangan yang
-              mencerminkan kearifan lokal.
-            </p>
+            <h5 class="fw-bold mt-3 mb-0">Kerajinan Tradisional</h5>
           </div>
         </div>
-
+        <!-- Tambahkan setelah 3 card yang sudah ada -->
         <div class="col-lg-4 col-md-6">
-          <div class="text-center p-4">
-            <div class="bg-info rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center"
-              style="width: 80px; height: 80px">
+          <div class="highlight-card" data-title="Kuliner Autentik"
+            data-desc="Cita rasa khas daerah dengan bahan-bahan segar dari kebun sendiri dan resep turun temurun.">
+            <div class="icon-wrap bg-info">
               <i class="fas fa-utensils text-white fa-2x"></i>
             </div>
-            <h5 class="fw-bold">Kuliner Autentik</h5>
-            <p class="text-muted">
-              Cita rasa khas daerah dengan bahan-bahan segar dari kebun
-              sendiri dan resep turun temurun.
-            </p>
+            <h5 class="fw-bold mt-3 mb-0">Kuliner Autentik</h5>
           </div>
         </div>
-
         <div class="col-lg-4 col-md-6">
-          <div class="text-center p-4">
-            <div class="bg-danger rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center"
-              style="width: 80px; height: 80px">
+          <div class="highlight-card" data-title="Seni & Budaya"
+            data-desc="Pertunjukan tari tradisional, musik gamelan, dan festival budaya yang meriah sepanjang tahun.">
+            <div class="icon-wrap bg-danger">
               <i class="fas fa-music text-white fa-2x"></i>
             </div>
-            <h5 class="fw-bold">Seni & Budaya</h5>
-            <p class="text-muted">
-              Pertunjukan tari tradisional, musik gamelan, dan festival budaya
-              yang meriah sepanjang tahun.
-            </p>
+            <h5 class="fw-bold mt-3 mb-0">Seni & Budaya</h5>
           </div>
         </div>
-
         <div class="col-lg-4 col-md-6">
-          <div class="text-center p-4">
-            <div class="bg-secondary rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center"
-              style="width: 80px; height: 80px">
+          <div class="highlight-card" data-title="Homestay"
+            data-desc="Pengalaman menginap di rumah penduduk lokal dengan keramahan dan kenyamanan yang tak terlupakan.">
+            <div class="icon-wrap bg-secondary">
               <i class="fas fa-home text-white fa-2x"></i>
             </div>
-            <h5 class="fw-bold">Homestay</h5>
-            <p class="text-muted">
-              Pengalaman menginap di rumah penduduk lokal dengan keramahan dan
-              kenyamanan yang tak terlupakan.
-            </p>
+            <h5 class="fw-bold mt-3 mb-0">Homestay</h5>
           </div>
+        </div>
+      </div>
+      <!-- Modal Card Overlay -->
+      <div id="highlight-modal" class="highlight-modal">
+        <div class="highlight-modal-content">
+          <button class="highlight-modal-close" aria-label="Tutup">&times;</button>
+          <div class="highlight-modal-icon"></div>
+          <h5 class="highlight-modal-title"></h5>
+          <p class="highlight-modal-desc"></p>
         </div>
       </div>
     </div>
@@ -649,6 +630,50 @@
   <script src="js/bootstrap/bootstrap.bundle.js"></script>
   <!-- Custom JS -->
   <script src="js/custom.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Card click handler
+      document.querySelectorAll('.highlight-card').forEach(card => {
+        card.addEventListener('click', function () {
+          const modal = document.getElementById('highlight-modal');
+          const icon = card.querySelector('.icon-wrap').cloneNode(true);
+          const title = card.getAttribute('data-title');
+          const desc = card.getAttribute('data-desc');
+          // Set modal content
+          const modalIcon = modal.querySelector('.highlight-modal-icon');
+          modalIcon.innerHTML = '';
+          modalIcon.appendChild(icon);
+          modal.querySelector('.highlight-modal-title').textContent = title;
+          const descEl = modal.querySelector('.highlight-modal-desc');
+          descEl.textContent = '';
+          modal.classList.add('active');
+          // Typing animation
+          let i = 0;
+          function typeWriter() {
+            if (i <= desc.length) {
+              descEl.textContent = desc.slice(0, i);
+              i++;
+              setTimeout(typeWriter, 18 + Math.random() * 22);
+            }
+          }
+          typeWriter();
+        });
+      });
+      // Close modal
+      document.querySelector('.highlight-modal-close').onclick = function () {
+        document.getElementById('highlight-modal').classList.remove('active');
+      };
+      // Close modal on overlay click
+      document.getElementById('highlight-modal').onclick = function (e) {
+        if (e.target === this) this.classList.remove('active');
+      };
+      // ESC key closes modal
+      document.addEventListener('keydown', function (e) {
+        if (e.key === "Escape") document.getElementById('highlight-modal').classList.remove('active');
+      });
+    });
+  </script>
 
   <script>
     // Robust smooth scroll function for the "Jelajahi" button
