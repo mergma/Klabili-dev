@@ -86,10 +86,12 @@ function addRippleEffectAndNavigation() {
   });
 }
 
-// ki ki ki ma ma ma
+// Enhanced language toggle with animations
 function toggleLanguage() {
   const languageSwitch = document.getElementById("languageSwitch");
   const isIndonesian = languageSwitch.checked;
+
+  updateLanguageToggleState(isIndonesian ? 'id' : 'en');
 
   if (isIndonesian) {
     console.log("Language changed to Indonesian");
@@ -100,6 +102,53 @@ function toggleLanguage() {
     // Add your English language implementation here
     // Example: document.querySelector('html').setAttribute('lang', 'en');
   }
+}
+
+// Function to set language directly (called when clicking flags)
+function setLanguage(lang) {
+  const languageSwitch = document.getElementById("languageSwitch");
+  const isIndonesian = lang === 'id';
+
+  // Update switch state
+  languageSwitch.checked = isIndonesian;
+
+  // Trigger the toggle function
+  updateLanguageToggleState(lang);
+
+  if (isIndonesian) {
+    console.log("Language changed to Indonesian");
+    // Add your Indonesian language implementation here
+  } else {
+    console.log("Language changed to English");
+    // Add your English language implementation here
+  }
+}
+
+// Function to update the visual state with animations
+function updateLanguageToggleState(lang) {
+  const container = document.getElementById("languageToggleContainer");
+  const flagEn = container.querySelector(".flag-en");
+  const flagId = container.querySelector(".flag-id");
+
+  // Remove existing state classes
+  container.classList.remove("en-active", "id-active");
+  flagEn.classList.remove("flag-active");
+  flagId.classList.remove("flag-active");
+
+  // Add new state class
+  if (lang === 'id') {
+    container.classList.add("id-active");
+    flagId.classList.add("flag-active");
+  } else {
+    container.classList.add("en-active");
+    flagEn.classList.add("flag-active");
+  }
+
+  // Remove the pulse animation class after animation completes
+  setTimeout(() => {
+    flagEn.classList.remove("flag-active");
+    flagId.classList.remove("flag-active");
+  }, 600);
 }
 
 // Initialize when page loads

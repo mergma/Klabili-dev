@@ -73,3 +73,99 @@
     opacity: 0;
   }
 }
+
+/* Language Toggle Animations */
+.language-toggle-container {
+  position: relative;
+}
+
+.language-toggle-container svg {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 2px;
+}
+
+.language-toggle-container svg:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Flag animation states */
+.flag-en {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.flag-id {
+  opacity: 0.6;
+  transform: translateX(0);
+}
+
+/* When Indonesian is selected */
+.language-toggle-container.id-active .flag-en {
+  opacity: 0.6;
+  transform: translateX(-2px);
+}
+
+.language-toggle-container.id-active .flag-id {
+  opacity: 1;
+  transform: translateX(2px);
+  box-shadow: 0 0 0 2px rgba(255, 0, 0, 0.3);
+}
+
+/* When English is selected */
+.language-toggle-container.en-active .flag-en {
+  opacity: 1;
+  transform: translateX(-2px);
+  box-shadow: 0 0 0 2px rgba(1, 33, 105, 0.3);
+}
+
+.language-toggle-container.en-active .flag-id {
+  opacity: 0.6;
+  transform: translateX(2px);
+}
+
+/* Enhanced switch animation */
+.form-check-input {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.form-check-input:checked {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  transform: scale(1.05);
+}
+
+.form-check-input:not(:checked) {
+  background-color: #012169;
+  border-color: #012169;
+  transform: scale(1.05);
+}
+
+.form-check-input:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Pulse animation for active flag */
+@keyframes flagPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.flag-active {
+  animation: flagPulse 0.6s ease-in-out;
+}
+
+/* Smooth slide animation for switch */
+@keyframes switchSlide {
+  0% { transform: translateX(-10px); opacity: 0.8; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+.form-check-input:checked {
+  animation: switchSlide 0.3s ease-out;
+}
