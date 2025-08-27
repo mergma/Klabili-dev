@@ -128,19 +128,130 @@ html {
 
 /* Language Toggle Animations */
 .language-toggle-container {
+  display: flex;
+  align-items: center;
+  background: #e0e0e0;
+  border-radius: 2em;
+  padding: 6px 18px;
+  gap: 8px; /* Lebih rapat */
+  box-shadow: 0 2px 12px #0001;
+  min-width: 110px;
+  min-height: 48px;
   position: relative;
 }
 
-.language-toggle-container svg {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+.flag-img {
+  border-radius: 6px;
+  box-shadow: 0 1px 6px #0002;
+  transition:
+    width 0.25s cubic-bezier(.4,2,.6,1),
+    height 0.25s cubic-bezier(.4,2,.6,1),
+    box-shadow 0.25s,
+    filter 0.25s;
+  filter: grayscale(0.3) brightness(0.98);
   cursor: pointer;
-  border-radius: 3px;
-  padding: 2px;
 }
 
-.language-toggle-container svg:hover {
-  transform: scale(1.1);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+.flag-img.active {
+  width: 52px !important;
+  height: 36px !important;
+  box-shadow: 0 2px 12px #0d6efd33;
+  filter: grayscale(0) brightness(1.05) drop-shadow(0 0 4px #fff8);
+  z-index: 2;
+}
+
+.flag-img.inactive {
+  width: 32px !important;
+  height: 22px !important;
+  opacity: 0.7;
+  filter: grayscale(0.5) brightness(0.93);
+  z-index: 1;
+}
+
+.language-toggle-dot {
+  width: 8px;
+  height: 8px;
+  background: #222;
+  border-radius: 50%;
+  margin: 0 4px;
+  opacity: 0.6;
+}
+
+.language-toggle-container .flag-img {
+  width: 38px;
+  height: 26px;
+  border-radius: 6px;
+  box-shadow: 0 1px 6px #0002;
+  object-fit: cover;
+  transition: 
+    width 0.25s cubic-bezier(.4,2,.6,1),
+    height 0.25s cubic-bezier(.4,2,.6,1),
+    box-shadow 0.25s,
+    filter 0.25s;
+  filter: grayscale(0.3) brightness(0.98);
+  cursor: pointer;
+}
+
+.flag-img {
+  border-radius: 6px;
+  box-shadow: 0 1px 6px #0002;
+  transition:
+    width 0.25s cubic-bezier(.4,2,.6,1),
+    height 0.25s cubic-bezier(.4,2,.6,1),
+    box-shadow 0.25s,
+    filter 0.25s;
+  filter: grayscale(0.3) brightness(0.98);
+  cursor: pointer;
+}
+
+.flag-img.active {
+  width: 52px !important;
+  height: 36px !important;
+  box-shadow: 0 2px 12px #0d6efd33;
+  filter: grayscale(0) brightness(1.05) drop-shadow(0 0 4px #fff8);
+  z-index: 2;
+}
+
+.flag-img.inactive {
+  width: 32px !important;
+  height: 22px !important;
+  opacity: 0.7;
+  filter: grayscale(0.5) brightness(0.93);
+  z-index: 1;
+}
+
+.language-toggle-dot {
+  width: 8px;
+  height: 8px;
+  background: #222;
+  border-radius: 50%;
+  margin: 0 4px;
+  opacity: 0.6;
+}
+
+.language-toggle-container .flag-img.active {
+  width: 52px;
+  height: 36px;
+  box-shadow: 0 2px 12px #0d6efd33;
+  filter: grayscale(0) brightness(1.05) drop-shadow(0 0 4px #fff8);
+  z-index: 2;
+}
+
+.language-toggle-container .flag-img.inactive {
+  width: 32px;
+  height: 22px;
+  opacity: 0.7;
+  filter: grayscale(0.5) brightness(0.93);
+  z-index: 1;
+}
+
+.language-toggle-dot {
+  width: 8px;
+  height: 8px;
+  background: #222;
+  border-radius: 50%;
+  margin: 0 8px;
+  opacity: 0.6;
 }
 
 /* Flag animation states */
