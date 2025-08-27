@@ -531,7 +531,8 @@ html {
   color: #198754;
   transform: translateX(6px) scale(1.03);
   border-radius: 0.5rem;
-  margin: 0 4px;        
+  margin: 0 4px;  
+}      
 
 /* From Uiverse.io by iZOXVL */ 
 
@@ -576,10 +577,11 @@ html {
 
 .boton-elegante .arrow {
   display: inline-block;
-  margin-left: 0.7em;
-  font-size: 1.2em;
-  vertical-align: middle;
-  transition: transform 0.3s;
+  margin-left: 0.3em;      /* Lebih dekat ke teks */
+  font-size: 1.1em;        /* Ukuran proporsional */
+  vertical-align: middle;  /* Sejajar dengan teks */
+  transition: transform 0.3s, color 0.3s;
+  line-height: 1;          /* Pastikan tidak turun ke bawah */
 }
 
 .boton-elegante:hover .arrow {
@@ -961,4 +963,3 @@ body {
     height: 40px;
   }
 }
-
