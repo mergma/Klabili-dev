@@ -141,7 +141,14 @@
           <!-- Right side: Language Toggle Switch -->
           <div class="navbar-nav" style="flex: 1; justify-content: flex-end;">
             <div class="nav-item d-flex align-items-center">
-              <span class="me-2 text-muted small fw-bold">EN</span>
+              <!-- English Flag SVG -->
+              <svg class="me-2" width="20" height="15" viewBox="0 0 20 15" xmlns="http://www.w3.org/2000/svg">
+                <rect width="20" height="15" fill="#012169"/>
+                <path d="M0 0L20 15M20 0L0 15" stroke="#fff" stroke-width="2"/>
+                <path d="M0 0L20 15M20 0L0 15" stroke="#C8102E" stroke-width="1"/>
+                <path d="M10 0V15M0 7.5H20" stroke="#fff" stroke-width="3"/>
+                <path d="M10 0V15M0 7.5H20" stroke="#C8102E" stroke-width="2"/>
+              </svg>
               <div class="form-check form-switch">
                 <input
                   class="form-check-input"
@@ -151,7 +158,11 @@
                   onchange="toggleLanguage()"
                 />
               </div>
-              <span class="ms-2 text-muted small fw-bold">ID</span>
+              <!-- Indonesian Flag SVG -->
+              <svg class="ms-2" width="20" height="15" viewBox="0 0 20 15" xmlns="http://www.w3.org/2000/svg">
+                <rect width="20" height="7.5" fill="#FF0000"/>
+                <rect y="7.5" width="20" height="7.5" fill="#FFFFFF"/>
+              </svg>
             </div>
           </div>
         </div>
