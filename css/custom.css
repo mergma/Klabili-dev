@@ -387,6 +387,62 @@ html {
   color: #198754;
 }
 
+.btn-lihat-lebih {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg, #198754 0%, #0d6efd 100%);
+  color: #fff;
+  font-size: 1.15rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px -6px #0d6efd55;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  z-index: 1;
+  gap: 0.7em;
+}
+
+.btn-lihat-lebih span {
+  position: relative;
+  z-index: 2;
+}
+
+.btn-lihat-lebih .arrow-anim {
+  transition: transform 0.3s cubic-bezier(.4,2,.6,1);
+  margin-left: 0.2em;
+  vertical-align: middle;
+}
+
+.btn-lihat-lebih:hover .arrow-anim {
+  transform: translateX(7px) scale(1.15);
+}
+
+.btn-lihat-lebih::before {
+  content: '';
+  position: absolute;
+  left: -75%;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.35) 100%);
+  transform: skewX(-25deg);
+  transition: left 0.5s cubic-bezier(.4,2,.6,1);
+  z-index: 1;
+}
+
+.btn-lihat-lebih:hover::before {
+  left: 120%;
+}
+
+.btn-lihat-lebih:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 8px -4px #0d6efd55;
+}
+
 /* Sticky Navbar Styles */
 .navbar {
   transition: all 0.3s ease-in-out;
