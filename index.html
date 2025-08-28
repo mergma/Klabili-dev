@@ -353,25 +353,33 @@
       <div class="row text-center">
         <div class="col-lg-3 col-md-6 mb-4">
           <div class="p-3">
-            <h2 class="display-4 fw-bold mb-2">15+</h2>
+            <h2 class="display-4 fw-bold mb-2">
+              <span class="countup" data-target="15">0</span>+
+            </h2>
             <p class="lead mb-0">Spot Wisata</p>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 mb-4">
           <div class="p-3">
-            <h2 class="display-4 fw-bold mb-2">25</h2>
+            <h2 class="display-4 fw-bold mb-2">
+              <span class="countup" data-target="25">0</span>
+            </h2>
             <p class="lead mb-0">Homestay</p>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 mb-4">
           <div class="p-3">
-            <h2 class="display-4 fw-bold mb-2">500+</h2>
+            <h2 class="display-4 fw-bold mb-2">
+              <span class="countup" data-target="500">0</span>+
+            </h2>
             <p class="lead mb-0">Wisatawan/Bulan</p>
           </div>
         </div>
         <div class="col-lg-3 col-md-6 mb-4">
           <div class="p-3">
-            <h2 class="display-4 fw-bold mb-2">10</h2>
+            <h2 class="display-4 fw-bold mb-2">
+              <span class="countup" data-target="10">0</span>
+            </h2>
             <p class="lead mb-0">Tahun Berkembang</p>
           </div>
         </div>
@@ -755,6 +763,32 @@
       fadeEls.forEach(el => observer.observe(el));
     });
   </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      function animateCountUp(el, target, duration = 8000) { // <-- 8 detik
+        let start = 0;
+        let startTime = null;
+        function updateCount(timestamp) {
+          if (!startTime) startTime = timestamp;
+          const progress = Math.min((timestamp - startTime) / duration, 1);
+          el.textContent = Math.floor(progress * (target - start) + start);
+          if (progress < 1) {
+            requestAnimationFrame(updateCount);
+          } else {
+            el.textContent = target;
+          }
+        }
+        requestAnimationFrame(updateCount);
+      }
+
+      document.querySelectorAll('.countup').forEach(el => {
+        const target = parseInt(el.getAttribute('data-target'), 10);
+        animateCountUp(el, target, 8000); // <-- 8 detik
+      });
+    });
+  </script>
+
 </body>
 
 </html>

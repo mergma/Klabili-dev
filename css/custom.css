@@ -962,3 +962,10 @@ body {
     height: 40px;
   }
 }
+
+.countup {
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+  transition: color 0.3s;
+}
