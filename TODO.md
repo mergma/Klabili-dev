@@ -1,21 +1,24 @@
-# Navbar Standardization Project
+# TODO List
 
-## Objective
-Make all pages have the same navbar as index.html
+## Review HTML Files
+- [ ] Review `tentang_kami.html` for content updates.
+- [ ] Review `wisata_budaya.html` for content updates.
+- [ ] Review `informasi.html` for content updates.
+- [ ] Review `galeri.html` for content updates.
+- [ ] Review `fasilitas.html` for content updates.
+- [ ] Review `footer_template.html` for consistency and updates.
+- [ ] Review `index.html` for overall structure and links.
 
-## Files to Update:
-- [x] fasilitas.html (language toggle updated)
-- [x] tentang_kami.html (language toggle updated)
-- [x] wisata_budaya.html (language toggle updated)
-- [x] informasi.html (language toggle updated)
-- [x] galeri.html (language toggle updated)
+## JavaScript Updates
+- [ ] Review `js/custom.js` for functionality improvements or bug fixes.
 
-## Steps:
-1. Extract navbar code from index.html
-2. Update each page with the modern navbar
-3. Set proper "active" class for current page
-4. Verify functionality
-5. Test navigation
+## CSS Review
+- [ ] Review CSS files in the `css/` directory for styling consistency.
+- [ ] Ensure Bootstrap CSS files are correctly linked and up to date.
 
-## Progress:
-- Files completed: 5/5 (fasilitas.html, tentang_kami.html, wisata_budaya.html, informasi.html, galeri.html - language toggle updated)
+## Image Assets
+- [ ] Review images in the `img/` directory for optimization and relevance.
+
+## General Maintenance
+- [ ] Check for broken links across all HTML files.
+- [ ] Ensure all pages are responsive and functional across devices.
