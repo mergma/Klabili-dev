@@ -1,24 +1,14 @@
-# TODO List
+# Task: Make card in "profil-desa" section same width as container
 
-## Review HTML Files
-- [ ] Review `tentang_kami.html` for content updates.
-- [ ] Review `wisata_budaya.html` for content updates.
-- [ ] Review `informasi.html` for content updates.
-- [ ] Review `galeri.html` for content updates.
-- [ ] Review `fasilitas.html` for content updates.
-- [ ] Review `footer_template.html` for consistency and updates.
-- [ ] Review `index.html` for overall structure and links.
+## Steps to complete:
+1. [x] Remove fixed width from card's inline style in tentang_kami.html
+2. [x] Update media queries to remove fixed width constraints
+3. [ ] Verify responsive behavior
 
-## JavaScript Updates
-- [ ] Review `js/custom.js` for functionality improvements or bug fixes.
+## Files to modify:
+- tentang_kami.html
 
-## CSS Review
-- [ ] Review CSS files in the `css/` directory for styling consistency.
-- [ ] Ensure Bootstrap CSS files are correctly linked and up to date.
-
-## Image Assets
-- [ ] Review images in the `img/` directory for optimization and relevance.
-
-## General Maintenance
-- [ ] Check for broken links across all HTML files.
-- [ ] Ensure all pages are responsive and functional across devices.
+## Progress:
+- [x] Step 1: Remove fixed width from card
+- [x] Step 2: Update media queries
+- [ ] Step 3: Verify responsive behavior

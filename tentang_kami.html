@@ -327,7 +327,7 @@
             </div>
           </div>
           <div class="col-md-6 d-flex justify-content-center">
-            <div class="card border-0" style="width: 320px; margin-top: 32px">
+            <div class="card border-0 w-100" style="margin-top: 32px">
               <div class="card-body">
                 <h2 class="card-title text-primary mb-4">
                   Profil Desa Klabili
@@ -356,29 +356,26 @@
             flex-direction: column !important;
             align-items: center !important;
           }
-          #profil-desa .rounded-circle,
-          #profil-desa .card {
+          #profil-desa .rounded-circle {
             width: 90vw !important;
             max-width: 340px;
             min-width: 220px;
           }
           #profil-desa .card {
             margin-top: 32px !important;
+            width: 100%; /* Allow card to take full width */
           }
         }
         @media (min-width: 768px) {
-          #profil-desa .rounded-circle,
-          #profil-desa .card {
-            width: 320px !important;
-          }
           #profil-desa .card {
             margin-top: 0 !important;
+            width: 100%; /* Allow card to take full width */
           }
         }
       </style>
 
       <!-- Struktur Desa Section -->
-      <section id="struktur-desa" class="py-5 bg-light">
+<section id="struktur-desa" class="py-5 mb-5 bg-light">
         <div class="container">
           <div class="row">
             <div class="col-12 text-center mb-5">
