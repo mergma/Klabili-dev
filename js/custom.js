@@ -156,18 +156,19 @@ function addRippleEffectAndNavigation() {
 // Enhanced language toggle with animations
 function toggleLanguage() {
   const languageSwitch = document.getElementById("languageSwitch");
-  const isIndonesian = languageSwitch.checked;
+  if (languageSwitch) {
+    const isIndonesian = languageSwitch.checked;
+    updateLanguageToggleState(isIndonesian ? 'id' : 'en');
 
-  updateLanguageToggleState(isIndonesian ? 'id' : 'en');
-
-  if (isIndonesian) {
-    console.log("Language changed to Indonesian");
-    // Add your Indonesian language implementation here
-    // Example: document.querySelector('html').setAttribute('lang', 'id');
-  } else {
-    console.log("Language changed to English");
-    // Add your English language implementation here
-    // Example: document.querySelector('html').setAttribute('lang', 'en');
+    if (isIndonesian) {
+      console.log("Language changed to Indonesian");
+      // Add your Indonesian language implementation here
+      // Example: document.querySelector('html').setAttribute('lang', 'id');
+    } else {
+      console.log("Language changed to English");
+      // Add your English language implementation here
+      // Example: document.querySelector('html').setAttribute('lang', 'en');
+    }
   }
 }
 
@@ -176,8 +177,10 @@ function setLanguage(lang) {
   const languageSwitch = document.getElementById("languageSwitch");
   const isIndonesian = lang === 'id';
 
-  // Update switch state
-  languageSwitch.checked = isIndonesian;
+  // Update switch state if checkbox exists
+  if (languageSwitch) {
+    languageSwitch.checked = isIndonesian;
+  }
 
   // Trigger the toggle function
   updateLanguageToggleState(lang);
@@ -194,8 +197,12 @@ function setLanguage(lang) {
 // Function to update the visual state with animations
 function updateLanguageToggleState(lang) {
   const container = document.getElementById("languageToggleContainer");
+  if (!container) return;
+
   const flagEn = container.querySelector(".flag-en");
   const flagId = container.querySelector(".flag-id");
+
+  if (!flagEn || !flagId) return;
 
   // Remove existing state classes
   container.classList.remove("en-active", "id-active");
@@ -216,6 +223,38 @@ function updateLanguageToggleState(lang) {
     flagEn.classList.remove("flag-active");
     flagId.classList.remove("flag-active");
   }, 600);
+}
+
+// Initialize language toggle for the new design
+function initLanguageToggle() {
+  const container = document.getElementById("languageToggleContainer");
+  if (!container) return;
+
+  const flagEn = container.querySelector(".flag-en");
+  const flagId = container.querySelector(".flag-id");
+
+  if (!flagEn || !flagId) return;
+
+  // Add click event listeners to flags
+  flagEn.addEventListener("click", function () {
+    flagEn.classList.add("active");
+    flagEn.classList.remove("inactive");
+    flagId.classList.add("inactive");
+    flagId.classList.remove("active");
+    container.classList.add("en-active");
+    container.classList.remove("id-active");
+    setLanguage('en');
+  });
+
+  flagId.addEventListener("click", function () {
+    flagId.classList.add("active");
+    flagId.classList.remove("inactive");
+    flagEn.classList.add("inactive");
+    flagEn.classList.remove("active");
+    container.classList.add("id-active");
+    container.classList.remove("en-active");
+    setLanguage('id');
+  });
 }
 
 // Sticky Navbar Functionality
@@ -278,4 +317,5 @@ document.addEventListener('DOMContentLoaded', function() {
   addRippleEffectAndNavigation();
   initStickyNavbar();
   handleHashOnLoad();
+  initLanguageToggle();
 });
