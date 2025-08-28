@@ -143,14 +143,6 @@
                   Kontak
                 </button>
               </li>
-              <li>
-                <hr class="dropdown-divider" />
-              </li>
-              <li>
-                <button class="dropdown-item" type="button" data-nav-url="informasi.html#tambahan">
-                  Tambahan
-                </button>
-              </li>
             </ul>
           </li>
 
@@ -167,14 +159,6 @@
               <li>
                 <button class="dropdown-item" type="button" data-nav-url="galeri.html#kegiatan-masyarakat">
                   Kegiatan Masyarakat
-                </button>
-              </li>
-              <li>
-                <hr class="dropdown-divider" />
-              </li>
-              <li>
-                <button class="dropdown-item" type="button" data-nav-url="galeri.html#tambahan-galeri">
-                  Tambahan
                 </button>
               </li>
             </ul>
@@ -625,6 +609,11 @@
     </div>
   </footer>
 
+  <!-- Scroll to Top Button -->
+<button id="scrollToTopBtn" class="btn btn-success rounded-circle shadow" style="position: fixed; bottom: 32px; right: 32px; z-index: 999; display: none; width: 48px; height: 48px; align-items: center; justify-content: center;">
+  <i class="fas fa-leaf"></i>
+</button>
+
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 
@@ -766,7 +755,7 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      function animateCountUp(el, target, duration = 8000) { // <-- 8 detik
+      function animateCountUp(el, target, duration = 15000) { // <-- 8 detik
         let start = 0;
         let startTime = null;
         function updateCount(timestamp) {
@@ -784,10 +773,27 @@
 
       document.querySelectorAll('.countup').forEach(el => {
         const target = parseInt(el.getAttribute('data-target'), 10);
-        animateCountUp(el, target, 8000); // <-- 8 detik
+        animateCountUp(el, target, 15000); // <-- 8 detik
       });
     });
   </script>
+
+  <script>
+  // Show/hide button on scroll
+  window.addEventListener('scroll', function () {
+    const btn = document.getElementById('scrollToTopBtn');
+    if (window.scrollY > 200) {
+      btn.classList.add('show');
+    } else {
+      btn.classList.remove('show');
+    }
+  });
+
+  // Scroll to top on click
+  document.getElementById('scrollToTopBtn').onclick = function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+</script>
 
 </body>
 

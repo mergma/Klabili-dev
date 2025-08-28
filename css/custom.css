@@ -969,3 +969,22 @@ body {
   color: inherit;
   transition: color 0.3s;
 }
+
+#scrollToTopBtn {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 999;
+  display: none;
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transition: opacity 0.3s;
+}
+
+#scrollToTopBtn.show {
+  display: flex !important;
+  opacity: 1;
+}
