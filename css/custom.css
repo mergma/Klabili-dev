@@ -70,7 +70,6 @@ html {
 .dropdown-item {
   transition: all 0.2s ease;
 }
-
 .dropdown-item:hover {
   transform: translateX(5px);
   background-color: #f8f9fa;
