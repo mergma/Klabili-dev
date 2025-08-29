@@ -63,7 +63,6 @@ function scrollToSection(sectionId) {
 
   requestAnimationFrame(animation);
 }
-
 // Function to handle hash navigation on page load
 function handleHashOnLoad() {
   const hash = window.location.hash;
