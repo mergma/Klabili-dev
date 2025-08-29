@@ -86,7 +86,7 @@ html {
 
 
 .hero-section {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../img/IMG-20250819-WA0065.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../img/hero_page_img.JPG');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -987,6 +987,24 @@ body {
 
 .card-body > .icon-container:not(:last-child) {
   margin-bottom: 1rem; /* Space below icon for stacked layout */
+}
+
+/* Page Title Background with Image */
+.page-title-bg {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../img/about_us_img.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.page-title-bg h1 {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  font-weight: 700;
+}
+
+.page-title-bg .lead {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
 }
 
 /* Ensure social media links stay horizontal on all screen sizes */

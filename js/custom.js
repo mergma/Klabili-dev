@@ -69,10 +69,8 @@ function handleHashOnLoad() {
   const hash = window.location.hash;
   if (hash) {
     const sectionId = hash.substring(1); // Remove the # symbol
-    // Wait a bit for the page to fully load before scrolling
-    setTimeout(() => {
-      scrollToSection(sectionId);
-    }, 500);
+    // Scroll immediately without delay
+    scrollToSection(sectionId);
   }
 }
 
@@ -260,20 +258,24 @@ function initLanguageToggle() {
 // Sticky Navbar Functionality
 function initStickyNavbar() {
   const navbar = document.querySelector('.navbar');
-  const heroSection = document.querySelector('.hero-section');
+  let scrollThresholdElement = document.querySelector('.hero-section');
 
-  if (!navbar || !heroSection) {
-    console.log('Navbar or hero section not found');
+  if (!scrollThresholdElement) {
+    scrollThresholdElement = document.querySelector('.page-title-bg') || document.querySelector('.bg-primary.text-white.py-5');
+  }
+
+  if (!navbar || !scrollThresholdElement) {
+    console.log('Navbar or scroll threshold element not found');
     return;
   }
 
-  // Get the height of the hero section
-  const heroHeight = heroSection.offsetHeight;
+  // Get the height of the scroll threshold element
+  let scrollThresholdHeight = scrollThresholdElement.offsetHeight;
 
   function handleScroll() {
     const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
 
-    if (scrollPosition > heroHeight - 100) { // Start transition 100px before hero ends
+    if (scrollPosition > scrollThresholdHeight - 100) { // Start transition 100px before element ends
       if (!navbar.classList.contains('sticky')) {
         navbar.classList.add('sticky');
         document.body.classList.add('navbar-sticky');
@@ -299,10 +301,11 @@ function initStickyNavbar() {
   // Add scroll event listener
   window.addEventListener('scroll', requestTick);
 
-  // Handle window resize to recalculate hero height
+  // Handle window resize to recalculate scroll threshold height
   window.addEventListener('resize', function() {
-    // Recalculate hero height on resize
+    // Recalculate scroll threshold height on resize
     setTimeout(() => {
+      scrollThresholdHeight = scrollThresholdElement.offsetHeight;
       handleScroll();
     }, 100);
   });
