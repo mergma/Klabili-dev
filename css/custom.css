@@ -1103,3 +1103,7 @@ footer a.text-white-50:hover {
 footer a.text-white-50 {
   transition: color 0.3s ease;
 }
+
+.text-primary {
+    color: #4CAF50 !important;  /* Light green color */
+}
