@@ -1058,3 +1058,14 @@ body {
   display: flex !important;
   opacity: 1;
 }
+
+.cta-section {
+  position: relative;
+  background: linear-gradient(120deg, #198754 40%, #b6e2b3 70%, #cadcae 90%, #f8fff6 100%);
+  /* Atau pakai background-color: #198754; jika ingin polos */
+}
+
+.cta-section h2,
+.cta-section p {
+  text-shadow: 1px 2px 8px #0008;
+}
