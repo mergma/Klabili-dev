@@ -76,9 +76,16 @@
 
 HEAD
 .hero-section {
-    background-image: linear-gradient(rgba(248, 249, 250, 0.7), rgba(248, 249, 250, 0.7));
+    background-image: url('../img/hero_page_img.JPG'), linear-gradient(rgba(248, 249, 250, 0.7), rgba(248, 249, 250, 0.7));
     background-size: cover;
     background-position: center;
+    height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .btn-primary {
