@@ -2,9 +2,74 @@
 function navigateTo(url) {
   if (url && url !== '#') {
     console.log('Navigating to:', url); // Debug log
-    window.location.href = url;
+
+    // Check if URL contains a hash (section anchor)
+    if (url.includes('#')) {
+      const [pageUrl, sectionId] = url.split('#');
+      const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+
+      // If we're already on the target page, just scroll to the section
+      if (pageUrl === currentPage || pageUrl === window.location.pathname) {
+        scrollToSection(sectionId);
+      } else {
+        // Navigate to the page first, then scroll to section
+        window.location.href = url;
+      }
+    } else {
+      // Regular navigation without hash
+      window.location.href = url;
+    }
   } else {
     console.log('Invalid URL or #:', url); // Debug log
+  }
+}
+
+// Function to smoothly scroll to a section
+function scrollToSection(sectionId) {
+  const targetElement = document.getElementById(sectionId);
+
+  if (!targetElement) {
+    console.error('Target section not found:', sectionId);
+    return;
+  }
+
+  // Calculate position accounting for navbar height
+  const navbarHeight = document.querySelector('.navbar')?.offsetHeight || 80;
+  const targetPosition = targetElement.offsetTop - navbarHeight - 20; // Extra 20px padding
+
+  // Smooth scroll animation
+  const startPosition = window.pageYOffset || document.documentElement.scrollTop;
+  const distance = targetPosition - startPosition;
+  const duration = 1000; // 1 second duration
+  let start = null;
+
+  function animation(currentTime) {
+    if (start === null) start = currentTime;
+    const timeElapsed = currentTime - start;
+    const progress = Math.min(timeElapsed / duration, 1);
+
+    // Easing function (ease-in-out)
+    const easeInOutQuad = progress < 0.5
+      ? 2 * progress * progress
+      : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+
+    const currentPosition = startPosition + distance * easeInOutQuad;
+    window.scrollTo(0, currentPosition);
+
+    if (timeElapsed < duration) {
+      requestAnimationFrame(animation);
+    }
+  }
+
+  requestAnimationFrame(animation);
+}
+// Function to handle hash navigation on page load
+function handleHashOnLoad() {
+  const hash = window.location.hash;
+  if (hash) {
+    const sectionId = hash.substring(1); // Remove the # symbol
+    // Scroll immediately without delay
+    scrollToSection(sectionId);
   }
 }
 
@@ -71,8 +136,7 @@ function addRippleEffectAndNavigation() {
       // Navigate after a short delay to show ripple effect
       if (url && url !== '#') {
         setTimeout(() => {
-          console.log('Navigating to:', url);
-          window.location.href = url;
+          navigateTo(url);
         }, 150); // Short delay for ripple effect
       } else {
         console.log('No navigation - URL is:', url);
@@ -89,18 +153,19 @@ function addRippleEffectAndNavigation() {
 // Enhanced language toggle with animations
 function toggleLanguage() {
   const languageSwitch = document.getElementById("languageSwitch");
-  const isIndonesian = languageSwitch.checked;
+  if (languageSwitch) {
+    const isIndonesian = languageSwitch.checked;
+    updateLanguageToggleState(isIndonesian ? 'id' : 'en');
 
-  updateLanguageToggleState(isIndonesian ? 'id' : 'en');
-
-  if (isIndonesian) {
-    console.log("Language changed to Indonesian");
-    // Add your Indonesian language implementation here
-    // Example: document.querySelector('html').setAttribute('lang', 'id');
-  } else {
-    console.log("Language changed to English");
-    // Add your English language implementation here
-    // Example: document.querySelector('html').setAttribute('lang', 'en');
+    if (isIndonesian) {
+      console.log("Language changed to Indonesian");
+      // Add your Indonesian language implementation here
+      // Example: document.querySelector('html').setAttribute('lang', 'id');
+    } else {
+      console.log("Language changed to English");
+      // Add your English language implementation here
+      // Example: document.querySelector('html').setAttribute('lang', 'en');
+    }
   }
 }
 
@@ -109,8 +174,10 @@ function setLanguage(lang) {
   const languageSwitch = document.getElementById("languageSwitch");
   const isIndonesian = lang === 'id';
 
-  // Update switch state
-  languageSwitch.checked = isIndonesian;
+  // Update switch state if checkbox exists
+  if (languageSwitch) {
+    languageSwitch.checked = isIndonesian;
+  }
 
   // Trigger the toggle function
   updateLanguageToggleState(lang);
@@ -127,8 +194,12 @@ function setLanguage(lang) {
 // Function to update the visual state with animations
 function updateLanguageToggleState(lang) {
   const container = document.getElementById("languageToggleContainer");
+  if (!container) return;
+
   const flagEn = container.querySelector(".flag-en");
   const flagId = container.querySelector(".flag-id");
+
+  if (!flagEn || !flagId) return;
 
   // Remove existing state classes
   container.classList.remove("en-active", "id-active");
@@ -151,8 +222,102 @@ function updateLanguageToggleState(lang) {
   }, 600);
 }
 
+// Initialize language toggle for the new design
+function initLanguageToggle() {
+  const container = document.getElementById("languageToggleContainer");
+  if (!container) return;
+
+  const flagEn = container.querySelector(".flag-en");
+  const flagId = container.querySelector(".flag-id");
+
+  if (!flagEn || !flagId) return;
+
+  // Add click event listeners to flags
+  flagEn.addEventListener("click", function () {
+    flagEn.classList.add("active");
+    flagEn.classList.remove("inactive");
+    flagId.classList.add("inactive");
+    flagId.classList.remove("active");
+    container.classList.add("en-active");
+    container.classList.remove("id-active");
+    setLanguage('en');
+  });
+
+  flagId.addEventListener("click", function () {
+    flagId.classList.add("active");
+    flagId.classList.remove("inactive");
+    flagEn.classList.add("inactive");
+    flagEn.classList.remove("active");
+    container.classList.add("id-active");
+    container.classList.remove("en-active");
+    setLanguage('id');
+  });
+}
+
+// Sticky Navbar Functionality
+function initStickyNavbar() {
+  const navbar = document.querySelector('.navbar');
+  let scrollThresholdElement = document.querySelector('.hero-section');
+
+  if (!scrollThresholdElement) {
+    scrollThresholdElement = document.querySelector('.page-title-bg') || document.querySelector('.bg-primary.text-white.py-5');
+  }
+
+  if (!navbar || !scrollThresholdElement) {
+    console.log('Navbar or scroll threshold element not found');
+    return;
+  }
+
+  // Get the height of the scroll threshold element
+  let scrollThresholdHeight = scrollThresholdElement.offsetHeight;
+
+  function handleScroll() {
+    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollPosition > scrollThresholdHeight - 100) { // Start transition 100px before element ends
+      if (!navbar.classList.contains('sticky')) {
+        navbar.classList.add('sticky');
+        document.body.classList.add('navbar-sticky');
+      }
+    } else {
+      if (navbar.classList.contains('sticky')) {
+        navbar.classList.remove('sticky');
+        document.body.classList.remove('navbar-sticky');
+      }
+    }
+  }
+
+  // Throttle scroll events for better performance
+  let ticking = false;
+  function requestTick() {
+    if (!ticking) {
+      requestAnimationFrame(handleScroll);
+      ticking = true;
+      setTimeout(() => { ticking = false; }, 16); // ~60fps
+    }
+  }
+
+  // Add scroll event listener
+  window.addEventListener('scroll', requestTick);
+
+  // Handle window resize to recalculate scroll threshold height
+  window.addEventListener('resize', function() {
+    // Recalculate scroll threshold height on resize
+    setTimeout(() => {
+      scrollThresholdHeight = scrollThresholdElement.offsetHeight;
+      handleScroll();
+    }, 100);
+  });
+
+  // Initial check in case page is already scrolled
+  handleScroll();
+}
+
 // Initialize when page loads
 document.addEventListener('DOMContentLoaded', function() {
   setActiveNavButton();
   addRippleEffectAndNavigation();
+  initStickyNavbar();
+  handleHashOnLoad();
+  initLanguageToggle();
 });

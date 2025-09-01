@@ -3,7 +3,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 /* Bagian hero */
 .hero {
   text-align: center;
@@ -27,6 +26,7 @@
   font-size: 1.2rem;
   font-style: italic;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .hero .btn {
