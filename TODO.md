@@ -1,6 +1,3 @@
-# to do list
-
-**main thing**
-- find more HiRes img 4 background
-- language
-- dunno
+- [ ] Change the fifth card's class from col-12 to col-md-6
+- [ ] Remove max-width: 300px from its inline style
+- [ ] Verify all cards have consistent height: 140px
