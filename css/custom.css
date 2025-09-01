@@ -27,10 +27,11 @@ html {
 .nav-btn:hover {
   background: none !important;
   box-shadow: none !important;
-  color: #198754;
+  border: 2px solid #198754 !important;
+  color: #198754 !important;
   transform: translateY(-2px);
+  border-radius: 50% !important;
 }
-
 .nav-btn.active {
   color: rgba(0, 0, 0, 0.9);
   background-color: rgba(0, 0, 0, 0.1);
@@ -521,6 +522,8 @@ html {
   box-shadow: 0 4px 16px -6px #19875422;
   transform: translateY(-2px) scale(1.04);
   outline: none;
+  border: none;
+  border-radius: 1.5rem;
 }
 
 .navbar-nav .nav-link::after {
