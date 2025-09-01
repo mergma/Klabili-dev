@@ -1057,9 +1057,6 @@ body {
 #scrollToTopBtn.show {
   display: flex !important;
   opacity: 1;
-<<<<<<< HEAD
-}
-=======
 }
 
 .cta-section {
@@ -1079,7 +1076,3 @@ footer a.text-white-50:hover {
   transition: color 0.3s ease;
 }
 
-footer a.text-white-50 {
-  transition: color 0.3s ease;
-}
->>>>>>> 1d30b2e (perbaikan footer)
