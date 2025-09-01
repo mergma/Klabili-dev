@@ -399,8 +399,8 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center mb-5">
-          <h2 class="display-5 fw-bold">Aktivitas & Pengalaman</h2>
-          <p class="lead text-muted">
+          <h2 class="display-5 fw-bold fade-in-on-scroll">Aktivitas & Pengalaman</h2>
+          <p class="lead text-muted fade-in-on-scroll">
             Berbagai kegiatan menarik yang dapat Anda nikmati di desa kami
           </p>
         </div>
@@ -408,7 +408,7 @@
 
       <div class="row g-4">
         <div class="col-lg-6 col-md-6">
-          <div class="card border-0 shadow-sm h-100">
+          <div class="card border-0 shadow-sm h-100 slide-in-left" data-delay="200">
             <div class="card-body p-4">
               <div class="d-flex align-items-start">
                 <div class="bg-primary rounded-circle p-2 me-3 flex-shrink-0">
@@ -426,7 +426,7 @@
         </div>
 
         <div class="col-lg-6 col-md-6">
-          <div class="card border-0 shadow-sm h-100">
+          <div class="card border-0 shadow-sm h-100 slide-in-right" data-delay="400">
             <div class="card-body p-4">
               <div class="d-flex align-items-start">
                 <div class="bg-success rounded-circle p-2 me-3 flex-shrink-0">
@@ -444,7 +444,7 @@
         </div>
 
         <div class="col-lg-6 col-md-6">
-          <div class="card border-0 shadow-sm h-100">
+          <div class="card border-0 shadow-sm h-100 slide-in-left" data-delay="600">
             <div class="card-body p-4">
               <div class="d-flex align-items-start">
                 <div class="bg-warning rounded-circle p-2 me-3 flex-shrink-0">
@@ -462,7 +462,7 @@
         </div>
 
         <div class="col-lg-6 col-md-6">
-          <div class="card border-0 shadow-sm h-100">
+          <div class="card border-0 shadow-sm h-100 slide-in-right" data-delay="800">
             <div class="card-body p-4">
               <div class="d-flex align-items-start">
                 <div class="bg-info rounded-circle p-2 me-3 flex-shrink-0">
@@ -480,7 +480,7 @@
         </div>
 
         <div class="col-lg-6 col-md-6">
-          <div class="card border-0 shadow-sm h-100">
+          <div class="card border-0 shadow-sm h-100 slide-in-left" data-delay="1000">
             <div class="card-body p-4">
               <div class="d-flex align-items-start">
                 <div class="bg-danger rounded-circle p-2 me-3 flex-shrink-0">
@@ -498,7 +498,7 @@
         </div>
 
         <div class="col-lg-6 col-md-6">
-          <div class="card border-0 shadow-sm h-100">
+          <div class="card border-0 shadow-sm h-100 slide-in-right" data-delay="1200">
             <div class="card-body p-4">
               <div class="d-flex align-items-start">
                 <div class="bg-secondary rounded-circle p-2 me-3 flex-shrink-0">
@@ -516,7 +516,7 @@
         </div>
 
         <div class="col-lg-6 col-md-6">
-          <div class="card border-0 shadow-sm h-100">
+          <div class="card border-0 shadow-sm h-100 slide-in-left" data-delay="1400">
             <div class="card-body p-4">
               <div class="d-flex align-items-start">
                 <div class="bg-primary rounded-circle p-2 me-3 flex-shrink-0">
@@ -534,7 +534,7 @@
         </div>
 
         <div class="col-lg-6 col-md-6">
-          <div class="card border-0 shadow-sm h-100">
+          <div class="card border-0 shadow-sm h-100 slide-in-right" data-delay="1600">
             <div class="card-body p-4">
               <div class="d-flex align-items-start">
                 <div class="bg-success rounded-circle p-2 me-3 flex-shrink-0">
@@ -552,7 +552,7 @@
         </div>
 
         <div class="col-lg-6 col-md-6">
-          <div class="card border-0 shadow-sm h-100">
+          <div class="card border-0 shadow-sm h-100 slide-in-left" data-delay="1800">
             <div class="card-body p-4">
               <div class="d-flex align-items-start">
                 <div class="bg-warning rounded-circle p-2 me-3 flex-shrink-0">
@@ -570,7 +570,7 @@
         </div>
 
         <div class="col-lg-6 col-md-6">
-          <div class="card border-0 shadow-sm h-100">
+          <div class="card border-0 shadow-sm h-100 slide-in-right" data-delay="2000">
             <div class="card-body p-4">
               <div class="d-flex align-items-start">
                 <div class="bg-info rounded-circle p-2 me-3 flex-shrink-0">
@@ -884,14 +884,17 @@
   </script>
 
   <script>
-    // Fade in on scroll for .fade-in-on-scroll elements (repeatable)
+    // Animations on scroll for multiple classes (repeatable)
     document.addEventListener("DOMContentLoaded", function () {
-      const fadeEls = document.querySelectorAll('.fade-in-on-scroll');
+      const animEls = document.querySelectorAll('.fade-in-on-scroll, .slide-in-left, .slide-in-right');
       const observer = new IntersectionObserver(
         entries => {
           entries.forEach(entry => {
             if (entry.isIntersecting) {
-              entry.target.classList.add('visible');
+              const delay = entry.target.getAttribute('data-delay') || 0;
+              setTimeout(() => {
+                entry.target.classList.add('visible');
+              }, delay);
             } else {
               entry.target.classList.remove('visible');
             }
@@ -899,7 +902,7 @@
         },
         { threshold: 0.3 }
       );
-      fadeEls.forEach(el => observer.observe(el));
+      animEls.forEach(el => observer.observe(el));
     });
   </script>
 
