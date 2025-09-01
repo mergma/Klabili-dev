@@ -58,6 +58,8 @@
 .nav-btn:focus {
   color: #007bff;
   outline: none;
+  border: none;
+  border-radius: 1.5rem;
 }
 
 /* Dropdown menu item button styles */
