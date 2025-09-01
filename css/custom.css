@@ -29,6 +29,8 @@ html {
   box-shadow: none !important;
   color: #198754;
   transform: translateY(-2px);
+  border-radius: 50% !important;
+  border: 2px solid #198754;
 }
 
 .nav-btn.active {
