@@ -1057,29 +1057,4 @@ body {
 #scrollToTopBtn.show {
   display: flex !important;
   opacity: 1;
-<<<<<<< HEAD
 }
-=======
-}
-
-.cta-section {
-  position: relative;
-  background: linear-gradient(120deg, #198754 40%, #b6e2b3 70%, #cadcae 90%, #f8fff6 100%);
-  /* Atau pakai background-color: #198754; jika ingin polos */
-}
-
-.cta-section h2,
-.cta-section p {
-  text-shadow: 1px 2px 8px #0008;
-}
-
-/* Footer link hover effects */
-footer a.text-white-50:hover {
-  color: #ffffff !important;
-  transition: color 0.3s ease;
-}
-
-footer a.text-white-50 {
-  transition: color 0.3s ease;
-}
->>>>>>> 1d30b2e (perbaikan footer)
