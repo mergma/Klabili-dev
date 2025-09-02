@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Bagian hero */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: #f4f4f4; /* abu-abu muda */
+  color: #000;
+  min-height: 100vh; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* vertikal tengah */
+  align-items: center;     /* horizontal tengah */
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.hero .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #ddd; /* abu-abu terang */
+  color: #333;      /* teks gelap biar kebaca */
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.hero .btn:hover {
+  background: #bbb; /* sedikit lebih gelap pas hover */
+}
+
