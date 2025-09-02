@@ -80,20 +80,20 @@ function setActiveNavButton() {
 
   navButtons.forEach(button => {
     button.classList.remove('active');
-    const buttonText = button.textContent.trim().toLowerCase();
+    const buttonText = button.textContent.trim();
 
     // Set active button based on current page
-    if (currentPage === 'index.html' && buttonText === 'home') {
+    if (currentPage === 'index.html' && buttonText === 'Beranda') {
       button.classList.add('active');
-    } else if (currentPage === 'fasilitas.html' && buttonText === 'facilities') {
+    } else if (currentPage === 'fasilitas.html' && buttonText === 'Fasilitas') {
       button.classList.add('active');
-    } else if (currentPage === 'tentang_kami.html' && buttonText === 'about us') {
+    } else if (currentPage === 'tentang_kami.html' && buttonText === 'Tentang Kami') {
       button.classList.add('active');
-    } else if (currentPage === 'wisata_budaya.html' && buttonText === 'culture') {
+    } else if (currentPage === 'wisata_budaya.html' && buttonText === 'Wisata & Budaya') {
       button.classList.add('active');
-    } else if (currentPage === 'informasi.html' && buttonText === 'village information') {
+    } else if (currentPage === 'informasi.html' && buttonText === 'Informasi Desa') {
       button.classList.add('active');
-    } else if (currentPage === 'galeri.html' && buttonText === 'gallery') {
+    } else if (currentPage === 'galeri.html' && buttonText === 'Galeri') {
       button.classList.add('active');
     }
   });
@@ -105,6 +105,11 @@ function addRippleEffectAndNavigation() {
 
   buttons.forEach(button => {
     button.addEventListener('click', function(e) {
+      // Skip if it's a dropdown toggle button
+      if (this.classList.contains('dropdown-toggle')) {
+        return;
+      }
+
       console.log('Button clicked:', this.textContent.trim()); // Debug log
 
       // Get the navigation URL from data attribute
