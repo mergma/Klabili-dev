@@ -8,6 +8,62 @@
     <link rel="stylesheet" href="css/bootstrap/bootstrap.css" />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom.css" />
+    <style>
+      @keyframes fly {
+        0% { transform: translateX(-50px) rotate(0deg) scale(0.8); opacity: 0; }
+        50% { opacity: 1; transform: scale(1.1); }
+        100% { transform: translateX(50px) rotate(10deg) scale(0.8); opacity: 0; }
+      }
+      @keyframes sail {
+        0% { transform: translateX(-30px) rotate(0deg) scale(0.9); opacity: 0.8; }
+        50% { transform: translateX(30px) rotate(5deg) scale(1.05); opacity: 1; }
+        100% { transform: translateX(-30px) rotate(0deg) scale(0.9); opacity: 0.8; }
+      }
+      @keyframes drive {
+        0% { transform: translateX(-40px) scale(0.9); opacity: 0.7; }
+        50% { transform: translateX(40px) scale(1.1); opacity: 1; }
+        100% { transform: translateX(-40px) scale(0.9); opacity: 0.7; }
+      }
+      .animated-plane {
+        animation: fly 3s ease-in-out infinite;
+        filter: drop-shadow(2px 4px 3px rgba(0,0,0,0.3));
+      }
+      .animated-boat {
+        animation: sail 4s ease-in-out infinite;
+        filter: drop-shadow(1px 3px 2px rgba(0,0,0,0.2));
+      }
+      .animated-car {
+        animation: drive 2s ease-in-out infinite;
+        filter: drop-shadow(2px 3px 2px rgba(0,0,0,0.25));
+      }
+      .transport-icon {
+        font-size: 2rem;
+        transition: transform 0.3s ease;
+        cursor: pointer;
+      }
+      .transport-icon:hover {
+        transform: scale(1.3) rotate(10deg);
+        color: #28a745;
+      }
+      .cloud, .road-1, .road-2, .water {
+        transition: transform 0.8s ease, opacity 0.8s ease;
+      }
+      .cloud {
+        transform: translateX(-100px);
+        opacity: 0;
+      }
+      .road-1, .road-2 {
+        transform: translateX(100px);
+        opacity: 0;
+      }
+      .water {
+        transform: translateX(-100px);
+        opacity: 0;
+      }
+      .transport-section {
+        margin-bottom: 20px;
+      }
+    </style>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -197,45 +253,120 @@
                 </div>
             </div>
 
-            <div class="row g-4 justify-content-center">
-                <div class="col-lg-6 d-flex justify-content-center">
-                    <div class="card border-0 shadow-sm h-100" style="max-width: 400px; width: 100%;">
-                        <div class="card-body p-4 text-start">
-                            <h5 class="card-title"><i class="fas fa-map-marker-alt text-primary me-2"></i>Alamat Lengkap</h5>
-                            <p class="card-text">
-                                <strong>Kampung Klabili</strong><br>
-                                Distrik Selemkai<br>
-                                Kabupaten Tambrauw<br>
-                                Provinsi Papua Barat<br>
-                                Indonesia
-                            </p>
-                            <hr>
-                            <h6><i class="fas fa-globe text-success me-2"></i>Koordinat GPS</h6>
-                            <p class="card-text">
-                                <strong>Latitude:</strong> -0.7893° S<br>
-                                <strong>Longitude:</strong> 132.0685° E
-                            </p>
+            <div class="row g-4">
+                <div class="col-12 d-flex justify-content-center">
+                    <div class="card border-0 shadow-lg" style="width: 100%; max-width: 800px; background: linear-gradient(135deg, #d4edda, #a8d5a3); border-radius: 20px; box-shadow: 0 8px 16px rgba(0, 128, 0, 0.25); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                        <div class="card-body p-4 pt-3 pb-3 text-start">
+                            <h5 class="card-title animated-title text-center" style="color: #155724; font-weight: 800; font-size: 1.6rem;">
+                                <i class="fas fa-map-marker-alt me-2"></i>Alamat Lengkap
+                            </h5>
+                            <div class="row justify-content-center">
+                                <div class="col-md-8 d-flex justify-content-center">
+                                    <div class="address-content" style="background: #a8d5a3; border-radius: 15px; padding: 25px 30px; border: 2px solid #6ca66c; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); width: 100%; max-width: 400px; margin: 20px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                                        <div class="address-item mb-3" style="display: flex; align-items: center; margin-bottom: 15px;">
+                                            <i class="fas fa-home text-success me-3" style="font-size: 1.7rem;"></i>
+                                            <span style="font-size: 1.3rem; font-weight: 700; color: #2f6f2f;">Kampung Klabili</span>
+                                        </div>
+                                        <div class="address-item mb-3" style="display: flex; align-items: center; margin-bottom: 12px;">
+                                            <i class="fas fa-map-marked-alt text-primary me-3" style="font-size: 1.5rem;"></i>
+                                            <span style="font-size: 1.15rem; color: #3a5f3a;">Distrik Selemkai</span>
+                                        </div>
+                                        <div class="address-item mb-3" style="display: flex; align-items: center; margin-bottom: 12px;">
+                                            <i class="fas fa-city text-info me-3" style="font-size: 1.5rem;"></i>
+                                            <span style="font-size: 1.15rem; color: #3a5f3a;">Kabupaten Tambrauw</span>
+                                        </div>
+                                        <div class="address-item mb-3" style="display: flex; align-items: center; margin-bottom: 12px;">
+                                            <i class="fas fa-flag text-warning me-3" style="font-size: 1.5rem;"></i>
+                                            <span style="font-size: 1.15rem; color: #3a5f3a;">Provinsi Papua Barat</span>
+                                        </div>
+                                        <div class="address-item" style="display: flex; align-items: center;">
+                                            <i class="fas fa-globe-americas text-danger me-3" style="font-size: 1.5rem;"></i>
+                                            <span style="font-size: 1.15rem; color: #3a5f3a;">Indonesia</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 d-flex flex-column align-items-center">
+                                    <div class="gps-coordinates" style="background: linear-gradient(135deg, rgba(40, 167, 69, 0.1), rgba(40, 167, 69, 0.05)); border-radius: 15px; padding: 20px; border: 2px solid rgba(40, 167, 69, 0.3); box-shadow: 0 4px 8px rgba(0,0,0,0.1); text-align: center; width: 100%; max-width: 400px; margin: 20px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                                        <h6 style="color: #19692c; font-weight: 700; margin-bottom: 15px;">
+                                            <i class="fas fa-satellite text-success me-2"></i>Koordinat GPS
+                                        </h6>
+                                        <div class="coordinate-item mb-2" style="display: flex; align-items: center; justify-content: center;">
+                                            <i class="fas fa-arrow-up text-primary me-2"></i>
+                                            <span style="font-size: 1rem; font-weight: 600; color: #2f4f2f;">Latitude: -0.7893° S</span>
+                                        </div>
+                                        <div class="coordinate-item" style="display: flex; align-items: center; justify-content: center;">
+                                            <i class="fas fa-arrow-right text-info me-2"></i>
+                                            <span style="font-size: 1rem; font-weight: 600; color: #2f4f2f;">Longitude: 132.0685° E</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+    <style>
+      @keyframes pulse {
+        0% { transform: scale(1); color: #198754; }
+        50% { transform: scale(1.1); color: #28a745; }
+        100% { transform: scale(1); color: #198754; }
+      }
+      @keyframes fadeInUp {
+        0% { opacity: 0; transform: translateY(20px); }
+        100% { opacity: 1; transform: translateY(0); }
+      }
+      .animated-title {
+        animation: pulse 2s infinite;
+        font-weight: 700;
+      }
+      .animated-text {
+        animation: fadeInUp 1.5s ease forwards;
+      }
+    </style>
 
-                <div class="col-lg-6 d-flex justify-content-center">
-                    <div class="card border-0 shadow-sm h-100" style="max-width: 400px; width: 100%;">
-                        <div class="card-body p-4 text-start">
-                            <h5 class="card-title"><i class="fas fa-route text-warning me-2"></i>Akses Transportasi</h5>
-                            <div class="mb-3">
-                                <h6><i class="fas fa-plane text-info me-2"></i>Via Udara</h6>
-                                <p class="card-text small">Bandara Domine Eduard Osok (SOQ) Sorong → Perjalanan darat 3 jam</p>
+                <div class="col-12 d-flex justify-content-center mt-4">
+                    <div class="card border-0 shadow-sm" style="width: 100%; max-width: 1000px; overflow: hidden; position: relative;">
+                        <div class="card-body p-4 text-start position-relative" style="overflow: visible;">
+                            <h5 class="card-title mb-4" id="akses-transportasi-title" style="opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease;">
+                                <i class="fas fa-route text-warning me-2"></i>Akses Transportasi
+                            </h5>
+                            <div id="via-udara" class="transport-section" style="opacity: 0; transform: translateX(-100px); transition: opacity 0.6s ease, transform 0.6s ease;">
+                                <div class="animated-plane transport-icon" style="font-size: 3rem; position: relative; left: -100px; transition: left 1s ease;"></div>
+                                <h6 class="mt-3">Via Udara</h6>
+                                <div class="clouds" style="position: relative; margin-top: 10px;">
+                                    <div class="cloud cloud-1" style="background: #e0f7fa; border-radius: 50%; padding: 10px; margin-bottom: 5px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);">
+                                        <strong>Dari Sorong:</strong> Penerbangan domestik ke Bandara Domine Eduard Osok (Sorong), dilanjutkan perjalanan darat menuju Klabili (via Sausapor) sekitar 4 jam.
+                                    </div>
+                                    <div class="cloud cloud-2" style="background: #b2ebf2; border-radius: 50%; padding: 10px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);">
+                                        <strong>Dari Manokwari:</strong> Penerbangan ke Bandara Rendani (Manokwari), kemudian Susi Air terbang ke Bandara Werur (Tambrauw) dua kali seminggu. Dari Werur lanjut darat ke Klabili.
+                                    </div>
+                                </div>
                             </div>
-                            <div class="mb-3">
-                                <h6><i class="fas fa-car text-success me-2"></i>Via Darat</h6>
-                                <p class="card-text small">Dari Sorong: Mobil/Bus → 3 jam perjalanan<br>
-                                Dari Manokwari: Mobil → 5 jam perjalanan</p>
+                            <div id="via-darat" class="transport-section" style="opacity: 0; transform: translateX(100px); transition: opacity 0.6s ease, transform 0.6s ease; margin-top: 30px;">
+                                <div class="animated-car transport-icon" style="font-size: 3rem; position: relative; right: -100px; transition: right 1s ease;"></div>
+                                <h6 class="mt-3">Via Darat</h6>
+                                <div class="road" style="position: relative; margin-top: 10px;">
+                                    <div class="road-1" style="background: #c8e6c9; border-radius: 10px; padding: 10px; margin-bottom: 5px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);">
+                                        <strong>Dari Sorong:</strong> Rute Sorong → Sausapor → Klabili dengan mobil 4×4 atau motor trail. Waktu tempuh total ≈2–4 jam.
+                                    </div>
+                                    <div class="road-2" style="background: #a5d6a7; border-radius: 10px; padding: 10px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);">
+                                        <strong>Dari Manokwari:</strong> Rute Manokwari → Sorong → Klabili menggunakan mobil 4×4. Perkiraan waktu total ≈8–10 jam.
+                                    </div>
+                                </div>
                             </div>
-                            <div>
-                                <h6><i class="fas fa-ship text-primary me-2"></i>Via Laut</h6>
-                                <p class="card-text small">Pelabuhan Sorong → Perjalanan darat 3 jam</p>
+                            <div id="via-laut" class="transport-section" style="opacity: 0; transform: translateX(-100px); transition: opacity 0.6s ease, transform 0.6s ease; margin-top: 30px;">
+                                <div class="animated-boat transport-icon" style="font-size: 3rem; position: relative; left: -100px; transition: left 1s ease;"></div>
+                                <h6 class="mt-3">Via Laut</h6>
+                                <div class="water" style="position: relative; margin-top: 10px; background: #b3e5fc; border-radius: 10px; padding: 10px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);">
+                                    Tidak ada layanan feri langsung ke Klabili. Pelabuhan terdekat adalah Pelabuhan Sausapor (khusus kargo mingguan ke Sorong), speedboat penumpang Sorong–Sausapor (~2 jam) sedang direncanakan, namun belum beroperasi.
+                                </div>
                             </div>
+                            <hr style="margin-top: 40px; opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease;" id="rekomendasi-transportasi-hr">
+                            <h6 id="rekomendasi-transportasi" style="opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease;">
+                                <i class="fas fa-tools text-secondary me-2"></i>Rekomendasi Kendaraan
+                            </h6>
+                            <p class="card-text small" id="rekomendasi-transportasi-text" style="opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease;">
+                                Disarankan menggunakan mobil double cabin 4×4 (misalnya Toyota Hilux, Mitsubishi Pajero) atau sepeda motor trail untuk menghadapi jalan berbatu/lumpur menuju Klabili.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -490,5 +621,93 @@
     <script src="js/bootstrap/bootstrap.bundle.js"></script>
     <!-- Custom JS -->
     <script src="js/custom.js"></script>
+
+    <!-- Scroll Animation Script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const element = entry.target;
+              element.style.opacity = '1';
+              element.style.transform = 'translateY(0) translateX(0)';
+
+              // Special animations for transport sections
+              if (element.id === 'via-udara') {
+                setTimeout(() => {
+                  const plane = element.querySelector('.animated-plane');
+                  plane.style.left = '0px';
+                  setTimeout(() => {
+                    const clouds = element.querySelectorAll('.cloud');
+                    clouds.forEach((cloud, index) => {
+                      setTimeout(() => {
+                        cloud.style.transform = 'translateX(0)';
+                        cloud.style.opacity = '1';
+                      }, index * 500);
+                    });
+                  }, 1000);
+                }, 500);
+              } else if (element.id === 'via-darat') {
+                setTimeout(() => {
+                  const car = element.querySelector('.animated-car');
+                  car.style.right = '0px';
+                  setTimeout(() => {
+                    const roads = element.querySelectorAll('.road-1, .road-2');
+                    roads.forEach((road, index) => {
+                      setTimeout(() => {
+                        road.style.transform = 'translateX(0)';
+                        road.style.opacity = '1';
+                      }, index * 500);
+                    });
+                  }, 1000);
+                }, 500);
+              } else if (element.id === 'via-laut') {
+                setTimeout(() => {
+                  const boat = element.querySelector('.animated-boat');
+                  boat.style.left = '0px';
+                  setTimeout(() => {
+                    const water = element.querySelector('.water');
+                    water.style.transform = 'translateX(0)';
+                    water.style.opacity = '1';
+                  }, 1000);
+                }, 500);
+              } else if (element.id === 'rekomendasi-transportasi') {
+                setTimeout(() => {
+                  document.getElementById('rekomendasi-transportasi-hr').style.opacity = '1';
+                  document.getElementById('rekomendasi-transportasi-hr').style.transform = 'translateY(0)';
+                  setTimeout(() => {
+                    document.getElementById('rekomendasi-transportasi-text').style.opacity = '1';
+                    document.getElementById('rekomendasi-transportasi-text').style.transform = 'translateY(0)';
+                  }, 300);
+                }, 500);
+              }
+            }
+          });
+        }, observerOptions);
+
+        // Observe elements
+        const elementsToObserve = [
+          'akses-transportasi-title',
+          'via-udara',
+          'via-darat',
+          'via-laut',
+          'rekomendasi-transportasi'
+        ];
+
+        elementsToObserve.forEach(id => {
+          const element = document.getElementById(id);
+          if (element) {
+            observer.observe(element);
+          }
+        });
+
+        // Initial styles are now handled by CSS
+      });
+    </script>
   </body>
 </html>
