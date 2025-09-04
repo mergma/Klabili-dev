@@ -908,6 +908,7 @@ body.navbar-sticky {
 /* Smooth transition for body padding */
 body {
   transition: padding-top 0.3s ease-in-out;
+  overflow-x: hidden;
 }
 
 
