@@ -1,20 +1,10 @@
-# TODO: Redesign Lokasi & Peta Desa Klabili
+# TODO: Fix informasi.html
 
-## Completed
-- [ ] Analyze current structure in informasi.html
-- [ ] Brainstorm plan for redesign
-
-## In Progress
-- [ ] Update section title to “📍 Lokasi Desa Klabili”
-- [ ] Restructure to 2-column grid: left address, right map
-- [ ] Add highlights: GPS box with 📍, village name with green accent
-- [ ] Add small illustrations (mountains, forests, houses)
-- [ ] Condense transport into tabs (Via Udara | Via Darat | Via Laut)
-- [ ] Update titles: “🗺️ Cara ke Sini”, “🚗 Rekomendasi Kendaraan”
-- [ ] Apply soft green palette
-- [ ] Add CTA button “Lihat di Google Maps”
-- [ ] Update CSS styles
-
-## Pending
-- [ ] Test responsiveness
-- [ ] Verify layout balance
+## Pending Tasks
+- [ ] Update lokasi-peta section structure with flexbox container and cards
+- [ ] Add soft green gradient background (.section-gradient)
+- [ ] Add small icons to section titles (📍, 🗺️, etc.)
+- [ ] Add 🌿 leaf dividers between sections
+- [ ] Improve vehicle animations with overflow:hidden and natural keyframes
+- [ ] Add AOS scroll animations and initialize
+- [ ] Test the page for responsiveness and animations
