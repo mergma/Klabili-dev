@@ -104,6 +104,11 @@ html {
   transition: color 0.3s ease;
 }
 
+/* Set all titles (h1-h6) and card titles to green theme color */
+h1, h2, h3, h4, h5, h6, .card-title {
+  color: #198754 !important;
+}
+
 .hero-section h1:hover {
   color: #198754; /* Bootstrap primary green */
   cursor: pointer;
