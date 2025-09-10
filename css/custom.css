@@ -938,182 +938,12 @@ body {
   overflow: hidden;
   transition-duration: .3s;
 }
-/* Instagram */
-.containerOne:hover {
-  background: linear-gradient(135deg, #f9ce34 0%, #ee2a7b 50%, #6228d7 100%);
-  transition-duration: .3s;
-}
-/* Facebook */
-.containerTwo:hover {
-  background-color: #1877F3; /* Facebook blue */
-  transition-duration: .3s;
-}
-/* Whatsapp*/
-.containerFour:hover {
-  background-color: #128C7E;
-  transition-duration: .3s;
-}
-
-.socialContainer:active {
-  transform: scale(0.9);
-  transition-duration: .3s;
-}
-
-.socialSvg {
-  width: 17px;
-}
-
-.socialSvg path {
-  fill: rgb(255, 255, 255);
-}
-
-.socialContainer:hover .socialSvg {
-  animation: slide-in-top 0.3s both;
-}
-
-@keyframes slide-in-top {
-  0% {
-    transform: translateY(-50px);
-    opacity: 0;
-  }
-
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-/* Fix for squished Font Awesome icons in circular containers */
-.icon-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.icon-container i {
-  flex-shrink: 0;
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  max-height: 100%;
-}
-
-/* Ensure Font Awesome icons maintain aspect ratio */
-.fa-icon-fix {
-  flex-shrink: 0 !important;
-  width: auto !important;
-  height: auto !important;
-}
-
-/* Add spacing between icons and text in cards */
-.card-body .icon-container {
-  margin-right: 1rem; /* Space between icon and text for side-by-side layout */
-}
-
-.card-body > .icon-container:not(:last-child) {
-  margin-bottom: 1rem; /* Space below icon for stacked layout */
-}
-
-/* Page Title Background with Image */
-.page-title-bg {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../img/about_us_img.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-}
-
-.page-title-bg h1 {
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-  font-weight: 700;
-}
-
-.page-title-bg .lead {
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
-}
-
-/* Ensure social media links stay horizontal on all screen sizes */
-@media (max-width: 768px) {
-  .card {
-    flex-direction: row !important;
-    flex-wrap: nowrap !important;
-    gap: 15px; /* Slightly smaller gap on mobile */
-    padding: 20px 15px; /* Adjust padding for mobile */
-  }
-
-  .socialContainer {
-    width: 45px; /* Slightly smaller icons on mobile */
-    height: 45px;
-  }
-}
-
-@media (max-width: 480px) {
-  .card {
-    gap: 10px; /* Even smaller gap on very small screens */
-    padding: 15px 10px;
-  }
-
-  .socialContainer {
-    width: 40px; /* Even smaller icons on very small screens */
-    height: 40px;
-  }
-}
-
-.countup {
-  font-size: inherit;
-  font-weight: inherit;
-  color: inherit;
-  transition: color 0.3s;
-}
-
-#scrollToTopBtn {
-  position: fixed;
-  bottom: 32px;
-  right: 32px;
-  z-index: 999;
-  display: none;
-  width: 48px;
-  height: 48px;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  transition: opacity 0.3s;
-}
-
-#scrollToTopBtn.show {
-  display: flex !important;
-  opacity: 1;
-}
-
-.cta-section {
-  position: relative;
-  background: linear-gradient(120deg, #198754 40%, #b6e2b3 70%, #cadcae 90%, #f8fff6 100%);
-  /* Atau pakai background-color: #198754; jika ingin polos */
-}
-
-.cta-section h2,
-.cta-section p {
-  text-shadow: 1px 2px 8px #0008;
-}
-
-/* Footer link hover effects */
-footer a.text-white-50:hover {
-  color: #ffffff !important;
-  transition: color 0.3s ease;
-}
-
-footer a.text-white-50 {
-  transition: color 0.3s ease;
-}
-
-.text-primary {
-    color: #4CAF50 !important;  /* Light green color */
+.socialContainer:hover {
+  background-color: rgb(25, 135, 84);
+  transform: scale(1.1);
 }
 
 .icon-image-container {
-    width: 100%;
-    height: 100%;
     overflow: hidden;
     border-radius: 50%;
 }
@@ -1122,4 +952,9 @@ footer a.text-white-50 {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.icon-image:hover {
+    transform: scale(1.1);
 }
