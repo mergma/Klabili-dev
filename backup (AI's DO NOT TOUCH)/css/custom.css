@@ -908,6 +908,7 @@ body.navbar-sticky {
 /* Smooth transition for body padding */
 body {
   transition: padding-top 0.3s ease-in-out;
+  overflow-x: hidden;
 }
 
 
@@ -1108,4 +1109,17 @@ footer a.text-white-50 {
 
 .text-primary {
     color: #4CAF50 !important;  /* Light green color */
+}
+
+.icon-image-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.icon-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
