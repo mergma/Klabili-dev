@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tentang Kami - Desa Wisata Klabili</title>
+  <title>About Us - Klabili Tourism Village</title>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="css/bootstrap/bootstrap.css" />
   <!-- Custom CSS -->
@@ -16,7 +16,7 @@
     <div class="container-fluid">
       <!-- Left side: Logo -->
       <div class="navbar-brand-container" style="flex: 1">
-        <a class="navbar-brand" href="index.html"><img src="img/Logo_Desa_Wisata_Klabili-removebg-preview.png" alt=""
+        <a class="navbar-brand" href="index_en.html"><img src="img/Logo_Desa_Wisata_Klabili-removebg-preview.png" alt=""
             width="100px" /></a>
       </div>
 
@@ -27,9 +27,9 @@
 
       <!-- Language Toggle Switch - Outside collapsible menu -->
       <div class="navbar-nav d-flex align-items-center">
-        <div class="nav-item d-flex align-items-center language-toggle-container id-active"
+        <div class="nav-item d-flex align-items-center language-toggle-container en-active"
           id="languageToggleContainer">
-          <svg class="flag-img flag-en inactive" width="52" height="36" viewBox="0 0 20 15"
+          <svg class="flag-img flag-en active" width="52" height="36" viewBox="0 0 20 15"
             xmlns="http://www.w3.org/2000/svg" onclick="setLanguage('en')">
             <rect width="20" height="15" fill="#012169" />
             <path d="M0 0L20 15M20 0L0 15" stroke="#fff" stroke-width="2" />
@@ -38,7 +38,7 @@
             <path d="M10 0V15M0 7.5H20" stroke="#C8102E" stroke-width="2" />
           </svg>
           <span class="language-toggle-dot"></span>
-          <svg class="flag-img flag-id active" width="32" height="22" viewBox="0 0 20 15"
+          <svg class="flag-img flag-id inactive" width="32" height="22" viewBox="0 0 20 15"
             xmlns="http://www.w3.org/2000/svg" onclick="setLanguage('id')">
             <rect width="20" height="7.5" fill="#FF0000" />
             <rect y="7.5" width="20" height="7.5" fill="#FFFFFF" />
@@ -50,25 +50,25 @@
         <!-- Center: Navigation items -->
         <ul class="navbar-nav mx-auto mb-2 mb-lg-0 justify-content-center" style="flex: 1">
           <li class="nav-item">
-            <button class="btn nav-btn" type="button" data-nav-url="index.html">
-              Beranda
+            <button class="btn nav-btn" type="button" data-nav-url="index_en.html">
+              Home
             </button>
           </li>
 
           <li class="nav-item dropdown">
             <button class="btn nav-btn dropdown-toggle active" type="button" data-bs-toggle="dropdown"
               aria-expanded="false">
-              Tentang Kami
+              About Us
             </button>
             <ul class="dropdown-menu">
               <li>
-                <button class="dropdown-item" type="button" data-nav-url="tentang_kami.html#profil-desa">
-                  Profil Desa
+                <button class="dropdown-item" type="button" data-nav-url="tentang_kami_en.html#profil-desa">
+                  Village Profile
                 </button>
               </li>
               <li>
-                <button class="dropdown-item" type="button" data-nav-url="tentang_kami.html#struktur-desa">
-                  Struktur Desa
+                <button class="dropdown-item" type="button" data-nav-url="tentang_kami_en.html#struktur-desa">
+                  Village Structure
                 </button>
               </li>
             </ul>
@@ -76,12 +76,12 @@
 
           <li class="nav-item dropdown">
             <button class="btn nav-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Fasilitas
+              Facilities
             </button>
             <ul class="dropdown-menu">
               <li>
-                <button class="dropdown-item" type="button" data-nav-url="fasilitas.html#fasilitas-umum-desa">
-                  Fasilitas Umum Desa
+                <button class="dropdown-item" type="button" data-nav-url="fasilitas_en.html#fasilitas-umum-desa">
+                  Public Village Facilities
                 </button>
               </li>
             </ul>
@@ -89,40 +89,40 @@
 
           <li class="nav-item dropdown">
             <button class="btn nav-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Wisata & Budaya
+              Tourism & Culture
             </button>
             <ul class="dropdown-menu">
               <li>
-                <button class="dropdown-item" type="button" data-nav-url="wisata_budaya.html#spot-wisata">
-                  Spot Wisata
+                <button class="dropdown-item" type="button" data-nav-url="wisata_budaya_en.html#spot-wisata">
+                  Tourist Spots
                 </button>
               </li>
               <li>
-                <button class="dropdown-item" type="button" data-nav-url="wisata_budaya.html#budaya-lokal">
-                  Budaya Lokal
+                <button class="dropdown-item" type="button" data-nav-url="wisata_budaya_en.html#budaya-lokal">
+                  Local Culture
                 </button>
               </li>
               <li>
-                <button class="dropdown-item" type="button" data-nav-url="wisata_budaya.html#acara-tahunan">
-                  Acara Tahunan
+                <button class="dropdown-item" type="button" data-nav-url="wisata_budaya_en.html#acara-tahunan">
+                  Annual Events
                 </button>
               </li>
               <li>
-                <button class="dropdown-item" type="button" data-nav-url="wisata_budaya.html#kerajinan-tangan">
-                  Kerajinan Tangan
+                <button class="dropdown-item" type="button" data-nav-url="wisata_budaya_en.html#kerajinan-tangan">
+                  Handicrafts
                 </button>
               </li>
               <li>
-                <button class="dropdown-item" type="button" data-nav-url="wisata_budaya.html#kuliner-lokal">
-                  Kuliner Lokal
+                <button class="dropdown-item" type="button" data-nav-url="wisata_budaya_en.html#kuliner-lokal">
+                  Local Cuisine
                 </button>
               </li>
               <li>
                 <hr class="dropdown-divider" />
               </li>
               <li>
-                <button class="dropdown-item" type="button" data-nav-url="wisata_budaya.html#souvenir">
-                  Suvenir
+                <button class="dropdown-item" type="button" data-nav-url="wisata_budaya_en.html#souvenir">
+                  Souvenirs
                 </button>
               </li>
             </ul>
@@ -130,17 +130,17 @@
 
           <li class="nav-item dropdown">
             <button class="btn nav-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Informasi Desa
+              Village Information
             </button>
             <ul class="dropdown-menu">
               <li>
-                <button class="dropdown-item" type="button" data-nav-url="informasi.html#lokasi-peta">
-                  Lokasi & Peta
+                <button class="dropdown-item" type="button" data-nav-url="informasi_en.html#lokasi-peta">
+                  Location & Map
                 </button>
               </li>
               <li>
-                <button class="dropdown-item" type="button" data-nav-url="informasi.html#kontak">
-                  Kontak
+                <button class="dropdown-item" type="button" data-nav-url="informasi_en.html#kontak">
+                  Contact
                 </button>
               </li>
             </ul>
@@ -148,17 +148,17 @@
 
           <li class="nav-item dropdown">
             <button class="btn nav-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Galeri
+              Gallery
             </button>
             <ul class="dropdown-menu">
               <li>
-                <button class="dropdown-item" type="button" data-nav-url="galeri.html#dokumentasi-acara">
-                  Dokumentasi Acara
+                <button class="dropdown-item" type="button" data-nav-url="galeri_en.html#dokumentasi-acara">
+                  Event Documentation
                 </button>
               </li>
               <li>
-                <button class="dropdown-item" type="button" data-nav-url="galeri.html#kegiatan-masyarakat">
-                  Kegiatan Masyarakat
+                <button class="dropdown-item" type="button" data-nav-url="galeri_en.html#kegiatan-masyarakat">
+                  Community Activities
                 </button>
               </li>
             </ul>
@@ -173,8 +173,8 @@
     <div class="container">
       <div class="row">
         <div class="col-12 text-center">
-          <h1 class="display-4 fw-bold text-white mb-3">Tentang Kami</h1>
-          <p class="lead">Profil Desa Wisata Klabili</p>
+          <h1 class="display-4 fw-bold text-white mb-3">About Us</h1>
+          <p class="lead">Klabili Tourism Village Profile</p>
         </div>
       </div>
     </div>
@@ -182,7 +182,7 @@
 
   <!-- Page Content -->
   <div class="container mt-4">
-    <!-- Profil Desa Section -->
+    <!-- Village Profile Section -->
     <section id="profil-desa" class="py-5">
       <div class="row align-items-center mb-5 flex-column flex-md-row justify-content-center">
         <div class="col-md-6 d-flex justify-content-center mb-4 mb-md-0">
@@ -195,19 +195,19 @@
           <div class="card border-0 w-100" style="margin-top: 32px">
             <div class="card-body">
               <h2 class="card-title text-primary mb-4">
-                Profil Desa Klabili
+                Klabili Village Profile
               </h2>
               <p class="card-text mb-3">
-                Desa Klabili terletak di dataran tinggi yang dikelilingi oleh
-                perbukitan hijau dan sungai jernih. Dengan ketinggian 800
-                meter di atas permukaan laut, desa ini menawarkan udara sejuk
-                dan pemandangan alam yang memukau sepanjang tahun.
+                Klabili Village is located on a highland surrounded by
+                green hills and clear rivers. At an altitude of 800
+                meters above sea level, this village offers cool air
+                and stunning natural scenery throughout the year.
               </p>
               <ul class="list-unstyled">
-                <li><strong>Ketinggian:</strong> 800 mdpl</li>
-                <li><strong>Luas Wilayah:</strong> 15.5 km²</li>
-                <li><strong>Populasi:</strong> ~2.500 jiwa</li>
-                <li><strong>Iklim:</strong> Tropis sejuk</li>
+                <li><strong>Altitude:</strong> 800 meters above sea level</li>
+                <li><strong>Area:</strong> 15.5 km²</li>
+                <li><strong>Population:</strong> ~2,500 people</li>
+                <li><strong>Climate:</strong> Cool tropical</li>
               </ul>
             </div>
           </div>
@@ -244,16 +244,16 @@
       }
     </style>
 
-    <!-- Struktur Desa Section -->
+    <!-- Village Structure Section -->
     <section id="struktur-desa" class="py-5 mb-5 bg-light">
       <div class="container">
         <div class="row">
           <div class="col-12 text-center mb-5">
             <h2 class="display-5 fw-bold text-primary">
-              Struktur Organisasi Desa
+              Village Organizational Structure
             </h2>
             <p class="lead text-muted">
-              Kepemimpinan dan struktur pemerintahan Desa Klabili
+              Leadership and governance structure of Klabili Village
             </p>
           </div>
         </div>
@@ -265,9 +265,9 @@
                   <i class="fas fa-user-tie text-white fa-2x fa-icon-fix"></i>
                 </div>
                 <div>
-                  <h5 class="card-title">Kepala Desa</h5>
+                  <h5 class="card-title">Village Head</h5>
                   <p class="card-text text-muted">
-                    Pak Yoram Kalami
+                    Mr. Yoram Kalami
                   </p>
                 </div>
               </div>
@@ -280,9 +280,9 @@
                   <i class="fas fa-users text-white fa-2x fa-icon-fix"></i>
                 </div>
                 <div>
-                  <h5 class="card-title">Wakil Kepala Desa</h5>
+                  <h5 class="card-title">Deputy Village Head</h5>
                   <p class="card-text text-muted">
-                    Pak Yustus Kalami
+                    Mr. Yustus Kalami
                   </p>
                 </div>
               </div>
@@ -291,14 +291,6 @@
         </div>
       </div>
     </section>
-
-    <!-- WhatsApp Chat Button -->
-    <!-- <div class="position-fixed bottom-0 end-0 mb-4 me-4">
-            <a href="#" class="btn btn-success rounded-circle p-3">
-                <i class="bi bi-whatsapp"></i>
-                Chat Kami
-            </a>
-        </div> -->
   </div>
 
   <!-- Footer -->
@@ -308,28 +300,28 @@
         <!-- Column 1: Logo and Description -->
         <div class="col-lg-3 col-md-6 mb-4">
           <div class="mb-3">
-            <img src="img/Logo_Desa_Wisata_Klabili-removebg-preview.png" alt="Logo Desa Wisata Klabili" width="150px" />
+            <img src="img/Logo_Desa_Wisata_Klabili-removebg-preview.png" alt="Klabili Tourism Village Logo" width="150px" />
           </div>
           <p class="text-white-50">
-            Desa Wisata Klabili menawarkan pengalaman wisata autentik dengan keindahan alam, budaya lokal, dan keramahan masyarakat Suku Moi.
+            Klabili Tourism Village offers authentic tourism experiences with natural beauty, local culture, and the warmth of the Moi Tribe community.
           </p>
         </div>
 
         <!-- Column 2: Quick Links -->
         <div class="col-lg-3 col-md-6 mb-4">
-          <h5 class="fw-bold mb-3">Tautan Cepat</h5>
+          <h5 class="fw-bold mb-3">Quick Links</h5>
           <ul class="list-unstyled">
-            <li class="mb-2"><a href="index.html" class="text-white-50 text-decoration-none">Beranda</a></li>
-            <li class="mb-2"><a href="tentang_kami.html" class="text-white-50 text-decoration-none">Tentang Kami</a></li>
-            <li class="mb-2"><a href="fasilitas.html" class="text-white-50 text-decoration-none">Fasilitas</a></li>
-            <li class="mb-2"><a href="wisata_budaya.html" class="text-white-50 text-decoration-none">Wisata & Budaya</a></li>
-            <li class="mb-2"><a href="galeri.html" class="text-white-50 text-decoration-none">Galeri</a></li>
+            <li class="mb-2"><a href="index_en.html" class="text-white-50 text-decoration-none">Home</a></li>
+            <li class="mb-2"><a href="tentang_kami_en.html" class="text-white-50 text-decoration-none">About Us</a></li>
+            <li class="mb-2"><a href="fasilitas_en.html" class="text-white-50 text-decoration-none">Facilities</a></li>
+            <li class="mb-2"><a href="wisata_budaya_en.html" class="text-white-50 text-decoration-none">Tourism & Culture</a></li>
+            <li class="mb-2"><a href="galeri_en.html" class="text-white-50 text-decoration-none">Gallery</a></li>
           </ul>
         </div>
 
         <!-- Column 3: Contact Info -->
         <div class="col-lg-3 col-md-6 mb-4">
-          <h5 class="fw-bold mb-3">Kontak Kami</h5>
+          <h5 class="fw-bold mb-3">Contact Us</h5>
           <ul class="list-unstyled">
             <li class="mb-2">
               <i class="fas fa-phone me-2"></i>
@@ -337,7 +329,7 @@
             </li>
             <li class="mb-2">
               <i class="fas fa-map-marker-alt me-2"></i>
-              <span>Kampung Klabili, Distrik Selemkai, Kabupaten Tambrauw</span>
+              <span>Klabili Village, Selemkai District, Tambrauw Regency</span>
             </li>
             <li class="mb-2">
               <i class="fas fa-envelope me-2"></i>
@@ -348,7 +340,7 @@
 
         <!-- Column 4: Social Media -->
         <div class="col-lg-3 col-md-6 mb-4">
-          <h5 class="fw-bold mb-3">Ikuti Kami</h5>
+          <h5 class="fw-bold mb-3">Follow Us</h5>
           <div class="d-flex">
             <a href="https://www.instagram.com/klabili_bridwhtcing/" target="_blank" rel="noopener noreferrer"
               class="socialContainer containerOne me-3">
@@ -366,7 +358,7 @@
                 </path>
               </svg>
             </a>
-            <a href="https://wa.me/6282236955445?text=Halo%20saya%20mau%20tanya" target="_blank"
+            <a href="https://wa.me/6282236955445?text=Hello%20I%20want%20to%20ask" target="_blank"
               rel="noopener noreferrer" class="socialContainer
               containerFour">
               <svg class="socialSvg whatsappSvg" viewBox="0 0 16 16">
@@ -384,7 +376,7 @@
       <div class="row">
         <div class="col-12 text-center">
           <p class="mb-0 text-white-50">
-            &copy; 2025 Desa Wisata Klabili. Semua hak dilindungi.
+            &copy; 2025 Klabili Tourism Village. All rights reserved.
           </p>
         </div>
       </div>
