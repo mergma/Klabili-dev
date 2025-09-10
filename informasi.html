@@ -579,65 +579,269 @@
         100% { transform: translateX(100%); }
       }
 
-      /* Gradient background lembut */
+      /* Enhanced Gradient Background with Natural Pattern */
       .section-gradient {
-        background: linear-gradient(135deg, #e9f9ef, #f5fff8);
+        background: linear-gradient(135deg, #e9f9ef 0%, #d4edda 25%, #a8d5a3 50%, #f5fff8 75%, #e9f9ef 100%);
         background-image:
-          radial-gradient(circle at 20% 80%, rgba(40, 167, 69, 0.1) 0%, transparent 50%),
+          radial-gradient(circle at 20% 80%, rgba(40, 167, 69, 0.15) 0%, transparent 50%),
           radial-gradient(circle at 80% 20%, rgba(0, 123, 255, 0.1) 0%, transparent 50%),
-          radial-gradient(circle at 40% 40%, rgba(255, 193, 7, 0.1) 0%, transparent 50%);
-        background-size: 100px 100px;
+          radial-gradient(circle at 40% 40%, rgba(255, 193, 7, 0.08) 0%, transparent 50%),
+          url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234caf50' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        background-size: 100px 100px, 100px 100px, 100px 100px, 60px 60px;
         padding: 50px 20px;
+        position: relative;
+        overflow: hidden;
       }
 
-      /* Flexbox untuk Alamat & Peta */
+      /* Floating Background Ornaments */
+      .background-ornaments {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .leaf-ornament {
+        position: absolute;
+        font-size: 2rem;
+        color: rgba(76, 175, 80, 0.3);
+        animation: leaf-float 8s ease-in-out infinite;
+      }
+
+      .leaf-ornament:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+      .leaf-ornament:nth-child(2) { top: 20%; right: 15%; animation-delay: 2s; }
+      .leaf-ornament:nth-child(3) { bottom: 30%; left: 20%; animation-delay: 4s; }
+      .leaf-ornament:nth-child(4) { bottom: 20%; right: 10%; animation-delay: 6s; }
+
+      .bird-ornament {
+        position: absolute;
+        font-size: 1.5rem;
+        color: rgba(33, 150, 243, 0.4);
+        animation: bird-fly 12s ease-in-out infinite;
+      }
+
+      .bird-ornament:nth-child(1) { top: 15%; left: -5%; animation-delay: 1s; }
+      .bird-ornament:nth-child(2) { top: 35%; right: -5%; animation-delay: 5s; }
+      .bird-ornament:nth-child(3) { bottom: 25%; left: -5%; animation-delay: 9s; }
+
+      @keyframes leaf-float {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        25% { transform: translateY(-10px) rotate(5deg); }
+        50% { transform: translateY(-5px) rotate(-3deg); }
+        75% { transform: translateY(-15px) rotate(2deg); }
+      }
+
+      @keyframes bird-fly {
+        0% { transform: translateX(-100px) translateY(0px); opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { transform: translateX(calc(100vw + 100px)) translateY(-20px); opacity: 0; }
+      }
+
+      /* Enhanced Flexbox untuk Alamat & Peta dengan Glassmorphism */
       .lokasi-container {
         display: flex;
         justify-content: space-between;
         align-items: stretch;
-        gap: 20px;
+        gap: 30px;
         flex-wrap: wrap;
         overflow: visible;
+        position: relative;
+        z-index: 2;
+        padding: 20px;
       }
 
       .lokasi-container .card {
         flex: 1 1 350px;
         min-width: 300px;
         max-width: 600px;
-        background: #fff;
-        border-radius: 15px;
-        padding: 20px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        background: linear-gradient(135deg,
+          rgba(255, 255, 255, 0.25),
+          rgba(255, 255, 255, 0.15),
+          rgba(248, 249, 250, 0.2)
+        );
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-radius: 25px;
+        padding: 30px;
+        box-shadow:
+          0 8px 32px rgba(0, 0, 0, 0.1),
+          0 0 0 1px rgba(255, 255, 255, 0.18),
+          inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        position: relative;
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(50px) scale(0.9) rotateX(10deg);
+        animation: card-appear-glass 1s ease-out forwards;
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .lokasi-container .card:nth-child(1) { animation-delay: 0.3s; }
+      .lokasi-container .card:nth-child(2) { animation-delay: 0.6s; }
+
+      @keyframes card-appear-glass {
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1) rotateX(0deg);
+        }
       }
 
       .lokasi-container .card:hover {
-        transform: scale(1.05) translateY(-5px);
-        box-shadow: 0 12px 25px rgba(0,0,0,0.2);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        transform: translateY(-8px) scale(1.02) rotateX(-2deg);
+        box-shadow:
+          0 20px 60px rgba(40, 167, 69, 0.15),
+          0 0 0 1px rgba(40, 167, 69, 0.2),
+          0 0 20px rgba(76, 175, 80, 0.1);
+        border-color: rgba(40, 167, 69, 0.4);
+        background: linear-gradient(135deg,
+          rgba(255, 255, 255, 0.35),
+          rgba(255, 255, 255, 0.25),
+          rgba(248, 249, 250, 0.3)
+        );
       }
 
+      .lokasi-container .card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg,
+          transparent,
+          rgba(40, 167, 69, 0.1),
+          rgba(0, 123, 255, 0.1),
+          transparent
+        );
+        transition: left 0.8s ease;
+        z-index: -1;
+      }
+
+      .lokasi-container .card:hover::before {
+        left: 100%;
+      }
+
+      /* Glassmorphism untuk semua cards */
+      .glass-card {
+        background: linear-gradient(135deg,
+          rgba(255, 255, 255, 0.25),
+          rgba(255, 255, 255, 0.15)
+        );
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow:
+          0 8px 32px rgba(0, 0, 0, 0.1),
+          inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .glass-card:hover {
+        transform: translateY(-5px) rotateX(-1deg);
+        box-shadow:
+          0 15px 45px rgba(0, 0, 0, 0.15),
+          inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        background: linear-gradient(135deg,
+          rgba(255, 255, 255, 0.35),
+          rgba(255, 255, 255, 0.25)
+        );
+      }
+
+      /* Card Icons */
+      .card-icon {
+        font-size: 3rem;
+        margin-bottom: 15px;
+        display: block;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+
+      .card-icon.location-pin {
+        color: #e53935;
+        animation: pin-vibrate 2s ease-in-out infinite;
+      }
+
+      .card-icon.house {
+        color: #8d6e63;
+        animation: house-sway 3s ease-in-out infinite;
+      }
+
+      .card-icon.map {
+        color: #1976d2;
+        animation: map-blink 4s ease-in-out infinite;
+      }
+
+      @keyframes pin-vibrate {
+        0%, 100% { transform: translateX(0); }
+        25% { transform: translateX(-2px); }
+        75% { transform: translateX(2px); }
+      }
+
+      @keyframes house-sway {
+        0%, 100% { transform: rotate(0deg); }
+        25% { transform: rotate(1deg); }
+        75% { transform: rotate(-1deg); }
+      }
+
+      @keyframes map-blink {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.7; transform: scale(1.05); }
+      }
+
+      /* Enhanced Button */
       .btn-map {
-        margin-top: 15px;
-        padding: 10px 20px;
-        background: #2e7d32;
+        margin-top: 20px;
+        padding: 12px 25px;
+        background: linear-gradient(45deg, #2e7d32, #4caf50);
         color: #fff;
         border: none;
-        border-radius: 8px;
+        border-radius: 25px;
         cursor: pointer;
-        transition: background 0.3s ease, transform 0.3s ease;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
       }
+
+      .btn-map::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(45deg, #4caf50, #66bb6a, #2e7d32);
+        transition: left 0.5s ease;
+        z-index: -1;
+      }
+
       .btn-map:hover {
-        background: #1b5e20;
-        transform: scale(1.1);
-        animation: pulse 1s infinite;
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 8px 25px rgba(46, 125, 50, 0.4);
+      }
+
+      .btn-map:hover::before {
+        left: 0;
       }
 
       .lokasi-container iframe {
         width: 100%;
         height: 250px;
-        border-radius: 10px;
-        border: none;
+        border-radius: 15px;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .lokasi-container iframe:hover {
+        border-color: rgba(40, 167, 69, 0.5);
+        box-shadow: 0 0 20px rgba(40, 167, 69, 0.2);
       }
 
       @media (max-width: 768px) {
@@ -649,6 +853,9 @@
           max-width: 100%;
           min-width: auto;
           margin-bottom: 20px;
+        }
+        .background-ornaments {
+          display: none; /* Hide ornaments on mobile for better performance */
         }
       }
 
@@ -857,9 +1064,19 @@
     <!-- Page Content -->
         <!-- Lokasi & Peta Section -->
         <section id="lokasi-peta" class="section-gradient py-5">
+            <!-- Background Ornaments -->
+            <div class="background-ornaments">
+                <div class="leaf-ornament">🌿</div>
+                <div class="leaf-ornament">🍃</div>
+                <div class="leaf-ornament">🌿</div>
+                <div class="leaf-ornament">🍃</div>
+                <div class="bird-ornament">🐦</div>
+                <div class="bird-ornament">🦅</div>
+                <div class="bird-ornament">🐦</div>
+            </div>
             <div class="row">
                 <div class="col-12 text-center mb-5">
-                    <h2 class="display-5 fw-bold" style="color: #2d5a2d;">📍 Lokasi Desa Klabili</h2>
+                    <h2 class="display-5 fw-bold section-heading" style="color: #2d5a2d;">📍 Lokasi Desa Klabili</h2>
                     <p class="lead" style="color: #6c757d;">Temukan lokasi dan cara menuju desa wisata kami</p>
                 </div>
             </div>
