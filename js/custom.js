@@ -82,7 +82,7 @@ function setActiveNavButton() {
     button.classList.remove('active');
     const buttonText = button.textContent.trim();
 
-    // Set active button based on current page
+    // Set active button based on current page (Indonesian)
     if (currentPage === 'index.html' && buttonText === 'Beranda') {
       button.classList.add('active');
     } else if (currentPage === 'fasilitas.html' && buttonText === 'Fasilitas') {
@@ -94,6 +94,20 @@ function setActiveNavButton() {
     } else if (currentPage === 'informasi.html' && buttonText === 'Informasi Desa') {
       button.classList.add('active');
     } else if (currentPage === 'galeri.html' && buttonText === 'Galeri') {
+      button.classList.add('active');
+    }
+    // Set active button based on current page (English)
+    else if (currentPage === 'index_en.html' && buttonText === 'Home') {
+      button.classList.add('active');
+    } else if (currentPage === 'fasilitas_en.html' && buttonText === 'Facilities') {
+      button.classList.add('active');
+    } else if (currentPage === 'tentang_kami_en.html' && buttonText === 'About Us') {
+      button.classList.add('active');
+    } else if (currentPage === 'wisata_budaya_en.html' && buttonText === 'Tourism & Culture') {
+      button.classList.add('active');
+    } else if (currentPage === 'informasi_en.html' && buttonText === 'Village Information') {
+      button.classList.add('active');
+    } else if (currentPage === 'galeri_en.html' && buttonText === 'Gallery') {
       button.classList.add('active');
     }
   });
@@ -187,12 +201,35 @@ function setLanguage(lang) {
   // Trigger the toggle function
   updateLanguageToggleState(lang);
 
+  // Get current page name
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  let targetPage = '';
+
   if (isIndonesian) {
     console.log("Language changed to Indonesian");
-    // Add your Indonesian language implementation here
+    // Navigate to Indonesian version
+    if (currentPage.includes('_en.html')) {
+      targetPage = currentPage.replace('_en.html', '.html');
+    } else if (currentPage === 'index_en.html') {
+      targetPage = 'index.html';
+    } else {
+      targetPage = currentPage; // Already Indonesian
+    }
   } else {
     console.log("Language changed to English");
-    // Add your English language implementation here
+    // Navigate to English version
+    if (currentPage === 'index.html') {
+      targetPage = 'index_en.html';
+    } else if (currentPage.includes('.html') && !currentPage.includes('_en.html')) {
+      targetPage = currentPage.replace('.html', '_en.html');
+    } else {
+      targetPage = currentPage; // Already English
+    }
+  }
+
+  // Navigate to the target page if it's different from current
+  if (targetPage !== currentPage) {
+    window.location.href = targetPage;
   }
 }
 
