@@ -912,7 +912,7 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      function animateCountUp(el, target, duration = 15000) { // <-- 8 detik
+      function animateCountUp(el, target, duration = 1000) { // <-- 8 detik
         let start = 0;
         let startTime = null;
         function updateCount(timestamp) {
@@ -930,7 +930,7 @@
 
       document.querySelectorAll('.countup').forEach(el => {
         const target = parseInt(el.getAttribute('data-target'), 10);
-        animateCountUp(el, target, 15000); // <-- 8 detik
+        animateCountUp(el, target, 1000); // <-- 8 detik
       });
     });
   </script>
