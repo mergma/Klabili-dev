@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home - Klabili Tourism Village</title>
+  <link rel="stylesheet" href="css/index.css" />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap/bootstrap.css" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/custom.css" />
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <!-- Left side: Logo -->
+      <div class="navbar-brand-container" style="flex: 1">
+        <a class="navbar-brand" href="#"><img src="img/Logo_Desa_Wisata_Klabili-removebg-preview.png" alt=""
+            width="100px" /></a>
+      </div>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Language Toggle Switch - Outside collapsible menu -->
+      <div class="navbar-nav d-flex align-items-center">
+        <div class="nav-item d-flex align-items-center language-toggle-container en-active"
+          id="languageToggleContainer">
+          <svg class="flag-img flag-en active" width="52" height="36" viewBox="0 0 20 15"
+            xmlns="http://www.w3.org/2000/svg" onclick="setLanguage('en')">
+            <rect width="20" height="15" fill="#012169" />
+            <path d="M0 0L20 15M20 0L0 15" stroke="#fff" stroke-width="2" />
+            <path d="M0 0L20 15M20 0L0 15" stroke="#C8102E" stroke-width="1" />
+            <path d="M10 0V15M0 7.5H20" stroke="#fff" stroke-width="3" />
+            <path d="M10 0V15M0 7.5H20" stroke="#C8102E" stroke-width="2" />
+          </svg>
+          <span class="language-toggle-dot"></span>
+          <svg class="flag-img flag-id inactive" width="32" height="22" viewBox="0 0 20 15"
+            xmlns="http://www.w3.org/2000/svg" onclick="setLanguage('id')">
+            <rect width="20" height="7.5" fill="#FF0000" />
+            <rect y="7.5" width="20" height="7.5" fill="#FFFFFF" />
+          </svg>
+        </div>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- Center: Navigation items -->
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 justify-content-center" style="flex: 1">
+          <li class="nav-item">
+            <button class="btn nav-btn active" type="button" data-nav-url="index_en.html">
+              Home
+            </button>
+          </li>
+
+          <li class="nav-item dropdown">
+            <button class="btn nav-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              About Us
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <button class="dropdown-item" type="button" data-nav-url="tentang_kami_en.html#profil-desa">
+                  Village Profile
+                </button>
+              </li>
+              <li>
+                <button class="dropdown-item" type="button" data-nav-url="tentang_kami_en.html#struktur-desa">
+                  Village Structure
+                </button>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <button class="btn nav-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Facilities
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <button class="dropdown-item" type="button" data-nav-url="fasilitas_en.html#fasilitas-umum-desa">
+                  Public Village Facilities
+                </button>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <button class="btn nav-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Tourism & Culture
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <button class="dropdown-item" type="button" data-nav-url="wisata_budaya_en.html#spot-wisata">
+                  Tourist Spots
+                </button>
+              </li>
+              <li>
+                <button class="dropdown-item" type="button" data-nav-url="wisata_budaya_en.html#budaya-lokal">
+                  Local Culture
+                </button>
+              </li>
+              <li>
+                <button class="dropdown-item" type="button" data-nav-url="wisata_budaya_en.html#acara-tahunan">
+                  Annual Events
+                </button>
+              </li>
+              <li>
+                <button class="dropdown-item" type="button" data-nav-url="wisata_budaya_en.html#kerajinan-tangan">
+                  Handicrafts
+                </button>
+              </li>
+              <li>
+                <button class="dropdown-item" type="button" data-nav-url="wisata_budaya_en.html#kuliner-lokal">
+                  Local Cuisine
+                </button>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li>
+                <button class="dropdown-item" type="button" data-nav-url="wisata_budaya_en.html#souvenir">
+                  Souvenirs
+                </button>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <button class="btn nav-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Village Information
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <button class="dropdown-item" type="button" data-nav-url="informasi_en.html#lokasi-peta">
+                  Location & Map
+                </button>
+              </li>
+              <li>
+                <button class="dropdown-item" type="button" data-nav-url="informasi_en.html#kontak">
+                  Contact
+                </button>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <button class="btn nav-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Gallery
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <button class="dropdown-item" type="button" data-nav-url="galeri_en.html#dokumentasi-acara">
+                  Event Documentation
+                </button>
+              </li>
+              <li>
+                <button class="dropdown-item" type="button" data-nav-url="galeri_en.html#kegiatan-masyarakat">
+                  Community Activities
+                </button>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="container-fluid hero-section d-flex align-items-center justify-content-center" style="height: 100vh">
+    <div class="text-center text-white">
+      <h1 class="display-4 mb-3 fw-bold">Klabili Tourism Village</h1>
+      <p class="lead mb-4">
+        "Experience the charm of nature, culture, and the warmth of local community."
+      </p>
+      <button class="boton-elegante" onclick="scrollToOverview()">
+        Explore<span class="arrow">&rarr;</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Village Overview Section -->
+  <section id="village-overview" class="py-5 bg-light">
+    <div class="container" style="text-align: justify;">
+      <div class="row">
+        <div class="col-lg-12 text-center mb-5">
+          <h2 class="display-5 fw-bold text-primary fade-in-on-scroll">
+            Welcome to Klabili Village
+          </h2>
+          <p class="lead text-muted fade-in-on-scroll">
+            A hidden gem in the heart of Indonesia offering
+            authentic tourism experiences
+          </p>
+        </div>
+      </div>
+
+      <div class="row g-4 mb-5">
+        <div class="col-lg-6">
+          <div class="card h-100 shadow-sm border-0 fade-in-on-scroll">
+            <div class="card-body p-4">
+              <div class="d-flex align-items-center mb-3">
+                <div class="bg-primary rounded-circle p-3 me-3">
+                  <i class="fas fa-map-marker-alt text-white"></i>
+                </div>
+                <h4 class="card-title mb-0">Location & Geography</h4>
+              </div>
+              <p class="card-text">
+                Welcome to Klabili Village, a hidden gem in Selemkay District, Tambrauw Regency,
+                Southwest Papua.
+                Geographically, this village is located in the northern part of Papua Island and borders directly with Sorong Regency.
+                Access to Klabili offers its own adventure! You will take a challenging overland journey from Sorong City for about 2 hours using a 4WD vehicle.
+                The roads that are still dominated by soil and hills promise an epic journey to untouched natural beauty.
+                Klabili Village is surrounded by dense tropical forests, clear rivers, and stunning mountains.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="card h-100 shadow-sm border-0 fade-in-on-scroll">
+            <div class="card-body p-4">
+              <div class="d-flex align-items-center mb-3">
+                <div class="bg-success rounded-circle p-3 me-3">
+                  <i class="fas fa-users text-white"></i>
+                </div>
+                <h4 class="card-title mb-0">Community & Culture</h4>
+              </div>
+              <p class="card-text">
+                With a population of around 2,500 people, the Klabili community, which is predominantly Moi Tribe, is known
+                to be very friendly and uphold ancestral traditions.
+                They live in harmony with nature, preserving traditional knowledge in farming, hunting, and processing
+                forest products.
+                Local culture is preserved through traditional dances, rituals, and beautiful handicrafts such as weaving,
+                noken, and beaded decorations.
+                The Moi Tribe has a strong clan-based social structure, with traditional leaders and clan heads who
+                play important roles.
+                Life in Klabili is greatly influenced by animistic beliefs, where nature and ancestors are honored
+                through various traditional ceremonies.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Village Highlights Section -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center mb-5">
+          <h2 class="display-5 fw-bold">Klabili Village Excellence</h2>
+          <p class="lead text-muted">
+            Discover the unique charm that makes our village special
+          </p>
+        </div>
+      </div>
+      <div class="row g-4 justify-content-center" id="village-highlights">
+        <!-- Example Card -->
+        <div class="col-lg-4 col-md-6">
+          <div class="highlight-card" data-title="Nature Tourism"
+            data-desc="Step into the heart of Klabili's tropical forest, where real adventure awaits.
+            Witness the wonder of birdwatching in their natural habitat, not in cages, but in the captivating wild.
+            Accompanied by knowledgeable local guides, you can spot rare species in the early morning when they are most active.
+            Additionally, explore the hidden Klabili Waterfall, conquer challenging trekking trails, and enter bat caves
+            to admire spectacular natural formations. This nature experience is our way of sharing the wealth of environmental services
+            that are the breath of life in this village.">
+            <div class="icon-wrap bg-primary">
+              <i class="fas fa-mountain text-white fa-lg"></i>
+            </div>
+            <h5 class="fw-bold mt-3 mb-0">Nature Tourism</h5>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="highlight-card" data-title="Organic Farming"
+            data-desc="In Klabili, organic farming is a reflection of a way of life that has become ingrained.
+            Unlike other villages, here you will find the philosophy of sufficiency held firmly by the Moi Tribe.
+            Witness firsthand how the community harvests their garden produce subsistently, without destroying, only taking what is needed.
+            This is a unique opportunity to learn about sago, taro, and cassava, which are the main food sources, as well as understand
+            the harmonious relationship between humans and nature that has been woven for thousands of years.">
+            <div class="icon-wrap bg-success">
+              <i class="fas fa-seedling text-white fa-lg"></i>
+            </div>
+            <h5 class="fw-bold mt-3 mb-0">Organic Farming</h5>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="highlight-card" data-title="Traditional Crafts"
+            data-desc="Take home more than just souvenirs, take home a story.
+            Noken, Papua's traditional bag recognized by UNESCO as a world cultural heritage, is not just a product.
+            Made from tree bark fiber and carried with the forehead, noken symbolizes maturity, peace, and fertility for Papuan women.
+            Every noken weave and bead sparkle has deep meaning, reflecting the local wisdom and authentic identity of the Moi Tribe.">
+            <div class="icon-wrap bg-warning">
+              <i class="fas fa-palette text-white fa-lg"></i>
+            </div>
+            <h5 class="fw-bold mt-3 mb-0">Traditional Crafts</h5>
+          </div>
+        </div>
+        <!-- Add after the existing 3 cards -->
+        <div class="col-lg-4 col-md-6">
+          <div class="highlight-card" data-title="Authentic Cuisine"
+            data-desc="Feel the warmth of the Moi Tribe through authentic flavors.
+            In Klabili, you won't find fancy restaurants, but Community Kitchens managed directly by village mothers.
+            Enjoy traditional dishes like papeda and snakehead fish cooked in bamboo or wrapped in leaves, a hereditary cooking method
+            that creates unmatched deliciousness. This is an intimate dining experience, as if you were being hosted in your own home.">
+            <div class="icon-wrap bg-info">
+              <i class="fas fa-utensils text-white fa-lg"></i>
+            </div>
+            <h5 class="fw-bold mt-3 mb-0">Authentic Cuisine</h5>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="highlight-card" data-title="Arts & Culture"
+            data-desc="Arts and culture are the beating heart of Klabili Village.
+            Witness stunning traditional dance performances, accompanied by authentic Moi Tribe music that tells the stories of ancestors.
+            The highlight of your visit is Cultural Night, a celebration that unites the entire village, where you can eat together
+            and feel the togetherness in an atmosphere full of brotherhood.
+            A visit to the SALSES Studio and Cultural House will provide deeper insights into this invaluable heritage.">
+            <div class="icon-wrap bg-danger">
+              <i class="fas fa-music text-white fa-lg"></i>
+            </div>
+            <h5 class="fw-bold mt-3 mb-0">Arts & Culture</h5>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="highlight-card" data-title="Homestay"
+            data-desc="Forget hotels and enjoy an unforgettable living experience.
+            In Klabili, homestay is not just a place to stay, but an opportunity to become part of a local family.
+            Although the facilities are simple, with hotel-equivalent beds but without AC, the warmth you feel will be far more valuable.
+            Exchange stories, share laughter, and experience firsthand the daily life of the Moi Tribe, forging bonds that you will always remember.">
+            <div class="icon-wrap bg-secondary">
+              <i class="fas fa-home text-white fa-lg"></i>
+            </div>
+            <h5 class="fw-bold mt-3 mb-0">Homestay</h5>
+          </div>
+        </div>
+      </div>
+      <!-- Modal Card Overlay -->
+      <div id="highlight-modal" class="highlight-modal">
+        <div class="highlight-modal-content">
+          <button class="highlight-modal-close" aria-label="Close">&times;</button>
+          <div class="highlight-modal-icon"></div>
+          <h5 class="highlight-modal-title"></h5>
+          <p class="highlight-modal-desc"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Village Statistics Section -->
+  <section class="py-5 bg-primary text-white">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="p-3">
+            <h2 class="display-4 fw-bold mb-2">
+              <span class="countup" data-target="15">0</span>+
+            </h2>
+            <p class="lead mb-0">Tourist Spots</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="p-3">
+            <h2 class="display-4 fw-bold mb-2">
+              <span class="countup" data-target="25">0</span>
+            </h2>
+            <p class="lead mb-0">Homestays</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="p-3">
+            <h2 class="display-4 fw-bold mb-2">
+              <span class="countup" data-target="70">0</span>±
+            </h2>
+            <p class="lead mb-0">Tourists/Month</p>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="p-3">
+            <h2 class="display-4 fw-bold mb-2">
+              <span class="countup" data-target="10">0</span>
+            </h2>
+            <p class="lead mb-0">Years Developing</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Village Activities Section -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center mb-5">
+          <h2 class="display-5 fw-bold fade-in-on-scroll">Activities & Experiences</h2>
+          <p class="lead text-muted fade-in-on-scroll">
+            Various exciting activities you can enjoy in our village
+          </p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-6 col-md-6">
+          <div class="card border-0 shadow-sm h-100 slide-in-left" data-delay="200">
+            <div class="card-body p-4">
+              <div class="d-flex align-items-start">
+                <div class="bg-primary rounded-circle p-2 me-3 flex-shrink-0">
+                  <i class="fas fa-binoculars text-white"></i>
+                </div>
+                <div>
+                  <h5 class="card-title">Birdwatching in tropical forest</h5>
+                  <p class="card-text text-muted">
+                    Enjoy an exciting birdwatching experience in Klabili's pristine tropical forest. Here, tourists are accompanied by guides in groups to observe various wild Papuan birds directly.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6">
+          <div class="card border-0 shadow-sm h-100 slide-in-right" data-delay="400">
+            <div class="card-body p-4">
+              <div class="d-flex align-items-start">
+                <div class="bg-success rounded-circle p-2 me-3 flex-shrink-0">
+                  <i class="fas fa-hiking text-white"></i>
+                </div>
+                <div>
+                  <h5 class="card-title">Trekking to explore nature</h5>
+                  <p class="card-text text-muted">
+                    Explore trekking trails in the forests and hills around Klabili village. Every step offers views of Southwest Papua's green and pristine nature.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6">
+          <div class="card border-0 shadow-sm h-100 slide-in-left" data-delay="600">
+            <div class="card-body p-4">
+              <div class="d-flex align-items-start">
+                <div class="bg-warning rounded-circle p-2 me-3 flex-shrink-0">
+                  <i class="fas fa-campground text-white"></i>
+                </div>
+                <div>
+                  <h5 class="card-title">Camping in the open</h5>
+                  <p class="card-text text-muted">
+                    Spend an exciting night under the starry sky by setting up tents in Klabili. The quiet atmosphere and fresh night air in the tropical forest make the camping experience even more memorable.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6">
+          <div class="card border-0 shadow-sm h-100 slide-in-right" data-delay="800">
+            <div class="card-body p-4">
+              <div class="d-flex align-items-start">
+                <div class="bg-info rounded-circle p-2 me-3 flex-shrink-0">
+                  <i class="fas fa-music text-white"></i>
+                </div>
+                <div>
+                  <h5 class="card-title">Moi Tribe traditional dance</h5>
+                  <p class="card-text text-muted">
+                    Witness stunning cultural attractions in the form of Moi Tribe traditional dances. Local dancers wear complete Papuan traditional costumes with energetic traditional music.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6">
+          <div class="card border-0 shadow-sm h-100 slide-in-left" data-delay="1000">
+            <div class="card-body p-4">
+              <div class="d-flex align-items-start">
+                <div class="bg-danger rounded-circle p-2 me-3 flex-shrink-0">
+                  <i class="fas fa-utensils text-white"></i>
+                </div>
+                <div>
+                  <h5 class="card-title">Authentic Papuan local cuisine</h5>
+                  <p class="card-text text-muted">
+                    Taste various traditional Klabili dishes, such as savory papeda, taro, cassava, and snakehead fish processed Papua-style. All these dishes are cooked by village mothers with hereditary recipes.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6">
+          <div class="card border-0 shadow-sm h-100 slide-in-right" data-delay="1200">
+            <div class="card-body p-4">
+              <div class="d-flex align-items-start">
+                <div class="bg-secondary rounded-circle p-2 me-3 flex-shrink-0">
+                  <i class="fas fa-water text-white"></i>
+                </div>
+                <div>
+                  <h5 class="card-title">Klabili Waterfall</h5>
+                  <p class="card-text text-muted">
+                    Visit the enchanting Klabili Waterfall in the middle of the forest. Its clear water splashes and green surroundings provide their own coolness.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6">
+          <div class="card border-0 shadow-sm h-100 slide-in-left" data-delay="1400">
+            <div class="card-body p-4">
+              <div class="d-flex align-items-start">
+                <div class="bg-primary rounded-circle p-2 me-3 flex-shrink-0">
+                  <i class="fas fa-camera text-white"></i>
+                </div>
+                <div>
+                  <h5 class="card-title">Nature photo spots</h5>
+                  <p class="card-text text-muted">
+                    Capture moments at Klabili's beautiful photo spots. There are panoramic hill areas and locations near Klabili Waterfall, perfect for family photos or selfies with stunning natural backgrounds.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6">
+          <div class="card border-0 shadow-sm h-100 slide-in-right" data-delay="1600">
+            <div class="card-body p-4">
+              <div class="d-flex align-items-start">
+                <div class="bg-success rounded-circle p-2 me-3 flex-shrink-0">
+                  <i class="fas fa-moon text-white"></i>
+                </div>
+                <div>
+                  <h5 class="card-title">Local cultural night</h5>
+                  <p class="card-text text-muted">
+                    Join Klabili's unique cultural night with traditional music performances and communal dining with residents. In this event, visitors experience the excitement of traditional Papuan music and camaraderie before the end of their visit.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6">
+          <div class="card border-0 shadow-sm h-100 slide-in-left" data-delay="1800">
+            <div class="card-body p-4">
+              <div class="d-flex align-items-start">
+                <div class="bg-warning rounded-circle p-2 me-3 flex-shrink-0">
+                  <i class="fas fa-mountain text-white"></i>
+                </div>
+                <div>
+                  <h5 class="card-title">Bat Cave & Orchid Garden</h5>
+                  <p class="card-text text-muted">
+                    Explore Klabili's adventurous Bat Cave, then visit the natural orchid garden around it. Here visitors can see bat colonies and various endemic Papuan orchids in their habitat.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6">
+          <div class="card border-0 shadow-sm h-100 slide-in-right" data-delay="2000">
+            <div class="card-body p-4">
+              <div class="d-flex align-items-start">
+                <div class="bg-info rounded-circle p-2 me-3 flex-shrink-0">
+                  <i class="fas fa-home text-white"></i>
+                </div>
+                <div>
+                  <h5 class="card-title">Homestay & interaction with locals</h5>
+                  <p class="card-text text-muted">
+                    Stay with local residents in traditional Klabili homestays and feel the warm atmosphere of a Papuan village. Accommodation in the form of residents' houses allows tourists to directly learn Moi culture and village daily life.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Village Facilities Section -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center mb-5">
+          <h2 class="display-5 fw-bold">Village Facilities</h2>
+          <p class="lead text-muted">
+            Complete facilities for tourist comfort
+          </p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="text-center p-3">
+            <div class="bg-primary rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center"
+              style="width: 60px; height: 60px">
+              <i class="fas fa-wifi text-white fa-lg"></i>
+            </div>
+            <h6 class="fw-bold">Free WiFi</h6>
+            <small class="text-muted">Fast internet in public areas</small>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="text-center p-3">
+            <div class="bg-success rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center"
+              style="width: 60px; height: 60px">
+              <i class="fas fa-parking text-white fa-lg"></i>
+            </div>
+            <h6 class="fw-bold">Parking Area</h6>
+            <small class="text-muted">Safe and spacious parking</small>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="text-center p-3">
+            <div class="bg-warning rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center"
+              style="width: 60px; height: 60px">
+              <i class="fas fa-restroom text-white fa-lg"></i>
+            </div>
+            <h6 class="fw-bold">Public Restrooms</h6>
+            <small class="text-muted">Clean and comfortable facilities</small>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-12 text-center">
+          <a href="fasilitas_en.html" class="btn btn-lihat-lebih px-5 py-3">
+            <span>See More</span>
+            <svg class="arrow-anim" width="22" height="22" viewBox="0 0 22 22" fill="none">
+              <path d="M6 11H16M16 11L12.5 7.5M16 11L12.5 14.5" stroke="#fff" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- Call to Action Section -->
+  <section class="py-5 cta-section text-white">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center">
+          <h2 class="display-5 fw-bold mb-4">
+            Ready to Experience an Unforgettable Adventure?
+          </h2>
+          <p class="lead mb-4">
+            Join thousands of tourists who have experienced
+            the magic of Klabili Village. Plan your visit now!
+          </p>
+          <div class="d-flex flex-column flex-md-row gap-3 justify-content-center">
+            <a href="https://wa.me/6282236955445?text=Hello%20I%20want%20to%20ask" target="_blank" class="btn btn-light btn-lg px-4">
+              <i class="fas fa-calendar-alt me-2"></i>Plan Your Visit
+            </a>
+            <!-- Contact Us section removed -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-5">
+    <div class="container">
+      <div class="row">
+        <!-- Column 1: Logo and Description -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="mb-3">
+            <img src="img/Logo_Desa_Wisata_Klabili-removebg-preview.png" alt="Klabili Tourism Village Logo" width="150px" />
+          </div>
+          <p class="text-white-50">
+            Klabili Tourism Village offers authentic tourism experiences with natural beauty, local culture, and the warmth of the Moi Tribe community.
+          </p>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <h5 class="fw-bold mb-3">Quick Links</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="index_en.html" class="text-white-50 text-decoration-none">Home</a></li>
+            <li class="mb-2"><a href="tentang_kami_en.html" class="text-white-50 text-decoration-none">About Us</a></li>
+            <li class="mb-2"><a href="fasilitas_en.html" class="text-white-50 text-decoration-none">Facilities</a></li>
+            <li class="mb-2"><a href="wisata_budaya_en.html" class="text-white-50 text-decoration-none">Tourism & Culture</a></li>
+            <li class="mb-2"><a href="galeri_en.html" class="text-white-50 text-decoration-none">Gallery</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Contact Info -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <h5 class="fw-bold mb-3">Contact Us</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2">
+              <i class="fas fa-phone me-2"></i>
+              <span>+62 822-3695-5445</span>
+            </li>
+            <li class="mb-2">
+              <i class="fas fa-map-marker-alt me-2"></i>
+              <span>Klabili Village, Selemkai District, Tambrauw Regency</span>
+            </li>
+            <li class="mb-2">
+              <i class="fas fa-envelope me-2"></i>
+              <span>info@desaklabili.com</span>
+             </li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Social Media -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <h5 class="fw-bold mb-3">Follow Us</h5>
+          <div class="d-flex">
+            <a href="https://www.instagram.com/klabili_bridwhtcing/" target="_blank" rel="noopener noreferrer"
+              class="socialContainer containerOne me-3">
+              <svg class="socialSvg instagramSvg" viewBox="0 0 16 16">
+                <path
+                  d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z">
+                </path>
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=100094418988540" target="_blank" rel="noopener noreferrer"
+              class="socialContainer containerTwo me-3">
+              <svg class="socialSvg facebookSvg" viewBox="0 0 16 16">
+                <path
+                  d="M15.117 0H.883A.884.884 0 0 0 0 .883v14.234C0 15.548.396 16 .883 16h7.675v-6.176H6.548V7.41h2.01V5.797c0-1.99 1.216-3.078 2.993-3.078.868 0 1.617.064 1.836.093v2.13h-1.26c-.988 0-1.18.47-1.18 1.158V7.41h2.36l-.308 2.414h-2.052V16h4.025A.884.884 0 0 0 16 15.117V.883A.884.884 0 0 0 15.117 0z">
+                </path>
+              </svg>
+            </a>
+            <a href="https://wa.me/6282236955445?text=Hello%20I%20want%20to%20ask" target="_blank"
+              rel="noopener noreferrer" class="socialContainer
+              containerFour">
+              <svg class="socialSvg whatsappSvg" viewBox="0 0 16 16">
+                <path
+                  d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z">
+                </path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <hr class="my-4">
+      <div class="row">
+        <div class="col-12 text-center">
+          <p class="mb-0 text-white-50">
+            &copy; 2025 Klabili Tourism Village. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <button id="scrollToTopBtn" class="btn btn-success rounded-circle shadow"
+    style="position: fixed; bottom: 32px; right: 32px; z-index: 999; display: none; width: 48px; height: 48px; align-items: center; justify-content: center;">
+    <i class="fas fa-leaf"></i>
+  </button>
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+  <!-- Bootstrap JS -->
+  <script src="js/bootstrap/bootstrap.bundle.js"></script>
+  <!-- Custom JS -->
+  <script src="js/custom.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const container = document.getElementById("languageToggleContainer");
+      const flagEn = container.querySelector(".flag-en");
+      const flagId = container.querySelector(".flag-id");
+
+      flagEn.addEventListener("click", function () {
+        flagEn.classList.add("active");
+        flagEn.classList.remove("inactive");
+        flagId.classList.add("inactive");
+        flagId.classList.remove("active");
+        container.classList.add("en-active");
+        container.classList.remove("id-active");
+      });
+
+      flagId.addEventListener("click", function () {
+        flagId.classList.add("active");
+        flagId.classList.remove("inactive");
+        flagEn.classList.add("inactive");
+        flagEn.classList.remove("active");
+        container.classList.add("id-active");
+        container.classList.remove("en-active");
+      });
+    });
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      // Card click handler
+      document.querySelectorAll('.highlight-card').forEach(card => {
+        card.addEventListener('click', function () {
+          const modal = document.getElementById('highlight-modal');
+          const icon = card.querySelector('.icon-wrap').cloneNode(true);
+          const title = card.getAttribute('data-title');
+          const desc = card.getAttribute('data-desc');
+          // Set modal content
+          const modalIcon = modal.querySelector('.highlight-modal-icon');
+          modalIcon.innerHTML = '';
+          modalIcon.appendChild(icon);
+          modal.querySelector('.highlight-modal-title').textContent = title;
+          const descEl = modal.querySelector('.highlight-modal-desc');
+          descEl.textContent = '';
+          modal.classList.add('active');
+          // Typing animation
+          let i = 0;
+          function typeWriter() {
+            if (i <= desc.length) {
+              descEl.textContent = desc.slice(0, i);
+              i++;
+              setTimeout(typeWriter, 18 + Math.random() * 22);
+            }
+          }
+          typeWriter();
+        });
+      });
+      // Close modal
+      document.querySelector('.highlight-modal-close').onclick = function () {
+        document.getElementById('highlight-modal').classList.remove('active');
+      };
+      // Close modal on overlay click
+      document.getElementById('highlight-modal').onclick = function (e) {
+        if (e.target === this) this.classList.remove('active');
+      };
+      // ESC key closes modal
+      document.addEventListener('keydown', function (e) {
+        if (e.key === "Escape") document.getElementById('highlight-modal').classList.remove('active');
+      });
+    });
+  </script>
+
+  <script>
+    // Robust smooth scroll function for the "Explore" button
+    function scrollToOverview() {
+      const targetElement = document.getElementById("village-overview");
+
+      if (!targetElement) {
+        console.error("Target element not found");
+        return;
+      }
+
+      // Always use JavaScript animation for consistent behavior
+      const targetPosition = targetElement.offsetTop - 80; // Account for navbar
+      const startPosition =
+        window.pageYOffset || document.documentElement.scrollTop;
+      const distance = targetPosition - startPosition;
+      const duration = 1000; // 1 second duration
+      let start = null;
+
+      function animation(currentTime) {
+        if (start === null) start = currentTime;
+        const timeElapsed = currentTime - start;
+        const progress = Math.min(timeElapsed / duration, 1);
+
+        // Easing function (ease-in-out)
+        const easeInOutQuad =
+          progress < 0.5
+            ? 2 * progress * progress
+            : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+
+        const currentPosition = startPosition + distance * easeInOutQuad;
+        window.scrollTo(0, currentPosition);
+
+        if (timeElapsed < duration) {
+          requestAnimationFrame(animation);
+        }
+      }
+
+      requestAnimationFrame(animation);
+    }
+  </script>
+
+  <script>
+    // Animations on scroll for multiple classes (repeatable)
+    document.addEventListener("DOMContentLoaded", function () {
+      const animEls = document.querySelectorAll('.fade-in-on-scroll, .slide-in-left, .slide-in-right');
+      const observer = new IntersectionObserver(
+        entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const delay = entry.target.getAttribute('data-delay') || 0;
+              setTimeout(() => {
+                entry.target.classList.add('visible');
+              }, delay);
+            } else {
+              entry.target.classList.remove('visible');
+            }
+          });
+        },
+        { threshold: 0.3 }
+      );
+      animEls.forEach(el => observer.observe(el));
+    });
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      function animateCountUp(el, target, duration = 1000) { // <-- 8 seconds
+        let start = 0;
+        let startTime = null;
+        function updateCount(timestamp) {
+          if (!startTime) startTime = timestamp;
+          const progress = Math.min((timestamp - startTime) / duration, 1);
+          el.textContent = Math.floor(progress * (target - start) + start);
+          if (progress < 1) {
+            requestAnimationFrame(updateCount);
+          } else {
+            el.textContent = target;
+          }
+        }
+        requestAnimationFrame(updateCount);
+      }
+
+      document.querySelectorAll('.countup').forEach(el => {
+        const target = parseInt(el.getAttribute('data-target'), 10);
+        animateCountUp(el, target, 1000); // <-- 8 seconds
+      });
+    });
+  </script>
+
+  <script>
+    // Show/hide button on scroll
+    window.addEventListener('scroll', function () {
+      const btn = document.getElementById('scrollToTopBtn');
+      if (window.scrollY > 200) {
+        btn.classList.add('show');
+      } else {
+        btn.classList.remove('show');
+      }
+    });
+
+    // Scroll to top on click
+    document.getElementById('scrollToTopBtn').onclick = function () {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+  </script>
+
+</body>
+
+</html>

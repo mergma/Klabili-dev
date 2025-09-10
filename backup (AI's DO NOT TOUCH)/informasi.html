@@ -376,9 +376,9 @@
         
         <!-- Language Toggle Switch - Outside collapsible menu -->
         <div class="navbar-nav d-flex align-items-center">
-          <div class="nav-item d-flex align-items-center language-toggle-container en-active"
+          <div class="nav-item d-flex align-items-center language-toggle-container id-active"
             id="languageToggleContainer">
-            <svg class="flag-img flag-en active" width="52" height="36" viewBox="0 0 20 15"
+            <svg class="flag-img flag-en inactive" width="52" height="36" viewBox="0 0 20 15"
               xmlns="http://www.w3.org/2000/svg" onclick="setLanguage('en')">
               <rect width="20" height="15" fill="#012169" />
               <path d="M0 0L20 15M20 0L0 15" stroke="#fff" stroke-width="2" />
@@ -387,7 +387,7 @@
               <path d="M10 0V15M0 7.5H20" stroke="#C8102E" stroke-width="2" />
             </svg>
             <span class="language-toggle-dot"></span>
-            <svg class="flag-img flag-id inactive" width="32" height="22" viewBox="0 0 20 15"
+            <svg class="flag-img flag-id active" width="32" height="22" viewBox="0 0 20 15"
               xmlns="http://www.w3.org/2000/svg" onclick="setLanguage('id')">
               <rect width="20" height="7.5" fill="#FF0000" />
               <rect y="7.5" width="20" height="7.5" fill="#FFFFFF" />
@@ -518,161 +518,115 @@
     </nav>
 
     <!-- Page Title -->
-    <div class="container-fluid bg-primary text-white py-5 hero-pattern position-relative">
-        <div class="floating-shapes">
-            <div class="shape circle" style="top: 20%; left: 10%; animation-delay: 0s;"></div>
-            <div class="shape triangle" style="top: 60%; right: 15%; animation-delay: 2s;"></div>
-            <div class="shape square" style="top: 40%; left: 80%; animation-delay: 4s;"></div>
+     <div class="container-fluid bg-primary text-white py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center">
+            <h1 class="display-4 fw-bold mb-3 text-white">Informasi Desa Klabili</h1>
+            <p class="lead">Panduan lengkap informasi dan lokasi Desa Klabili</p>
         </div>
-        <div class="container position-relative" style="z-index: 2;">
-            <div class="row">
-                <div class="col-12 text-center">
-                    <h1 class="display-4 fw-bold mb-3 fade-in-section animated-title" style="color: #FFFFFF; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">Informasi Desa Wisata Klabili</h1>
-                    <p class="lead fade-in-section section-subtitle" style="color: #FFFFFF; text-shadow: 1px 1px 2px rgba(0,0,0,0.3); animation-delay: 0.3s;">Informasi lengkap untuk memudahkan kunjungan Anda</p>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
+  </div>
 
     <!-- Page Content -->
         <!-- Lokasi & Peta Section -->
-        <section id="lokasi-peta" class="py-5">
+        <section id="lokasi-peta" class="py-5" style="background: linear-gradient(135deg, #f0f8f0 0%, #ffffff 100%);">
             <div class="row">
                 <div class="col-12 text-center mb-5">
-                    <h2 class="display-5 fw-bold text-primary">Lokasi & Peta</h2>
-                    <p class="lead text-muted">Panduan lokasi dan akses menuju Desa Klabili</p>
+                    <h2 class="display-5 fw-bold" style="color: #2d5a2d;">📍 Lokasi Desa Klabili</h2>
+                    <p class="lead" style="color: #6c757d;">Temukan lokasi dan cara menuju desa wisata kami</p>
                 </div>
             </div>
 
-            <div class="row g-4">
-                <div class="col-12 d-flex justify-content-center">
-                    <div class="card border-0 shadow-lg" style="width: 100%; max-width: 800px; background: linear-gradient(135deg, #d4edda, #a8d5a3); border-radius: 20px; box-shadow: 0 8px 16px rgba(0, 128, 0, 0.25); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-                        <div class="card-body p-4 pt-3 pb-3 text-start">
-                            <h5 class="card-title animated-title text-center" style="color: #155724; font-weight: 800; font-size: 1.6rem;">
-                                <i class="fas fa-map-marker-alt me-2"></i>Alamat Lengkap
-                            </h5>
-                            <div class="row justify-content-center">
-                                <div class="col-md-6 d-flex justify-content-center">
-                                    <div class="address-content" style="background: #a8d5a3; border-radius: 15px; padding: 25px 30px; border: 2px solid #6ca66c; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); width: 100%; max-width: 400px; margin: 20px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                                        <div class="address-item mb-3" style="display: flex; align-items: center; margin-bottom: 15px;">
-                                            <i class="fas fa-home text-success me-3" style="font-size: 1.7rem;"></i>
-                                            <span style="font-size: 1.3rem; font-weight: 700; color: #2f6f2f;">Kampung Klabili</span>
-                                        </div>
-                                        <div class="address-item mb-3" style="display: flex; align-items: center; margin-bottom: 12px;">
-                                            <i class="fas fa-map-marked-alt text-primary me-3" style="font-size: 1.5rem;"></i>
-                                            <span style="font-size: 1.15rem; color: #3a5f3a;">Distrik Selemkai</span>
-                                        </div>
-                                        <div class="address-item mb-3" style="display: flex; align-items: center; margin-bottom: 12px;">
-                                            <i class="fas fa-city text-info me-3" style="font-size: 1.5rem;"></i>
-                                            <span style="font-size: 1.15rem; color: #3a5f3a;">Kabupaten Tambrauw</span>
-                                        </div>
-                                        <div class="address-item mb-3" style="display: flex; align-items: center; margin-bottom: 12px;">
-                                            <i class="fas fa-flag text-warning me-3" style="font-size: 1.5rem;"></i>
-                                            <span style="font-size: 1.15rem; color: #3a5f3a;">Provinsi Papua Barat</span>
-                                        </div>
-                                        <div class="address-item" style="display: flex; align-items: center;">
-                                            <i class="fas fa-globe-americas text-danger me-3" style="font-size: 1.5rem;"></i>
-                                            <span style="font-size: 1.15rem; color: #3a5f3a;">Indonesia</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 d-flex flex-column align-items-center">
-                                    <div class="gps-coordinates" style="background: linear-gradient(135deg, rgba(40, 167, 69, 0.1), rgba(40, 167, 69, 0.05)); border-radius: 15px; padding: 20px; border: 2px solid rgba(40, 167, 69, 0.3); box-shadow: 0 4px 8px rgba(0,0,0,0.1); text-align: center; width: 100%; max-width: 400px; margin: 20px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
-                                        <h6 style="color: #19692c; font-weight: 700; margin-bottom: 15px;">
-                                            <i class="fas fa-satellite text-success me-2"></i>Koordinat GPS
-                                        </h6>
-                                        <div class="coordinate-item mb-2" style="display: flex; align-items: center; justify-content: center;">
-                                            <i class="fas fa-arrow-up text-primary me-2"></i>
-                                            <span style="font-size: 1rem; font-weight: 600; color: #2f4f2f;">Latitude: -0.7893° S</span>
-                                        </div>
-                                        <div class="coordinate-item" style="display: flex; align-items: center; justify-content: center;">
-                                            <i class="fas fa-arrow-right text-info me-2"></i>
-                                            <span style="font-size: 1rem; font-weight: 600; color: #2f4f2f;">Longitude: 132.0685° E</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-    <style>
-      @keyframes pulse {
-        0% { transform: scale(1); color: #198754; }
-        50% { transform: scale(1.1); color: #28a745; }
-        100% { transform: scale(1); color: #198754; }
-      }
-      @keyframes fadeInUp {
-        0% { opacity: 0; transform: translateY(20px); }
-        100% { opacity: 1; transform: translateY(0); }
-      }
-      .animated-title {
-        animation: pulse 2s infinite;
-        font-weight: 700;
-      }
-      .animated-text {
-        animation: fadeInUp 1.5s ease forwards;
-      }
-    </style>
+            <div class="container">
 
-                <div class="col-12 d-flex justify-content-center mt-4">
-                    <div class="card border-0 shadow-lg" style="width: 100%; max-width: 1000px; background: linear-gradient(135deg, #f8f9fa, #e9ecef); border-radius: 20px; box-shadow: 0 8px 16px rgba(108, 117, 125, 0.25); transition: transform 0.3s ease; overflow: hidden; position: relative;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-                        <div class="card-body p-4 text-start position-relative" style="overflow: visible;">
-                            <h5 class="card-title mb-4" id="akses-transportasi-title" style="opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; color: #6c757d; font-weight: 700;">
-                                <i class="fas fa-route text-warning me-2"></i>Akses Transportasi
-                            </h5>
-                            <div id="via-udara" class="transport-section" style="opacity: 0; transform: translateX(-100px); transition: opacity 0.6s ease, transform 0.6s ease;">
-                                <div class="animated-plane transport-icon" style="font-size: 3rem; position: relative; left: -100px; transition: left 1s ease;"></div>
-                                <h6 class="mt-3">Via Udara</h6>
-                                <div class="clouds" style="position: relative; margin-top: 10px;">
-                                    <div class="cloud cloud-1" style="background: #e0f7fa; border-radius: 50%; padding: 10px; margin-bottom: 5px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);">
-                                        <strong>Dari Sorong:</strong> Penerbangan domestik ke Bandara Domine Eduard Osok (Sorong), dilanjutkan perjalanan darat menuju Klabili (via Sausapor) sekitar 4 jam.
-                                    </div>
-                                    <div class="cloud cloud-2" style="background: #b2ebf2; border-radius: 50%; padding: 10px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);">
-                                        <strong>Dari Manokwari:</strong> Penerbangan ke Bandara Rendani (Manokwari), kemudian Susi Air terbang ke Bandara Werur (Tambrauw) dua kali seminggu. Dari Werur lanjut darat ke Klabili.
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="via-darat" class="transport-section" style="opacity: 0; transform: translateX(100px); transition: opacity 0.6s ease, transform 0.6s ease; margin-top: 30px;">
-                                <div class="animated-car transport-icon" style="font-size: 3rem; position: relative; right: -100px; transition: right 1s ease;"></div>
-                                <h6 class="mt-3">Via Darat</h6>
-                                <div class="road" style="position: relative; margin-top: 10px;">
-                                    <div class="road-1" style="background: #c8e6c9; border-radius: 10px; padding: 10px; margin-bottom: 5px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);">
-                                        <strong>Dari Sorong:</strong> Rute Sorong → Sausapor → Klabili dengan mobil 4×4 atau motor trail. Waktu tempuh total ≈2–4 jam.
-                                    </div>
-                                    <div class="road-2" style="background: #a5d6a7; border-radius: 10px; padding: 10px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);">
-                                        <strong>Dari Manokwari:</strong> Rute Manokwari → Sorong → Klabili menggunakan mobil 4×4. Perkiraan waktu total ≈8–10 jam.
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="via-laut" class="transport-section" style="opacity: 0; transform: translateX(-100px); transition: opacity 0.6s ease, transform 0.6s ease; margin-top: 30px;">
-                                <div class="animated-boat transport-icon" style="font-size: 3rem; position: relative; left: -100px; transition: left 1s ease;"></div>
-                                <h6 class="mt-3">Via Laut</h6>
-                                <div class="water" style="position: relative; margin-top: 10px; background: #b3e5fc; border-radius: 10px; padding: 10px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1);">
-                                    Tidak ada layanan feri langsung ke Klabili. Pelabuhan terdekat adalah Pelabuhan Sausapor (khusus kargo mingguan ke Sorong), speedboat penumpang Sorong–Sausapor (~2 jam) sedang direncanakan, namun belum beroperasi.
-                                </div>
-                            </div>
-                            <hr style="margin-top: 40px; opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease;" id="rekomendasi-transportasi-hr">
-                            <h6 id="rekomendasi-transportasi" style="opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease;">
-                                <i class="fas fa-tools text-secondary me-2"></i>Rekomendasi Kendaraan
-                            </h6>
-                            <p class="card-text small" id="rekomendasi-transportasi-text" style="opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease;">
-                                Disarankan menggunakan mobil double cabin 4×4 (misalnya Toyota Hilux, Mitsubishi Pajero) atau sepeda motor trail untuk menghadapi jalan berbatu/lumpur menuju Klabili.
-                            </p>
+            <div class="row g-4 align-items-center">
+                <!-- Kolom Kiri: Alamat Lengkap -->
+                <div class="col-lg-6">
+                    <div class="card border-0 shadow-sm" style="background: #ffffff; border-radius: 15px; position: relative; overflow: hidden;">
+                        <!-- Ilustrasi Pojok -->
+                        <div style="position: absolute; top: 10px; right: 10px; opacity: 0.1;">
+                            <i class="fas fa-mountain" style="font-size: 2rem; color: #28a745;"></i>
                         </div>
-                    </div>
-                </div>
-
-                <div class="col-12 d-flex justify-content-center">
-                    <div class="card border-0 shadow-lg" style="width: 100%; max-width: 600px; background: linear-gradient(135deg, #d4edda, #a8d5a3); border-radius: 20px; box-shadow: 0 8px 16px rgba(0, 128, 0, 0.25); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
+                        <div style="position: absolute; bottom: 10px; left: 10px; opacity: 0.1;">
+                            <i class="fas fa-tree" style="font-size: 1.5rem; color: #20c997;"></i>
+                        </div>
                         <div class="card-body p-4">
-                            <h5 class="card-title text-center mb-4" style="color: #155724; font-weight: 800; font-size: 1.6rem;"><i class="fas fa-map text-primary me-2"></i>Peta Lokasi</h5>
-                            <div class="bg-light rounded d-flex align-items-center justify-content-center" style="height: 300px; border: 2px solid #6ca66c;">
-                                <div class="text-center">
-                                    <i class="fas fa-map-marked-alt text-muted" style="font-size: 3rem;"></i>
-                                    <p class="text-muted mt-3">Peta interaktif akan ditampilkan di sini</p>
-                                    <small class="text-muted">Integrasi dengan Google Maps atau OpenStreetMap</small>
+                            <h5 class="card-title mb-4" style="color: #28a745; font-size: 1.8rem; font-weight: 700;">Alamat Lengkap</h5>
+                            <div class="mb-3">
+                                <span style="font-size: 1.5rem; font-weight: 800; color: #155724;">Kampung Klabili</span>
+                            </div>
+                            <div class="mb-2" style="color: #6c757d;">Distrik Selemkai</div>
+                            <div class="mb-2" style="color: #6c757d;">Kabupaten Tambrauw</div>
+                            <div class="mb-3" style="color: #6c757d;">Provinsi Papua Barat, Indonesia</div>
+                            <div class="gps-box" style="background: #d4edda; border: 1px solid #c3e6cb; border-radius: 8px; padding: 10px; display: inline-block;">
+                                <i class="fas fa-map-pin" style="color: #28a745;"></i> GPS: -0.7893, 132.0685
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Kolom Kanan: Peta Interaktif -->
+                <div class="col-lg-6">
+                    <div class="card border-0 shadow-sm" style="background: #ffffff; border-radius: 15px; position: relative; overflow: hidden;">
+                        <!-- Ilustrasi Pojok -->
+                        <div style="position: absolute; top: 10px; left: 10px; opacity: 0.1;">
+                            <i class="fas fa-home" style="font-size: 1.8rem; color: #ffc107;"></i>
+                        </div>
+                        <div class="card-body p-4">
+                            <h5 class="card-title mb-4" style="color: #28a745; font-weight: 700;">Peta Interaktif</h5>
+                            <div style="height: 300px; background: #f8f9fa; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1m12!1m3!1d3989.123456789012!2d132.0685!3d-0.7893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMMKwNDcnMjEuNSJTIDEzMsKwMDQnMDYuNiJF!5e0!3m2!1sen!2sid!4v1234567890123!5m2!1sen!2sid" width="100%" height="100%" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                            <div class="text-center mt-3">
+                                <a href="https://maps.google.com/?q=-0.7605856254605924, 131.77974998332832" target="_blank" class="btn btn-success">Lihat di Google Maps</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Cara ke Sini -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <h3 class="text-center mb-4" style="color: #2d5a2d;">🗺️ Cara ke Sini</h3>
+                    <!-- Tabs -->
+                    <div class="card border-0 shadow-sm" style="background: #ffffff; border-radius: 15px;">
+                        <div class="card-body p-4">
+                            <ul class="nav nav-tabs" id="transportTabs" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="udara-tab" data-bs-toggle="tab" data-bs-target="#udara" type="button" role="tab" aria-controls="udara" aria-selected="true">Via Udara</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="darat-tab" data-bs-toggle="tab" data-bs-target="#darat" type="button" role="tab" aria-controls="darat" aria-selected="false">Via Darat</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="laut-tab" data-bs-toggle="tab" data-bs-target="#laut" type="button" role="tab" aria-controls="laut" aria-selected="false">Via Laut</button>
+                                </li>
+                            </ul>
+                            <div class="tab-content mt-3" id="transportTabsContent">
+                                <div class="tab-pane fade show active" id="udara" role="tabpanel" aria-labelledby="udara-tab">
+                                    <p><strong>Dari Sorong:</strong> Penerbangan ke Bandara Domine Eduard Osok, lalu darat ke Klabili via Sausapor (~4 jam).</p>
+                                    <p><strong>Dari Manokwari:</strong> Penerbangan ke Bandara Rendani, lalu Susi Air ke Bandara Werur, kemudian darat ke Klabili.</p>
+                                </div>
+                                <div class="tab-pane fade" id="darat" role="tabpanel" aria-labelledby="darat-tab">
+                                    <p><strong>Dari Sorong:</strong> Rute Sorong → Sausapor → Klabili dengan mobil 4×4 atau motor trail (~2–4 jam).</p>
+                                    <p><strong>Dari Manokwari:</strong> Rute Manokwari → Sorong → Klabili (~8–10 jam).</p>
+                                </div>
+                                <div class="tab-pane fade" id="laut" role="tabpanel" aria-labelledby="laut-tab">
+                                    <p>Tidak ada feri langsung. Pelabuhan terdekat Sausapor (kargo mingguan), speedboat Sorong–Sausapor (~2 jam) dalam perencanaan.</p>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Rekomendasi Kendaraan -->
+            <div class="row mt-4">
+                <div class="col-12">
+                    <h4 class="text-center mb-3" style="color: #2d5a2d;">🚗 Rekomendasi Kendaraan</h4>
+                    <div class="card border-0 shadow-sm" style="background: #ffffff; border-radius: 15px;">
+                        <div class="card-body p-4 text-center">
+                            <p style="color: #6c757d;">Gunakan mobil double cabin 4×4 (Toyota Hilux, Mitsubishi Pajero) atau motor trail untuk jalan berbatu/lumpur.</p>
                         </div>
                     </div>
                 </div>

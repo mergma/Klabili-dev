@@ -1,9 +1,20 @@
-# TODO: Split Fasilitas Umum Desa Section
+# TODO: Redesign Lokasi & Peta Desa Klabili
 
-- [x] Modify fasilitas.html to split the section into two columns
-  - [x] Add main row wrapper
-  - [x] Create left column (col-lg-4 col-md-5) with facility information card
-  - [x] Create right column (col-lg-8 col-md-7) with facility grid and additional facilities
-  - [x] Ensure responsive design
-- [ ] Test layout on different screen sizes
-- [ ] Adjust spacing or content if needed
+## Completed
+- [ ] Analyze current structure in informasi.html
+- [ ] Brainstorm plan for redesign
+
+## In Progress
+- [ ] Update section title to “📍 Lokasi Desa Klabili”
+- [ ] Restructure to 2-column grid: left address, right map
+- [ ] Add highlights: GPS box with 📍, village name with green accent
+- [ ] Add small illustrations (mountains, forests, houses)
+- [ ] Condense transport into tabs (Via Udara | Via Darat | Via Laut)
+- [ ] Update titles: “🗺️ Cara ke Sini”, “🚗 Rekomendasi Kendaraan”
+- [ ] Apply soft green palette
+- [ ] Add CTA button “Lihat di Google Maps”
+- [ ] Update CSS styles
+
+## Pending
+- [ ] Test responsiveness
+- [ ] Verify layout balance
