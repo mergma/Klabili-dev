@@ -87,7 +87,7 @@ html {
 
 
 .hero-section {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../img/hero_page_img.JPG');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../img/HeroPage/hero_page_img.JPG');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
