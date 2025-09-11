@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -357,6 +358,537 @@
         font-size: 1.2rem;
         min-width: 20px;
       }
+
+/* Lokasi & Peta Animations and Effects */
+.location-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.location-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.btn-maps {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-maps:hover {
+  background-color: #28a745 !important;
+  transform: scale(1.05);
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+      /* Animated Plane for Via Udara */
+      .animated-plane {
+        position: absolute;
+        top: 20px;
+        left: 0;
+        font-size: 2rem;
+        color: #007bff;
+        animation: fly-plane 8s ease-in-out infinite;
+        opacity: 0.7;
+        pointer-events: none;
+      }
+
+      @keyframes fly-plane {
+        0% { transform: translateX(0) translateY(0) rotate(0deg); opacity: 0; }
+        25% { transform: translateX(100px) translateY(-30px) rotate(10deg); opacity: 0.7; }
+        50% { transform: translateX(200px) translateY(0) rotate(0deg); opacity: 0.7; }
+        75% { transform: translateX(300px) translateY(-30px) rotate(-10deg); opacity: 0.7; }
+        100% { transform: translateX(400px) translateY(0) rotate(0deg); opacity: 0; }
+      }
+
+      /* Animated Jeep for Via Darat */
+      .animated-jeep {
+        position: absolute;
+        bottom: 20px;
+        right: 0;
+        font-size: 2rem;
+        color: #28a745;
+        animation: drive-jeep 6s ease-in-out infinite;
+        opacity: 0.7;
+        pointer-events: none;
+      }
+
+      @keyframes drive-jeep {
+        0% { transform: translateX(0); opacity: 0; }
+        20% { transform: translateX(-100px); opacity: 0.7; }
+        40% { transform: translateX(-200px); opacity: 0.7; }
+        60% { transform: translateX(-300px); opacity: 0.7; }
+        80% { transform: translateX(-400px); opacity: 0.7; }
+        100% { transform: translateX(-500px); opacity: 0; }
+      }
+
+      /* Animated Boat for Via Laut */
+      .animated-boat {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        font-size: 2rem;
+        color: #17a2b8;
+        animation: sail-boat 7s ease-in-out infinite;
+        opacity: 0.7;
+        pointer-events: none;
+      }
+
+      @keyframes sail-boat {
+        0% { transform: translateX(0) rotate(0deg); opacity: 0; }
+        25% { transform: translateX(100px) rotate(2deg); opacity: 0.7; }
+        50% { transform: translateX(200px) rotate(-2deg); opacity: 0.7; }
+        75% { transform: translateX(300px) rotate(2deg); opacity: 0.7; }
+        100% { transform: translateX(400px) rotate(0deg); opacity: 0; }
+      }
+
+      /* Wave Animation for Boat */
+      .wave {
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        width: 100%;
+        height: 10px;
+        background: linear-gradient(90deg, transparent, rgba(23, 162, 184, 0.3), transparent);
+        animation: wave-motion 3s ease-in-out infinite;
+      }
+
+      @keyframes wave-motion {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
+      }
+
+
+
+/* Jeep Entry Animation for Rekomendasi Kendaraan */
+.jeep-entry {
+  position: absolute;
+  bottom: 20px;
+  left: -50px;
+  font-size: 2rem;
+  color: #28a745;
+  animation: jeep-enter 5s ease-in-out infinite;
+  opacity: 0;
+}
+
+@keyframes jeep-enter {
+  0% { transform: translateX(-50px); opacity: 0; }
+  20% { opacity: 0.7; }
+  80% { opacity: 0.7; }
+  100% { transform: translateX(350px); opacity: 0; }
+}
+
+/* Fade-in for Peta */
+.fade-in-peta {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.fade-in-peta.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Background Pattern for Alamat Lengkap */
+.address-pattern {
+  background-image: radial-gradient(circle at 20% 80%, rgba(40, 167, 69, 0.1) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 20%, rgba(0, 123, 255, 0.1) 0%, transparent 50%),
+                    radial-gradient(circle at 40% 40%, rgba(255, 193, 7, 0.1) 0%, transparent 50%);
+  background-size: 100px 100px;
+}
+
+/* Parallax Background */
+.parallax-bg {
+  background-image: url('img/hutan_tropis_bg.png'); /* Placeholder for tropical forest image */
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* Tooltip for Transport Icons */
+.tooltip-custom {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-custom .tooltip-text {
+  visibility: hidden;
+  width: 120px;
+  background-color: #28a745;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+      .tooltip-custom:hover .tooltip-text {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      /* Jeep Entry Animation for Rekomendasi Kendaraan */
+      .jeep-entry {
+        position: absolute;
+        bottom: 20px;
+        left: -50px;
+        font-size: 2rem;
+        color: #28a745;
+        animation: jeep-enter 5s ease-in-out infinite;
+        opacity: 0;
+      }
+
+      @keyframes jeep-enter {
+        0% { transform: translateX(-50px); opacity: 0; }
+        20% { opacity: 0.7; }
+        80% { opacity: 0.7; }
+        100% { transform: translateX(350px); opacity: 0; }
+      }
+
+      /* Wave Animation for Boat */
+      .wave {
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        width: 100%;
+        height: 10px;
+        background: linear-gradient(90deg, transparent, rgba(23, 162, 184, 0.3), transparent);
+        animation: wave-motion 3s ease-in-out infinite;
+      }
+
+      @keyframes wave-motion {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
+      }
+
+      /* Enhanced Gradient Background with Natural Pattern */
+      .section-gradient {
+        background: linear-gradient(135deg, #e9f9ef 0%, #d4edda 25%, #a8d5a3 50%, #f5fff8 75%, #e9f9ef 100%);
+        background-image:
+          radial-gradient(circle at 20% 80%, rgba(40, 167, 69, 0.15) 0%, transparent 50%),
+          radial-gradient(circle at 80% 20%, rgba(0, 123, 255, 0.1) 0%, transparent 50%),
+          radial-gradient(circle at 40% 40%, rgba(255, 193, 7, 0.08) 0%, transparent 50%),
+          url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234caf50' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        background-size: 100px 100px, 100px 100px, 100px 100px, 60px 60px;
+        padding: 50px 20px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Floating Background Ornaments */
+      .background-ornaments {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .leaf-ornament {
+        position: absolute;
+        font-size: 2rem;
+        color: rgba(76, 175, 80, 0.3);
+        animation: leaf-float 8s ease-in-out infinite;
+      }
+
+      .leaf-ornament:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+      .leaf-ornament:nth-child(2) { top: 20%; right: 15%; animation-delay: 2s; }
+      .leaf-ornament:nth-child(3) { bottom: 30%; left: 20%; animation-delay: 4s; }
+      .leaf-ornament:nth-child(4) { bottom: 20%; right: 10%; animation-delay: 6s; }
+
+      .bird-ornament {
+        position: absolute;
+        font-size: 1.5rem;
+        color: rgba(33, 150, 243, 0.4);
+        animation: bird-fly 12s ease-in-out infinite;
+      }
+
+      .bird-ornament:nth-child(1) { top: 15%; left: -5%; animation-delay: 1s; }
+      .bird-ornament:nth-child(2) { top: 35%; right: -5%; animation-delay: 5s; }
+      .bird-ornament:nth-child(3) { bottom: 25%; left: -5%; animation-delay: 9s; }
+
+      @keyframes leaf-float {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        25% { transform: translateY(-10px) rotate(5deg); }
+        50% { transform: translateY(-5px) rotate(-3deg); }
+        75% { transform: translateY(-15px) rotate(2deg); }
+      }
+
+      @keyframes bird-fly {
+        0% { transform: translateX(-100px) translateY(0px); opacity: 0; }
+        10% { opacity: 1; }
+        90% { opacity: 1; }
+        100% { transform: translateX(calc(100vw + 100px)) translateY(-20px); opacity: 0; }
+      }
+
+      /* Enhanced Flexbox untuk Alamat & Peta dengan Glassmorphism */
+      .lokasi-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        gap: 30px;
+        flex-wrap: wrap;
+        overflow: visible;
+        position: relative;
+        z-index: 2;
+        padding: 20px;
+      }
+
+      .lokasi-container .card {
+        flex: 1 1 350px;
+        min-width: 300px;
+        max-width: 600px;
+        background: linear-gradient(135deg,
+          rgba(255, 255, 255, 0.25),
+          rgba(255, 255, 255, 0.15),
+          rgba(248, 249, 250, 0.2)
+        );
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-radius: 25px;
+        padding: 30px;
+        box-shadow:
+          0 8px 32px rgba(0, 0, 0, 0.1),
+          0 0 0 1px rgba(255, 255, 255, 0.18),
+          inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        position: relative;
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(50px) scale(0.9) rotateX(10deg);
+        animation: card-appear-glass 1s ease-out forwards;
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .lokasi-container .card:nth-child(1) { animation-delay: 0.3s; }
+      .lokasi-container .card:nth-child(2) { animation-delay: 0.6s; }
+
+      @keyframes card-appear-glass {
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1) rotateX(0deg);
+        }
+      }
+
+      .lokasi-container .card:hover {
+        transform: translateY(-8px) scale(1.02) rotateX(-2deg);
+        box-shadow:
+          0 20px 60px rgba(40, 167, 69, 0.15),
+          0 0 0 1px rgba(40, 167, 69, 0.2),
+          0 0 20px rgba(76, 175, 80, 0.1);
+        border-color: rgba(40, 167, 69, 0.4);
+        background: linear-gradient(135deg,
+          rgba(255, 255, 255, 0.35),
+          rgba(255, 255, 255, 0.25),
+          rgba(248, 249, 250, 0.3)
+        );
+      }
+
+      .lokasi-container .card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg,
+          transparent,
+          rgba(40, 167, 69, 0.1),
+          rgba(0, 123, 255, 0.1),
+          transparent
+        );
+        transition: left 0.8s ease;
+        z-index: -1;
+      }
+
+      .lokasi-container .card:hover::before {
+        left: 100%;
+      }
+
+      /* Glassmorphism untuk semua cards */
+      .glass-card {
+        background: linear-gradient(135deg,
+          rgba(255, 255, 255, 0.25),
+          rgba(255, 255, 255, 0.15)
+        );
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow:
+          0 8px 32px rgba(0, 0, 0, 0.1),
+          inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .glass-card:hover {
+        transform: translateY(-5px) rotateX(-1deg);
+        box-shadow:
+          0 15px 45px rgba(0, 0, 0, 0.15),
+          inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        background: linear-gradient(135deg,
+          rgba(255, 255, 255, 0.35),
+          rgba(255, 255, 255, 0.25)
+        );
+      }
+
+      /* Card Icons */
+      .card-icon {
+        font-size: 3rem;
+        margin-bottom: 15px;
+        display: block;
+        text-align: center;
+        transition: all 0.3s ease;
+      }
+
+      .card-icon.location-pin {
+        color: #e53935;
+        animation: pin-vibrate 2s ease-in-out infinite;
+      }
+
+      .card-icon.house {
+        color: #8d6e63;
+        animation: house-sway 3s ease-in-out infinite;
+      }
+
+      .card-icon.map {
+        color: #1976d2;
+        animation: map-blink 4s ease-in-out infinite;
+      }
+
+      @keyframes pin-vibrate {
+        0%, 100% { transform: translateX(0); }
+        25% { transform: translateX(-2px); }
+        75% { transform: translateX(2px); }
+      }
+
+      @keyframes house-sway {
+        0%, 100% { transform: rotate(0deg); }
+        25% { transform: rotate(1deg); }
+        75% { transform: rotate(-1deg); }
+      }
+
+      @keyframes map-blink {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.7; transform: scale(1.05); }
+      }
+
+      /* Enhanced Button */
+      .btn-map {
+        margin-top: 20px;
+        padding: 12px 25px;
+        background: linear-gradient(45deg, #2e7d32, #4caf50);
+        color: #fff;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
+      }
+
+      .btn-map::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(45deg, #4caf50, #66bb6a, #2e7d32);
+        transition: left 0.5s ease;
+        z-index: -1;
+      }
+
+      .btn-map:hover {
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 8px 25px rgba(46, 125, 50, 0.4);
+      }
+
+      .btn-map:hover::before {
+        left: 0;
+      }
+
+      .lokasi-container iframe {
+        width: 100%;
+        height: 250px;
+        border-radius: 15px;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        transition: all 0.3s ease;
+      }
+
+      .lokasi-container iframe:hover {
+        border-color: rgba(40, 167, 69, 0.5);
+        box-shadow: 0 0 20px rgba(40, 167, 69, 0.2);
+      }
+
+      @media (max-width: 768px) {
+        .lokasi-container {
+          flex-direction: column;
+          overflow: visible;
+        }
+        .lokasi-container .card {
+          max-width: 100%;
+          min-width: auto;
+          margin-bottom: 20px;
+        }
+        .background-ornaments {
+          display: none; /* Hide ornaments on mobile for better performance */
+        }
+      }
+
+      /* Tombol Maps */
+      .btn-map {
+        margin-top: 15px;
+        padding: 10px 20px;
+        background: #2e7d32;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.3s ease, transform 0.2s ease;
+      }
+      .btn-map:hover {
+        background: #1b5e20;
+        transform: scale(1.05);
+      }
+
+      /* Leaf Divider */
+      .leaf-divider {
+        text-align: center;
+        font-size: 24px;
+        margin: 40px 0;
+        color: #4caf50;
+        animation: leafFloat 3s ease-in-out infinite;
+      }
+
+      @keyframes leafFloat {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-5px); }
+        100% { transform: translateY(0px); }
+      }
     </style>
   </head>
   <body>
@@ -531,60 +1063,51 @@
 
     <!-- Page Content -->
         <!-- Lokasi & Peta Section -->
-        <section id="lokasi-peta" class="py-5" style="background: linear-gradient(135deg, #f0f8f0 0%, #ffffff 100%);">
+        <section id="lokasi-peta" class="section-gradient py-5">
+            <!-- Background Ornaments -->
+            <div class="background-ornaments">
+                <div class="leaf-ornament">🌿</div>
+                <div class="leaf-ornament">🍃</div>
+                <div class="leaf-ornament">🌿</div>
+                <div class="leaf-ornament">🍃</div>
+                <div class="bird-ornament">🐦</div>
+                <div class="bird-ornament">🦅</div>
+                <div class="bird-ornament">🐦</div>
+            </div>
             <div class="row">
                 <div class="col-12 text-center mb-5">
-                    <h2 class="display-5 fw-bold" style="color: #2d5a2d;">📍 Lokasi Desa Klabili</h2>
+                    <h2 class="display-5 fw-bold section-heading" style="color: #2d5a2d;">📍 Lokasi Desa Klabili</h2>
                     <p class="lead" style="color: #6c757d;">Temukan lokasi dan cara menuju desa wisata kami</p>
                 </div>
             </div>
 
             <div class="container">
+                <div class="lokasi-container">
+                    <!-- Alamat Lengkap -->
+                    <div class="card alamat" data-aos="fade-right">
+                        <h3>📍 Alamat Lengkap</h3>
+                        <p><strong>🏠 Kampung Klabili</strong></p>
+                        <p>📍 Distrik Selemkai</p>
+                        <p>📍 Kabupaten Tambrauw</p>
+                        <p>📍 Provinsi Papua Barat, Indonesia</p>
+                        <p><span class="gps">📡 GPS: -0.7893, 132.0685</span></p>
+                    </div>
 
-            <div class="row g-4 align-items-center">
-                <!-- Kolom Kiri: Alamat Lengkap -->
-                <div class="col-lg-6">
-                    <div class="card border-0 shadow-sm" style="background: #ffffff; border-radius: 15px; position: relative; overflow: hidden;">
-                        <!-- Ilustrasi Pojok -->
-                        <div style="position: absolute; top: 10px; right: 10px; opacity: 0.1;">
-                            <i class="fas fa-mountain" style="font-size: 2rem; color: #28a745;"></i>
-                        </div>
-                        <div style="position: absolute; bottom: 10px; left: 10px; opacity: 0.1;">
-                            <i class="fas fa-tree" style="font-size: 1.5rem; color: #20c997;"></i>
-                        </div>
-                        <div class="card-body p-4">
-                            <h5 class="card-title mb-4" style="color: #28a745; font-size: 1.8rem; font-weight: 700;">Alamat Lengkap</h5>
-                            <div class="mb-3">
-                                <span style="font-size: 1.5rem; font-weight: 800; color: #155724;">Kampung Klabili</span>
-                            </div>
-                            <div class="mb-2" style="color: #6c757d;">Distrik Selemkai</div>
-                            <div class="mb-2" style="color: #6c757d;">Kabupaten Tambrauw</div>
-                            <div class="mb-3" style="color: #6c757d;">Provinsi Papua Barat, Indonesia</div>
-                            <div class="gps-box" style="background: #d4edda; border: 1px solid #c3e6cb; border-radius: 8px; padding: 10px; display: inline-block;">
-                                <i class="fas fa-map-pin" style="color: #28a745;"></i> GPS: -0.7893, 132.0685
-                            </div>
-                        </div>
+                    <!-- Peta Interaktif -->
+                    <div class="card peta" data-aos="fade-left">
+                        <h3>🗺️ Peta Interaktif</h3>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.123456789012!2d132.0685!3d-0.7893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMMKwNDcnMjEuNSJTIDEzMsKwMDQnMDYuNiJF!5e0!3m2!1sen!2sid!4v1234567890123!5m2!1sen!2sid"
+                            allowfullscreen=""
+                            loading="lazy">
+                        </iframe>
+                        <button class="btn-map" onclick="window.open('https://maps.app.goo.gl/1VghFktcsQnEcgB39', '_blank')">Lihat di Google Maps</button>
                     </div>
                 </div>
-                <!-- Kolom Kanan: Peta Interaktif -->
-                <div class="col-lg-6">
-                    <div class="card border-0 shadow-sm" style="background: #ffffff; border-radius: 15px; position: relative; overflow: hidden;">
-                        <!-- Ilustrasi Pojok -->
-                        <div style="position: absolute; top: 10px; left: 10px; opacity: 0.1;">
-                            <i class="fas fa-home" style="font-size: 1.8rem; color: #ffc107;"></i>
-                        </div>
-                        <div class="card-body p-4">
-                            <h5 class="card-title mb-4" style="color: #28a745; font-weight: 700;">Peta Interaktif</h5>
-                            <div style="height: 300px; background: #f8f9fa; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1m12!1m3!1d3989.123456789012!2d132.0685!3d-0.7893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMMKwNDcnMjEuNSJTIDEzMsKwMDQnMDYuNiJF!5e0!3m2!1sen!2sid!4v1234567890123!5m2!1sen!2sid" width="100%" height="100%" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy"></iframe>
-                            </div>
-                            <div class="text-center mt-3">
-                                <a href="https://maps.google.com/?q=-0.7605856254605924, 131.77974998332832" target="_blank" class="btn btn-success">Lihat di Google Maps</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+                <!-- Leaf Divider -->
+                <div class="leaf-divider">🌿</div>
+
             <!-- Cara ke Sini -->
             <div class="row mt-5">
                 <div class="col-12">
@@ -594,13 +1117,25 @@
                         <div class="card-body p-4">
                             <ul class="nav nav-tabs" id="transportTabs" role="tablist">
                                 <li class="nav-item" role="presentation">
-                                    <button class="nav-link active" id="udara-tab" data-bs-toggle="tab" data-bs-target="#udara" type="button" role="tab" aria-controls="udara" aria-selected="true">Via Udara</button>
+                                    <button class="nav-link active" id="udara-tab" data-bs-toggle="tab" data-bs-target="#udara" type="button" role="tab" aria-controls="udara" aria-selected="true">Via Udara
+                                      <span class="animated-plane transport-icon tooltip-custom" title="Penerbangan ke Sorong">✈️
+                                        <span class="tooltip-text">Penerbangan ke Sorong</span>
+                                      </span>
+                                    </button>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="darat-tab" data-bs-toggle="tab" data-bs-target="#darat" type="button" role="tab" aria-controls="darat" aria-selected="false">Via Darat</button>
+                                    <button class="nav-link" id="darat-tab" data-bs-toggle="tab" data-bs-target="#darat" type="button" role="tab" aria-controls="darat" aria-selected="false">Via Darat
+                                      <span class="animated-car transport-icon tooltip-custom" title="Rute Darat 4x4">🚙
+                                        <span class="tooltip-text">Rute Darat 4x4</span>
+                                      </span>
+                                    </button>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="laut-tab" data-bs-toggle="tab" data-bs-target="#laut" type="button" role="tab" aria-controls="laut" aria-selected="false">Via Laut</button>
+                                    <button class="nav-link" id="laut-tab" data-bs-toggle="tab" data-bs-target="#laut" type="button" role="tab" aria-controls="laut" aria-selected="false">Via Laut
+                                      <span class="animated-boat transport-icon tooltip-custom" title="Perjalanan Laut">🚤
+                                        <span class="tooltip-text">Perjalanan Laut</span>
+                                      </span>
+                                    </button>
                                 </li>
                             </ul>
                             <div class="tab-content mt-3" id="transportTabsContent">
@@ -612,6 +1147,7 @@
                                 </div>
                                 <div class="tab-pane fade" id="laut" role="tabpanel" aria-labelledby="laut-tab">
                                     <p>Tidak ada feri langsung. Pelabuhan terdekat Sausapor (kargo mingguan), speedboat Sorong–Sausapor (~2 jam) dalam perencanaan.</p>
+                                    <div class="wave"></div>
                                 </div>
                             </div>
                         </div>
@@ -625,6 +1161,8 @@
                     <div class="card border-0 shadow-sm" style="background: #ffffff; border-radius: 15px;">
                         <div class="card-body p-4 text-center">
                             <p style="color: #6c757d;">Gunakan mobil double cabin 4×4 (Toyota Hilux, Mitsubishi Pajero) atau motor trail untuk jalan berbatu/lumpur.</p>
+                            <p>🚙 Mobil Double Cabin 4x4</p>
+                            <p>🏍️ Motor Trail</p>
                         </div>
                     </div>
                 </div>
@@ -859,15 +1397,21 @@
 </button>
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <!-- AOS Library for Scroll Animations -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <!-- Bootstrap JS -->
     <script src="js/bootstrap/bootstrap.bundle.js"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <!-- Custom JS -->
     <script src="js/custom.js"></script>
 
     <!-- Scroll Animation Script -->
     <script>
       document.addEventListener('DOMContentLoaded', function() {
+        AOS.init();
+
         const observerOptions = {
           threshold: 0.1,
           rootMargin: '0px 0px -50px 0px'
