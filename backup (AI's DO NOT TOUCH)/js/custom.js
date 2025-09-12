@@ -221,7 +221,7 @@ function setLanguage(lang) {
   if (languageSwitch) {
     languageSwitch.checked = isIndonesian;
   }
-
+  
   // Trigger the toggle function
   updateLanguageToggleState(lang);
 
