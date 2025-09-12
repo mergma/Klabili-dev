@@ -1,1255 +1,624 @@
-
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Informasi Desa - Desa Wisata Klabili</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.css" />
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/custom.css" />
-    <style>
-      @keyframes fly {
-        0% { transform: translateX(-50px) rotate(0deg) scale(0.8); opacity: 0; }
-        50% { opacity: 1; transform: scale(1.1); }
-        100% { transform: translateX(50px) rotate(10deg) scale(0.8); opacity: 0; }
-      }
-      @keyframes sail {
-        0% { transform: translateX(-30px) rotate(0deg) scale(0.9); opacity: 0.8; }
-        50% { transform: translateX(30px) rotate(5deg) scale(1.05); opacity: 1; }
-        100% { transform: translateX(-30px) rotate(0deg) scale(0.9); opacity: 0.8; }
-      }
-      @keyframes drive {
-        0% { transform: translateX(-40px) scale(0.9); opacity: 0.7; }
-        50% { transform: translateX(40px) scale(1.1); opacity: 1; }
-        100% { transform: translateX(-40px) scale(0.9); opacity: 0.7; }
-      }
-      @keyframes float {
-        0% { transform: translateY(0px) rotate(0deg); }
-        50% { transform: translateY(-10px) rotate(5deg); }
-        100% { transform: translateY(0px) rotate(0deg); }
-      }
-      @keyframes fadeInUp {
-        0% { opacity: 0; transform: translateY(30px); }
-        100% { opacity: 1; transform: translateY(0); }
-      }
-      .animated-plane {
-        animation: fly 3s ease-in-out infinite;
-        filter: drop-shadow(2px 4px 3px rgba(0,0,0,0.3));
-      }
-      .animated-boat {
-        animation: sail 4s ease-in-out infinite;
-        filter: drop-shadow(1px 3px 2px rgba(0,0,0,0.2));
-      }
-      .animated-car {
-        animation: drive 2s ease-in-out infinite;
-        filter: drop-shadow(2px 3px 2px rgba(0,0,0,0.25));
-      }
-      .transport-icon {
-        font-size: 2rem;
-        transition: transform 0.3s ease;
-        cursor: pointer;
-      }
-      .transport-icon:hover {
-        transform: scale(1.3) rotate(10deg);
-        color: #28a745;
-      }
-      .cloud, .road-1, .road-2, .water {
-        transition: transform 0.8s ease, opacity 0.8s ease;
-      }
-      .cloud {
-        transform: translateX(-100px);
-        opacity: 0;
-      }
-      .road-1, .road-2 {
-        transform: translateX(100px);
-        opacity: 0;
-      }
-      .water {
-        transform: translateX(-100px);
-        opacity: 0;
-      }
-      .transport-section {
-        margin-bottom: 20px;
-      }
+<html lang="id">
 
-      /* Enhanced Layout Styles */
-      .section-divider {
-        position: relative;
-        height: 120px;
-        overflow: hidden;
-        background: linear-gradient(45deg, #f8f9fa 25%, transparent 25%),
-                    linear-gradient(-45deg, #f8f9fa 25%, transparent 25%),
-                    linear-gradient(45deg, transparent 75%, #f8f9fa 75%),
-                    linear-gradient(-45deg, transparent 75%, #f8f9fa 75%);
-        background-size: 20px 20px;
-        background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
-        margin: 80px 0;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Informasi Desa - Desa Wisata Klabili</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap/bootstrap.css" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/custom.css" />
+  <style>
+    .section-title {
+      position: relative;
+      font-size: 3rem;
+      font-weight: 700;
+      color: #2c3e50;
+      margin-bottom: 30px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
 
-      .section-divider::before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 60px;
-        height: 60px;
-        background: linear-gradient(45deg, #007bff, #28a745, #ffc107);
-        border-radius: 50%;
-        opacity: 0.1;
-        animation: float 4s ease-in-out infinite;
-      }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 6px;
+      background: linear-gradient(90deg, #007bff, #28a745, #ffc107, #dc3545);
+      border-radius: 3px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
 
-      .floating-shapes {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        overflow: hidden;
-      }
+    .section-subtitle {
+      font-size: 1.2rem;
+      color: #6c757d;
+      margin-bottom: 50px;
+      font-weight: 400;
+    }
 
-      .shape {
-        position: absolute;
-        opacity: 0.08;
-        animation: float 6s ease-in-out infinite;
-      }
+    .card-hover-lift {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      border: none;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
 
-      .shape.circle {
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
-        background: linear-gradient(45deg, #007bff, #28a745);
-      }
+    .card-hover-lift:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    }
 
-      .shape.triangle {
-        width: 0;
-        height: 0;
-        border-left: 40px solid transparent;
-        border-right: 40px solid transparent;
-        border-bottom: 69px solid #ffc107;
-      }
+    .decorative-line {
+      position: relative;
+      margin: 60px 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #007bff, #28a745, #ffc107, #dc3545, transparent);
+      border-radius: 2px;
+    }
 
-      .shape.square {
-        width: 50px;
-        height: 50px;
-        background: linear-gradient(45deg, #dc3545, #fd7e14);
-        transform: rotate(45deg);
-      }
+    .decorative-line::before {
+      content: '❋';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 0 15px;
+      color: #6c757d;
+      font-size: 18px;
+      font-weight: bold;
+    }
 
-      .hero-pattern {
-        background-image:
-          radial-gradient(circle at 25% 25%, rgba(0, 123, 255, 0.08) 0%, transparent 50%),
-          radial-gradient(circle at 75% 75%, rgba(40, 167, 69, 0.08) 0%, transparent 50%);
-        background-size: 120px 120px;
-      }
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 40px;
+      margin: 50px 0;
+    }
 
-      .content-section {
-        position: relative;
-        padding: 100px 0;
-        background-attachment: fixed;
-        background-size: cover;
-      }
+    .info-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 249, 250, 0.95));
+      border: none;
+      border-radius: 25px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+      transition: all 0.4s ease;
+      backdrop-filter: blur(15px);
+      position: relative;
+      overflow: hidden;
+      padding: 30px;
+    }
 
-      .content-section:nth-child(even) {
-        background: linear-gradient(135deg, rgba(248, 249, 250, 0.95) 0%, rgba(233, 236, 239, 0.95) 100%);
-      }
+    .info-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, #007bff, #28a745, #ffc107, #dc3545);
+      border-radius: 25px 25px 0 0;
+    }
 
-      .content-section:nth-child(odd) {
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 249, 250, 0.98) 100%);
-      }
+    .info-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    }
 
+    .icon-wrapper {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 25px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .info-card:hover .icon-wrapper {
+      transform: scale(1.1) rotate(5deg);
+      box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+    }
+
+    .contact-item {
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 25px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      border-left: 5px solid #007bff;
+    }
+
+    .contact-item:hover {
+      transform: translateX(10px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+      border-left-color: #28a745;
+    }
+
+    .contact-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 20px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      font-size: 24px;
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+    }
+
+    .map-container {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      height: 400px;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #6c757d;
+      font-size: 18px;
+      font-weight: 500;
+    }
+
+    .transport-card {
+      background: white;
+      border-radius: 15px;
+      padding: 25px;
+      margin-bottom: 20px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      border-top: 4px solid #007bff;
+    }
+
+    .transport-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+    }
+
+    .nav-tabs .nav-link {
+      border: none;
+      border-radius: 25px 25px 0 0;
+      padding: 15px 25px;
+      font-weight: 600;
+      color: #6c757d;
+      background: #f8f9fa;
+      margin-right: 5px;
+      transition: all 0.3s ease;
+    }
+
+    .nav-tabs .nav-link.active {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+    }
+
+    .tab-content {
+      background: white;
+      border-radius: 0 15px 15px 15px;
+      padding: 30px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .weather-card {
+      background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+      color: white;
+      border-radius: 20px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 15px 35px rgba(116, 185, 255, 0.3);
+    }
+
+    .weather-icon {
+      font-size: 4rem;
+      margin-bottom: 20px;
+      text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .tips-card {
+      background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);
+      color: white;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 15px 35px rgba(253, 121, 168, 0.3);
+    }
+
+    .tips-item {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 15px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .emergency-card {
+      background: linear-gradient(135deg, #ff7675 0%, #d63031 100%);
+      color: white;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 15px 35px rgba(255, 118, 117, 0.3);
+    }
+
+    .emergency-item {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 15px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+    }
+
+    .emergency-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
+      font-size: 20px;
+    }
+
+    @media (max-width: 768px) {
       .section-title {
-        position: relative;
-        display: inline-block;
-        margin-bottom: 30px;
-        font-weight: 800;
-        color: #2c3e50;
+        font-size: 2rem;
       }
-
-      .section-title::after {
-        content: '';
-        position: absolute;
-        bottom: -15px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100px;
-        height: 6px;
-        background: linear-gradient(90deg, #007bff, #28a745, #ffc107, #dc3545);
-        border-radius: 3px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      }
-
-      .section-subtitle {
-        font-size: 1.2rem;
-        color: #6c757d;
-        margin-bottom: 50px;
-        font-weight: 400;
-      }
-
-      .card-hover-lift {
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        border: none;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-      }
-
-      .card-hover-lift:hover {
-        transform: translateY(-10px) scale(1.02);
-        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-      }
-
-      .decorative-line {
-        position: relative;
-        margin: 60px 0;
-        height: 3px;
-        background: linear-gradient(90deg, transparent, #007bff, #28a745, #ffc107, #dc3545, transparent);
-        border-radius: 2px;
-      }
-
-      .decorative-line::before {
-        content: '❋';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: white;
-        padding: 0 15px;
-        color: #6c757d;
-        font-size: 18px;
-        font-weight: bold;
-      }
-
+      
       .info-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 40px;
-        margin: 50px 0;
-      }
-
-      .info-card {
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 249, 250, 0.95));
-        border: none;
-        border-radius: 25px;
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
-        transition: all 0.4s ease;
-        backdrop-filter: blur(15px);
-        position: relative;
-        overflow: hidden;
-        padding: 30px;
-      }
-
-      .info-card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 6px;
-        background: linear-gradient(90deg, #007bff, #28a745, #ffc107, #dc3545);
-        border-radius: 25px 25px 0 0;
-      }
-
-      .info-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
-      }
-
-      .fade-in-section {
-        opacity: 0;
-        transform: translateY(40px);
-        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-
-      .fade-in-section.animate {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      .animated-title {
-        animation: pulse 3s infinite;
-        font-weight: 800;
-        text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      }
-
-      .icon-circle {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto 25px;
-        font-size: 2.5rem;
-        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-        transition: all 0.3s ease;
-      }
-
-      .icon-circle:hover {
-        transform: scale(1.1) rotate(5deg);
-        box-shadow: 0 12px 35px rgba(0,0,0,0.2);
-      }
-
-      .contact-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 30px;
-        margin: 40px 0;
-      }
-
-      .tips-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-        gap: 40px;
-        margin: 50px 0;
-      }
-
-      .tips-card {
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 249, 250, 0.95));
-        border: none;
-        border-radius: 20px;
-        padding: 30px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .tips-card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 5px;
-        background: linear-gradient(90deg, #007bff, #28a745);
-      }
-
-      .tips-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-      }
-
-      .tips-list {
-        list-style: none;
-        padding: 0;
-      }
-
-      .tips-list li {
-        padding: 12px 0;
-        border-bottom: 1px solid rgba(0,0,0,0.05);
-        display: flex;
-        align-items: center;
-        transition: all 0.3s ease;
-      }
-
-      .tips-list li:hover {
-        padding-left: 10px;
-        background: rgba(0,123,255,0.02);
-      }
-
-      .tips-list li:last-child {
-        border-bottom: none;
-      }
-
-      .tips-icon {
-        margin-right: 15px;
-        color: #28a745;
-        font-size: 1.2rem;
-        min-width: 20px;
-      }
-
-/* Lokasi & Peta Animations and Effects */
-.location-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.location-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-}
-
-.btn-maps {
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.btn-maps:hover {
-  background-color: #28a745 !important;
-  transform: scale(1.05);
-  animation: pulse 1s infinite;
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
-}
-
-      /* Animated Plane for Via Udara */
-      .animated-plane {
-        position: absolute;
-        top: 20px;
-        left: 0;
-        font-size: 2rem;
-        color: #007bff;
-        animation: fly-plane 8s ease-in-out infinite;
-        opacity: 0.7;
-        pointer-events: none;
-      }
-
-      @keyframes fly-plane {
-        0% { transform: translateX(0) translateY(0) rotate(0deg); opacity: 0; }
-        25% { transform: translateX(100px) translateY(-30px) rotate(10deg); opacity: 0.7; }
-        50% { transform: translateX(200px) translateY(0) rotate(0deg); opacity: 0.7; }
-        75% { transform: translateX(300px) translateY(-30px) rotate(-10deg); opacity: 0.7; }
-        100% { transform: translateX(400px) translateY(0) rotate(0deg); opacity: 0; }
-      }
-
-      /* Animated Jeep for Via Darat */
-      .animated-jeep {
-        position: absolute;
-        bottom: 20px;
-        right: 0;
-        font-size: 2rem;
-        color: #28a745;
-        animation: drive-jeep 6s ease-in-out infinite;
-        opacity: 0.7;
-        pointer-events: none;
-      }
-
-      @keyframes drive-jeep {
-        0% { transform: translateX(0); opacity: 0; }
-        20% { transform: translateX(-100px); opacity: 0.7; }
-        40% { transform: translateX(-200px); opacity: 0.7; }
-        60% { transform: translateX(-300px); opacity: 0.7; }
-        80% { transform: translateX(-400px); opacity: 0.7; }
-        100% { transform: translateX(-500px); opacity: 0; }
-      }
-
-      /* Animated Boat for Via Laut */
-      .animated-boat {
-        position: absolute;
-        bottom: 20px;
-        left: 0;
-        font-size: 2rem;
-        color: #17a2b8;
-        animation: sail-boat 7s ease-in-out infinite;
-        opacity: 0.7;
-        pointer-events: none;
-      }
-
-      @keyframes sail-boat {
-        0% { transform: translateX(0) rotate(0deg); opacity: 0; }
-        25% { transform: translateX(100px) rotate(2deg); opacity: 0.7; }
-        50% { transform: translateX(200px) rotate(-2deg); opacity: 0.7; }
-        75% { transform: translateX(300px) rotate(2deg); opacity: 0.7; }
-        100% { transform: translateX(400px) rotate(0deg); opacity: 0; }
-      }
-
-      /* Wave Animation for Boat */
-      .wave {
-        position: absolute;
-        bottom: 10px;
-        left: 0;
-        width: 100%;
-        height: 10px;
-        background: linear-gradient(90deg, transparent, rgba(23, 162, 184, 0.3), transparent);
-        animation: wave-motion 3s ease-in-out infinite;
-      }
-
-      @keyframes wave-motion {
-        0% { transform: translateX(-100%); }
-        100% { transform: translateX(100%); }
-      }
-
-
-
-/* Jeep Entry Animation for Rekomendasi Kendaraan */
-.jeep-entry {
-  position: absolute;
-  bottom: 20px;
-  left: -50px;
-  font-size: 2rem;
-  color: #28a745;
-  animation: jeep-enter 5s ease-in-out infinite;
-  opacity: 0;
-}
-
-@keyframes jeep-enter {
-  0% { transform: translateX(-50px); opacity: 0; }
-  20% { opacity: 0.7; }
-  80% { opacity: 0.7; }
-  100% { transform: translateX(350px); opacity: 0; }
-}
-
-/* Fade-in for Peta */
-.fade-in-peta {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 1s ease, transform 1s ease;
-}
-
-.fade-in-peta.animate {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Background Pattern for Alamat Lengkap */
-.address-pattern {
-  background-image: radial-gradient(circle at 20% 80%, rgba(40, 167, 69, 0.1) 0%, transparent 50%),
-                    radial-gradient(circle at 80% 20%, rgba(0, 123, 255, 0.1) 0%, transparent 50%),
-                    radial-gradient(circle at 40% 40%, rgba(255, 193, 7, 0.1) 0%, transparent 50%);
-  background-size: 100px 100px;
-}
-
-/* Parallax Background */
-.parallax-bg {
-  background-image: url('img/hutan_tropis_bg.png'); /* Placeholder for tropical forest image */
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
-  opacity: 0.1;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
-
-/* Tooltip for Transport Icons */
-.tooltip-custom {
-  position: relative;
-  display: inline-block;
-}
-
-.tooltip-custom .tooltip-text {
-  visibility: hidden;
-  width: 120px;
-  background-color: #28a745;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
-  position: absolute;
-  z-index: 1;
-  bottom: 125%;
-  left: 50%;
-  margin-left: -60px;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-      .tooltip-custom:hover .tooltip-text {
-        visibility: visible;
-        opacity: 1;
-      }
-
-      /* Jeep Entry Animation for Rekomendasi Kendaraan */
-      .jeep-entry {
-        position: absolute;
-        bottom: 20px;
-        left: -50px;
-        font-size: 2rem;
-        color: #28a745;
-        animation: jeep-enter 5s ease-in-out infinite;
-        opacity: 0;
-      }
-
-      @keyframes jeep-enter {
-        0% { transform: translateX(-50px); opacity: 0; }
-        20% { opacity: 0.7; }
-        80% { opacity: 0.7; }
-        100% { transform: translateX(350px); opacity: 0; }
-      }
-
-      /* Wave Animation for Boat */
-      .wave {
-        position: absolute;
-        bottom: 10px;
-        left: 0;
-        width: 100%;
-        height: 10px;
-        background: linear-gradient(90deg, transparent, rgba(23, 162, 184, 0.3), transparent);
-        animation: wave-motion 3s ease-in-out infinite;
-      }
-
-      @keyframes wave-motion {
-        0% { transform: translateX(-100%); }
-        100% { transform: translateX(100%); }
-      }
-
-      /* Enhanced Gradient Background with Natural Pattern */
-      .section-gradient {
-        background: linear-gradient(135deg, #e9f9ef 0%, #d4edda 25%, #a8d5a3 50%, #f5fff8 75%, #e9f9ef 100%);
-        background-image:
-          radial-gradient(circle at 20% 80%, rgba(40, 167, 69, 0.15) 0%, transparent 50%),
-          radial-gradient(circle at 80% 20%, rgba(0, 123, 255, 0.1) 0%, transparent 50%),
-          radial-gradient(circle at 40% 40%, rgba(255, 193, 7, 0.08) 0%, transparent 50%),
-          url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234caf50' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        background-size: 100px 100px, 100px 100px, 100px 100px, 60px 60px;
-        padding: 50px 20px;
-        position: relative;
-        overflow: hidden;
-      }
-
-      /* Floating Background Ornaments */
-      .background-ornaments {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        z-index: 1;
-      }
-
-      .leaf-ornament {
-        position: absolute;
-        font-size: 2rem;
-        color: rgba(76, 175, 80, 0.3);
-        animation: leaf-float 8s ease-in-out infinite;
-      }
-
-      .leaf-ornament:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
-      .leaf-ornament:nth-child(2) { top: 20%; right: 15%; animation-delay: 2s; }
-      .leaf-ornament:nth-child(3) { bottom: 30%; left: 20%; animation-delay: 4s; }
-      .leaf-ornament:nth-child(4) { bottom: 20%; right: 10%; animation-delay: 6s; }
-
-      .bird-ornament {
-        position: absolute;
-        font-size: 1.5rem;
-        color: rgba(33, 150, 243, 0.4);
-        animation: bird-fly 12s ease-in-out infinite;
-      }
-
-      .bird-ornament:nth-child(1) { top: 15%; left: -5%; animation-delay: 1s; }
-      .bird-ornament:nth-child(2) { top: 35%; right: -5%; animation-delay: 5s; }
-      .bird-ornament:nth-child(3) { bottom: 25%; left: -5%; animation-delay: 9s; }
-
-      @keyframes leaf-float {
-        0%, 100% { transform: translateY(0px) rotate(0deg); }
-        25% { transform: translateY(-10px) rotate(5deg); }
-        50% { transform: translateY(-5px) rotate(-3deg); }
-        75% { transform: translateY(-15px) rotate(2deg); }
-      }
-
-      @keyframes bird-fly {
-        0% { transform: translateX(-100px) translateY(0px); opacity: 0; }
-        10% { opacity: 1; }
-        90% { opacity: 1; }
-        100% { transform: translateX(calc(100vw + 100px)) translateY(-20px); opacity: 0; }
-      }
-
-      /* Enhanced Flexbox untuk Alamat & Peta dengan Glassmorphism */
-      .lokasi-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: stretch;
-        gap: 30px;
-        flex-wrap: wrap;
-        overflow: visible;
-        position: relative;
-        z-index: 2;
-        padding: 20px;
-      }
-
-      .lokasi-container .card {
-        flex: 1 1 350px;
-        min-width: 300px;
-        max-width: 600px;
-        background: linear-gradient(135deg,
-          rgba(255, 255, 255, 0.25),
-          rgba(255, 255, 255, 0.15),
-          rgba(248, 249, 250, 0.2)
-        );
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        border-radius: 25px;
-        padding: 30px;
-        box-shadow:
-          0 8px 32px rgba(0, 0, 0, 0.1),
-          0 0 0 1px rgba(255, 255, 255, 0.18),
-          inset 0 1px 0 rgba(255, 255, 255, 0.3);
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        position: relative;
-        overflow: hidden;
-        opacity: 0;
-        transform: translateY(50px) scale(0.9) rotateX(10deg);
-        animation: card-appear-glass 1s ease-out forwards;
-        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-
-      .lokasi-container .card:nth-child(1) { animation-delay: 0.3s; }
-      .lokasi-container .card:nth-child(2) { animation-delay: 0.6s; }
-
-      @keyframes card-appear-glass {
-        to {
-          opacity: 1;
-          transform: translateY(0) scale(1) rotateX(0deg);
-        }
-      }
-
-      .lokasi-container .card:hover {
-        transform: translateY(-8px) scale(1.02) rotateX(-2deg);
-        box-shadow:
-          0 20px 60px rgba(40, 167, 69, 0.15),
-          0 0 0 1px rgba(40, 167, 69, 0.2),
-          0 0 20px rgba(76, 175, 80, 0.1);
-        border-color: rgba(40, 167, 69, 0.4);
-        background: linear-gradient(135deg,
-          rgba(255, 255, 255, 0.35),
-          rgba(255, 255, 255, 0.25),
-          rgba(248, 249, 250, 0.3)
-        );
-      }
-
-      .lokasi-container .card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg,
-          transparent,
-          rgba(40, 167, 69, 0.1),
-          rgba(0, 123, 255, 0.1),
-          transparent
-        );
-        transition: left 0.8s ease;
-        z-index: -1;
-      }
-
-      .lokasi-container .card:hover::before {
-        left: 100%;
-      }
-
-      /* Glassmorphism untuk semua cards */
-      .glass-card {
-        background: linear-gradient(135deg,
-          rgba(255, 255, 255, 0.25),
-          rgba(255, 255, 255, 0.15)
-        );
-        backdrop-filter: blur(15px);
-        -webkit-backdrop-filter: blur(15px);
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        box-shadow:
-          0 8px 32px rgba(0, 0, 0, 0.1),
-          inset 0 1px 0 rgba(255, 255, 255, 0.2);
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-
-      .glass-card:hover {
-        transform: translateY(-5px) rotateX(-1deg);
-        box-shadow:
-          0 15px 45px rgba(0, 0, 0, 0.15),
-          inset 0 1px 0 rgba(255, 255, 255, 0.3);
-        background: linear-gradient(135deg,
-          rgba(255, 255, 255, 0.35),
-          rgba(255, 255, 255, 0.25)
-        );
-      }
-
-      /* Card Icons */
-      .card-icon {
-        font-size: 3rem;
-        margin-bottom: 15px;
-        display: block;
-        text-align: center;
-        transition: all 0.3s ease;
-      }
-
-      .card-icon.location-pin {
-        color: #e53935;
-        animation: pin-vibrate 2s ease-in-out infinite;
-      }
-
-      .card-icon.house {
-        color: #8d6e63;
-        animation: house-sway 3s ease-in-out infinite;
-      }
-
-      .card-icon.map {
-        color: #1976d2;
-        animation: map-blink 4s ease-in-out infinite;
-      }
-
-      @keyframes pin-vibrate {
-        0%, 100% { transform: translateX(0); }
-        25% { transform: translateX(-2px); }
-        75% { transform: translateX(2px); }
-      }
-
-      @keyframes house-sway {
-        0%, 100% { transform: rotate(0deg); }
-        25% { transform: rotate(1deg); }
-        75% { transform: rotate(-1deg); }
-      }
-
-      @keyframes map-blink {
-        0%, 100% { opacity: 1; transform: scale(1); }
-        50% { opacity: 0.7; transform: scale(1.05); }
-      }
-
-      /* Enhanced Button */
-      .btn-map {
-        margin-top: 20px;
-        padding: 12px 25px;
-        background: linear-gradient(45deg, #2e7d32, #4caf50);
-        color: #fff;
-        border: none;
-        border-radius: 25px;
-        cursor: pointer;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
-        box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3);
-      }
-
-      .btn-map::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(45deg, #4caf50, #66bb6a, #2e7d32);
-        transition: left 0.5s ease;
-        z-index: -1;
-      }
-
-      .btn-map:hover {
-        transform: translateY(-3px) scale(1.05);
-        box-shadow: 0 8px 25px rgba(46, 125, 50, 0.4);
-      }
-
-      .btn-map:hover::before {
-        left: 0;
-      }
-
-      .lokasi-container iframe {
-        width: 100%;
-        height: 250px;
-        border-radius: 15px;
-        border: 2px solid rgba(255, 255, 255, 0.3);
-        transition: all 0.3s ease;
-      }
-
-      .lokasi-container iframe:hover {
-        border-color: rgba(40, 167, 69, 0.5);
-        box-shadow: 0 0 20px rgba(40, 167, 69, 0.2);
-      }
-
-      @media (max-width: 768px) {
-        .lokasi-container {
-          flex-direction: column;
-          overflow: visible;
-        }
-        .lokasi-container .card {
-          max-width: 100%;
-          min-width: auto;
-          margin-bottom: 20px;
-        }
-        .background-ornaments {
-          display: none; /* Hide ornaments on mobile for better performance */
-        }
-      }
-
-      /* Tombol Maps */
-      .btn-map {
-        margin-top: 15px;
-        padding: 10px 20px;
-        background: #2e7d32;
-        color: #fff;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: background 0.3s ease, transform 0.2s ease;
-      }
-      .btn-map:hover {
-        background: #1b5e20;
-        transform: scale(1.05);
-      }
-
-      /* Leaf Divider */
-      .leaf-divider {
-        text-align: center;
-        font-size: 24px;
-        margin: 40px 0;
-        color: #4caf50;
-        animation: leafFloat 3s ease-in-out infinite;
-      }
-
-      @keyframes leafFloat {
-        0% { transform: translateY(0px); }
-        50% { transform: translateY(-5px); }
-        100% { transform: translateY(0px); }
-      }
-    </style>
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <!-- Left side: Logo -->
-        <div class="navbar-brand-container" style="flex: 1">
-          <a class="navbar-brand" href="index.html"><img src="img/Logo_Desa_Wisata_Klabili-removebg-preview.png" alt=""
-              width="100px" /></a>
-        </div>
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        
-        <!-- Language Toggle Switch - Outside collapsible menu -->
-        <div class="navbar-nav d-flex align-items-center">
-          <div class="nav-item d-flex align-items-center language-toggle-container id-active"
-            id="languageToggleContainer">
-            <svg class="flag-img flag-en inactive" width="52" height="36" viewBox="0 0 20 15"
-              xmlns="http://www.w3.org/2000/svg" onclick="setLanguage('en')">
-              <rect width="20" height="15" fill="#012169" />
-              <path d="M0 0L20 15M20 0L0 15" stroke="#fff" stroke-width="2" />
-              <path d="M0 0L20 15M20 0L0 15" stroke="#C8102E" stroke-width="1" />
-              <path d="M10 0V15M0 7.5H20" stroke="#fff" stroke-width="3" />
-              <path d="M10 0V15M0 7.5H20" stroke="#C8102E" stroke-width="2" />
-            </svg>
-            <span class="language-toggle-dot"></span>
-            <svg class="flag-img flag-id active" width="32" height="22" viewBox="0 0 20 15"
-              xmlns="http://www.w3.org/2000/svg" onclick="setLanguage('id')">
-              <rect width="20" height="7.5" fill="#FF0000" />
-              <rect y="7.5" width="20" height="7.5" fill="#FFFFFF" />
-            </svg>
-          </div>
-        </div>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <!-- Center: Navigation items -->
-          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 justify-content-center" style="flex: 1">
-            <li class="nav-item">
-              <button class="btn nav-btn" type="button" data-nav-url="index.html">
-                Beranda
-              </button>
-            </li>
-
-            <li class="nav-item dropdown">
-              <button class="btn nav-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Tentang Kami
-              </button>
-              <ul class="dropdown-menu">
-                <li>
-                  <button class="dropdown-item" type="button" data-nav-url="tentang_kami.html#profil-desa">
-                    Profil Desa
-                  </button>
-                </li>
-                <li>
-                  <button class="dropdown-item" type="button" data-nav-url="tentang_kami.html#struktur-desa">
-                    Struktur Desa
-                  </button>
-                </li>
-              </ul>
-            </li>
-
-            <li class="nav-item dropdown">
-              <button class="btn nav-btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Fasilitas
-              </button>
-              <ul class="dropdown-menu">
-                <li>
-                  <button class="dropdown-item" type="button" data-nav-url="fasilitas.html#fasilitas-umum-desa">
-                    Fasilitas Umum Desa
-                  </button>
-                </li>
-              </ul>
-            </li>
-
-            <li class="nav-item dropdown">
-              <button class="btn nav-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Wisata & Budaya
-              </button>
-              <ul class="dropdown-menu">
-                <li>
-                  <button class="dropdown-item" type="button" data-nav-url="wisata_budaya.html#spot-wisata">
-                    Spot Wisata
-                  </button>
-                </li>
-                <li>
-                  <button class="dropdown-item" type="button" data-nav-url="wisata_budaya.html#budaya-lokal">
-                    Budaya Lokal
-                  </button>
-                </li>
-                <li>
-                  <button class="dropdown-item" type="button" data-nav-url="wisata_budaya.html#acara-tahunan">
-                    Acara Tahunan
-                  </button>
-                </li>
-                <li>
-                  <button class="dropdown-item" type="button" data-nav-url="wisata_budaya.html#kerajinan-tangan">
-                    Kerajinan Tangan
-                  </button>
-                </li>
-                <li>
-                  <button class="dropdown-item" type="button" data-nav-url="wisata_budaya.html#kuliner-lokal">
-                    Kuliner Lokal
-                  </button>
-                </li>
-                <li>
-                  <hr class="dropdown-divider" />
-                </li>
-                <li>
-                  <button class="dropdown-item" type="button" data-nav-url="wisata_budaya.html#souvenir">
-                    Suvenir
-                  </button>
-                </li>
-              </ul>
-            </li>
-
-            <li class="nav-item dropdown">
-              <button class="btn nav-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Informasi Desa
-              </button>
-              <ul class="dropdown-menu">
-                <li>
-                  <button class="dropdown-item" type="button" data-nav-url="informasi.html#lokasi-peta">
-                    Lokasi & Peta
-                  </button>
-                </li>
-                <li>
-                  <button class="dropdown-item" type="button" data-nav-url="informasi.html#kontak">
-                    Kontak
-                  </button>
-                </li>
-              </ul>
-            </li>
-
-            <li class="nav-item dropdown">
-              <button class="btn nav-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Galeri
-              </button>
-              <ul class="dropdown-menu">
-                <li>
-                  <button class="dropdown-item" type="button" data-nav-url="galeri.html#dokumentasi-acara">
-                    Dokumentasi Acara
-                  </button>
-                </li>
-                <li>
-                  <button class="dropdown-item" type="button" data-nav-url="galeri.html#kegiatan-masyarakat">
-                    Kegiatan Masyarakat
-                  </button>
-                </li>
-              </ul>
-            </li>
-          </ul>
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      .contact-item:hover {
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <!-- Left side: Logo -->
+      <div class="navbar-brand-container" style="flex: 1">
+        <a class="navbar-brand" href="index.html"><img src="img/Logo_Desa_Wisata_Klabili-removebg-preview.png" alt=""
+            width="100px" /></a>
+      </div>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Language Toggle Switch - Outside collapsible menu -->
+      <div class="navbar-nav d-flex align-items-center">
+        <div class="nav-item d-flex align-items-center language-toggle-container en-active"
+          id="languageToggleContainer">
+          <svg class="flag-img flag-en inactive" width="52" height="36" viewBox="0 0 20 15"
+            xmlns="http://www.w3.org/2000/svg" onclick="setLanguage('en')">
+            <rect width="20" height="15" fill="#012169" />
+            <path d="M0 0L20 15M20 0L0 15" stroke="#fff" stroke-width="2" />
+            <path d="M0 0L20 15M20 0L0 15" stroke="#C8102E" stroke-width="1" />
+            <path d="M10 0V15M0 7.5H20" stroke="#fff" stroke-width="3" />
+            <path d="M10 0V15M0 7.5H20" stroke="#C8102E" stroke-width="2" />
+          </svg>
+          <span class="language-toggle-dot"></span>
+          <svg class="flag-img flag-id active" width="32" height="22" viewBox="0 0 20 15"
+            xmlns="http://www.w3.org/2000/svg" onclick="setLanguage('id')">
+            <rect width="20" height="7.5" fill="#FF0000" />
+            <rect y="7.5" width="20" height="7.5" fill="#FFFFFF" />
+          </svg>
         </div>
       </div>
-    </nav>
 
-    <!-- Page Title -->
-     <div class="container-fluid bg-primary text-white py-5">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 text-center">
-            <h1 class="display-4 fw-bold mb-3 text-white">Informasi Desa Klabili</h1>
-            <p class="lead">Panduan lengkap informasi dan lokasi Desa Klabili</p>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- Center: Navigation items -->
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 justify-content-center" style="flex: 1">
+          <li class="nav-item">
+            <button class="btn nav-btn" type="button" data-nav-url="index.html">
+              Beranda
+            </button>
+          </li>
+
+          <li class="nav-item dropdown">
+            <button class="btn nav-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Tentang Kami
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <button class="dropdown-item" type="button" data-nav-url="tentang_kami.html#profil-desa">
+                  Profil Desa
+                </button>
+              </li>
+              <li>
+                <button class="dropdown-item" type="button" data-nav-url="tentang_kami.html#struktur-desa">
+                  Struktur Desa
+                </button>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <button class="btn nav-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Fasilitas
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <button class="dropdown-item" type="button" data-nav-url="fasilitas.html#fasilitas-umum-desa">
+                  Fasilitas Umum Desa
+                </button>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <button class="btn nav-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Wisata & Budaya
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <button class="dropdown-item" type="button" data-nav-url="wisata_budaya.html#spot-wisata">
+                  Spot Wisata
+                </button>
+              </li>
+              <li>
+                <button class="dropdown-item" type="button" data-nav-url="wisata_budaya.html#budaya-lokal">
+                  Budaya Lokal
+                </button>
+              </li>
+              <li>
+                <button class="dropdown-item" type="button" data-nav-url="wisata_budaya.html#acara-tahunan">
+                  Acara Tahunan
+                </button>
+              </li>
+              <li>
+                <button class="dropdown-item" type="button" data-nav-url="wisata_budaya.html#kerajinan-tangan">
+                  Kerajinan Tangan
+                </button>
+              </li>
+              <li>
+                <button class="dropdown-item" type="button" data-nav-url="wisata_budaya.html#kuliner-lokal">
+                  Kuliner Lokal
+                </button>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li>
+                <button class="dropdown-item" type="button" data-nav-url="wisata_budaya.html#souvenir">
+                  Souvenir
+                </button>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <button class="btn nav-btn dropdown-toggle active" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Informasi Desa
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <button class="dropdown-item" type="button" data-nav-url="informasi.html#lokasi-peta">
+                  Lokasi & Peta
+                </button>
+              </li>
+              <li>
+                <button class="dropdown-item" type="button" data-nav-url="informasi.html#kontak">
+                  Kontak
+                </button>
+              </li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <button class="btn nav-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Galeri
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <button class="dropdown-item" type="button" data-nav-url="galeri.html#dokumentasi-acara">
+                  Dokumentasi Acara
+                </button>
+              </li>
+              <li>
+                <button class="dropdown-item" type="button" data-nav-url="galeri.html#kegiatan-masyarakat">
+                  Kegiatan Masyarakat
+                </button>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Title -->
+  <div class="container-fluid bg-primary text-white py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h1 class="display-4 fw-bold text-white mb-3">Informasi Desa</h1>
+          <p class="lead">Informasi lengkap tentang lokasi, kontak, dan tips perjalanan</p>
         </div>
       </div>
     </div>
   </div>
 
+  <div class="container mt-4">
     <!-- Page Content -->
-        <!-- Lokasi & Peta Section -->
-        <section id="lokasi-peta" class="section-gradient py-5">
-            <!-- Background Ornaments -->
-            <div class="background-ornaments">
-                <div class="leaf-ornament">🌿</div>
-                <div class="leaf-ornament">🍃</div>
-                <div class="leaf-ornament">🌿</div>
-                <div class="leaf-ornament">🍃</div>
-                <div class="bird-ornament">🐦</div>
-                <div class="bird-ornament">🦅</div>
-                <div class="bird-ornament">🐦</div>
-            </div>
+        <!-- Location & Map Section -->
+        <section id="lokasi-peta" class="py-5" style="background: linear-gradient(135deg, #f0f8f0 0%, #ffffff 100%);">
             <div class="row">
                 <div class="col-12 text-center mb-5">
-                    <h2 class="display-5 fw-bold section-heading" style="color: #2d5a2d;">📍 Lokasi Desa Klabili</h2>
-                    <p class="lead" style="color: #6c757d;">Temukan lokasi dan cara menuju desa wisata kami</p>
+                    <h2 class="section-title">Lokasi & Peta</h2>
+                    <p class="section-subtitle">Temukan jalan ke Desa Wisata Klabili</p>
                 </div>
             </div>
 
-            <div class="container">
-                <div class="lokasi-container">
-                    <!-- Alamat Lengkap -->
-                    <div class="card alamat" data-aos="fade-right">
-                        <h3>📍 Alamat Lengkap</h3>
-                        <p><strong>🏠 Kampung Klabili</strong></p>
-                        <p>📍 Distrik Selemkai</p>
-                        <p>📍 Kabupaten Tambrauw</p>
-                        <p>📍 Provinsi Papua Barat, Indonesia</p>
-                        <p><span class="gps">📡 GPS: -0.7893, 132.0685</span></p>
-                    </div>
-
-                    <!-- Peta Interaktif -->
-                    <div class="card peta" data-aos="fade-left">
-                        <h3>🗺️ Peta Interaktif</h3>
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.123456789012!2d132.0685!3d-0.7893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMMKwNDcnMjEuNSJTIDEzMsKwMDQnMDYuNiJF!5e0!3m2!1sen!2sid!4v1234567890123!5m2!1sen!2sid"
-                            allowfullscreen=""
-                            loading="lazy">
-                        </iframe>
-                        <button class="btn-map" onclick="window.open('https://maps.app.goo.gl/1VghFktcsQnEcgB39', '_blank')">Lihat di Google Maps</button>
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="info-card">
+                        <div class="icon-wrapper">
+                            <i class="fas fa-map-marker-alt text-white fa-2x"></i>
+                        </div>
+                        <h4 class="text-center mb-4" style="color: #2c3e50; font-weight: 600;">Alamat Desa</h4>
+                        <div class="text-center">
+                            <p style="font-size: 1.1rem; line-height: 1.8; color: #34495e;">
+                                <strong>Desa Klabili</strong><br>
+                                Kecamatan Selemkai<br>
+                                Kabupaten Tambrauw<br>
+                                Provinsi Papua Barat Daya<br>
+                                Indonesia
+                            </p>
+                            <div style="background: #f8f9fa; padding: 15px; border-radius: 10px; margin-top: 20px;">
+                                <small style="color: #6c757d;">
+                                    <i class="fas fa-info-circle me-2"></i>
+                                    Terletak pada ketinggian 800 meter di atas permukaan laut
+                                </small>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Leaf Divider -->
-                <div class="leaf-divider">🌿</div>
-
-            <!-- Cara ke Sini -->
-            <div class="row mt-5">
-                <div class="col-12">
-                    <h3 class="text-center mb-4" style="color: #2d5a2d;">🗺️ Cara ke Sini</h3>
-                    <!-- Tabs -->
+                <div class="col-lg-6">
                     <div class="card border-0 shadow-sm" style="background: #ffffff; border-radius: 15px;">
                         <div class="card-body p-4">
                             <ul class="nav nav-tabs" id="transportTabs" role="tablist">
                                 <li class="nav-item" role="presentation">
-                                    <button class="nav-link active" id="udara-tab" data-bs-toggle="tab" data-bs-target="#udara" type="button" role="tab" aria-controls="udara" aria-selected="true">Via Udara
-                                      <span class="animated-plane transport-icon tooltip-custom" title="Penerbangan ke Sorong">✈️
-                                        <span class="tooltip-text">Penerbangan ke Sorong</span>
-                                      </span>
-                                    </button>
+                                    <button class="nav-link active" id="udara-tab" data-bs-toggle="tab" data-bs-target="#udara" type="button" role="tab" aria-controls="udara" aria-selected="true">Dengan Udara</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="darat-tab" data-bs-toggle="tab" data-bs-target="#darat" type="button" role="tab" aria-controls="darat" aria-selected="false">Via Darat
-                                      <span class="animated-car transport-icon tooltip-custom" title="Rute Darat 4x4">🚙
-                                        <span class="tooltip-text">Rute Darat 4x4</span>
-                                      </span>
-                                    </button>
+                                    <button class="nav-link" id="darat-tab" data-bs-toggle="tab" data-bs-target="#darat" type="button" role="tab" aria-controls="darat" aria-selected="false">Dengan Darat</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="laut-tab" data-bs-toggle="tab" data-bs-target="#laut" type="button" role="tab" aria-controls="laut" aria-selected="false">Via Laut
-                                      <span class="animated-boat transport-icon tooltip-custom" title="Perjalanan Laut">🚤
-                                        <span class="tooltip-text">Perjalanan Laut</span>
-                                      </span>
-                                    </button>
+                                    <button class="nav-link" id="laut-tab" data-bs-toggle="tab" data-bs-target="#laut" type="button" role="tab" aria-controls="laut" aria-selected="false">Dengan Laut</button>
                                 </li>
                             </ul>
                             <div class="tab-content mt-3" id="transportTabsContent">
                                 <div class="tab-pane fade show active" id="udara" role="tabpanel" aria-labelledby="udara-tab">
-                                    <p><strong>Dari Sorong:</strong> Penerbangan ke Bandara Domine Eduard Osok, lalu darat ke Klabili via Sausapor (~4 jam).</p>
+                                    <p><strong>Dari Sorong:</strong> Penerbangan ke Bandara Domine Eduard Osok, kemudian darat ke Klabili melalui Sausapor (~4 jam).</p>
                                 </div>
                                 <div class="tab-pane fade" id="darat" role="tabpanel" aria-labelledby="darat-tab">
-                                    <p><strong>Dari Sorong:</strong> Rute Sorong → Sausapor → Klabili dengan mobil 4×4 atau motor trail (~2–4 jam).</p>
+                                    <p><strong>Dari Sorong:</strong> Rute Sorong → Sausapor → Klabili dengan kendaraan 4×4 atau sepeda motor trail (~2–4 jam).</p>
                                 </div>
                                 <div class="tab-pane fade" id="laut" role="tabpanel" aria-labelledby="laut-tab">
-                                    <p>Tidak ada feri langsung. Pelabuhan terdekat Sausapor (kargo mingguan), speedboat Sorong–Sausapor (~2 jam) dalam perencanaan.</p>
-                                    <div class="wave"></div>
+                                    <p>Tidak ada layanan feri langsung. Pelabuhan terdekat adalah Sausapor (kargo mingguan), speedboat Sorong–Sausapor (~2 jam) sedang direncanakan.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Rekomendasi Kendaraan -->
-            <div class="row mt-4">
+
+            <div class="decorative-line"></div>
+
+            <div class="row">
                 <div class="col-12">
-                    <h4 class="text-center mb-3" style="color: #2d5a2d;">🚗 Rekomendasi Kendaraan</h4>
-                    <div class="card border-0 shadow-sm" style="background: #ffffff; border-radius: 15px;">
-                        <div class="card-body p-4 text-center">
-                            <p style="color: #6c757d;">Gunakan mobil double cabin 4×4 (Toyota Hilux, Mitsubishi Pajero) atau motor trail untuk jalan berbatu/lumpur.</p>
-                            <p>🚙 Mobil Double Cabin 4x4</p>
-                            <p>🏍️ Motor Trail</p>
+                    <div class="map-container">
+                        <div class="text-center">
+                            <i class="fas fa-map fa-3x mb-3"></i>
+                            <p>Peta Interaktif Segera Hadir</p>
+                            <small>Peta lokasi detail akan tersedia di sini</small>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Kontak Section -->
+        <!-- Contact Section -->
         <section id="kontak" class="py-5 bg-light">
             <div class="container">
                 <div class="row">
                     <div class="col-12 text-center mb-5">
-                        <h2 class="display-5 fw-bold text-primary">Kontak</h2>
-                        <p class="lead text-muted">Hubungi kami untuk informasi dan reservasi</p>
+                        <h2 class="section-title">Informasi Kontak</h2>
+                        <p class="section-subtitle">Hubungi kami untuk pemesanan dan pertanyaan</p>
                     </div>
                 </div>
-                <div class="row g-4 justify-content-center">
-                    <div class="col-lg-4 col-md-6 d-flex justify-content-center">
-                        <div class="card border-0 shadow-lg h-100" style="background: linear-gradient(135deg, #cce5ff, #99d6ff); border-radius: 20px; box-shadow: 0 8px 16px rgba(0, 123, 255, 0.25); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-                            <div class="card-body text-center p-4">
-                                <div class="bg-primary rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px; box-shadow: 0 4px 8px rgba(0,123,255,0.3);">
-                                    <i class="fas fa-phone text-white fa-2x"></i>
+
+                <div class="row g-4">
+                    <div class="col-lg-4">
+                        <div class="contact-item">
+                            <div class="d-flex align-items-center">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
                                 </div>
-                                <h5 class="card-title" style="color: #004085; font-weight: 700;">Telepon</h5>
-                                <p class="card-text" style="color: #004085;">
-                                    <strong>Kantor Desa:</strong><br>
-                                    +62 123-1234<br><br>
-                                    <strong>Koordinator Wisata:</strong><br>
-                                    +62 987-6543
-                                </p>
+                                <div>
+                                    <h5 style="color: #2c3e50; margin-bottom: 5px;">Telepon</h5>
+                                    <p style="color: #6c757d; margin-bottom: 0;">+62 822-3695-5445</p>
+                                    <small style="color: #95a5a6;">Tersedia 24/7</small>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 d-flex justify-content-center">
-                        <div class="card border-0 shadow-lg h-100" style="background: linear-gradient(135deg, #d4edda, #a8d5a3); border-radius: 20px; box-shadow: 0 8px 16px rgba(40, 167, 69, 0.25); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-                            <div class="card-body text-center p-4">
-                                <div class="bg-success rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px; box-shadow: 0 4px 8px rgba(40,167,69,0.3);">
-                                    <i class="fas fa-envelope text-white fa-2x"></i>
+                    <div class="col-lg-4">
+                        <div class="contact-item">
+                            <div class="d-flex align-items-center">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
                                 </div>
-                                <h5 class="card-title" style="color: #155724; font-weight: 700;">Email</h5>
-                                <p class="card-text" style="color: #155724;">
-                                    <strong>Informasi Umum:</strong><br>
-                                    info@desaklabili.id<br><br>
-                                    <strong>Reservasi:</strong><br>
-                                    booking@desaklabili.id
-                                </p>
+                                <div>
+                                    <h5 style="color: #2c3e50; margin-bottom: 5px;">Email</h5>
+                                    <p style="color: #6c757d; margin-bottom: 0;">info@desaklabili.com</p>
+                                    <small style="color: #95a5a6;">Respons dalam 24 jam</small>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6 d-flex justify-content-center">
-                        <div class="card border-0 shadow-lg h-100" style="background: linear-gradient(135deg, #fff3cd, #ffeaa7); border-radius: 20px; box-shadow: 0 8px 16px rgba(255, 193, 7, 0.25); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-                            <div class="card-body text-center p-4">
-                                <div class="bg-warning rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px; box-shadow: 0 4px 8px rgba(255,193,7,0.3);">
-                                    <i class="fab fa-whatsapp text-white fa-2x"></i>
+                    <div class="col-lg-4">
+                        <div class="contact-item">
+                            <div class="d-flex align-items-center">
+                                <div class="contact-icon">
+                                    <i class="fab fa-whatsapp"></i>
                                 </div>
-                                <h5 class="card-title" style="color: #856404; font-weight: 700;">WhatsApp</h5>
-                                <p class="card-text" style="color: #856404;">
-                                    <strong>Chat Langsung:</strong><br>
-                                    +62 82236955445<br><br>
-                                    <small class="text-muted">Tersedia 24/7 untuk informasi cepat</small>
-                                </p>
+                                <div>
+                                    <h5 style="color: #2c3e50; margin-bottom: 5px;">WhatsApp</h5>
+                                    <p style="color: #6c757d; margin-bottom: 0;">+62 822-3695-5445</p>
+                                    <small style="color: #95a5a6;">Respons cepat</small>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row mt-5 justify-content-center">
-                    <div class="col-lg-8 d-flex justify-content-center">
-                        <div class="card border-0 shadow-lg" style="background: linear-gradient(135deg, #e3f2fd, #bbdefb); border-radius: 20px; box-shadow: 0 8px 16px rgba(13, 110, 253, 0.25); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-                            <div class="card-body p-4">
-                                <h5 class="card-title text-center mb-4" style="color: #0d6efd; font-weight: 700;"><i class="fas fa-clock text-info me-2"></i>Jam Operasional</h5>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <h6 style="color: #0d6efd; font-weight: 600;">Kantor Desa</h6>
-                                        <p class="small" style="color: #0d6efd;">
-                                            Senin - Jumat: 08:00 - 16:00<br>
-                                            Sabtu: 08:00 - 12:00<br>
-                                            Minggu: Tutup
-                                        </p>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <h6 style="color: #0d6efd; font-weight: 600;">Pusat Informasi Wisata</h6>
-                                        <p class="small" style="color: #0d6efd;">
-                                            Setiap Hari: 07:00 - 19:00<br>
-                                            <em>Termasuk hari libur</em>
-                                        </p>
-                                    </div>
+
+                <div class="row mt-5">
+                    <div class="col-lg-6">
+                        <div class="contact-item">
+                            <div class="d-flex align-items-center">
+                                <div class="contact-icon">
+                                    <i class="fab fa-instagram"></i>
+                                </div>
+                                <div>
+                                    <h5 style="color: #2c3e50; margin-bottom: 5px;">Instagram</h5>
+                                    <p style="color: #6c757d; margin-bottom: 0;">@klabili_birdwatching</p>
+                                    <small style="color: #95a5a6;">Ikuti untuk pembaruan</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="contact-item">
+                            <div class="d-flex align-items-center">
+                                <div class="contact-icon">
+                                    <i class="fab fa-facebook"></i>
+                                </div>
+                                <div>
+                                    <h5 style="color: #2c3e50; margin-bottom: 5px;">Facebook</h5>
+                                    <p style="color: #6c757d; margin-bottom: 0;">Klabili Tourism Village</p>
+                                    <small style="color: #95a5a6;">Pembaruan komunitas</small>
                                 </div>
                             </div>
                         </div>
@@ -1258,42 +627,62 @@
             </div>
         </section>
 
-        <!-- Tambahan Section -->
+        <!-- Additional Information Section -->
         <section id="tambahan" class="py-5">
             <div class="row">
                 <div class="col-12 text-center mb-5">
-                    <h2 class="display-5 fw-bold text-primary">Informasi Tambahan</h2>
-                    <p class="lead text-muted">Tips dan informasi penting untuk kunjungan Anda</p>
+                    <h2 class="section-title">Tips Perjalanan & Informasi</h2>
+                    <p class="section-subtitle">Informasi penting untuk kunjungan Anda</p>
                 </div>
             </div>
 
-            <div class="row g-4 justify-content-center">
-                <div class="col-lg-6 d-flex justify-content-center">
-                    <div class="card border-0 shadow-lg h-100" style="width: 100%; background: linear-gradient(135deg, #cce5ff, #99d6ff); border-radius: 20px; box-shadow: 0 8px 16px rgba(0, 123, 255, 0.25); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-                        <div class="card-body p-4 text-start">
-                            <h5 class="card-title" style="color: #004085; font-weight: 700;"><i class="fas fa-suitcase text-primary me-2"></i>Tips Berkunjung</h5>
-                            <ul class="list-unstyled" style="color: #004085;">
-                                <li><i class="fas fa-check text-success me-2"></i>Bawa pakaian hangat (suhu 15-25°C)</li>
-                                <li><i class="fas fa-check text-success me-2"></i>Gunakan alas kaki yang nyaman untuk trekking</li>
-                                <li><i class="fas fa-check text-success me-2"></i>Bawa kamera untuk mengabadikan momen</li>
-                                <li><i class="fas fa-check text-success me-2"></i>Siapkan uang tunai (ATM terbatas)</li>
-                                <li><i class="fas fa-check text-success me-2"></i>Hormati adat dan budaya lokal</li>
-                            </ul>
-                        </div>
+            <div class="info-grid">
+                <div class="weather-card">
+                    <div class="weather-icon">
+                        <i class="fas fa-cloud-sun"></i>
+                    </div>
+                    <h4 style="margin-bottom: 20px;">Cuaca & Iklim</h4>
+                    <p style="font-size: 1.1rem; line-height: 1.6;">
+                        Iklim tropis sejuk dengan suhu berkisar 18-25°C.
+                        Musim hujan: November-Maret. Waktu kunjungan terbaik: April-Oktober.
+                    </p>
+                </div>
+
+                <div class="tips-card">
+                    <h4 style="margin-bottom: 25px;">
+                        <i class="fas fa-lightbulb me-2"></i>Tips Perjalanan
+                    </h4>
+                    <div class="tips-item">
+                        <strong>Yang Dibawa:</strong> Pakaian hangat, perlengkapan hujan, sepatu hiking yang nyaman, obat anti nyamuk
+                    </div>
+                    <div class="tips-item">
+                        <strong>Waktu Terbaik:</strong> Pagi hari untuk pengamatan burung, sore hari untuk kegiatan budaya
+                    </div>
+                    <div class="tips-item">
+                        <strong>Durasi:</strong> Minimum 2-3 hari untuk sepenuhnya menikmati desa
                     </div>
                 </div>
 
-                <div class="col-lg-6 d-flex justify-content-center">
-                    <div class="card border-0 shadow-lg h-100" style="width: 100%; background: linear-gradient(135deg, #fff3cd, #ffeaa7); border-radius: 20px; box-shadow: 0 8px 16px rgba(255, 193, 7, 0.25); transition: transform 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'" onmouseout="this.style.transform='translateY(0)'">
-                        <div class="card-body p-4 text-start">
-                            <h5 class="card-title" style="color: #856404; font-weight: 700;"><i class="fas fa-exclamation-triangle text-warning me-2"></i>Hal Penting</h5>
-                            <ul class="list-unstyled" style="color: #856404;">
-                                <li><i class="fas fa-info-circle text-info me-2"></i>Reservasi homestay minimal 3 hari sebelumnya</li>
-                                <li><i class="fas fa-info-circle text-info me-2"></i>Musim terbaik: April-Oktober (kemarau)</li>
-                                <li><i class="fas fa-info-circle text-info me-2"></i>Sinyal telepon terbatas di beberapa area</li>
-                                <li><i class="fas fa-info-circle text-info me-2"></i>Jaga kebersihan dan kelestarian alam</li>
-                                <li><i class="fas fa-info-circle text-info me-2"></i>Ikuti panduan dari pemandu lokal</li>
-                            </ul>
+                <div class="emergency-card">
+                    <h4 style="margin-bottom: 25px;">
+                        <i class="fas fa-first-aid me-2"></i>Kontak Darurat
+                    </h4>
+                    <div class="emergency-item">
+                        <div class="emergency-icon">
+                            <i class="fas fa-hospital"></i>
+                        </div>
+                        <div>
+                            <strong>Pos Kesehatan</strong><br>
+                            <small>Layanan medis dasar tersedia di desa</small>
+                        </div>
+                    </div>
+                    <div class="emergency-item">
+                        <div class="emergency-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <strong>Darurat:</strong> +62 822-3695-5445<br>
+                            <small>Bantuan darurat 24/7</small>
                         </div>
                     </div>
                 </div>
@@ -1301,200 +690,125 @@
         </section>
     </div>
 
-    <!-- Footer -->
-  <footer class="bg-dark text-white py-5">
-    <div class="container">
-      <div class="row">
-        <!-- Column 1: Logo and Description -->
-        <div class="col-lg-3 col-md-6 mb-4">
-          <div class="mb-3">
-            <img src="img/Logo_Desa_Wisata_Klabili-removebg-preview.png" alt="Logo Desa Wisata Klabili" width="150px" />
-          </div>
-          <p class="text-white-50">
-            Desa Wisata Klabili menawarkan pengalaman wisata autentik dengan keindahan alam, budaya lokal, dan keramahan masyarakat Suku Moi.
-          </p>
+<!-- Footer -->
+<footer class="bg-dark text-white py-5">
+  <div class="container">
+    <div class="row">
+      <!-- Column 1: Logo and Description -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="mb-3">
+          <img src="img/LogoDesaWisata/Logo_Desa_Wisata_Klabili-removebg-preview.png" alt="Klabili Tourism Village Logo" width="150px" />
         </div>
-
-        <!-- Column 2: Quick Links -->
-        <div class="col-lg-3 col-md-6 mb-4">
-          <h5 class="fw-bold mb-3">Tautan Cepat</h5>
-          <ul class="list-unstyled">
-            <li class="mb-2"><a href="index.html" class="text-white-50 text-decoration-none">Beranda</a></li>
-            <li class="mb-2"><a href="tentang_kami.html" class="text-white-50 text-decoration-none">Tentang Kami</a></li>
-            <li class="mb-2"><a href="fasilitas.html" class="text-white-50 text-decoration-none">Fasilitas</a></li>
-            <li class="mb-2"><a href="wisata_budaya.html" class="text-white-50 text-decoration-none">Wisata & Budaya</a></li>
-            <li class="mb-2"><a href="galeri.html" class="text-white-50 text-decoration-none">Galeri</a></li>
-          </ul>
-        </div>
-
-        <!-- Column 3: Contact Info -->
-        <div class="col-lg-3 col-md-6 mb-4">
-          <h5 class="fw-bold mb-3">Kontak Kami</h5>
-          <ul class="list-unstyled">
-            <li class="mb-2">
-              <i class="fas fa-phone me-2"></i>
-              <span>+62 822-3695-5445</span>
-            </li>
-            <li class="mb-2">
-              <i class="fas fa-map-marker-alt me-2"></i>
-              <span>Kampung Klabili, Distrik Selemkai, Kabupaten Tambrauw</span>
-            </li>
-            <li class="mb-2">
-              <i class="fas fa-envelope me-2"></i>
-              <span>info@desaklabili.com</span>
-             </li>
-          </ul>
-        </div>
-
-        <!-- Column 4: Social Media -->
-        <div class="col-lg-3 col-md-6 mb-4">
-          <h5 class="fw-bold mb-3">Ikuti Kami</h5>
-          <div class="d-flex">
-            <a href="https://www.instagram.com/klabili_bridwhtcing/" target="_blank" rel="noopener noreferrer"
-              class="socialContainer containerOne me-3">
-              <svg class="socialSvg instagramSvg" viewBox="0 0 16 16">
-                <path
-                  d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z">
-                </path>
-              </svg>
-            </a>
-            <a href="https://www.facebook.com/profile.php?id=100094418988540" target="_blank" rel="noopener noreferrer"
-              class="socialContainer containerTwo me-3">
-              <svg class="socialSvg facebookSvg" viewBox="0 0 16 16">
-                <path
-                  d="M15.117 0H.883A.884.884 0 0 0 0 .883v14.234C0 15.548.396 16 .883 16h7.675v-6.176H6.548V7.41h2.01V5.797c0-1.99 1.216-3.078 2.993-3.078.868 0 1.617.064 1.836.093v2.13h-1.26c-.988 0-1.18.47-1.18 1.158V7.41h2.36l-.308 2.414h-2.052V16h4.025A.884.884 0 0 0 16 15.117V.883A.884.884 0 0 0 15.117 0z">
-                </path>
-              </svg>
-            </a>
-            <a href="https://wa.me/6282236955445?text=Halo%20saya%20mau%20tanya" target="_blank"
-              rel="noopener noreferrer" class="socialContainer
-              containerFour">
-              <svg class="socialSvg whatsappSvg" viewBox="0 0 16 16">
-                <path
-                  d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z">
-                </path>
-              </svg>
-            </a>
-          </div>
-        </div>
+        <p class="text-white-50">
+          Klabili Tourism Village offers authentic tourism experiences with natural beauty, local culture, and the warmth of the Moi Tribe community.
+        </p>
       </div>
 
-      <!-- Copyright -->
-      <hr class="my-4">
-      <div class="row">
-        <div class="col-12 text-center">
-          <p class="mb-0 text-white-50">
-            &copy; 2025 Desa Wisata Klabili. Semua hak dilindungi.
-          </p>
+      <!-- Column 2: Quick Links -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <h5 class="fw-bold mb-3">Quick Links</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2"><a href="index_en.html" class="text-white-50 text-decoration-none">Home</a></li>
+          <li class="mb-2"><a href="tentang_kami_en.html" class="text-white-50 text-decoration-none">About Us</a></li>
+          <li class="mb-2"><a href="fasilitas_en.html" class="text-white-50 text-decoration-none">Facilities</a></li>
+          <li class="mb-2"><a href="wisata_budaya_en.html" class="text-white-50 text-decoration-none">Tourism & Culture</a></li>
+          <li class="mb-2"><a href="galeri_en.html" class="text-white-50 text-decoration-none">Gallery</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Contact Info -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <h5 class="fw-bold mb-3">Contact Us</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2">
+            <i class="fas fa-phone me-2"></i>
+            <span>+62 822-3695-5445</span>
+          </li>
+          <li class="mb-2">
+            <i class="fas fa-map-marker-alt me-2"></i>
+            <span>Klabili Village, Selemkai District, Tambrauw Regency</span>
+          </li>
+          <li class="mb-2">
+            <i class="fas fa-envelope me-2"></i>
+            <span>info@desaklabili.com</span>
+           </li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Social Media -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <h5 class="fw-bold mb-3">Follow Us</h5>
+        <div class="d-flex">
+          <a href="https://www.instagram.com/klabili_bridwhtcing/" target="_blank" rel="noopener noreferrer"
+            class="socialContainer containerOne me-3">
+            <svg class="socialSvg instagramSvg" viewBox="0 0 16 16">
+              <path
+                d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z">
+              </path>
+            </svg>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=100094418988540" target="_blank" rel="noopener noreferrer"
+            class="socialContainer containerTwo me-3">
+            <svg class="socialSvg facebookSvg" viewBox="0 0 16 16">
+              <path
+                d="M15.117 0H.883A.884.884 0 0 0 0 .883v14.234C0 15.548.396 16 .883 16h7.675v-6.176H6.548V7.41h2.01V5.797c0-1.99 1.216-3.078 2.993-3.078.868 0 1.617.064 1.836.093v2.13h-1.26c-.988 0-1.18.47-1.18 1.158V7.41h2.36l-.308 2.414h-2.052V16h4.025A.884.884 0 0 0 16 15.117V.883A.884.884 0 0 0 15.117 0z">
+              </path>
+            </svg>
+          </a>
+          <a href="https://wa.me/6282236955445?text=Hello%20I%20want%20to%20ask" target="_blank"
+            rel="noopener noreferrer" class="socialContainer
+            containerFour">
+            <svg class="socialSvg whatsappSvg" viewBox="0 0 16 16">
+              <path
+                d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z">
+              </path>
+            </svg>
+          </a>
         </div>
       </div>
     </div>
-  </footer>
+
+    <!-- Copyright -->
+    <hr class="my-4">
+    <div class="row">
+      <div class="col-12 text-center">
+        <p class="mb-0 text-white-50">
+          &copy; 2025 Klabili Tourism Village. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
 
 <!-- Scroll to Top Button -->
 <button id="scrollToTopBtn" class="btn btn-success rounded-circle shadow" style="position: fixed; bottom: 32px; right: 32px; z-index: 999; display: none; width: 48px; height: 48px; align-items: center; justify-content: center;">
   <i class="fas fa-leaf"></i>
 </button>
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    <!-- AOS Library for Scroll Animations -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-    <!-- Bootstrap JS -->
-    <script src="js/bootstrap/bootstrap.bundle.js"></script>
-    <!-- AOS JS -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <!-- Custom JS -->
-    <script src="js/custom.js"></script>
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 
-    <!-- Scroll Animation Script -->
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        AOS.init();
+<!-- Bootstrap JS -->
+<script src="js/bootstrap/bootstrap.bundle.js"></script>
+<!-- Custom JS -->
+<script src="js/custom.js"></script>
 
-        const observerOptions = {
-          threshold: 0.1,
-          rootMargin: '0px 0px -50px 0px'
-        };
+<script>
+  // Show/hide button on scroll
+  window.addEventListener('scroll', function () {
+    const btn = document.getElementById('scrollToTopBtn');
+    if (window.scrollY > 200) {
+      btn.classList.add('show');
+    } else {
+      btn.classList.remove('show');
+    }
+  });
 
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              const element = entry.target;
-              element.style.opacity = '1';
-              element.style.transform = 'translateY(0) translateX(0)';
+  // Scroll to top on click
+  document.getElementById('scrollToTopBtn').onclick = function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+</script>
 
-              // Special animations for transport sections
-              if (element.id === 'via-udara') {
-                setTimeout(() => {
-                  const plane = element.querySelector('.animated-plane');
-                  plane.style.left = '0px';
-                  setTimeout(() => {
-                    const clouds = element.querySelectorAll('.cloud');
-                    clouds.forEach((cloud, index) => {
-                      setTimeout(() => {
-                        cloud.style.transform = 'translateX(0)';
-                        cloud.style.opacity = '1';
-                      }, index * 500);
-                    });
-                  }, 1000);
-                }, 500);
-              } else if (element.id === 'via-darat') {
-                setTimeout(() => {
-                  const car = element.querySelector('.animated-car');
-                  car.style.right = '0px';
-                  setTimeout(() => {
-                    const roads = element.querySelectorAll('.road-1, .road-2');
-                    roads.forEach((road, index) => {
-                      setTimeout(() => {
-                        road.style.transform = 'translateX(0)';
-                        road.style.opacity = '1';
-                      }, index * 500);
-                    });
-                  }, 1000);
-                }, 500);
-              } else if (element.id === 'via-laut') {
-                setTimeout(() => {
-                  const boat = element.querySelector('.animated-boat');
-                  boat.style.left = '0px';
-                  setTimeout(() => {
-                    const water = element.querySelector('.water');
-                    water.style.transform = 'translateX(0)';
-                    water.style.opacity = '1';
-                  }, 1000);
-                }, 500);
-              } else if (element.id === 'rekomendasi-transportasi') {
-                setTimeout(() => {
-                  document.getElementById('rekomendasi-transportasi-hr').style.opacity = '1';
-                  document.getElementById('rekomendasi-transportasi-hr').style.transform = 'translateY(0)';
-                  setTimeout(() => {
-                    document.getElementById('rekomendasi-transportasi-text').style.opacity = '1';
-                    document.getElementById('rekomendasi-transportasi-text').style.transform = 'translateY(0)';
-                  }, 300);
-                }, 500);
-              }
-            }
-          });
-        }, observerOptions);
-
-        // Observe elements
-        const elementsToObserve = [
-          'akses-transportasi-title',
-          'via-udara',
-          'via-darat',
-          'via-laut',
-          'rekomendasi-transportasi'
-        ];
-
-        elementsToObserve.forEach(id => {
-          const element = document.getElementById(id);
-          if (element) {
-            observer.observe(element);
-          }
-        });
-
-        // Initial styles are now handled by CSS
-      });
-    </script>
-  </body>
+</body>
 </html>
