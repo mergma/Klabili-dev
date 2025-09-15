@@ -40,7 +40,7 @@ html {
 
 .nav-btn:focus {
   outline: none;
-  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  box-shadow: 0 0 0 0.25rem rgba(48, 255, 25, 0.25);
 }
 
 /* Animation for button press */
@@ -189,7 +189,7 @@ h1, h2, h3, h4, h5, h6, .card-title {
 .flag-img.active {
   width: 42px !important;
   height: 28px !important;
-  box-shadow: 0 2px 12px #0d6efd33;
+  box-shadow: 0 2px 12px hsla(132, 98%, 58%, 0.2);
   filter: grayscale(0) brightness(1.05) drop-shadow(0 0 4px #fff8);
   z-index: 2;
 }
