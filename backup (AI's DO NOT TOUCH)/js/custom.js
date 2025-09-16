@@ -388,6 +388,172 @@ function initStickyNavbar() {
   handleScroll();
 }
 
+// Gallery Modal Functionality
+function initGalleryModal() {
+  // Create modal HTML if it doesn't exist
+  if (!document.getElementById('galleryModal')) {
+    const modalHTML = `
+      <div id="galleryModal" class="modal fade" tabindex="-1" aria-labelledby="galleryModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header border-0">
+              <h5 class="modal-title" id="galleryModalLabel">Gallery Image</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-0">
+              <img id="galleryModalImage" src="" alt="" class="img-fluid w-100">
+            </div>
+            <div class="modal-footer border-0">
+              <p id="galleryModalDescription" class="text-muted mb-0"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
+  }
+
+  // Add click event listeners to all gallery cards
+  const galleryCards = document.querySelectorAll('.gallery-card');
+  const modal = new bootstrap.Modal(document.getElementById('galleryModal'));
+  const modalImage = document.getElementById('galleryModalImage');
+  const modalTitle = document.getElementById('galleryModalLabel');
+  const modalDescription = document.getElementById('galleryModalDescription');
+
+  galleryCards.forEach(card => {
+    card.addEventListener('click', function() {
+      const img = this.querySelector('.gallery-img');
+      const title = this.querySelector('.card-title');
+      const description = this.querySelector('.card-text');
+
+      if (img && title) {
+        modalImage.src = img.src;
+        modalImage.alt = img.alt;
+        modalTitle.textContent = title.textContent;
+        modalDescription.textContent = description ? description.textContent : '';
+        modal.show();
+      }
+    });
+
+    // Add keyboard accessibility
+    card.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        this.click();
+      }
+    });
+
+    // Make cards focusable
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('role', 'button');
+    card.setAttribute('aria-label', 'View image in gallery');
+  });
+}
+
+// Video Player Functionality
+function initVideoPlayer() {
+  const videoThumbnail = document.querySelector('.video-thumbnail');
+  const videoPlayer = document.querySelector('.video-player');
+  const iframe = document.querySelector('.video-player iframe');
+
+  if (videoThumbnail && videoPlayer && iframe) {
+    videoThumbnail.addEventListener('click', function() {
+      // Example video URLs - replace with actual video URLs
+      const videoUrls = [
+        'https://www.youtube.com/embed/dQw4w9WgXcQ', // Example YouTube video
+        'https://player.vimeo.com/video/147365861', // Example Vimeo video
+      ];
+
+      // For demonstration, we'll show a modal with video options
+      showVideoModal();
+    });
+
+    // Add keyboard accessibility
+    videoThumbnail.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        this.click();
+      }
+    });
+
+    // Make video thumbnail focusable
+    videoThumbnail.setAttribute('tabindex', '0');
+    videoThumbnail.setAttribute('role', 'button');
+    videoThumbnail.setAttribute('aria-label', 'Play video documentary');
+  }
+}
+
+// Show video selection modal
+function showVideoModal() {
+  // Create modal if it doesn't exist
+  if (!document.getElementById('videoModal')) {
+    const modalHTML = `
+      <div id="videoModal" class="modal fade" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header border-0">
+              <h5 class="modal-title" id="videoModalLabel">
+                <i class="fas fa-video text-primary me-2"></i>Video Dokumenter Desa Klabili
+              </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="row g-3">
+                <div class="col-12">
+                  <div class="alert alert-info d-flex align-items-center">
+                    <i class="fas fa-info-circle me-2"></i>
+                    <div>
+                      <strong>Video dokumenter sedang dalam proses produksi.</strong><br>
+                      Sementara ini, Anda dapat menikmati galeri foto yang tersedia di atas.
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="card h-100 border-0 bg-light">
+                    <div class="card-body text-center">
+                      <i class="fas fa-camera text-primary mb-3" style="font-size: 2rem;"></i>
+                      <h6 class="card-title">Dokumentasi Foto</h6>
+                      <p class="card-text small text-muted">Lihat koleksi foto kegiatan dan pemandangan desa</p>
+                      <button class="btn btn-sm btn-outline-primary" onclick="scrollToGallery()">Lihat Galeri</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="card h-100 border-0 bg-light">
+                    <div class="card-body text-center">
+                      <i class="fas fa-play text-success mb-3" style="font-size: 2rem;"></i>
+                      <h6 class="card-title">Video Segera Hadir</h6>
+                      <p class="card-text small text-muted">Video dokumenter profesional sedang dalam tahap produksi</p>
+                      <button class="btn btn-sm btn-outline-success" disabled>Coming Soon</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
+  }
+
+  const modal = new bootstrap.Modal(document.getElementById('videoModal'));
+  modal.show();
+}
+
+// Scroll to gallery function
+function scrollToGallery() {
+  const modal = bootstrap.Modal.getInstance(document.getElementById('videoModal'));
+  modal.hide();
+
+  setTimeout(() => {
+    const gallerySection = document.getElementById('dokumentasi-acara');
+    if (gallerySection) {
+      gallerySection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, 300);
+}
+
 // Initialize when page loads
 document.addEventListener("DOMContentLoaded", function () {
   setActiveNavButton();
@@ -395,4 +561,10 @@ document.addEventListener("DOMContentLoaded", function () {
   initStickyNavbar();
   handleHashOnLoad();
   initLanguageToggle();
+
+  // Initialize gallery functionality if on gallery page
+  if (window.location.pathname.includes('galeri') || document.querySelector('.gallery-card')) {
+    initGalleryModal();
+    initVideoPlayer();
+  }
 });
