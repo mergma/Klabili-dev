@@ -729,8 +729,10 @@ h1, h2, h3, h4, h5, h6, .card-title {
 
 /* Highlight Card Animation */
 .highlight-card {
-  background: #fff;
-  border-radius: 24px;
+  background: #ffffff !important; /* White background */
+  color: #000000 !important; /* Black text */
+  border: 2px solid #198754 !important; /* Green border */
+  border-radius: 25px !important; /* 25px corner rounding */
   box-shadow: 0 4px 24px -8px #0d6efd22;
   padding: 2.5rem 1.5rem 1.5rem 1.5rem;
   text-align: center;
@@ -921,7 +923,10 @@ body {
 .card {
   width: fit-content;
   height: fit-content;
-  background-color: rgb(238, 238, 238);
+  background-color: #ffffff !important; /* White background */
+  color: #000000 !important; /* Black text */
+  border: 2px solid #198754 !important; /* Green border */
+  border-radius: 25px !important; /* 25px corner rounding */
   display: flex;
   flex-direction: row; /* Ensure horizontal layout */
   align-items: center;
@@ -969,8 +974,11 @@ body {
 
 /* Gallery Styles */
 .gallery-card {
+  background: #ffffff !important; /* White background */
+  color: #000000 !important; /* Black text */
+  border: 2px solid #198754 !important; /* Green border */
+  border-radius: 25px !important; /* 25px corner rounding */
   transition: all 0.3s ease;
-  border-radius: 15px;
   overflow: hidden;
 }
 
@@ -1157,8 +1165,11 @@ section:not(:last-child)::after {
 
 /* Video feature cards */
 .video-feature-card {
+  background: #ffffff !important; /* White background */
+  color: #000000 !important; /* Black text */
+  border: 2px solid #198754 !important; /* Green border */
+  border-radius: 25px !important; /* 25px corner rounding */
   transition: all 0.3s ease;
-  border-radius: 15px;
 }
 
 .video-feature-card:hover {
@@ -1400,12 +1411,13 @@ section:not(:last-child)::after {
 }
 
 .wisata-card {
-  background: #fff;
-  border-radius: 20px;
+  background: #ffffff !important; /* White background */
+  color: #000000 !important; /* Black text */
+  border: 2px solid #198754 !important; /* Green border */
+  border-radius: 25px !important; /* 25px corner rounding */
   overflow: hidden;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
   transition: all 0.4s ease;
-  border: none;
   position: relative;
 }
 
@@ -1533,8 +1545,10 @@ section:not(:last-child)::after {
 
 /* Enhanced Culture Section */
 .culture-featured-card {
-  background: #fff;
-  border-radius: 25px;
+  background: #ffffff !important; /* White background */
+  color: #000000 !important; /* Black text */
+  border: 2px solid #198754 !important; /* Green border */
+  border-radius: 25px !important; /* 25px corner rounding */
   overflow: hidden;
   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
   transition: all 0.4s ease;
@@ -1646,13 +1660,14 @@ section:not(:last-child)::after {
 
 /* Culture Grid Cards */
 .culture-card {
-  background: #fff;
-  border-radius: 20px;
+  background: #ffffff !important; /* White background */
+  color: #000000 !important; /* Black text */
+  border: 2px solid #198754 !important; /* Green border */
+  border-radius: 25px !important; /* 25px corner rounding */
   padding: 2rem;
   text-align: center;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
   transition: all 0.4s ease;
-  border: none;
   position: relative;
   overflow: hidden;
 }
@@ -1779,12 +1794,13 @@ section:not(:last-child)::after {
 
 /* Enhanced Events Section */
 .event-card {
-  background: #fff;
-  border-radius: 20px;
+  background: #ffffff !important; /* White background */
+  color: #000000 !important; /* Black text */
+  border: 2px solid #198754 !important; /* Green border */
+  border-radius: 25px !important; /* 25px corner rounding */
   overflow: hidden;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
   transition: all 0.4s ease;
-  border: none;
   position: relative;
 }
 
@@ -2001,12 +2017,13 @@ section:not(:last-child)::after {
 
 /* Enhanced Craft Section */
 .craft-card {
-  background: #fff;
-  border-radius: 20px;
+  background: #ffffff !important; /* White background */
+  color: #000000 !important; /* Black text */
+  border: 2px solid #198754 !important; /* Green border */
+  border-radius: 25px !important; /* 25px corner rounding */
   overflow: hidden;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
   transition: all 0.4s ease;
-  border: none;
   position: relative;
   text-align: center;
 }
@@ -2217,8 +2234,10 @@ section:not(:last-child)::after {
 
 /* Enhanced Culinary Section */
 .culinary-featured-card {
-  background: #fff;
-  border-radius: 25px;
+  background: #ffffff !important; /* White background */
+  color: #000000 !important; /* Black text */
+  border: 2px solid #198754 !important; /* Green border */
+  border-radius: 25px !important; /* 25px corner rounding */
   overflow: hidden;
   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
   transition: all 0.4s ease;
@@ -2330,12 +2349,13 @@ section:not(:last-child)::after {
 
 /* Culinary Grid Cards */
 .culinary-card {
-  background: #fff;
-  border-radius: 20px;
+  background: #ffffff !important; /* White background */
+  color: #000000 !important; /* Black text */
+  border: 2px solid #198754 !important; /* Green border */
+  border-radius: 25px !important; /* 25px corner rounding */
   overflow: hidden;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
   transition: all 0.4s ease;
-  border: none;
   text-align: center;
 }
 
@@ -2502,12 +2522,13 @@ section:not(:last-child)::after {
 
 /* Enhanced Souvenir Section */
 .souvenir-category-card {
-  background: #fff;
-  border-radius: 20px;
+  background: #ffffff !important; /* White background */
+  color: #000000 !important; /* Black text */
+  border: 2px solid #198754 !important; /* Green border */
+  border-radius: 25px !important; /* 25px corner rounding */
   overflow: hidden;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
   transition: all 0.4s ease;
-  border: none;
 }
 
 .souvenir-category-card:hover {
@@ -2616,12 +2637,13 @@ section:not(:last-child)::after {
 }
 
 .souvenir-package-card {
-  background: #fff;
-  border-radius: 15px;
+  background: #ffffff !important; /* White background */
+  color: #000000 !important; /* Black text */
+  border: 2px solid #198754 !important; /* Green border */
+  border-radius: 25px !important; /* 25px corner rounding */
   overflow: hidden;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
-  border: 2px solid transparent;
 }
 
 .souvenir-package-card:hover {
@@ -2994,6 +3016,45 @@ section {
   .text-muted {
     color: #a0aec0 !important;
   }
+}
+
+/* Ensure all card text is black for readability */
+.card *,
+.highlight-card *,
+.wisata-card *,
+.culture-card *,
+.event-card *,
+.craft-card *,
+.culinary-card *,
+.souvenir-category-card *,
+.gallery-card *,
+.video-feature-card *,
+.culture-featured-card *,
+.culinary-featured-card *,
+.souvenir-package-card * {
+  color: #000000 !important;
+}
+
+/* Exception for icons and special elements that should keep their colors */
+.card .bg-primary,
+.card .bg-success,
+.card .bg-warning,
+.card .bg-info,
+.card .bg-danger,
+.card .bg-secondary,
+.highlight-card .icon-wrap,
+.wisata-card .icon-wrap,
+.culture-card .icon-wrap,
+.event-card .icon-wrap,
+.craft-card .icon-wrap,
+.culinary-card .icon-wrap,
+.souvenir-category-card .icon-wrap,
+.gallery-card .icon-wrap,
+.video-feature-card .icon-wrap,
+.culture-featured-card .icon-wrap,
+.culinary-featured-card .icon-wrap,
+.souvenir-package-card .icon-wrap {
+  color: #ffffff !important;
 }
 
 /* Performance optimizations */
