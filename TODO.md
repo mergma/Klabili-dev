@@ -1,1 +1,1 @@
-- [x] Add green border to the "Location & Geography" card in index_en.html
+- [ ] Add green border to the "Location & Geography" card in index_en.html

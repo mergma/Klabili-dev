@@ -729,7 +729,7 @@ h1, h2, h3, h4, h5, h6, .card-title {
 
 /* Highlight Card Animation */
 .highlight-card {
-  background: #ffffff !important; /* White background */
+  background: linear-gradient(135deg, #f8fff6 0%, #ffffff 50%, #eaf6ff 100%) !important; /* Gradient background */
   color: #000000 !important; /* Black text */
   border: 2px solid #198754 !important; /* Green border */
   border-radius: 25px !important; /* 25px corner rounding */
@@ -747,9 +747,9 @@ h1, h2, h3, h4, h5, h6, .card-title {
 .highlight-card:hover, .highlight-card:focus {
   transform: translateY(-8px) scale(1.04);
   box-shadow: 0 12px 32px -4px #19875455, 0 2px 8px #0d6efd22;
-  background: linear-gradient(120deg, #f8fff6 60%, #eaf6ff 100%);
-  border: 1.5px solid #19875433;
-  transition: 
+  background: linear-gradient(135deg, #e8f5e8 0%, #f0fff0 30%, #e6f3ff 70%, #f8fff8 100%) !important;
+  border: 2px solid #198754 !important; /* Keep green border on hover */
+  transition:
     transform 0.25s cubic-bezier(.4,2,.6,1),
     box-shadow 0.25s,
     background 0.3s,
