@@ -576,7 +576,7 @@ function injectBackToTop() {
     btn.style.pointerEvents = y > 300 ? 'auto' : 'none';
   };
   window.addEventListener('scroll', toggle);
-  toggle();
+  toggle();    
 
   // Smooth scroll to top
   btn.addEventListener('click', () => {
