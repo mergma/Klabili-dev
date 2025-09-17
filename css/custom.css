@@ -273,7 +273,7 @@ html {
 /* Hover effect for "Desa Wisata Klabili" in hero section */
 .hero-section h1 {
   transition: color 0.3s ease;
-}
+} 
 
 /* Set all titles (h1-h6) and card titles to green theme color */
 h1,
