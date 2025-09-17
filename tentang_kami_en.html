@@ -167,124 +167,262 @@
       </div>
     </div>
   </nav>
-
-  <!-- Page Title -->
-  <div class="container-fluid bg-primary text-white py-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 text-center">
-          <h1 class="display-4 fw-bold text-white mb-3">About Us</h1>
-          <p class="lead">Klabili Tourism Village Profile</p>
+  <!-- Hero Section -->
+  <section class="hero-about position-relative overflow-hidden">
+    <div class="hero-bg position-absolute w-100 h-100" style="background: linear-gradient(135deg, rgba(25, 135, 84, 0.8), rgba(25, 135, 84, 0.6)), url('img/AboutUs/about_us_img.jpg') center/cover; z-index: -1;"></div>
+    <div class="container py-5">
+      <div class="row align-items-center min-vh-50">
+        <div class="col-lg-8 mx-auto text-center text-white">
+          <h1 class="display-3 fw-bold mb-4 animate-fade-in">About Klabili Tourism Village</h1>
+          <p class="lead fs-4 mb-4 animate-fade-in-delay">Discover the natural beauty, culture, and warmth of the Moi Tribe community in the heart of West Papua</p>
+          <div class="d-flex justify-content-center gap-3 animate-fade-in-delay-2">
+            <a href="#profil-desa" class="btn btn-light btn-lg px-4 py-3 rounded-pill">
+              <i class="fas fa-mountain me-2"></i>Village Profile
+            </a>
+            <a href="#struktur-desa" class="btn btn-outline-light btn-lg px-4 py-3 rounded-pill">
+              <i class="fas fa-users me-2"></i>Organization Structure
+            </a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- Page Content -->
-  <div class="container mt-4">
+  <div class="container-fluid px-0">
     <!-- Village Profile Section -->
-    <section id="profil-desa" class="py-5">
-      <div class="row align-items-center mb-5 flex-column flex-md-row justify-content-center">
-        <div class="col-md-6 d-flex justify-content-center mb-4 mb-md-0">
-          <div class="rounded-circle bg-light d-flex align-items-center justify-content-center icon-container"
-            style="width: 320px; height: 320px">
-            <i class="fas fa-mountain text-primary fa-icon-fix" style="font-size: 4rem"></i>
+    <section id="profil-desa" class="py-5 bg-light">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12 text-center">
+            <h2 class="display-4 fw-bold text-primary mb-3">Klabili Village Profile</h2>
+            <p class="lead text-muted mb-5">A hidden gem in the highlands of West Papua</p>
           </div>
         </div>
-        <div class="col-md-6 d-flex justify-content-center">
-          <div class="card border-0 w-100" style="margin-top: 32px">
-            <div class="card-body">
-              <h2 class="card-title text-primary mb-4">
-                Klabili Village Profile
-              </h2>
-              <p class="card-text mb-3">
-                Klabili Village is located on a highland surrounded by
-                green hills and clear rivers. At an altitude of 800
-                meters above sea level, this village offers cool air
-                and stunning natural scenery throughout the year.
+
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <div class="position-relative">
+              <img src="img/View/view_1.jpg" alt="Klabili Village View" class="img-fluid rounded-4 shadow-lg">
+              <div class="position-absolute top-0 start-0 bg-primary text-white px-3 py-2 rounded-end-3 mt-3">
+                <i class="fas fa-mountain me-2"></i>800 masl
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="ps-lg-4">
+              <h3 class="h2 text-primary mb-4">Stunning Natural Beauty</h3>
+              <p class="fs-5 text-muted mb-4">
+                Klabili Village is located on a highland surrounded by green hills and clear rivers.
+                At an altitude of 800 meters above sea level, this village offers cool air and
+                stunning natural scenery throughout the year.
               </p>
-              <ul class="list-unstyled">
-                <li><strong>Altitude:</strong> 800 meters above sea level</li>
-                <li><strong>Area:</strong> 15.5 km²</li>
-                <li><strong>Population:</strong> ~2,500 people</li>
-                <li><strong>Climate:</strong> Cool tropical</li>
-              </ul>
+
+              <div class="row g-4">
+                <div class="col-sm-6">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="bg-primary rounded-circle p-3 me-3">
+                      <i class="fas fa-mountain text-white"></i>
+                    </div>
+                    <div>
+                      <h6 class="mb-1 fw-bold">Altitude</h6>
+                      <p class="mb-0 text-muted">800 masl</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="bg-success rounded-circle p-3 me-3">
+                      <i class="fas fa-map text-white"></i>
+                    </div>
+                    <div>
+                      <h6 class="mb-1 fw-bold">Area</h6>
+                      <p class="mb-0 text-muted">15.5 km²</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="bg-info rounded-circle p-3 me-3">
+                      <i class="fas fa-users text-white"></i>
+                    </div>
+                    <div>
+                      <h6 class="mb-1 fw-bold">Population</h6>
+                      <p class="mb-0 text-muted">~2,500 people</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="bg-warning rounded-circle p-3 me-3">
+                      <i class="fas fa-thermometer-half text-white"></i>
+                    </div>
+                    <div>
+                      <h6 class="mb-1 fw-bold">Climate</h6>
+                      <p class="mb-0 text-muted">Cool tropical</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <style>
-      /* Responsive spacing and sizing for shape & card */
-      @media (max-width: 767.98px) {
-        #profil-desa .row.align-items-center {
-          flex-direction: column !important;
-          align-items: center !important;
-        }
-
-        #profil-desa .rounded-circle {
-          width: 90vw !important;
-          max-width: 340px;
-          min-width: 220px;
-        }
-
-        #profil-desa .card {
-          margin-top: 32px !important;
-          width: 100%;
-          /* Allow card to take full width */
-        }
-      }
-
-      @media (min-width: 768px) {
-        #profil-desa .card {
-          margin-top: 0 !important;
-          width: 100%;
-          /* Allow card to take full width */
-        }
-      }
-    </style>
-
-    <!-- Village Structure Section -->
-    <section id="struktur-desa" class="py-5 mb-5 bg-light">
+    <!-- History & Culture Section -->
+    <section class="py-5">
       <div class="container">
-        <div class="row">
-          <div class="col-12 text-center mb-5">
-            <h2 class="display-5 fw-bold text-primary">
-              Village Organizational Structure
-            </h2>
-            <p class="lead text-muted">
-              Leadership and governance structure of Klabili Village
-            </p>
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6 order-lg-2">
+            <div class="position-relative">
+              <img src="img/Masyarakat/masyarakat_1.jpg" alt="Moi Tribe Community" class="img-fluid rounded-4 shadow-lg">
+              <div class="position-absolute bottom-0 start-0 bg-dark bg-opacity-75 text-white p-3 rounded-end-3 mb-3">
+                <i class="fas fa-users me-2"></i>Moi Tribe
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="row g-4 justify-content-center">
-          <div class="col-lg-4 col-md-6 d-flex justify-content-center">
-            <div class="card h-100 shadow-sm border-0" style="min-width: 320px; max-width: 450px">
-              <div class="card-body p-4 text-start d-flex align-items-center">
-                <div class="bg-success rounded-circle mb-3 icon-container" style="width: 80px; height: 80px">
-                  <i class="fas fa-user-tie text-white fa-2x fa-icon-fix"></i>
+          <div class="col-lg-6 order-lg-1">
+            <div class="pe-lg-4">
+              <h3 class="h2 text-primary mb-4">Moi Tribe Cultural Heritage</h3>
+              <p class="fs-5 text-muted mb-4">
+                Klabili Village is home to the Moi Tribe community who have inhabited this area for generations.
+                The preserved local wisdom and traditions are the main attractions for tourists who want to
+                experience authentic cultural experiences.
+              </p>
+              <div class="row g-3">
+                <div class="col-12">
+                  <div class="d-flex align-items-start">
+                    <div class="bg-primary rounded-circle p-2 me-3 mt-1">
+                      <i class="fas fa-music text-white"></i>
+                    </div>
+                    <div>
+                      <h6 class="fw-bold mb-1">Traditional Dances</h6>
+                      <p class="text-muted mb-0">Traditional dances still preserved in various ceremonies</p>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <h5 class="card-title">Village Head</h5>
-                  <p class="card-text text-muted">
-                    Mr. Yoram Kalami
-                  </p>
+                <div class="col-12">
+                  <div class="d-flex align-items-start">
+                    <div class="bg-success rounded-circle p-2 me-3 mt-1">
+                      <i class="fas fa-home text-white"></i>
+                    </div>
+                    <div>
+                      <h6 class="fw-bold mb-1">Traditional Houses</h6>
+                      <p class="text-muted mb-0">Traditional architecture reflecting local wisdom</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="d-flex align-items-start">
+                    <div class="bg-info rounded-circle p-2 me-3 mt-1">
+                      <i class="fas fa-leaf text-white"></i>
+                    </div>
+                    <div>
+                      <h6 class="fw-bold mb-1">Environmental Wisdom</h6>
+                      <p class="text-muted mb-0">Sustainable nature conservation practices</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6 d-flex justify-content-center">
-            <div class="card h-100 shadow-sm border-0" style="min-width: 320px; max-width: 370px">
-              <div class="card-body p-4 text-start d-flex align-items-center">
-                <div class="bg-success rounded-circle mb-3 icon-container" style="width: 80px; height: 80px">
-                  <i class="fas fa-users text-white fa-2x fa-icon-fix"></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vision Mission Section -->
+    <section class="py-5 bg-primary bg-opacity-10">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12 text-center">
+            <h2 class="display-4 fw-bold text-primary mb-3">Vision & Mission</h2>
+            <p class="lead text-muted">Our commitment to sustainable tourism village development</p>
+          </div>
+        </div>
+
+        <div class="row g-5">
+          <div class="col-lg-6">
+            <div class="card border-0 shadow-lg h-100">
+              <div class="card-body p-5">
+                <div class="text-center mb-4">
+                  <div class="bg-primary rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                    <i class="fas fa-eye text-white fa-2x"></i>
+                  </div>
                 </div>
-                <div>
-                  <h5 class="card-title">Deputy Village Head</h5>
-                  <p class="card-text text-muted">
-                    Mr. Yustus Kalami
-                  </p>
+                <h3 class="text-center text-primary mb-4">Vision</h3>
+                <p class="text-center fs-5 text-muted">
+                  To make Klabili Village a sustainable cultural and natural tourism destination,
+                  while preserving the local wisdom of the Moi Tribe and the natural beauty of West Papua.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="card border-0 shadow-lg h-100">
+              <div class="card-body p-5">
+                <div class="text-center mb-4">
+                  <div class="bg-success rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                    <i class="fas fa-bullseye text-white fa-2x"></i>
+                  </div>
                 </div>
+                <h3 class="text-center text-success mb-4">Mission</h3>
+                <ul class="list-unstyled">
+                  <li class="mb-3 d-flex align-items-start">
+                    <i class="fas fa-check-circle text-success me-3 mt-1"></i>
+                    <span>Develop natural and cultural tourism potential sustainably</span>
+                  </li>
+                  <li class="mb-3 d-flex align-items-start">
+                    <i class="fas fa-check-circle text-success me-3 mt-1"></i>
+                    <span>Empower local communities through the tourism sector</span>
+                  </li>
+                  <li class="mb-3 d-flex align-items-start">
+                    <i class="fas fa-check-circle text-success me-3 mt-1"></i>
+                    <span>Preserve the culture and traditions of the Moi Tribe</span>
+                  </li>
+                  <li class="d-flex align-items-start">
+                    <i class="fas fa-check-circle text-success me-3 mt-1"></i>
+                    <span>Maintain environmental conservation and biodiversity</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Village Structure Section -->
+    <section id="struktur-desa" class="py-5">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12 text-center">
+            <h2 class="display-4 fw-bold text-primary mb-3">Village Organizational Structure</h2>
+            <p class="lead text-muted">Leadership and governance structure of Klabili Village</p>
+          </div>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+          <div class="col-lg-5 col-md-6">
+            <div class="card border-0 shadow-lg h-100">
+              <div class="card-body p-4 text-center">
+                <div class="bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 100px; height: 100px;">
+                  <i class="fas fa-user-tie text-white fa-3x"></i>
+                </div>
+                <h4 class="text-primary mb-3">Village Head</h4>
+                <h5 class="fw-bold mb-2">Mr. Yoram Kalami</h5>
+                <p class="text-muted">Leading and coordinating all village government activities and tourism village development</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5 col-md-6">
+            <div class="card border-0 shadow-lg h-100">
+              <div class="card-body p-4 text-center">
+                <div class="bg-success rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style="width: 100px; height: 100px;">
+                  <i class="fas fa-users text-white fa-3x"></i>
+                </div>
+                <h4 class="text-success mb-3">Deputy Village Head</h4>
+                <h5 class="fw-bold mb-2">Mr. Yustus Kalami</h5>
+                <p class="text-muted">Assisting the village head in carrying out government duties and coordinating tourism village programs</p>
               </div>
             </div>
           </div>
@@ -405,6 +543,77 @@
   <!-- Custom JS -->
   <script src="js/custom.js"></script>
 
+  <style>
+    /* Hero Section Styles */
+    .hero-about {
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .min-vh-50 {
+      min-height: 50vh;
+    }
+
+    /* Animation Classes */
+    .animate-fade-in {
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .animate-fade-in-delay {
+      animation: fadeInUp 1s ease-out 0.3s both;
+    }
+
+    .animate-fade-in-delay-2 {
+      animation: fadeInUp 1s ease-out 0.6s both;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Card Hover Effects */
+    .card {
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1) !important;
+    }
+
+    /* Button Styles */
+    .btn {
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .hero-about {
+        min-height: 60vh;
+      }
+
+      .display-3 {
+        font-size: 2.5rem;
+      }
+
+      .display-4 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+
   <script>
     // Show/hide button on scroll
     window.addEventListener('scroll', function () {
@@ -420,6 +629,20 @@
     document.getElementById('scrollToTopBtn').onclick = function () {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     };
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
   </script>
 </body>
 
