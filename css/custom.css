@@ -281,9 +281,25 @@ h2,
 h3,
 h4,
 h5,
-h6,
-.card-title {
+h6 {
   color: #198754 !important;
+}
+
+/* Card titles should be black for readability on white background - only for main cards */
+.card:not(.card .card) .card-title,
+.wisata-card:not(.card .wisata-card) .card-title,
+.culture-card:not(.card .culture-card) .card-title,
+.culture-featured-card:not(.card .culture-featured-card) .card-title,
+.event-card:not(.card .event-card) .card-title,
+.craft-card:not(.card .craft-card) .card-title,
+.culinary-card:not(.card .culinary-card) .card-title,
+.culinary-featured-card:not(.card .culinary-featured-card) .card-title,
+.souvenir-category-card:not(.card .souvenir-category-card) .card-title,
+.souvenir-package-card:not(.card .souvenir-package-card) .card-title,
+.gallery-card:not(.card .gallery-card) .card-title,
+.highlight-card:not(.card .highlight-card) .card-title,
+.facility-card:not(.card .facility-card) .card-title {
+  color: #000000 !important;
 }
 
 .hero-section h1:hover {
@@ -930,8 +946,10 @@ h6,
 
 /* Highlight Card Animation */
 .highlight-card {
-  background: #fff;
-  border-radius: 24px;
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #28a745 !important;
+  border-radius: 25px !important;
   box-shadow: 0 4px 24px -8px #0d6efd22;
   padding: 2.5rem 1.5rem 1.5rem 1.5rem;
   text-align: center;
@@ -1151,7 +1169,10 @@ body {
 .card {
   width: fit-content;
   height: fit-content;
-  background-color: rgb(238, 238, 238);
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #28a745 !important;
+  border-radius: 25px !important;
   display: flex;
   flex-direction: row;
   /* Ensure horizontal layout */
@@ -1202,8 +1223,11 @@ body {
 
 /* Gallery Styles */
 .gallery-card {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #28a745 !important;
+  border-radius: 25px !important;
   transition: all 0.3s ease;
-  border-radius: 15px;
   overflow: hidden;
 }
 
@@ -1309,7 +1333,7 @@ body {
 
 .gallery-card .card-text {
   line-height: 1.5;
-  color: #6c757d;
+  color: #333333 !important;
 }
 
 /* Section spacing improvements */
@@ -1408,7 +1432,7 @@ section:not(:last-child)::after {
 }
 
 .video-feature-card .card-title {
-  color: #198754 !important;
+  color: #000000 !important;
 }
 
 /* Badge styling improvements */
@@ -1637,12 +1661,13 @@ section:not(:last-child)::after {
 }
 
 .wisata-card {
-  background: #fff;
-  border-radius: 20px;
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #28a745 !important;
+  border-radius: 25px !important;
   overflow: hidden;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
   transition: all 0.4s ease;
-  border: none;
   position: relative;
 }
 
@@ -1770,8 +1795,10 @@ section:not(:last-child)::after {
 
 /* Enhanced Culture Section */
 .culture-featured-card {
-  background: #fff;
-  border-radius: 25px;
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #28a745 !important;
+  border-radius: 25px !important;
   overflow: hidden;
   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
   transition: all 0.4s ease;
@@ -1883,13 +1910,14 @@ section:not(:last-child)::after {
 
 /* Culture Grid Cards */
 .culture-card {
-  background: #fff;
-  border-radius: 20px;
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #28a745 !important;
+  border-radius: 25px !important;
   padding: 2rem;
   text-align: center;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
   transition: all 0.4s ease;
-  border: none;
   position: relative;
   overflow: hidden;
 }
@@ -2016,12 +2044,13 @@ section:not(:last-child)::after {
 
 /* Enhanced Events Section */
 .event-card {
-  background: #fff;
-  border-radius: 20px;
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #28a745 !important;
+  border-radius: 25px !important;
   overflow: hidden;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
   transition: all 0.4s ease;
-  border: none;
   position: relative;
 }
 
@@ -2238,12 +2267,13 @@ section:not(:last-child)::after {
 
 /* Enhanced Craft Section */
 .craft-card {
-  background: #fff;
-  border-radius: 20px;
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #28a745 !important;
+  border-radius: 25px !important;
   overflow: hidden;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
   transition: all 0.4s ease;
-  border: none;
   position: relative;
   text-align: center;
 }
@@ -2454,8 +2484,10 @@ section:not(:last-child)::after {
 
 /* Enhanced Culinary Section */
 .culinary-featured-card {
-  background: #fff;
-  border-radius: 25px;
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #28a745 !important;
+  border-radius: 25px !important;
   overflow: hidden;
   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
   transition: all 0.4s ease;
@@ -2567,12 +2599,13 @@ section:not(:last-child)::after {
 
 /* Culinary Grid Cards */
 .culinary-card {
-  background: #fff;
-  border-radius: 20px;
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #28a745 !important;
+  border-radius: 25px !important;
   overflow: hidden;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
   transition: all 0.4s ease;
-  border: none;
   text-align: center;
 }
 
@@ -2739,12 +2772,13 @@ section:not(:last-child)::after {
 
 /* Enhanced Souvenir Section */
 .souvenir-category-card {
-  background: #fff;
-  border-radius: 20px;
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #28a745 !important;
+  border-radius: 25px !important;
   overflow: hidden;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
   transition: all 0.4s ease;
-  border: none;
 }
 
 .souvenir-category-card:hover {
@@ -2853,12 +2887,13 @@ section:not(:last-child)::after {
 }
 
 .souvenir-package-card {
-  background: #fff;
-  border-radius: 15px;
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #28a745 !important;
+  border-radius: 25px !important;
   overflow: hidden;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
-  border: 2px solid transparent;
 }
 
 .souvenir-package-card:hover {
@@ -3235,6 +3270,103 @@ section {
   .text-muted {
     color: #a0aec0 !important;
   }
+}
+
+/* Global Card Styling Override - Only for main card containers */
+.card:not(.card .card):not([class*="card"] .card),
+.wisata-card:not(.card .wisata-card):not([class*="card"] .wisata-card),
+.culture-card:not(.card .culture-card):not([class*="card"] .culture-card),
+.culture-featured-card:not(.card .culture-featured-card):not([class*="card"] .culture-featured-card),
+.event-card:not(.card .event-card):not([class*="card"] .event-card),
+.craft-card:not(.card .craft-card):not([class*="card"] .craft-card),
+.culinary-card:not(.card .culinary-card):not([class*="card"] .culinary-card),
+.culinary-featured-card:not(.card .culinary-featured-card):not([class*="card"] .culinary-featured-card),
+.souvenir-category-card:not(.card .souvenir-category-card):not([class*="card"] .souvenir-category-card),
+.souvenir-package-card:not(.card .souvenir-package-card):not([class*="card"] .souvenir-package-card),
+.gallery-card:not(.card .gallery-card):not([class*="card"] .gallery-card),
+.highlight-card:not(.card .highlight-card):not([class*="card"] .highlight-card),
+.facility-card:not(.card .facility-card):not([class*="card"] .facility-card) {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #28a745 !important;
+  border-radius: 25px !important;
+}
+
+/* Ensure main card text is black for readability, but preserve nested elements */
+.card:not(.card .card):not([class*="card"] .card) > .card-body,
+.card:not(.card .card):not([class*="card"] .card) > .card-header,
+.card:not(.card .card):not([class*="card"] .card) > .card-footer,
+.wisata-card:not(.card .wisata-card):not([class*="card"] .wisata-card) > *,
+.culture-card:not(.card .culture-card):not([class*="card"] .culture-card) > *,
+.culture-featured-card:not(.card .culture-featured-card):not([class*="card"] .culture-featured-card) > *,
+.event-card:not(.card .event-card):not([class*="card"] .event-card) > *,
+.craft-card:not(.card .craft-card):not([class*="card"] .craft-card) > *,
+.culinary-card:not(.card .culinary-card):not([class*="card"] .culinary-card) > *,
+.culinary-featured-card:not(.card .culinary-featured-card):not([class*="card"] .culinary-featured-card) > *,
+.souvenir-category-card:not(.card .souvenir-category-card):not([class*="card"] .souvenir-category-card) > *,
+.souvenir-package-card:not(.card .souvenir-package-card):not([class*="card"] .souvenir-package-card) > *,
+.gallery-card:not(.card .gallery-card):not([class*="card"] .gallery-card) > *,
+.highlight-card:not(.card .highlight-card):not([class*="card"] .highlight-card) > *,
+.facility-card:not(.card .facility-card):not([class*="card"] .facility-card) > * {
+  color: #000000 !important;
+}
+
+/* Preserve original styling for nested cards and special elements */
+.card .card,
+.card [class*="btn"],
+.card .badge,
+.card .alert,
+[class*="card"] .card,
+[class*="card"] [class*="btn"],
+[class*="card"] .badge,
+[class*="card"] .alert {
+  background: initial !important;
+  color: initial !important;
+  border: initial !important;
+  border-radius: initial !important;
+}
+
+/* Preserve icon colors and special text classes */
+.card .text-primary,
+.card .text-success,
+.card .text-warning,
+.card .text-danger,
+.card .text-info,
+.card .text-secondary,
+.card .text-white,
+.card .fas,
+.card .far,
+.card .fab,
+.card i,
+[class*="card"] .text-primary,
+[class*="card"] .text-success,
+[class*="card"] .text-warning,
+[class*="card"] .text-danger,
+[class*="card"] .text-info,
+[class*="card"] .text-secondary,
+[class*="card"] .text-white,
+[class*="card"] .fas,
+[class*="card"] .far,
+[class*="card"] .fab,
+[class*="card"] i {
+  color: inherit !important;
+}
+
+/* Ensure text-muted in main cards is readable but darker - only for main cards */
+.card:not(.card .card) .text-muted,
+.wisata-card:not(.card .wisata-card) .text-muted,
+.culture-card:not(.card .culture-card) .text-muted,
+.culture-featured-card:not(.card .culture-featured-card) .text-muted,
+.event-card:not(.card .event-card) .text-muted,
+.craft-card:not(.card .craft-card) .text-muted,
+.culinary-card:not(.card .culinary-card) .text-muted,
+.culinary-featured-card:not(.card .culinary-featured-card) .text-muted,
+.souvenir-category-card:not(.card .souvenir-category-card) .text-muted,
+.souvenir-package-card:not(.card .souvenir-package-card) .text-muted,
+.gallery-card:not(.card .gallery-card) .text-muted,
+.highlight-card:not(.card .highlight-card) .text-muted,
+.facility-card:not(.card .facility-card) .text-muted {
+  color: #333333 !important;
 }
 
 /* Performance optimizations */
