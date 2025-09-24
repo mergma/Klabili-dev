@@ -1185,7 +1185,145 @@ body {
   /* Prevent wrapping to new lines */
 }
 
-/* for all social containers*/
+/* Enhanced Social Media Links */
+.social-media-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-radius: 50px;
+  text-decoration: none;
+  color: #ffffff;
+  background: linear-gradient(135deg, #6c757d, #495057);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+  min-width: 120px;
+  justify-content: center;
+}
+
+.social-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.social-link:hover::before {
+  left: 100%;
+}
+
+.social-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.social-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.social-icon svg {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+.social-link:hover .social-icon svg {
+  transform: scale(1.1);
+}
+
+.social-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Platform-specific colors */
+.instagram-link {
+  background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
+}
+
+.instagram-link:hover {
+  background: linear-gradient(135deg, #9d4edd, #ff1744, #ffc107);
+  color: #ffffff;
+}
+
+.facebook-link {
+  background: linear-gradient(135deg, #1877f2, #42a5f5);
+}
+
+.facebook-link:hover {
+  background: linear-gradient(135deg, #2196f3, #64b5f6);
+  color: #ffffff;
+}
+
+.whatsapp-link {
+  background: linear-gradient(135deg, #25d366, #128c7e);
+}
+
+.whatsapp-link:hover {
+  background: linear-gradient(135deg, #4caf50, #2e7d32);
+  color: #ffffff;
+}
+
+.youtube-link {
+  background: linear-gradient(135deg, #ff0000, #cc0000);
+}
+
+.youtube-link:hover {
+  background: linear-gradient(135deg, #f44336, #d32f2f);
+  color: #ffffff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .social-media-links {
+    justify-content: center;
+  }
+
+  .social-link {
+    min-width: 100px;
+    padding: 0.6rem 0.8rem;
+  }
+
+  .social-label {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .social-link {
+    flex-direction: column;
+    gap: 0.25rem;
+    min-width: 80px;
+    padding: 0.5rem;
+  }
+
+  .social-label {
+    font-size: 0.75rem;
+  }
+}
+
+/* Legacy support for old social containers */
 .socialContainer {
   width: 52px;
   height: 52px;
