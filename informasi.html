@@ -165,6 +165,235 @@
         box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
       }
 
+      /* Modern Contact Cards */
+      .contact-card-modern {
+        background: white;
+        border-radius: 20px;
+        padding: 0;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        transition: all 0.4s ease;
+        border: 2px solid transparent;
+        overflow: hidden;
+        height: 100%;
+      }
+
+      .contact-card-modern:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        border-color: rgba(25, 135, 84, 0.3);
+      }
+
+      .contact-card-header {
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        padding: 2rem 1.5rem 1rem;
+        text-align: center;
+        position: relative;
+      }
+
+      .contact-icon-modern {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1rem;
+        font-size: 1.8rem;
+        color: white;
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .contact-icon-modern.phone {
+        background: linear-gradient(135deg, #198754, #20c997);
+      }
+
+      .contact-icon-modern.whatsapp {
+        background: linear-gradient(135deg, #25d366, #128c7e);
+      }
+
+      .contact-icon-modern.email {
+        background: linear-gradient(135deg, #0d6efd, #6610f2);
+      }
+
+      .contact-card-modern:hover .contact-icon-modern {
+        transform: scale(1.1) rotate(5deg);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .contact-title {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #198754;
+        margin: 0;
+      }
+
+      .contact-card-body {
+        padding: 1.5rem;
+        text-align: center;
+      }
+
+      .contact-value {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #2c3e50;
+        margin-bottom: 0.5rem;
+      }
+
+      .contact-status {
+        display: inline-flex;
+        align-items: center;
+        font-size: 0.85rem;
+        font-weight: 500;
+        padding: 0.3rem 0.8rem;
+        border-radius: 15px;
+        margin-bottom: 1rem;
+      }
+
+      .contact-status.available {
+        background: rgba(25, 135, 84, 0.1);
+        color: #198754;
+      }
+
+      .contact-status.fast {
+        background: rgba(37, 211, 102, 0.1);
+        color: #25d366;
+      }
+
+      .contact-status.normal {
+        background: rgba(13, 110, 253, 0.1);
+        color: #0d6efd;
+      }
+
+      .contact-status i {
+        font-size: 0.7rem;
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.5; }
+      }
+
+      /* Social Media Section */
+      .social-media-section {
+        background: white;
+        border-radius: 25px;
+        padding: 2.5rem;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        border: 2px solid rgba(25, 135, 84, 0.1);
+      }
+
+      .social-card {
+        background: white;
+        border-radius: 15px;
+        padding: 1.5rem;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+        height: 100%;
+      }
+
+      .social-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+      }
+
+      .social-card.instagram {
+        border-color: rgba(225, 48, 108, 0.2);
+      }
+
+      .social-card.instagram:hover {
+        border-color: #e1306c;
+      }
+
+      .social-card.facebook {
+        border-color: rgba(24, 119, 242, 0.2);
+      }
+
+      .social-card.facebook:hover {
+        border-color: #1877f2;
+      }
+
+      .social-card-content {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .social-icon-wrapper {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        color: white;
+        flex-shrink: 0;
+      }
+
+      .social-card.instagram .social-icon-wrapper {
+        background: linear-gradient(135deg, #e1306c, #fd1d1d, #fcb045);
+      }
+
+      .social-card.facebook .social-icon-wrapper {
+        background: linear-gradient(135deg, #1877f2, #42a5f5);
+      }
+
+      .social-info {
+        flex: 1;
+      }
+
+      .social-platform {
+        font-weight: 700;
+        color: #198754;
+        margin-bottom: 0.25rem;
+        font-size: 1rem;
+      }
+
+      .social-handle {
+        font-weight: 600;
+        color: #2c3e50;
+        margin-bottom: 0.25rem;
+        font-size: 0.95rem;
+      }
+
+      .social-description {
+        color: #6c757d;
+        font-size: 0.8rem;
+        margin: 0;
+      }
+
+      .social-action {
+        flex-shrink: 0;
+      }
+
+      .btn-instagram {
+        background: linear-gradient(135deg, #e1306c, #fd1d1d);
+        border: none;
+        color: white;
+      }
+
+      .btn-instagram:hover {
+        background: linear-gradient(135deg, #fd1d1d, #e1306c);
+        color: white;
+        transform: translateY(-2px);
+      }
+
+      .btn-facebook {
+        background: linear-gradient(135deg, #1877f2, #42a5f5);
+        border: none;
+        color: white;
+      }
+
+      .btn-facebook:hover {
+        background: linear-gradient(135deg, #42a5f5, #1877f2);
+        color: white;
+        transform: translateY(-2px);
+      }
+
       .map-container {
         border-radius: 20px;
         overflow: hidden;
@@ -177,6 +406,222 @@
         color: #6c757d;
         font-size: 18px;
         font-weight: 500;
+      }
+
+      .map-container-enhanced {
+        min-height: 400px;
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .map-placeholder {
+        width: 100%;
+      }
+
+      .map-icon-wrapper {
+        animation: float 3s ease-in-out infinite;
+      }
+
+      .map-header {
+        background: linear-gradient(135deg, #198754 0%, #20c997 100%) !important;
+      }
+
+      .address-info .address-item {
+        position: relative;
+      }
+
+      .altitude-info {
+        border-left: 4px solid #198754;
+        transition: all 0.3s ease;
+      }
+
+      .altitude-info:hover {
+        background: #e8f5e8 !important;
+        transform: translateX(5px);
+      }
+
+      .transport-info {
+        border-left: 4px solid #0d6efd;
+        transition: all 0.3s ease;
+      }
+
+      .transport-info:hover {
+        background: #e7f3ff !important;
+        transform: translateY(-2px);
+      }
+
+      .transport-icon {
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(135deg, #e7f3ff, #cce7ff);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+      }
+
+      .nav-pills .nav-link {
+        border: 2px solid transparent;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .nav-pills .nav-link:hover {
+        background: rgba(25, 135, 84, 0.1);
+        border-color: rgba(25, 135, 84, 0.3);
+        transform: translateY(-2px);
+      }
+
+      .nav-pills .nav-link.active {
+        background: linear-gradient(135deg, #198754, #20c997);
+        border-color: #198754;
+        box-shadow: 0 4px 15px rgba(25, 135, 84, 0.3);
+      }
+
+      .map-features .badge {
+        transition: all 0.3s ease;
+      }
+
+      .map-features .badge:hover {
+        background: linear-gradient(135deg, #198754, #20c997) !important;
+        color: white !important;
+        transform: translateY(-2px);
+      }
+
+      @keyframes float {
+        0%, 100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      /* Enhanced Hero Section for Info Page */
+      .hero-section-info {
+        background: linear-gradient(135deg, #198754 0%, #20c997 50%, #0d6efd 100%);
+        position: relative;
+        min-height: 70vh;
+        display: flex;
+        align-items: center;
+      }
+
+      .hero-bg-info {
+        background: rgba(0, 0, 0, 0.3);
+        z-index: 1;
+      }
+
+      .hero-section-info .container {
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero-section-info .hero-badge .badge {
+        font-size: 0.9rem;
+        font-weight: 600;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        animation: fadeInUp 0.8s ease-out;
+      }
+
+      .hero-section-info .hero-title {
+        font-size: 3.5rem;
+        line-height: 1.2;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        animation: fadeInUp 0.8s ease-out 0.2s both;
+      }
+
+      .hero-section-info .text-gradient {
+        background: linear-gradient(45deg, #ffd700, #ffeb3b, #fff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 800;
+      }
+
+      .hero-section-info .hero-subtitle {
+        max-width: 800px;
+        margin: 0 auto;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        animation: fadeInUp 0.8s ease-out 0.4s both;
+      }
+
+      .hero-section-info .hero-stats {
+        animation: fadeInUp 0.8s ease-out 0.6s both;
+      }
+
+      .hero-section-info .stat-item {
+        text-align: center;
+        padding: 1rem;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: all 0.3s ease;
+        min-width: 100px;
+      }
+
+      .hero-section-info .stat-item:hover {
+        transform: translateY(-5px);
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      .hero-section-info .stat-number {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #ffd700;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+      }
+
+      .hero-section-info .stat-label {
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      /* Hero Decorative Elements */
+      .hero-section-info .hero-decoration {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        animation: float 6s ease-in-out infinite;
+      }
+
+      .hero-section-info .hero-decoration-1 {
+        width: 100px;
+        height: 100px;
+        top: 10%;
+        left: 10%;
+        animation-delay: 0s;
+      }
+
+      .hero-section-info .hero-decoration-2 {
+        width: 150px;
+        height: 150px;
+        top: 60%;
+        right: 15%;
+        animation-delay: 2s;
+      }
+
+      .hero-section-info .hero-decoration-3 {
+        width: 80px;
+        height: 80px;
+        bottom: 20%;
+        left: 20%;
+        animation-delay: 4s;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
 
       .transport-card {
@@ -281,6 +726,321 @@
         font-size: 20px;
       }
 
+      /* Enhanced Info Cards */
+      .info-card-enhanced {
+        background: white;
+        border-radius: 25px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        transition: all 0.4s ease;
+        border: 2px solid transparent;
+        overflow: hidden;
+        height: 100%;
+        position: relative;
+      }
+
+      .info-card-enhanced:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+      }
+
+      .info-card-enhanced.weather {
+        border-color: rgba(116, 185, 255, 0.2);
+      }
+
+      .info-card-enhanced.weather:hover {
+        border-color: #74b9ff;
+      }
+
+      .info-card-enhanced.tips {
+        border-color: rgba(253, 121, 168, 0.2);
+      }
+
+      .info-card-enhanced.tips:hover {
+        border-color: #fd79a8;
+      }
+
+      .info-card-enhanced.emergency {
+        border-color: rgba(255, 118, 117, 0.2);
+      }
+
+      .info-card-enhanced.emergency:hover {
+        border-color: #ff7675;
+      }
+
+      .info-card-header {
+        padding: 2rem 1.5rem 1rem;
+        text-align: center;
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      }
+
+      .info-icon-wrapper {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+        font-size: 2rem;
+        color: white;
+        transition: all 0.4s ease;
+        position: relative;
+      }
+
+      .info-icon-wrapper.weather-icon {
+        background: linear-gradient(135deg, #74b9ff, #0984e3);
+      }
+
+      .info-icon-wrapper.tips-icon {
+        background: linear-gradient(135deg, #fd79a8, #e84393);
+      }
+
+      .info-icon-wrapper.emergency-icon {
+        background: linear-gradient(135deg, #ff7675, #d63031);
+      }
+
+      .info-card-enhanced:hover .info-icon-wrapper {
+        transform: scale(1.1) rotate(5deg);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+      }
+
+      .info-card-title {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: #198754;
+        margin: 0;
+      }
+
+      .info-card-body {
+        padding: 1.5rem;
+      }
+
+      /* Weather Details */
+      .weather-details {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .weather-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.75rem;
+        background: #f8f9fa;
+        border-radius: 10px;
+        border-left: 4px solid #74b9ff;
+      }
+
+      .weather-label {
+        font-weight: 600;
+        color: #495057;
+        display: flex;
+        align-items: center;
+      }
+
+      .weather-value {
+        font-weight: 700;
+        color: #198754;
+        font-size: 1.1rem;
+      }
+
+      .weather-note {
+        background: rgba(116, 185, 255, 0.1);
+        color: #0984e3;
+        padding: 0.75rem;
+        border-radius: 10px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        text-align: center;
+      }
+
+      /* Tips List */
+      .tips-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .tip-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1rem;
+        background: #f8f9fa;
+        border-radius: 12px;
+        border-left: 4px solid #fd79a8;
+        transition: all 0.3s ease;
+      }
+
+      .tip-item:hover {
+        background: rgba(253, 121, 168, 0.05);
+        transform: translateX(5px);
+      }
+
+      .tip-icon {
+        width: 35px;
+        height: 35px;
+        background: linear-gradient(135deg, #fd79a8, #e84393);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 0.9rem;
+        flex-shrink: 0;
+      }
+
+      .tip-content strong {
+        color: #198754;
+        font-weight: 700;
+        display: block;
+        margin-bottom: 0.25rem;
+      }
+
+      .tip-content p {
+        margin: 0;
+        color: #6c757d;
+        font-size: 0.9rem;
+        line-height: 1.4;
+      }
+
+      /* Emergency Contacts */
+      .emergency-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .emergency-contact {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1rem;
+        background: #f8f9fa;
+        border-radius: 12px;
+        border-left: 4px solid #ff7675;
+        transition: all 0.3s ease;
+      }
+
+      .emergency-contact:hover {
+        background: rgba(255, 118, 117, 0.05);
+        transform: translateX(5px);
+      }
+
+      .emergency-contact-icon {
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(135deg, #ff7675, #d63031);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1rem;
+        flex-shrink: 0;
+      }
+
+      .emergency-contact-info h6 {
+        color: #198754;
+        font-weight: 700;
+        margin-bottom: 0.25rem;
+        font-size: 1rem;
+      }
+
+      .emergency-contact-info p {
+        margin-bottom: 0.25rem;
+        color: #495057;
+        font-size: 0.9rem;
+      }
+
+      .emergency-number {
+        font-weight: 700 !important;
+        color: #d63031 !important;
+        font-size: 1rem !important;
+      }
+
+      .availability {
+        background: rgba(25, 135, 84, 0.1);
+        color: #198754;
+        padding: 0.2rem 0.6rem;
+        border-radius: 12px;
+        font-size: 0.75rem;
+        font-weight: 600;
+      }
+
+      .emergency-note {
+        background: rgba(255, 118, 117, 0.1);
+        color: #d63031;
+        padding: 0.75rem;
+        border-radius: 10px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        text-align: center;
+      }
+
+      /* Additional Tips Section */
+      .additional-tips-section {
+        background: white;
+        border-radius: 25px;
+        padding: 2.5rem;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        border: 2px solid rgba(25, 135, 84, 0.1);
+      }
+
+      .tip-highlight-card {
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        border-radius: 20px;
+        padding: 2rem;
+        text-align: center;
+        border: 2px solid rgba(25, 135, 84, 0.1);
+        transition: all 0.3s ease;
+        height: 100%;
+      }
+
+      .tip-highlight-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        border-color: rgba(25, 135, 84, 0.3);
+      }
+
+      .tip-highlight-header h5 {
+        color: #198754;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+      }
+
+      .tip-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: left;
+      }
+
+      .tip-list li {
+        padding: 0.75rem 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        color: #495057;
+        font-size: 0.9rem;
+        line-height: 1.5;
+        position: relative;
+        padding-left: 1.5rem;
+      }
+
+      .tip-list li:last-child {
+        border-bottom: none;
+      }
+
+      .tip-list li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: #198754;
+        font-weight: bold;
+      }
+
       @media (max-width: 768px) {
         .section-title {
           font-size: 2rem;
@@ -293,6 +1053,232 @@
 
         .contact-item:hover {
           transform: none;
+        }
+
+        /* Hero Section Mobile */
+        .hero-section-info {
+          min-height: 60vh;
+        }
+
+        .hero-section-info .hero-title {
+          font-size: 2.5rem;
+        }
+
+        .hero-section-info .hero-subtitle {
+          font-size: 1.1rem;
+        }
+
+        .hero-section-info .hero-stats {
+          gap: 1rem !important;
+        }
+
+        .hero-section-info .stat-item {
+          padding: 0.75rem;
+          min-width: 80px;
+        }
+
+        .hero-section-info .stat-number {
+          font-size: 1.5rem;
+        }
+
+        /* Contact Cards Mobile */
+        .contact-card-modern:hover {
+          transform: translateY(-4px);
+        }
+
+        .contact-card-header {
+          padding: 1.5rem 1rem 0.75rem;
+        }
+
+        .contact-icon-modern {
+          width: 60px;
+          height: 60px;
+          font-size: 1.5rem;
+        }
+
+        .contact-card-body {
+          padding: 1rem;
+        }
+
+        .social-media-section {
+          padding: 1.5rem;
+        }
+
+        .social-card-content {
+          flex-direction: column;
+          text-align: center;
+          gap: 0.75rem;
+        }
+
+        /* Info Cards Mobile */
+        .info-card-enhanced:hover {
+          transform: translateY(-4px);
+        }
+
+        .info-card-header {
+          padding: 1.5rem 1rem 0.75rem;
+        }
+
+        .info-icon-wrapper {
+          width: 60px;
+          height: 60px;
+          font-size: 1.5rem;
+        }
+
+        .info-card-body {
+          padding: 1rem;
+        }
+
+        .weather-item {
+          flex-direction: column;
+          text-align: center;
+          gap: 0.5rem;
+        }
+
+        .tip-item {
+          flex-direction: column;
+          text-align: center;
+          gap: 0.75rem;
+        }
+
+        .emergency-contact {
+          flex-direction: column;
+          text-align: center;
+          gap: 0.75rem;
+        }
+
+        .additional-tips-section {
+          padding: 1.5rem;
+        }
+
+        .tip-highlight-card {
+          padding: 1.5rem;
+        }
+
+        /* Transport Section Mobile */
+        .nav-pills .nav-link {
+          font-size: 0.85rem;
+          padding: 0.5rem 0.75rem;
+        }
+
+        .transport-info {
+          padding: 1rem;
+        }
+
+        .transport-icon {
+          width: 35px;
+          height: 35px;
+          font-size: 1rem;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .hero-section-info {
+          min-height: 50vh;
+        }
+
+        .hero-section-info .hero-title {
+          font-size: 2rem;
+        }
+
+        .hero-section-info .hero-subtitle {
+          font-size: 1rem;
+        }
+
+        .hero-section-info .stat-item {
+          padding: 0.5rem;
+          min-width: 70px;
+        }
+
+        .hero-section-info .stat-number {
+          font-size: 1.25rem;
+        }
+
+        .hero-section-info .stat-label {
+          font-size: 0.8rem;
+        }
+
+        .contact-icon-modern {
+          width: 50px;
+          height: 50px;
+          font-size: 1.25rem;
+        }
+
+        .info-icon-wrapper {
+          width: 50px;
+          height: 50px;
+          font-size: 1.25rem;
+        }
+
+        .social-icon-wrapper {
+          width: 40px;
+          height: 40px;
+          font-size: 1.25rem;
+        }
+
+        .nav-pills .nav-link {
+          font-size: 0.8rem;
+          padding: 0.4rem 0.6rem;
+        }
+
+        .nav-pills .nav-link i {
+          display: none;
+        }
+
+        .tip-list li {
+          font-size: 0.85rem;
+          padding: 0.5rem 0;
+        }
+
+        .map-icon-wrapper {
+          font-size: 3rem !important;
+        }
+
+        .map-features {
+          flex-direction: column;
+          gap: 0.5rem !important;
+        }
+
+        .map-features .badge {
+          font-size: 0.75rem;
+          padding: 0.4rem 0.8rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .section-title {
+          font-size: 1.75rem;
+        }
+
+        .section-subtitle {
+          font-size: 1rem;
+        }
+
+        .hero-section-info .hero-title {
+          font-size: 1.75rem;
+        }
+
+        .contact-card-modern,
+        .info-card-enhanced {
+          margin-bottom: 1rem;
+        }
+
+        .weather-item,
+        .tip-item,
+        .emergency-contact {
+          padding: 0.75rem;
+        }
+
+        .tip-highlight-card {
+          padding: 1rem;
+        }
+
+        .additional-tips-section {
+          padding: 1rem;
+        }
+
+        .social-media-section {
+          padding: 1rem;
         }
       }
     </style>
@@ -567,174 +1553,213 @@
       </div>
     </nav>
 
-    <!-- Page Title -->
-    <div class="container-fluid bg-primary text-white py-5">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 text-center">
-            <h1 class="display-4 fw-bold text-white mb-3">Informasi Desa</h1>
-            <p class="lead">
-              Informasi lengkap tentang lokasi, kontak, dan tips perjalanan
+    <!-- Enhanced Page Header -->
+    <section class="hero-section-info position-relative overflow-hidden">
+      <div class="hero-bg-info position-absolute w-100 h-100"></div>
+      <div class="hero-decoration hero-decoration-1"></div>
+      <div class="hero-decoration hero-decoration-2"></div>
+      <div class="hero-decoration hero-decoration-3"></div>
+
+      <div class="container py-5">
+        <div class="row align-items-center min-vh-50">
+          <div class="col-lg-8 mx-auto text-center text-white">
+            <div class="hero-badge mb-4">
+              <span class="badge bg-light text-success px-4 py-2 rounded-pill fs-6">
+                <i class="fas fa-info-circle me-2"></i>Panduan Lengkap
+              </span>
+            </div>
+            <h1 class="hero-title display-3 mb-4 fw-bold">
+              Informasi <span class="text-gradient">Desa Wisata</span>
+            </h1>
+            <p class="hero-subtitle lead fs-4 mb-4">
+              Panduan lengkap tentang lokasi, kontak, dan tips perjalanan untuk pengalaman terbaik di Desa Wisata Klabili
             </p>
+            <div class="hero-stats d-flex justify-content-center gap-4 flex-wrap">
+              <div class="stat-item">
+                <div class="stat-number">800m</div>
+                <div class="stat-label">Ketinggian</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">24/7</div>
+                <div class="stat-label">Bantuan</div>
+              </div>
+              <div class="stat-item">
+                <div class="stat-number">3+</div>
+                <div class="stat-label">Rute Akses</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <div class="container mt-4">
       <!-- Page Content -->
       <!-- Location & Map Section -->
-      <section
-        id="lokasi-peta"
-        class="py-5"
-        style="background: linear-gradient(135deg, #f0f8f0 0%, #ffffff 100%)"
-      >
-        <div class="row">
-          <div class="col-12 text-center mb-5">
-            <h2 class="section-title">Lokasi & Peta</h2>
-            <p class="section-subtitle">Temukan jalan ke Desa Wisata Klabili</p>
-          </div>
-        </div>
-
-        <div class="row g-4">
-          <div class="col-lg-6">
-            <div class="info-card">
-              <div class="icon-wrapper">
-                <i class="fas fa-map-marker-alt text-white fa-2x"></i>
+      <section id="lokasi-peta" class="py-5" style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 text-center mb-5">
+              <div class="section-header">
+                <span class="badge bg-success-subtle text-success px-3 py-2 rounded-pill mb-3">
+                  <i class="fas fa-map-marker-alt me-2"></i>Lokasi & Akses
+                </span>
+                <h2 class="section-title">Lokasi & Peta</h2>
+                <p class="section-subtitle">Temukan jalan ke Desa Wisata Klabili dengan mudah</p>
               </div>
-              <h4
-                class="text-center mb-4"
-                style="color: #2c3e50; font-weight: 600"
-              >
-                Alamat Desa
-              </h4>
-              <div class="text-center">
-                <p style="font-size: 1.1rem; line-height: 1.8; color: #34495e">
-                  <strong>Desa Klabili</strong><br />
-                  Kecamatan Selemkai<br />
-                  Kabupaten Tambrauw<br />
-                  Provinsi Papua Barat Daya<br />
-                  Indonesia
-                </p>
-                <div
-                  style="
-                    background: #f8f9fa;
-                    padding: 15px;
-                    border-radius: 10px;
-                    margin-top: 20px;
-                  "
-                >
-                  <small style="color: #6c757d">
-                    <i class="fas fa-info-circle me-2"></i>
-                    Terletak pada ketinggian 800 meter di atas permukaan laut
-                  </small>
+            </div>
+          </div>
+
+          <div class="row g-4 mb-5">
+            <!-- Enhanced Address Card -->
+            <div class="col-lg-6">
+              <div class="wisata-card h-100">
+                <div class="card-body p-4 text-center">
+                  <div class="icon-wrapper mb-4">
+                    <i class="fas fa-map-marker-alt text-white fa-2x"></i>
+                  </div>
+                  <h4 class="card-title mb-4">Alamat Desa</h4>
+                  <div class="address-info">
+                    <div class="address-item mb-3">
+                      <h5 class="text-success fw-bold mb-2">Desa Klabili</h5>
+                      <p class="text-muted mb-1">Kecamatan Selemkai</p>
+                      <p class="text-muted mb-1">Kabupaten Tambrauw</p>
+                      <p class="text-muted mb-1">Provinsi Papua Barat Daya</p>
+                      <p class="text-muted">Indonesia</p>
+                    </div>
+                    <div class="altitude-info bg-light rounded-3 p-3">
+                      <i class="fas fa-mountain text-success me-2"></i>
+                      <small class="text-muted">
+                        Terletak pada ketinggian <strong>800 meter</strong> di atas permukaan laut
+                      </small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Enhanced Transport Options -->
+            <div class="col-lg-6">
+              <div class="wisata-card h-100">
+                <div class="card-body p-4">
+                  <div class="text-center mb-4">
+                    <div class="icon-wrapper mb-3">
+                      <i class="fas fa-route text-white fa-2x"></i>
+                    </div>
+                    <h4 class="card-title">Cara Menuju Klabili</h4>
+                  </div>
+
+                  <ul class="nav nav-pills nav-fill mb-4" id="transportTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active rounded-pill" id="udara-tab" data-bs-toggle="tab"
+                              data-bs-target="#udara" type="button" role="tab" aria-controls="udara" aria-selected="true">
+                        <i class="fas fa-plane me-2"></i>Udara
+                      </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link rounded-pill" id="darat-tab" data-bs-toggle="tab"
+                              data-bs-target="#darat" type="button" role="tab" aria-controls="darat" aria-selected="false">
+                        <i class="fas fa-car me-2"></i>Darat
+                      </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link rounded-pill" id="laut-tab" data-bs-toggle="tab"
+                              data-bs-target="#laut" type="button" role="tab" aria-controls="laut" aria-selected="false">
+                        <i class="fas fa-ship me-2"></i>Laut
+                      </button>
+                    </li>
+                  </ul>
+
+                  <div class="tab-content" id="transportTabsContent">
+                    <div class="tab-pane fade show active" id="udara" role="tabpanel" aria-labelledby="udara-tab">
+                      <div class="transport-info bg-light rounded-3 p-3">
+                        <div class="d-flex align-items-start">
+                          <div class="transport-icon me-3">
+                            <i class="fas fa-plane text-primary"></i>
+                          </div>
+                          <div>
+                            <h6 class="fw-bold text-success mb-2">Dari Sorong</h6>
+                            <p class="mb-2">Penerbangan ke Bandara Domine Eduard Osok</p>
+                            <p class="mb-0 text-muted">
+                              <i class="fas fa-clock me-1"></i>
+                              Kemudian perjalanan darat ke Klabili melalui Sausapor (~4 jam)
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade" id="darat" role="tabpanel" aria-labelledby="darat-tab">
+                      <div class="transport-info bg-light rounded-3 p-3">
+                        <div class="d-flex align-items-start">
+                          <div class="transport-icon me-3">
+                            <i class="fas fa-car text-primary"></i>
+                          </div>
+                          <div>
+                            <h6 class="fw-bold text-success mb-2">Dari Sorong</h6>
+                            <p class="mb-2">Rute: Sorong → Sausapor → Klabili</p>
+                            <p class="mb-0 text-muted">
+                              <i class="fas fa-clock me-1"></i>
+                              Kendaraan 4×4 atau sepeda motor trail (~2–4 jam)
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tab-pane fade" id="laut" role="tabpanel" aria-labelledby="laut-tab">
+                      <div class="transport-info bg-light rounded-3 p-3">
+                        <div class="d-flex align-items-start">
+                          <div class="transport-icon me-3">
+                            <i class="fas fa-ship text-primary"></i>
+                          </div>
+                          <div>
+                            <h6 class="fw-bold text-success mb-2">Akses Laut</h6>
+                            <p class="mb-2">Pelabuhan terdekat: Sausapor (kargo mingguan)</p>
+                            <p class="mb-0 text-muted">
+                              <i class="fas fa-info-circle me-1"></i>
+                              Speedboat Sorong–Sausapor (~2 jam) sedang direncanakan
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-6">
-            <div
-              class="card border-0 shadow-sm"
-              style="background: #ffffff; border-radius: 15px"
-            >
-              <div class="card-body p-4">
-                <ul class="nav nav-tabs" id="transportTabs" role="tablist">
-                  <li class="nav-item" role="presentation">
-                    <button
-                      class="nav-link active"
-                      id="udara-tab"
-                      data-bs-toggle="tab"
-                      data-bs-target="#udara"
-                      type="button"
-                      role="tab"
-                      aria-controls="udara"
-                      aria-selected="true"
-                    >
-                      Dengan Udara
-                    </button>
-                  </li>
-                  <li class="nav-item" role="presentation">
-                    <button
-                      class="nav-link"
-                      id="darat-tab"
-                      data-bs-toggle="tab"
-                      data-bs-target="#darat"
-                      type="button"
-                      role="tab"
-                      aria-controls="darat"
-                      aria-selected="false"
-                    >
-                      Dengan Darat
-                    </button>
-                  </li>
-                  <li class="nav-item" role="presentation">
-                    <button
-                      class="nav-link"
-                      id="laut-tab"
-                      data-bs-toggle="tab"
-                      data-bs-target="#laut"
-                      type="button"
-                      role="tab"
-                      aria-controls="laut"
-                      aria-selected="false"
-                    >
-                      Dengan Laut
-                    </button>
-                  </li>
-                </ul>
-                <div class="tab-content mt-3" id="transportTabsContent">
-                  <div
-                    class="tab-pane fade show active"
-                    id="udara"
-                    role="tabpanel"
-                    aria-labelledby="udara-tab"
-                  >
-                    <p>
-                      <strong>Dari Sorong:</strong> Penerbangan ke Bandara
-                      Domine Eduard Osok, kemudian darat ke Klabili melalui
-                      Sausapor (~4 jam).
-                    </p>
+          <!-- Enhanced Map Section -->
+          <div class="row">
+            <div class="col-12">
+              <div class="wisata-card">
+                <div class="card-body p-0">
+                  <div class="map-header bg-success text-white p-4 text-center">
+                    <h4 class="mb-2">
+                      <i class="fas fa-map me-2"></i>Peta Lokasi
+                    </h4>
+                    <p class="mb-0">Visualisasi lokasi Desa Wisata Klabili</p>
                   </div>
-                  <div
-                    class="tab-pane fade"
-                    id="darat"
-                    role="tabpanel"
-                    aria-labelledby="darat-tab"
-                  >
-                    <p>
-                      <strong>Dari Sorong:</strong> Rute Sorong → Sausapor →
-                      Klabili dengan kendaraan 4×4 atau sepeda motor trail (~2–4
-                      jam).
-                    </p>
-                  </div>
-                  <div
-                    class="tab-pane fade"
-                    id="laut"
-                    role="tabpanel"
-                    aria-labelledby="laut-tab"
-                  >
-                    <p>
-                      Tidak ada layanan feri langsung. Pelabuhan terdekat adalah
-                      Sausapor (kargo mingguan), speedboat Sorong–Sausapor (~2
-                      jam) sedang direncanakan.
-                    </p>
+                  <div class="map-container-enhanced">
+                    <div class="map-placeholder text-center py-5">
+                      <div class="map-icon-wrapper mb-4">
+                        <i class="fas fa-map-marked-alt fa-4x text-success"></i>
+                      </div>
+                      <h5 class="text-success mb-3">Peta Interaktif Segera Hadir</h5>
+                      <p class="text-muted mb-4">Peta lokasi detail dengan rute perjalanan akan tersedia di sini</p>
+                      <div class="map-features d-flex justify-content-center flex-wrap gap-3">
+                        <span class="badge bg-light text-dark px-3 py-2">
+                          <i class="fas fa-route me-1"></i>Rute Perjalanan
+                        </span>
+                        <span class="badge bg-light text-dark px-3 py-2">
+                          <i class="fas fa-map-pin me-1"></i>Titik Lokasi
+                        </span>
+                        <span class="badge bg-light text-dark px-3 py-2">
+                          <i class="fas fa-compass me-1"></i>Navigasi
+                        </span>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="decorative-line"></div>
-
-        <div class="row">
-          <div class="col-12">
-            <div class="map-container">
-              <div class="text-center">
-                <i class="fas fa-map fa-3x mb-3"></i>
-                <p>Peta Interaktif Segera Hadir</p>
-                <small>Peta lokasi detail akan tersedia di sini</small>
               </div>
             </div>
           </div>
@@ -742,102 +1767,144 @@
       </section>
 
       <!-- Contact Section -->
-      <section id="kontak" class="py-5 bg-light">
+      <section id="kontak" class="py-5" style="background: linear-gradient(135deg, #e8f5e8 0%, #f8f9fa 100%);">
         <div class="container">
           <div class="row">
             <div class="col-12 text-center mb-5">
-              <h2 class="section-title">Informasi Kontak</h2>
-              <p class="section-subtitle">
-                Hubungi kami untuk pemesanan dan pertanyaan
-              </p>
+              <div class="section-header">
+                <span class="badge bg-primary-subtle text-primary px-3 py-2 rounded-pill mb-3">
+                  <i class="fas fa-phone me-2"></i>Hubungi Kami
+                </span>
+                <h2 class="section-title">Informasi Kontak</h2>
+                <p class="section-subtitle">
+                  Hubungi kami untuk pemesanan dan pertanyaan seputar Desa Wisata Klabili
+                </p>
+              </div>
             </div>
           </div>
 
-          <div class="row g-4">
-            <div class="col-lg-4">
-              <div class="contact-item">
-                <div class="d-flex align-items-center">
-                  <div class="contact-icon">
+          <!-- Primary Contact Methods -->
+          <div class="row g-4 mb-5">
+            <div class="col-lg-4 col-md-6">
+              <div class="contact-card-modern">
+                <div class="contact-card-header">
+                  <div class="contact-icon-modern phone">
                     <i class="fas fa-phone"></i>
                   </div>
-                  <div>
-                    <h5 style="color: #2c3e50; margin-bottom: 5px">Telepon</h5>
-                    <p style="color: #6c757d; margin-bottom: 0">
-                      +62 822-3695-5445
-                    </p>
-                    <small style="color: #95a5a6">Tersedia 24/7</small>
+                  <h5 class="contact-title">Telepon</h5>
+                </div>
+                <div class="contact-card-body">
+                  <p class="contact-value">+62 822-3695-5445</p>
+                  <span class="contact-status available">
+                    <i class="fas fa-circle me-1"></i>Tersedia 24/7
+                  </span>
+                  <div class="contact-action mt-3">
+                    <a href="tel:+6282236955445" class="btn btn-outline-success btn-sm rounded-pill">
+                      <i class="fas fa-phone me-2"></i>Hubungi Sekarang
+                    </a>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="col-lg-4">
-              <div class="contact-item">
-                <div class="d-flex align-items-center">
-                  <div class="contact-icon">
-                    <i class="fas fa-envelope"></i>
-                  </div>
-                  <div>
-                    <h5 style="color: #2c3e50; margin-bottom: 5px">Email</h5>
-                    <p style="color: #6c757d; margin-bottom: 0">
-                      info@desaklabili.com
-                    </p>
-                    <small style="color: #95a5a6">Respons dalam 24 jam</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4">
-              <div class="contact-item">
-                <div class="d-flex align-items-center">
-                  <div class="contact-icon">
+            <div class="col-lg-4 col-md-6">
+              <div class="contact-card-modern">
+                <div class="contact-card-header">
+                  <div class="contact-icon-modern whatsapp">
                     <i class="fab fa-whatsapp"></i>
                   </div>
-                  <div>
-                    <h5 style="color: #2c3e50; margin-bottom: 5px">WhatsApp</h5>
-                    <p style="color: #6c757d; margin-bottom: 0">
-                      +62 822-3695-5445
-                    </p>
-                    <small style="color: #95a5a6">Respons cepat</small>
+                  <h5 class="contact-title">WhatsApp</h5>
+                </div>
+                <div class="contact-card-body">
+                  <p class="contact-value">+62 822-3695-5445</p>
+                  <span class="contact-status fast">
+                    <i class="fas fa-bolt me-1"></i>Respons cepat
+                  </span>
+                  <div class="contact-action mt-3">
+                    <a href="https://wa.me/6282236955445?text=Halo%20saya%20mau%20tanya%20tentang%20Desa%20Wisata%20Klabili"
+                       target="_blank" class="btn btn-outline-success btn-sm rounded-pill">
+                      <i class="fab fa-whatsapp me-2"></i>Chat WhatsApp
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="contact-card-modern">
+                <div class="contact-card-header">
+                  <div class="contact-icon-modern email">
+                    <i class="fas fa-envelope"></i>
+                  </div>
+                  <h5 class="contact-title">Email</h5>
+                </div>
+                <div class="contact-card-body">
+                  <p class="contact-value">info@desaklabili.com</p>
+                  <span class="contact-status normal">
+                    <i class="fas fa-clock me-1"></i>Respons dalam 24 jam
+                  </span>
+                  <div class="contact-action mt-3">
+                    <a href="mailto:info@desaklabili.com" class="btn btn-outline-success btn-sm rounded-pill">
+                      <i class="fas fa-envelope me-2"></i>Kirim Email
+                    </a>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="row mt-5">
-            <div class="col-lg-6">
-              <div class="contact-item">
-                <div class="d-flex align-items-center">
-                  <div class="contact-icon">
-                    <i class="fab fa-instagram"></i>
-                  </div>
-                  <div>
-                    <h5 style="color: #2c3e50; margin-bottom: 5px">
-                      Instagram
-                    </h5>
-                    <p style="color: #6c757d; margin-bottom: 0">
-                      @klabili_birdwatching
-                    </p>
-                    <small style="color: #95a5a6">Ikuti untuk pembaruan</small>
-                  </div>
+          <!-- Social Media Section -->
+          <div class="row">
+            <div class="col-12">
+              <div class="social-media-section">
+                <div class="text-center mb-4">
+                  <h4 class="text-success mb-3">
+                    <i class="fas fa-share-alt me-2"></i>Ikuti Media Sosial Kami
+                  </h4>
+                  <p class="text-muted">Dapatkan update terbaru tentang kegiatan dan acara di Desa Wisata Klabili</p>
                 </div>
-              </div>
-            </div>
 
-            <div class="col-lg-6">
-              <div class="contact-item">
-                <div class="d-flex align-items-center">
-                  <div class="contact-icon">
-                    <i class="fab fa-facebook"></i>
+                <div class="row g-4">
+                  <div class="col-lg-6">
+                    <div class="social-card instagram">
+                      <div class="social-card-content">
+                        <div class="social-icon-wrapper">
+                          <i class="fab fa-instagram"></i>
+                        </div>
+                        <div class="social-info">
+                          <h6 class="social-platform">Instagram</h6>
+                          <p class="social-handle">@klabili_birdwatching</p>
+                          <small class="social-description">Foto dan video kegiatan terbaru</small>
+                        </div>
+                        <div class="social-action">
+                          <a href="https://www.instagram.com/klabili_birdwatching/" target="_blank"
+                             class="btn btn-instagram btn-sm rounded-pill">
+                            <i class="fab fa-instagram me-2"></i>Follow
+                          </a>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <h5 style="color: #2c3e50; margin-bottom: 5px">Facebook</h5>
-                    <p style="color: #6c757d; margin-bottom: 0">
-                      Klabili Tourism Village
-                    </p>
-                    <small style="color: #95a5a6">Pembaruan komunitas</small>
+
+                  <div class="col-lg-6">
+                    <div class="social-card facebook">
+                      <div class="social-card-content">
+                        <div class="social-icon-wrapper">
+                          <i class="fab fa-facebook"></i>
+                        </div>
+                        <div class="social-info">
+                          <h6 class="social-platform">Facebook</h6>
+                          <p class="social-handle">Klabili Tourism Village</p>
+                          <small class="social-description">Pembaruan komunitas dan acara</small>
+                        </div>
+                        <div class="social-action">
+                          <a href="https://www.facebook.com/profile.php?id=100094418988540" target="_blank"
+                             class="btn btn-facebook btn-sm rounded-pill">
+                            <i class="fab fa-facebook me-2"></i>Like
+                          </a>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -847,66 +1914,183 @@
       </section>
 
       <!-- Additional Information Section -->
-      <section id="tambahan" class="py-5">
-        <div class="row">
-          <div class="col-12 text-center mb-5">
-            <h2 class="section-title">Tips Perjalanan & Informasi</h2>
-            <p class="section-subtitle">
-              Informasi penting untuk kunjungan Anda
-            </p>
-          </div>
-        </div>
-
-        <div class="info-grid">
-          <div class="weather-card">
-            <div class="weather-icon">
-              <i class="fas fa-cloud-sun"></i>
-            </div>
-            <h4 style="margin-bottom: 20px">Cuaca & Iklim</h4>
-            <p style="font-size: 1.1rem; line-height: 1.6">
-              Iklim tropis sejuk dengan suhu berkisar 18-25°C. Musim hujan:
-              November-Maret. Waktu kunjungan terbaik: April-Oktober.
-            </p>
-          </div>
-
-          <div class="tips-card">
-            <h4 style="margin-bottom: 25px">
-              <i class="fas fa-lightbulb me-2"></i>Tips Perjalanan
-            </h4>
-            <div class="tips-item">
-              <strong>Yang Dibawa:</strong> Pakaian hangat, perlengkapan hujan,
-              sepatu hiking yang nyaman, obat anti nyamuk
-            </div>
-            <div class="tips-item">
-              <strong>Waktu Terbaik:</strong> Pagi hari untuk pengamatan burung,
-              sore hari untuk kegiatan budaya
-            </div>
-            <div class="tips-item">
-              <strong>Durasi:</strong> Minimum 2-3 hari untuk sepenuhnya
-              menikmati desa
+      <section id="tambahan" class="py-5" style="background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 text-center mb-5">
+              <div class="section-header">
+                <span class="badge bg-warning-subtle text-warning px-3 py-2 rounded-pill mb-3">
+                  <i class="fas fa-info-circle me-2"></i>Informasi Penting
+                </span>
+                <h2 class="section-title">Tips Perjalanan & Informasi</h2>
+                <p class="section-subtitle">
+                  Informasi penting untuk mempersiapkan kunjungan Anda ke Desa Wisata Klabili
+                </p>
+              </div>
             </div>
           </div>
 
-          <div class="emergency-card">
-            <h4 style="margin-bottom: 25px">
-              <i class="fas fa-first-aid me-2"></i>Kontak Darurat
-            </h4>
-            <div class="emergency-item">
-              <div class="emergency-icon">
-                <i class="fas fa-hospital"></i>
-              </div>
-              <div>
-                <strong>Pos Kesehatan</strong><br />
-                <small>Layanan medis dasar tersedia di desa</small>
+          <div class="row g-4">
+            <!-- Weather & Climate Card -->
+            <div class="col-lg-4 col-md-6">
+              <div class="info-card-enhanced weather">
+                <div class="info-card-header">
+                  <div class="info-icon-wrapper weather-icon">
+                    <i class="fas fa-cloud-sun"></i>
+                  </div>
+                  <h4 class="info-card-title">Cuaca & Iklim</h4>
+                </div>
+                <div class="info-card-body">
+                  <div class="weather-details">
+                    <div class="weather-item">
+                      <div class="weather-label">
+                        <i class="fas fa-thermometer-half me-2"></i>Suhu
+                      </div>
+                      <div class="weather-value">18-25°C</div>
+                    </div>
+                    <div class="weather-item">
+                      <div class="weather-label">
+                        <i class="fas fa-cloud-rain me-2"></i>Musim Hujan
+                      </div>
+                      <div class="weather-value">Nov - Mar</div>
+                    </div>
+                    <div class="weather-item">
+                      <div class="weather-label">
+                        <i class="fas fa-sun me-2"></i>Waktu Terbaik
+                      </div>
+                      <div class="weather-value">Apr - Okt</div>
+                    </div>
+                  </div>
+                  <div class="weather-note">
+                    <i class="fas fa-info-circle me-2"></i>
+                    Iklim tropis sejuk dengan udara segar pegunungan
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="emergency-item">
-              <div class="emergency-icon">
-                <i class="fas fa-phone"></i>
+
+            <!-- Travel Tips Card -->
+            <div class="col-lg-4 col-md-6">
+              <div class="info-card-enhanced tips">
+                <div class="info-card-header">
+                  <div class="info-icon-wrapper tips-icon">
+                    <i class="fas fa-lightbulb"></i>
+                  </div>
+                  <h4 class="info-card-title">Tips Perjalanan</h4>
+                </div>
+                <div class="info-card-body">
+                  <div class="tips-list">
+                    <div class="tip-item">
+                      <div class="tip-icon">
+                        <i class="fas fa-tshirt"></i>
+                      </div>
+                      <div class="tip-content">
+                        <strong>Yang Dibawa:</strong>
+                        <p>Pakaian hangat, perlengkapan hujan, sepatu hiking, obat anti nyamuk</p>
+                      </div>
+                    </div>
+                    <div class="tip-item">
+                      <div class="tip-icon">
+                        <i class="fas fa-clock"></i>
+                      </div>
+                      <div class="tip-content">
+                        <strong>Waktu Terbaik:</strong>
+                        <p>Pagi untuk birdwatching, sore untuk aktivitas budaya</p>
+                      </div>
+                    </div>
+                    <div class="tip-item">
+                      <div class="tip-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                      </div>
+                      <div class="tip-content">
+                        <strong>Durasi:</strong>
+                        <p>Minimum 2-3 hari untuk pengalaman lengkap</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div>
-                <strong>Darurat:</strong> +62 822-3695-5445<br />
-                <small>Bantuan darurat 24/7</small>
+            </div>
+
+            <!-- Emergency Contact Card -->
+            <div class="col-lg-4 col-md-6">
+              <div class="info-card-enhanced emergency">
+                <div class="info-card-header">
+                  <div class="info-icon-wrapper emergency-icon">
+                    <i class="fas fa-first-aid"></i>
+                  </div>
+                  <h4 class="info-card-title">Kontak Darurat</h4>
+                </div>
+                <div class="info-card-body">
+                  <div class="emergency-list">
+                    <div class="emergency-contact">
+                      <div class="emergency-contact-icon">
+                        <i class="fas fa-hospital"></i>
+                      </div>
+                      <div class="emergency-contact-info">
+                        <h6>Pos Kesehatan Desa</h6>
+                        <p>Layanan medis dasar tersedia di desa</p>
+                        <span class="availability">Buka 24 jam</span>
+                      </div>
+                    </div>
+                    <div class="emergency-contact">
+                      <div class="emergency-contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                      </div>
+                      <div class="emergency-contact-info">
+                        <h6>Bantuan Darurat</h6>
+                        <p class="emergency-number">+62 822-3695-5445</p>
+                        <span class="availability">Tersedia 24/7</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="emergency-note">
+                    <i class="fas fa-exclamation-triangle me-2"></i>
+                    Simpan nomor ini di ponsel Anda
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Additional Tips Section -->
+          <div class="row mt-5">
+            <div class="col-12">
+              <div class="additional-tips-section">
+                <div class="row g-4">
+                  <div class="col-lg-6">
+                    <div class="tip-highlight-card">
+                      <div class="tip-highlight-header">
+                        <i class="fas fa-camera fa-2x text-success mb-3"></i>
+                        <h5>Tips Fotografi</h5>
+                      </div>
+                      <div class="tip-highlight-body">
+                        <ul class="tip-list">
+                          <li>Golden hour terbaik: 06:00-07:00 dan 17:00-18:00</li>
+                          <li>Bawa lensa telephoto untuk foto burung</li>
+                          <li>Siapkan pelindung kamera dari hujan</li>
+                          <li>Hormati privasi masyarakat lokal</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="tip-highlight-card">
+                      <div class="tip-highlight-header">
+                        <i class="fas fa-leaf fa-2x text-success mb-3"></i>
+                        <h5>Etika Lingkungan</h5>
+                      </div>
+                      <div class="tip-highlight-body">
+                        <ul class="tip-list">
+                          <li>Jangan meninggalkan sampah di alam</li>
+                          <li>Gunakan jalur yang sudah ada</li>
+                          <li>Jangan memetik tanaman atau mengganggu satwa</li>
+                          <li>Dukung produk lokal dan ramah lingkungan</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
