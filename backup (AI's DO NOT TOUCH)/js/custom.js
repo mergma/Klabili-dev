@@ -554,13 +554,45 @@ function scrollToGallery() {
   }, 300);
 }
 
+// Back-to-top button setup
+function injectBackToTop() {
+  if (document.getElementById('backToTop')) return;
+  const btn = document.createElement('button');
+  btn.id = 'backToTop';
+  btn.className = 'back-to-top btn btn-success';
+  btn.setAttribute('aria-label', 'Back to top');
+  btn.innerHTML = `
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <!-- Leaf icon -->
+      <path d="M20 3c-7 0-11 4-11 11 0 3 2 5 5 5 7 0 8-11 6-16z" fill="currentColor"/>
+      <path d="M4 20c5-5 9-7 14-9" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+    </svg>`;
+  document.body.appendChild(btn);
+
+  // Show/hide on scroll
+  const toggle = () => {
+    const y = window.pageYOffset || document.documentElement.scrollTop;
+    btn.style.opacity = y > 300 ? '1' : '0';
+    btn.style.pointerEvents = y > 300 ? 'auto' : 'none';
+  };
+  window.addEventListener('scroll', toggle);
+  toggle();    
+
+  // Smooth scroll to top
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+
 // Initialize when page loads
 document.addEventListener("DOMContentLoaded", function () {
   setActiveNavButton();
   addRippleEffectAndNavigation();
-  initStickyNavbar();
+  // initStickyNavbar();
   handleHashOnLoad();
   initLanguageToggle();
+  injectBackToTop();
 
   // Initialize gallery functionality if on gallery page
   if (window.location.pathname.includes('galeri') || document.querySelector('.gallery-card')) {
