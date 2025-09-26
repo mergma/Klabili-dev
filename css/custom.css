@@ -257,6 +257,22 @@ html {
   box-shadow: 0 16px 34px rgba(25, 135, 84, 0.32);
 }
 
+/* Scroll to Top Button Show/Hide Animation */
+#scrollToTopBtn {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#scrollToTopBtn.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#scrollToTopBtn:hover {
+  transform: translateY(-2px);
+}
+
 .hero-section {
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../img/HeroPage/hero_page_img.JPG');
   background-size: cover;
