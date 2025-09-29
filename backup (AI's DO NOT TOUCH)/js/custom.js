@@ -556,27 +556,26 @@ function scrollToGallery() {
 
 // Back-to-top button setup
 function injectBackToTop() {
-  if (document.getElementById('backToTop')) return;
+  if (document.getElementById('scrollToTopBtn')) return;
   const btn = document.createElement('button');
-  btn.id = 'backToTop';
-  btn.className = 'back-to-top btn btn-success';
+  btn.id = 'scrollToTopBtn';
+  btn.className = 'btn btn-success rounded-circle shadow';
+  btn.style.cssText = 'position: fixed; bottom: 32px; right: 32px; z-index: 999; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center;';
   btn.setAttribute('aria-label', 'Back to top');
-  btn.innerHTML = `
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <!-- Leaf icon -->
-      <path d="M20 3c-7 0-11 4-11 11 0 3 2 5 5 5 7 0 8-11 6-16z" fill="currentColor"/>
-      <path d="M4 20c5-5 9-7 14-9" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-    </svg>`;
+  btn.innerHTML = '<i class="fas fa-leaf"></i>';
   document.body.appendChild(btn);
 
   // Show/hide on scroll
   const toggle = () => {
     const y = window.pageYOffset || document.documentElement.scrollTop;
-    btn.style.opacity = y > 300 ? '1' : '0';
-    btn.style.pointerEvents = y > 300 ? 'auto' : 'none';
+    if (y > 200) {
+      btn.classList.add('show');
+    } else {
+      btn.classList.remove('show');
+    }
   };
   window.addEventListener('scroll', toggle);
-  toggle();    
+  toggle();
 
   // Smooth scroll to top
   btn.addEventListener('click', () => {

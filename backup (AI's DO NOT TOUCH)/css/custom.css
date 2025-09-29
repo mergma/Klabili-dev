@@ -257,6 +257,22 @@ html {
   box-shadow: 0 16px 34px rgba(25, 135, 84, 0.32);
 }
 
+/* Scroll to Top Button Show/Hide Animation */
+#scrollToTopBtn {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#scrollToTopBtn.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#scrollToTopBtn:hover {
+  transform: translateY(-2px);
+}
+
 .hero-section {
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../img/HeroPage/hero_page_img.JPG');
   background-size: cover;
@@ -3123,6 +3139,20 @@ section:not(:last-child)::after {
   color: white;
 }
 
+.contact-icon {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 2rem;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
 .contact-title {
   font-size: 1.75rem;
   font-weight: 700;
@@ -3197,6 +3227,12 @@ section:not(:last-child)::after {
     padding: 2rem 1.5rem;
   }
 
+  .contact-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+
   .contact-title {
     font-size: 1.5rem;
   }
@@ -3244,6 +3280,12 @@ section:not(:last-child)::after {
   }
 
   .package-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.25rem;
+  }
+
+  .contact-icon {
     width: 50px;
     height: 50px;
     font-size: 1.25rem;
