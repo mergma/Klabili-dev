@@ -2987,6 +2987,120 @@ section:not(:last-child)::after {
   }
 }
 
+/* Enhanced Souvenir Section */
+.souvenir-category-card {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #28a745 !important;
+  border-radius: 25px !important;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+}
+
+.souvenir-category-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.souvenir-category-header {
+  background: linear-gradient(135deg, #6c757d, #495057);
+  padding: 2rem 1.5rem 1.5rem;
+  text-align: center;
+  color: white;
+}
+
+.souvenir-category-icon {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-size: 2rem;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.souvenir-category-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.souvenir-category-content {
+  padding: 1.5rem;
+}
+
+.souvenir-category-description {
+  color: #6c757d;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.souvenir-category-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.souvenir-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  background: #f8f9fa;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.souvenir-item:hover {
+  background: #e9ecef;
+  transform: translateX(5px);
+}
+
+.souvenir-item i {
+  color: #198754;
+  font-size: 0.9rem;
+  margin-top: 0.1rem;
+  flex-shrink: 0;
+}
+
+.souvenir-item .item-name {
+  flex: 1;
+  font-weight: 500;
+  color: #495057;
+  font-size: 0.9rem;
+}
+
+.souvenir-price {
+  font-size: 0.8rem;
+  color: #6c757d;
+  font-weight: 600;
+  margin-top: 0.25rem;
+}
+
+.souvenir-category-footer {
+  padding: 1rem 1.5rem;
+  background: #f8f9fa;
+  text-align: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.souvenir-badge {
+  background: linear-gradient(135deg, #198754, #20c997);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: inline-block;
+}
+
 /* Enhanced Events Section */
 .event-card {
   background: #ffffff !important;
