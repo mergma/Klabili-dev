@@ -1658,6 +1658,7 @@ section:not(:last-child)::after {
 .hero-title {
   font-size: 3.5rem;
   line-height: 1.2;
+  color: #fff;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   animation: fadeInUp 0.8s ease-out 0.2s both;
 }
