@@ -2460,73 +2460,1742 @@ section:not(:last-child)::after {
   color: rgba(255, 255, 255, 0.9);
 }
 
-/* Enhanced souvenir card styles */
-.souvenir-card {
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
+/* Hero Decorative Elements */
+.hero-decoration {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  animation: float 6s ease-in-out infinite;
+}
+
+.hero-decoration-1 {
+  width: 100px;
+  height: 100px;
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.hero-decoration-2 {
+  width: 150px;
+  height: 150px;
+  top: 60%;
+  right: 15%;
+  animation-delay: 2s;
+}
+
+.hero-decoration-3 {
+  width: 80px;
+  height: 80px;
+  bottom: 20%;
+  left: 20%;
+  animation-delay: 4s;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments for hero section */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .hero-stats {
+    gap: 1rem !important;
+  }
+
+  .stat-item {
+    min-width: 120px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-section-wisata {
+    min-height: 60vh;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+}
+
+/* Enhanced Wisata Cards */
+.section-header {
+  position: relative;
+}
+
+.section-badge {
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.wisata-card {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #28a745 !important;
+  border-radius: 25px !important;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.wisata-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.wisata-card-image {
+  position: relative;
+  overflow: hidden;
+  height: 250px;
+}
+
+.wisata-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.wisata-card:hover .wisata-card-image img {
+  transform: scale(1.1);
+}
+
+.wisata-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(25, 135, 84, 0.8), rgba(13, 110, 253, 0.8));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wisata-card:hover .wisata-card-overlay {
+  opacity: 1;
+}
+
+.wisata-card-badge {
+  background: rgba(255, 255, 255, 0.9);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #198754;
+  font-size: 1.5rem;
+  transform: scale(0);
+  transition: transform 0.4s ease;
+}
+
+.wisata-card:hover .wisata-card-badge {
+  transform: scale(1);
+}
+
+.wisata-card .card-body {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.wisata-card .card-title {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #198754 !important;
+}
+
+.wisata-card .card-text {
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+
+.wisata-features {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+.feature-tag {
+  background: linear-gradient(135deg, #e8f5e8, #f0f9ff);
+  color: #198754;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 1px solid rgba(25, 135, 84, 0.2);
+  transition: all 0.3s ease;
+}
+
+.feature-tag:hover {
+  background: linear-gradient(135deg, #198754, #20c997);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustments for wisata cards */
+@media (max-width: 768px) {
+  .wisata-card-image {
+    height: 200px;
+  }
+
+  .wisata-card .card-body {
+    padding: 1.25rem;
+  }
+
+  .wisata-card .card-title {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .wisata-card-image {
+    height: 180px;
+  }
+
+  .feature-tag {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+  }
+}
+
+/* Enhanced Culture Section */
+.culture-featured-card {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #28a745 !important;
+  border-radius: 25px !important;
+  overflow: hidden;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+}
+
+.culture-featured-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15);
+}
+
+.culture-featured-image {
+  position: relative;
+  height: 400px;
   overflow: hidden;
 }
 
-.souvenir-card .card-header {
-  background-color: #f8f9fa;
-  padding: 1rem;
-  border-bottom: 1px solid #e0e0e0;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+.culture-featured-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
 }
 
-.souvenir-card .card-header i {
-  color: #00875A;
+.culture-featured-card:hover .culture-featured-image img {
+  transform: scale(1.05);
+}
+
+.culture-featured-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(255, 193, 7, 0.8), rgba(255, 152, 0, 0.8));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.culture-featured-card:hover .culture-featured-overlay {
+  opacity: 1;
+}
+
+.culture-featured-badge {
+  background: rgba(255, 255, 255, 0.9);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffc107;
+  font-size: 2rem;
+  transform: scale(0);
+  transition: transform 0.4s ease;
+}
+
+.culture-featured-card:hover .culture-featured-badge {
+  transform: scale(1);
+}
+
+.culture-featured-content {
+  padding: 2.5rem;
+}
+
+.culture-category {
+  color: #ffc107;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.culture-featured-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #198754;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+}
+
+.culture-featured-description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #6c757d;
+  margin-bottom: 2rem;
+}
+
+.culture-features {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.culture-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #198754;
+  font-weight: 500;
+}
+
+.culture-feature-item i {
+  font-size: 1.1rem;
+}
+
+/* Culture Grid Cards */
+.culture-card {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #28a745 !important;
+  border-radius: 25px !important;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.culture-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #ffc107, #fd7e14);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.culture-card:hover::before {
+  transform: scaleX(1);
+}
+
+.culture-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.culture-card-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #ffc107, #fd7e14);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  color: white;
+  font-size: 2rem;
+  transition: all 0.4s ease;
+}
+
+.culture-card:hover .culture-card-icon {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 10px 30px rgba(255, 193, 7, 0.4);
+}
+
+.culture-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #198754;
+  margin-bottom: 1rem;
+}
+
+.culture-card-description {
+  line-height: 1.6;
+  color: #6c757d;
+  margin-bottom: 1.5rem;
+}
+
+.culture-card-tags {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.culture-tag {
+  background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+  color: #856404;
+  padding: 0.4rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 1px solid rgba(255, 193, 7, 0.3);
+  transition: all 0.3s ease;
+}
+
+.culture-tag:hover {
+  background: linear-gradient(135deg, #ffc107, #fd7e14);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustments for culture section */
+@media (max-width: 768px) {
+  .culture-featured-image {
+    height: 250px;
+  }
+
+  .culture-featured-content {
+    padding: 1.5rem;
+  }
+
+  .culture-featured-title {
+    font-size: 1.5rem;
+  }
+
+  .culture-featured-description {
+    font-size: 1rem;
+  }
+
+  .culture-features {
+    gap: 1rem;
+  }
+
+  .culture-card {
+    padding: 1.5rem;
+  }
+
+  .culture-card-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .culture-featured-content {
+    padding: 1rem;
+  }
+
+  .culture-card {
+    padding: 1.25rem;
+  }
+}
+
+/* Enhanced Events Section */
+.event-card {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #28a745 !important;
+  border-radius: 25px !important;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.event-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.event-card-header {
+  background: linear-gradient(135deg, #198754, #20c997);
+  padding: 1.5rem;
+  text-align: center;
+  position: relative;
+  color: white;
+}
+
+.event-month {
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+.event-icon {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
   font-size: 1.5rem;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
-.souvenir-card .card-header h5 {
-  margin: 0;
-  color: #00875A;
+.event-card-body {
+  padding: 1.5rem;
 }
 
-.souvenir-card .card-body {
-  padding: 1rem;
+.event-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #198754;
+  margin-bottom: 1rem;
 }
 
-.souvenir-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.event-description {
+  line-height: 1.6;
+  color: #6c757d;
+  margin-bottom: 1.5rem;
 }
 
-.souvenir-list li {
+.event-highlights {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.highlight-item {
+  display: flex;
   align-items: center;
-  padding: 0.5rem 0;
-  border-bottom: 1px solid #eee;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: #495057;
 }
 
-.souvenir-list li:last-child {
-  border-bottom: none;
-}
-
-.souvenir-list li i {
-  color: #00875A;
-  margin-right: 0.5rem;
-}
-
-.price {
-  color: #666;
+.highlight-item i {
+  width: 20px;
+  color: #198754;
   font-size: 0.9rem;
 }
 
-.card-footer {
-  padding: 1rem;
-  background-color: #f8f9fa;
-  border-top: 1px solid #e0e0e0;
+.event-card-footer {
+  padding: 1rem 1.5rem;
+  background: #f8f9fa;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.badge {
-  font-weight: normal;
-  padding: 0.5rem 1rem;
+.event-duration {
+  font-weight: 600;
+  color: #495057;
+  font-size: 0.9rem;
+}
+
+.event-status {
+  padding: 0.4rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.event-status.active {
+  background: linear-gradient(135deg, #d4edda, #c3e6cb);
+  color: #155724;
+  border: 1px solid rgba(21, 87, 36, 0.2);
+}
+
+.event-status.featured {
+  background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+  color: #856404;
+  border: 1px solid rgba(133, 100, 4, 0.2);
+}
+
+/* Horizontal Event Cards */
+.event-card-horizontal {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.event-card-horizontal-content {
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.event-horizontal-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #198754, #20c997);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.event-horizontal-info {
+  flex: 1;
+}
+
+.event-horizontal-month {
+  color: #198754;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+}
+
+.event-horizontal-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #198754;
+  margin-bottom: 0.75rem;
+}
+
+.event-horizontal-description {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #6c757d;
+  margin: 0;
+}
+
+/* Responsive adjustments for events section */
+@media (max-width: 768px) {
+  .event-card-header {
+    padding: 1.25rem;
+  }
+
+  .event-card-body {
+    padding: 1.25rem;
+  }
+
+  .event-card-footer {
+    padding: 0.75rem 1.25rem;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+
+  .event-card-horizontal-content {
+    padding: 1.25rem;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .event-horizontal-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .event-card-header {
+    padding: 1rem;
+  }
+
+  .event-card-body {
+    padding: 1rem;
+  }
+
+  .event-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.25rem;
+  }
+
+  .highlight-item {
+    font-size: 0.85rem;
+  }
+}
+
+/* Enhanced Craft Section */
+.craft-card {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #28a745 !important;
+  border-radius: 25px !important;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  position: relative;
+  text-align: center;
+}
+
+.craft-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.craft-card-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #17a2b8, #20c997);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem auto 1.5rem;
+  color: white;
+  font-size: 2rem;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.craft-card:hover .craft-card-icon {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 10px 30px rgba(23, 162, 184, 0.4);
+}
+
+.craft-card-icon::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background: linear-gradient(135deg, #17a2b8, #20c997);
+  border-radius: 50%;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.craft-card:hover .craft-card-icon::before {
+  opacity: 0.3;
+}
+
+.craft-card-content {
+  padding: 0 1.5rem 1.5rem;
+}
+
+.craft-card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #198754;
+  margin-bottom: 1rem;
+}
+
+.craft-card-description {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #6c757d;
+  margin-bottom: 1.5rem;
+}
+
+.craft-card-features {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.craft-feature {
+  background: linear-gradient(135deg, #e1f5fe, #b3e5fc);
+  color: #0277bd;
+  padding: 0.3rem 0.7rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: 1px solid rgba(2, 119, 189, 0.2);
+  transition: all 0.3s ease;
+}
+
+.craft-feature:hover {
+  background: linear-gradient(135deg, #17a2b8, #20c997);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.craft-card-footer {
+  padding: 1rem 1.5rem;
+  background: #f8f9fa;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.craft-price-range {
+  font-weight: 600;
+  color: #198754;
+  font-size: 0.9rem;
+}
+
+/* Craft CTA Section */
+.craft-cta-card {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  border-radius: 25px;
+  padding: 3rem 2rem;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.craft-cta-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #198754;
+  margin-bottom: 1rem;
+}
+
+.craft-cta-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #6c757d;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.craft-cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.craft-cta-buttons .btn {
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.craft-cta-buttons .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive adjustments for craft section */
+@media (max-width: 768px) {
+  .craft-card-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+    margin: 1.5rem auto 1rem;
+  }
+
+  .craft-card-content {
+    padding: 0 1.25rem 1.25rem;
+  }
+
+  .craft-card-footer {
+    padding: 0.75rem 1.25rem;
+  }
+
+  .craft-cta-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .craft-cta-title {
+    font-size: 1.5rem;
+  }
+
+  .craft-cta-description {
+    font-size: 1rem;
+  }
+
+  .craft-cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .craft-cta-buttons .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 576px) {
+  .craft-card-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.25rem;
+  }
+
+  .craft-card-content {
+    padding: 0 1rem 1rem;
+  }
+
+  .craft-feature {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .craft-cta-card {
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* Enhanced Culinary Section */
+.culinary-featured-card {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #28a745 !important;
+  border-radius: 25px !important;
+  overflow: hidden;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+}
+
+.culinary-featured-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15);
+}
+
+.culinary-featured-image {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+}
+
+.culinary-featured-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.culinary-featured-card:hover .culinary-featured-image img {
+  transform: scale(1.05);
+}
+
+.culinary-featured-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(220, 53, 69, 0.8), rgba(255, 87, 34, 0.8));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.culinary-featured-card:hover .culinary-featured-overlay {
+  opacity: 1;
+}
+
+.culinary-featured-badge {
+  background: rgba(255, 255, 255, 0.9);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #dc3545;
+  font-size: 2rem;
+  transform: scale(0);
+  transition: transform 0.4s ease;
+}
+
+.culinary-featured-card:hover .culinary-featured-badge {
+  transform: scale(1);
+}
+
+.culinary-featured-content {
+  padding: 2.5rem;
+}
+
+.culinary-category {
+  color: #dc3545;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.culinary-featured-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #198754;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+}
+
+.culinary-featured-description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #6c757d;
+  margin-bottom: 2rem;
+}
+
+.culinary-features {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.culinary-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #198754;
+  font-weight: 500;
+}
+
+.culinary-feature-item i {
+  font-size: 1.1rem;
+}
+
+/* Culinary Grid Cards */
+.culinary-card {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #28a745 !important;
+  border-radius: 25px !important;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  text-align: center;
+}
+
+.culinary-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.culinary-card-icon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #dc3545, #ff5722);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem auto 1.5rem;
+  color: white;
+  font-size: 2rem;
+  transition: all 0.4s ease;
+}
+
+.culinary-card:hover .culinary-card-icon {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 10px 30px rgba(220, 53, 69, 0.4);
+}
+
+.culinary-card-content {
+  padding: 0 1.5rem 1.5rem;
+}
+
+.culinary-card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #198754;
+  margin-bottom: 1rem;
+}
+
+.culinary-card-description {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #6c757d;
+  margin-bottom: 1.5rem;
+}
+
+.culinary-card-tags {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.culinary-tag {
+  background: linear-gradient(135deg, #ffebee, #ffcdd2);
+  color: #c62828;
+  padding: 0.3rem 0.7rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: 1px solid rgba(198, 40, 40, 0.2);
+  transition: all 0.3s ease;
+}
+
+.culinary-tag:hover {
+  background: linear-gradient(135deg, #dc3545, #ff5722);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.culinary-card-footer {
+  padding: 1rem 1.5rem;
+  background: #f8f9fa;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.souvenir-contact-card {
+  background: linear-gradient(135deg, #198754, #20c997);
+  border-radius: 25px;
+  padding: 3rem 2rem;
+  text-align: center;
+  color: white;
+}
+
+.contact-icon {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 2rem;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.contact-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.contact-description {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.contact-buttons .btn {
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.contact-buttons .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive adjustments for souvenir section */
+@media (max-width: 768px) {
+  .souvenir-category-header {
+    padding: 1.5rem 1rem 1rem;
+  }
+
+  .souvenir-category-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+
+  .souvenir-category-content {
+    padding: 1.25rem;
+  }
+
+  .souvenir-packages-section {
+    padding: 2rem 1.5rem;
+  }
+
+  .souvenir-package-card.featured {
+    transform: none;
+  }
+
+  .souvenir-package-card.featured:hover {
+    transform: translateY(-5px);
+  }
+
+  .package-header {
+    padding: 1.25rem;
+  }
+
+  .package-content {
+    padding: 1.25rem;
+  }
+
+  .souvenir-contact-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .contact-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+
+  .contact-title {
+    font-size: 1.5rem;
+  }
+
+  .contact-description {
+    font-size: 1rem;
+  }
+
+  .contact-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-buttons .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 576px) {
+  .souvenir-category-header {
+    padding: 1rem;
+  }
+
+  .souvenir-category-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.25rem;
+  }
+
+  .souvenir-category-content {
+    padding: 1rem;
+  }
+
+  .souvenir-item {
+    padding: 0.5rem;
+  }
+
+  .souvenir-item span {
+    font-size: 0.85rem;
+  }
+
+  .souvenir-packages-section {
+    padding: 1.5rem 1rem;
+  }
+
+  .package-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.25rem;
+  }
+
+  .contact-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.25rem;
+  }
+
+  .souvenir-contact-card {
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* Additional Global Enhancements */
+.min-vh-50 {
+  min-height: 50vh;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced section spacing */
+section {
+  scroll-margin-top: 80px;
+}
+
+/* Improved container spacing for wisata budaya */
+.container {
+  position: relative;
+}
+
+/* Enhanced button styles */
+.btn {
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-lg {
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+}
+
+/* Enhanced text colors for better contrast */
+.text-primary {
+  color: #198754 !important;
+}
+
+.bg-primary-subtle {
+  background-color: rgba(25, 135, 84, 0.1) !important;
+}
+
+.bg-warning-subtle {
+  background-color: rgba(255, 193, 7, 0.1) !important;
+}
+
+.bg-success-subtle {
+  background-color: rgba(25, 135, 84, 0.1) !important;
+}
+
+.bg-info-subtle {
+  background-color: rgba(13, 202, 240, 0.1) !important;
+}
+
+.bg-danger-subtle {
+  background-color: rgba(220, 53, 69, 0.1) !important;
+}
+
+.bg-secondary-subtle {
+  background-color: rgba(108, 117, 125, 0.1) !important;
+}
+
+/* Enhanced loading animations */
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Intersection Observer animations */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+
+.animate-on-scroll.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Enhanced focus states for accessibility */
+.btn:focus,
+.card:focus,
+.nav-btn:focus {
+  outline: 2px solid #198754;
+  outline-offset: 2px;
+}
+
+/* Improved print styles */
+@media print {
+
+  .hero-section-wisata,
+  .navbar,
+  footer,
+  #scrollToTopBtn {
+    display: none !important;
+  }
+
+  .container {
+    max-width: 100% !important;
+  }
+
+  .card {
+    break-inside: avoid;
+    box-shadow: none !important;
+    border: 1px solid #dee2e6 !important;
+  }
+}
+
+/* Enhanced dark mode support (if needed in future) */
+@media (prefers-color-scheme: dark) {
+  .card {
+    background-color: #2d3748;
+    color: #e2e8f0;
+  }
+
+  .text-muted {
+    color: #a0aec0 !important;
+  }
+}
+
+/* Global Card Styling Override - Only for main card containers */
+.card:not(.card .card):not([class*="card"] .card),
+.wisata-card:not(.card .wisata-card):not([class*="card"] .wisata-card),
+.culture-card:not(.card .culture-card):not([class*="card"] .culture-card),
+.culture-featured-card:not(.card .culture-featured-card):not([class*="card"] .culture-featured-card),
+.event-card:not(.card .event-card):not([class*="card"] .event-card),
+.craft-card:not(.card .craft-card):not([class*="card"] .craft-card),
+.culinary-card:not(.card .culinary-card):not([class*="card"] .culinary-card),
+.culinary-featured-card:not(.card .culinary-featured-card):not([class*="card"] .culinary-featured-card),
+.souvenir-category-card:not(.card .souvenir-category-card):not([class*="card"] .souvenir-category-card),
+.souvenir-package-card:not(.card .souvenir-package-card):not([class*="card"] .souvenir-package-card),
+.gallery-card:not(.card .gallery-card):not([class*="card"] .gallery-card),
+.highlight-card:not(.card .highlight-card):not([class*="card"] .highlight-card),
+.facility-card:not(.card .facility-card):not([class*="card"] .facility-card) {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #28a745 !important;
+  border-radius: 25px !important;
+}
+
+/* Ensure main card text is black for readability, but preserve nested elements */
+.card:not(.card .card):not([class*="card"] .card) > .card-body,
+.card:not(.card .card):not([class*="card"] .card) > .card-header,
+.card:not(.card .card):not([class*="card"] .card) > .card-footer,
+.wisata-card:not(.card .wisata-card):not([class*="card"] .wisata-card) > *,
+.culture-card:not(.card .culture-card):not([class*="card"] .culture-card) > *,
+.culture-featured-card:not(.card .culture-featured-card):not([class*="card"] .culture-featured-card) > *,
+.event-card:not(.card .event-card):not([class*="card"] .event-card) > *,
+.craft-card:not(.card .craft-card):not([class*="card"] .craft-card) > *,
+.culinary-card:not(.card .culinary-card):not([class*="card"] .culinary-card) > *,
+.culinary-featured-card:not(.card .culinary-featured-card):not([class*="card"] .culinary-featured-card) > *,
+.souvenir-category-card:not(.card .souvenir-category-card):not([class*="card"] .souvenir-category-card) > *,
+.souvenir-package-card:not(.card .souvenir-package-card):not([class*="card"] .souvenir-package-card) > *,
+.gallery-card:not(.card .gallery-card):not([class*="card"] .gallery-card) > *,
+.highlight-card:not(.card .highlight-card):not([class*="card"] .highlight-card) > *,
+.facility-card:not(.card .facility-card):not([class*="card"] .facility-card) > * {
+  color: #000000 !important;
+}
+
+/* Preserve original styling for nested cards and special elements */
+.card .card,
+.card [class*="btn"],
+.card .badge,
+.card .alert,
+[class*="card"] .card,
+[class*="card"] [class*="btn"],
+[class*="card"] .badge,
+[class*="card"] .alert {
+  background: initial !important;
+  color: initial !important;
+  border: initial !important;
+  border-radius: initial !important;
+}
+
+/* Preserve icon colors and special text classes */
+.card .text-primary,
+.card .text-success,
+.card .text-warning,
+.card .text-danger,
+.card .text-info,
+.card .text-secondary,
+.card .text-white,
+.card .fas,
+.card .far,
+.card .fab,
+.card i,
+[class*="card"] .text-primary,
+[class*="card"] .text-success,
+[class*="card"] .text-warning,
+[class*="card"] .text-danger,
+[class*="card"] .text-info,
+[class*="card"] .text-secondary,
+[class*="card"] .text-white,
+[class*="card"] .fas,
+[class*="card"] .far,
+[class*="card"] .fab,
+[class*="card"] i {
+  color: inherit !important;
+}
+
+/* Ensure text-muted in main cards is readable but darker - only for main cards */
+.card:not(.card .card) .text-muted,
+.wisata-card:not(.card .wisata-card) .text-muted,
+.culture-card:not(.card .culture-card) .text-muted,
+.culture-featured-card:not(.card .culture-featured-card) .text-muted,
+.event-card:not(.card .event-card) .text-muted,
+.craft-card:not(.card .craft-card) .text-muted,
+.culinary-card:not(.card .culinary-card) .text-muted,
+.culinary-featured-card:not(.card .culinary-featured-card) .text-muted,
+.souvenir-category-card:not(.card .souvenir-category-card) .text-muted,
+.souvenir-package-card:not(.card .souvenir-package-card) .text-muted,
+.gallery-card:not(.card .gallery-card) .text-muted,
+.highlight-card:not(.card .highlight-card) .text-muted,
+.facility-card:not(.card .facility-card) .text-muted {
+  color: #2c3e50 !important;
+}
+
+/* Improve general text-muted readability */
+.text-muted {
+  color: #495057 !important;
+}
+
+/* Improve statistics text readability */
+.stat-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95) !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Ensure wisata cards are properly aligned */
+.wisata-card {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #28a745 !important;
+  border-radius: 25px !important;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Performance optimizations */
+.card,
+.wisata-card,
+.culture-card,
+.event-card,
+.craft-card,
+.culinary-card,
+.souvenir-category-card {
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Improved spacing for sections */
+section {
+  padding: 4rem 0;
+}
+
+section.py-5 {
+  padding: 5rem 0 !important;
+}
+
+/* Better spacing for card grids */
+.row.g-4 {
+  --bs-gutter-x: 2rem;
+  --bs-gutter-y: 2rem;
+}
+
+/* Improved margin for section headers */
+.section-header {
+  margin-bottom: 3rem;
+}
+
+/* Better spacing for gallery cards */
+.gallery-card {
+  margin-bottom: 2rem;
+}
+
+/* Improved spacing for statistics section */
+.bg-primary .p-3 {
+  padding: 2rem !important;
+}
+
+/* Improve lead text readability */
+.lead.text-muted {
+  color: #495057 !important;
+}
+
+/* Better contrast for section descriptions */
+.section-header .lead.text-muted {
+  color: #6c757d !important;
+  font-weight: 500;
+}
+
+/* Ensure all muted text in cards has good contrast */
+.card .text-muted,
+.wisata-card .text-muted,
+.culture-card .text-muted,
+.event-card .text-muted,
+.craft-card .text-muted,
+.culinary-card .text-muted,
+.gallery-card .text-muted {
+  color: #495057 !important;
+}
+
+/* Mobile responsive improvements */
+@media (max-width: 768px) {
+  .row.g-4 {
+    --bs-gutter-x: 1rem;
+    --bs-gutter-y: 1.5rem;
+  }
+
+  section {
+    padding: 3rem 0;
+  }
+
+  .section-header {
+    margin-bottom: 2rem;
+  }
+
+  .hero-stats {
+    gap: 1rem !important;
+  }
+
+  .stat-item {
+    min-width: 120px;
+  }
+}
+
+@media (max-width: 576px) {
+  .row.g-4 {
+    --bs-gutter-x: 0.75rem;
+    --bs-gutter-y: 1rem;
+  }
+
+  section {
+    padding: 2rem 0;
+  }
+
+  .hero-stats {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem !important;
+  }
+
+  .stat-item {
+    min-width: 100px;
+    padding: 0.75rem;
+  }
+}
+
+/* Enhanced accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Reduced motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .hero-decoration {
+    animation: none !important;
+  }
+}
+
+/* Enhanced mobile touch targets */
+@media (max-width: 768px) {
+
+  .btn,
+  .nav-btn,
+  .dropdown-item {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Final polish for overall consistency */
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* Enhanced container max-width for better readability */
