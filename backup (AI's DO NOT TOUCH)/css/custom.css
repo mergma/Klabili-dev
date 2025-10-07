@@ -1823,6 +1823,9 @@ section:not(:last-child)::after {
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
   transition: all 0.4s ease;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .wisata-card:hover {
@@ -1885,6 +1888,9 @@ section:not(:last-child)::after {
 
 .wisata-card .card-body {
   padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .wisata-card .card-title {
@@ -1896,12 +1902,14 @@ section:not(:last-child)::after {
 .wisata-card .card-text {
   line-height: 1.6;
   margin-bottom: 1.5rem;
+  flex: 1;
 }
 
 .wisata-features {
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
+  margin-top: auto;
 }
 
 .feature-tag {
@@ -3546,7 +3554,35 @@ section {
 .gallery-card:not(.card .gallery-card) .text-muted,
 .highlight-card:not(.card .highlight-card) .text-muted,
 .facility-card:not(.card .facility-card) .text-muted {
-  color: #333333 !important;
+  color: #2c3e50 !important;
+}
+
+/* Improve general text-muted readability across the site */
+.text-muted {
+  color: #495057 !important;
+}
+
+/* Improve statistics text readability */
+.stat-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95) !important;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Ensure wisata cards are properly aligned */
+.wisata-card {
+  background: #ffffff !important;
+  color: #000000 !important;
+  border: 2px solid #28a745 !important;
+  border-radius: 25px !important;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 /* Performance optimizations */
@@ -3560,6 +3596,104 @@ section {
   will-change: transform;
   backface-visibility: hidden;
   perspective: 1000px;
+}
+
+/* Improved spacing for sections */
+section {
+  padding: 4rem 0;
+}
+
+section.py-5 {
+  padding: 5rem 0 !important;
+}
+
+/* Better spacing for card grids */
+.row.g-4 {
+  --bs-gutter-x: 2rem;
+  --bs-gutter-y: 2rem;
+}
+
+/* Improved margin for section headers */
+.section-header {
+  margin-bottom: 3rem;
+}
+
+/* Better spacing for gallery cards */
+.gallery-card {
+  margin-bottom: 2rem;
+}
+
+/* Improved spacing for statistics section */
+.bg-primary .p-3 {
+  padding: 2rem !important;
+}
+
+/* Improve lead text readability */
+.lead.text-muted {
+  color: #495057 !important;
+}
+
+/* Better contrast for section descriptions */
+.section-header .lead.text-muted {
+  color: #6c757d !important;
+  font-weight: 500;
+}
+
+/* Ensure all muted text in cards has good contrast */
+.card .text-muted,
+.wisata-card .text-muted,
+.culture-card .text-muted,
+.event-card .text-muted,
+.craft-card .text-muted,
+.culinary-card .text-muted,
+.gallery-card .text-muted {
+  color: #495057 !important;
+}
+
+/* Mobile responsive improvements */
+@media (max-width: 768px) {
+  .row.g-4 {
+    --bs-gutter-x: 1rem;
+    --bs-gutter-y: 1.5rem;
+  }
+
+  section {
+    padding: 3rem 0;
+  }
+
+  .section-header {
+    margin-bottom: 2rem;
+  }
+
+  .hero-stats {
+    gap: 1rem !important;
+  }
+
+  .stat-item {
+    min-width: 120px;
+  }
+}
+
+@media (max-width: 576px) {
+  .row.g-4 {
+    --bs-gutter-x: 0.75rem;
+    --bs-gutter-y: 1rem;
+  }
+
+  section {
+    padding: 2rem 0;
+  }
+
+  .hero-stats {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem !important;
+  }
+
+  .stat-item {
+    min-width: 100px;
+    padding: 0.75rem;
+  }
 }
 
 /* Enhanced accessibility */
