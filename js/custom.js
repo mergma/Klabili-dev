@@ -388,23 +388,47 @@ function initStickyNavbar() {
   handleScroll();
 }
 
-// Gallery Modal Functionality
-function initGalleryModal() {
-  // Create modal HTML if it doesn't exist
+// Modern Gallery Functionality
+function initModernGallery() {
+  // Create enhanced modal HTML if it doesn't exist
   if (!document.getElementById('galleryModal')) {
     const modalHTML = `
       <div id="galleryModal" class="modal fade" tabindex="-1" aria-labelledby="galleryModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header border-0">
-              <h5 class="modal-title" id="galleryModalLabel">Gallery Image</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+          <div class="modal-content border-0 rounded-4">
+            <div class="modal-header border-0 bg-dark text-white">
+              <h5 class="modal-title" id="galleryModalLabel">
+                <i class="fas fa-image me-2"></i>Gallery Image
+              </h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body p-0">
-              <img id="galleryModalImage" src="" alt="" class="img-fluid w-100">
+            <div class="modal-body p-0 position-relative">
+              <img id="galleryModalImage" src="" alt="" class="img-fluid w-100" style="max-height: 70vh; object-fit: contain;">
+              <div class="modal-image-controls position-absolute top-50 start-0 translate-middle-y">
+                <button class="btn btn-dark btn-sm rounded-circle me-2" id="prevImageBtn">
+                  <i class="fas fa-chevron-left"></i>
+                </button>
+              </div>
+              <div class="modal-image-controls position-absolute top-50 end-0 translate-middle-y">
+                <button class="btn btn-dark btn-sm rounded-circle ms-2" id="nextImageBtn">
+                  <i class="fas fa-chevron-right"></i>
+                </button>
+              </div>
             </div>
-            <div class="modal-footer border-0">
-              <p id="galleryModalDescription" class="text-muted mb-0"></p>
+            <div class="modal-footer border-0 bg-light">
+              <div class="w-100">
+                <h6 id="galleryModalTitle" class="mb-2"></h6>
+                <p id="galleryModalDescription" class="text-muted mb-2"></p>
+                <div id="galleryModalMeta" class="d-flex gap-3 small text-muted"></div>
+              </div>
+              <div class="ms-auto">
+                <button class="btn btn-outline-primary btn-sm" id="shareImageBtn">
+                  <i class="fas fa-share-alt me-1"></i>Share
+                </button>
+                <button class="btn btn-primary btn-sm" id="downloadImageBtn">
+                  <i class="fas fa-download me-1"></i>Download
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -413,40 +437,96 @@ function initGalleryModal() {
     document.body.insertAdjacentHTML('beforeend', modalHTML);
   }
 
-  // Add click event listeners to all gallery cards
-  const galleryCards = document.querySelectorAll('.gallery-card');
-  const modal = new bootstrap.Modal(document.getElementById('galleryModal'));
-  const modalImage = document.getElementById('galleryModalImage');
-  const modalTitle = document.getElementById('galleryModalLabel');
-  const modalDescription = document.getElementById('galleryModalDescription');
+  // Initialize gallery filtering
+  initGalleryFiltering();
 
-  galleryCards.forEach(card => {
-    card.addEventListener('click', function() {
-      const img = this.querySelector('.gallery-img');
-      const title = this.querySelector('.card-title');
-      const description = this.querySelector('.card-text');
+  // Initialize gallery search
+  initGallerySearch();
 
-      if (img && title) {
-        modalImage.src = img.src;
-        modalImage.alt = img.alt;
-        modalTitle.textContent = title.textContent;
-        modalDescription.textContent = description ? description.textContent : '';
-        modal.show();
+  // Initialize view toggle
+  initViewToggle();
+
+  // Initialize modal functionality
+  initGalleryModalEvents();
+}
+
+// Gallery filtering functionality
+function initGalleryFiltering() {
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const galleryItems = document.querySelectorAll('.gallery-item');
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const filter = this.getAttribute('data-filter');
+
+      // Update active button
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      this.classList.add('active');
+
+      // Filter gallery items
+      galleryItems.forEach(item => {
+        const category = item.getAttribute('data-category');
+        if (filter === 'all' || category === filter) {
+          item.style.display = 'block';
+          item.style.animation = 'fadeIn 0.5s ease-in';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+}
+
+// Gallery search functionality
+function initGallerySearch() {
+  const searchInput = document.getElementById('gallerySearch');
+  if (!searchInput) return;
+
+  searchInput.addEventListener('input', function() {
+    const searchTerm = this.value.toLowerCase();
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    galleryItems.forEach(item => {
+      const title = item.querySelector('.card-title')?.textContent.toLowerCase() || '';
+      const description = item.querySelector('.card-description')?.textContent.toLowerCase() || '';
+
+      if (title.includes(searchTerm) || description.includes(searchTerm)) {
+        item.style.display = 'block';
+      } else {
+        item.style.display = 'none';
       }
     });
+  });
+}
 
-    // Add keyboard accessibility
-    card.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        this.click();
-      }
+// View toggle functionality
+function initViewToggle() {
+  const viewButtons = document.querySelectorAll('[data-view]');
+  const galleryGrids = document.querySelectorAll('.gallery-grid');
+
+  viewButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const view = this.getAttribute('data-view');
+
+      // Update active button
+      viewButtons.forEach(btn => btn.classList.remove('active'));
+      this.classList.add('active');
+
+      // Update grid layout
+      galleryGrids.forEach(grid => {
+        grid.className = 'gallery-grid';
+        switch(view) {
+          case 'masonry':
+            grid.classList.add('masonry-view');
+            break;
+          case 'list':
+            grid.classList.add('list-view');
+            break;
+          default:
+            grid.classList.add('grid-view');
+        }
+      });
     });
-
-    // Make cards focusable
-    card.setAttribute('tabindex', '0');
-    card.setAttribute('role', 'button');
-    card.setAttribute('aria-label', 'View image in gallery');
   });
 }
 
@@ -584,6 +664,158 @@ function injectBackToTop() {
 }
 
 
+// Gallery modal events
+function initGalleryModalEvents() {
+  const modal = new bootstrap.Modal(document.getElementById('galleryModal'));
+  const modalImage = document.getElementById('galleryModalImage');
+  const modalTitle = document.getElementById('galleryModalTitle');
+  const modalDescription = document.getElementById('galleryModalDescription');
+  const modalMeta = document.getElementById('galleryModalMeta');
+
+  let currentImageIndex = 0;
+  let galleryImages = [];
+
+  // Collect all gallery images
+  function updateGalleryImages() {
+    galleryImages = Array.from(document.querySelectorAll('.gallery-item:not([style*="display: none"]) .gallery-img'));
+  }
+
+  // Open modal function
+  window.openGalleryModal = function(button) {
+    const card = button.closest('.modern-gallery-card');
+    const img = card.querySelector('.gallery-img');
+    const title = card.querySelector('.card-title');
+    const description = card.querySelector('.card-description');
+    const metaItems = card.querySelectorAll('.meta-item');
+
+    updateGalleryImages();
+    currentImageIndex = galleryImages.indexOf(img);
+
+    modalImage.src = img.src;
+    modalImage.alt = img.alt;
+    modalTitle.textContent = title.textContent;
+    modalDescription.textContent = description.textContent;
+
+    // Update meta information
+    modalMeta.innerHTML = '';
+    metaItems.forEach(item => {
+      modalMeta.innerHTML += `<span>${item.innerHTML}</span>`;
+    });
+
+    modal.show();
+  };
+
+  // Share image function
+  window.shareImage = function(button) {
+    const card = button.closest('.modern-gallery-card');
+    const title = card.querySelector('.card-title').textContent;
+    const img = card.querySelector('.gallery-img');
+
+    if (navigator.share) {
+      navigator.share({
+        title: title,
+        text: `Check out this beautiful image from Desa Klabili: ${title}`,
+        url: window.location.href
+      });
+    } else {
+      // Fallback: copy to clipboard
+      navigator.clipboard.writeText(`${title} - ${window.location.href}`).then(() => {
+        alert('Link copied to clipboard!');
+      });
+    }
+  };
+
+  // Navigation between images
+  document.getElementById('prevImageBtn').addEventListener('click', function() {
+    if (currentImageIndex > 0) {
+      currentImageIndex--;
+      const img = galleryImages[currentImageIndex];
+      const card = img.closest('.modern-gallery-card');
+      updateModalContent(card);
+    }
+  });
+
+  document.getElementById('nextImageBtn').addEventListener('click', function() {
+    if (currentImageIndex < galleryImages.length - 1) {
+      currentImageIndex++;
+      const img = galleryImages[currentImageIndex];
+      const card = img.closest('.modern-gallery-card');
+      updateModalContent(card);
+    }
+  });
+
+  function updateModalContent(card) {
+    const img = card.querySelector('.gallery-img');
+    const title = card.querySelector('.card-title');
+    const description = card.querySelector('.card-description');
+    const metaItems = card.querySelectorAll('.meta-item');
+
+    modalImage.src = img.src;
+    modalImage.alt = img.alt;
+    modalTitle.textContent = title.textContent;
+    modalDescription.textContent = description.textContent;
+
+    modalMeta.innerHTML = '';
+    metaItems.forEach(item => {
+      modalMeta.innerHTML += `<span>${item.innerHTML}</span>`;
+    });
+  }
+
+  // Keyboard navigation
+  document.addEventListener('keydown', function(e) {
+    if (document.getElementById('galleryModal').classList.contains('show')) {
+      if (e.key === 'ArrowLeft') {
+        document.getElementById('prevImageBtn').click();
+      } else if (e.key === 'ArrowRight') {
+        document.getElementById('nextImageBtn').click();
+      }
+    }
+  });
+
+  // Download image
+  document.getElementById('downloadImageBtn').addEventListener('click', function() {
+    const link = document.createElement('a');
+    link.href = modalImage.src;
+    link.download = modalTitle.textContent.replace(/[^a-z0-9]/gi, '_').toLowerCase() + '.jpg';
+    link.click();
+  });
+
+  // Share button
+  document.getElementById('shareImageBtn').addEventListener('click', function() {
+    if (navigator.share) {
+      navigator.share({
+        title: modalTitle.textContent,
+        text: modalDescription.textContent,
+        url: window.location.href
+      });
+    } else {
+      navigator.clipboard.writeText(`${modalTitle.textContent} - ${window.location.href}`).then(() => {
+        alert('Link copied to clipboard!');
+      });
+    }
+  });
+}
+
+// Lazy loading for gallery images
+function initLazyLoading() {
+  const images = document.querySelectorAll('img[loading="lazy"]');
+
+  if ('IntersectionObserver' in window) {
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.src = img.src;
+          img.classList.remove('lazy');
+          imageObserver.unobserve(img);
+        }
+      });
+    });
+
+    images.forEach(img => imageObserver.observe(img));
+  }
+}
+
 // Initialize when page loads
 document.addEventListener("DOMContentLoaded", function () {
   setActiveNavButton();
@@ -594,8 +826,9 @@ document.addEventListener("DOMContentLoaded", function () {
   injectBackToTop();
 
   // Initialize gallery functionality if on gallery page
-  if (window.location.pathname.includes('galeri') || document.querySelector('.gallery-card')) {
-    initGalleryModal();
+  if (window.location.pathname.includes('galeri') || document.querySelector('.modern-gallery-card')) {
+    initModernGallery();
+    initLazyLoading();
     initVideoPlayer();
   }
 });
