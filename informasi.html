@@ -1738,24 +1738,34 @@
                     </h4>
                     <p class="mb-0">Visualisasi lokasi Desa Wisata Klabili</p>
                   </div>
+
                   <div class="map-container-enhanced">
-                    <div class="map-placeholder text-center py-5">
-                      <div class="map-icon-wrapper mb-4">
-                        <i class="fas fa-map-marked-alt fa-4x text-success"></i>
-                      </div>
-                      <h5 class="text-success mb-3">Peta Interaktif Segera Hadir</h5>
-                      <p class="text-muted mb-4">Peta lokasi detail dengan rute perjalanan akan tersedia di sini</p>
-                      <div class="map-features d-flex justify-content-center flex-wrap gap-3">
-                        <span class="badge bg-light text-dark px-3 py-2">
-                          <i class="fas fa-route me-1"></i>Rute Perjalanan
-                        </span>
-                        <span class="badge bg-light text-dark px-3 py-2">
-                          <i class="fas fa-map-pin me-1"></i>Titik Lokasi
-                        </span>
-                        <span class="badge bg-light text-dark px-3 py-2">
-                          <i class="fas fa-compass me-1"></i>Navigasi
-                        </span>
-                      </div>
+                    <!-- Google Maps Embed -->
+                    <div class="map-wrapper">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127271.88037711624!2d132.2975565!3d-0.4741225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2d5403d823ad1c45%3A0x66e7258d9778f647!2sKlabili%2C%20Selemkai%2C%20Kabupaten%20Tambrauw%2C%20Papua%20Bar.!5e0!3m2!1sid!2sid!4v1707301251801!5m2!1sid!2sid"
+                            width="100%" 
+                            height="450" 
+                            style="border:0; border-radius: 0 0 15px 15px;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                    
+                    <!-- Map Features -->
+                    <div class="map-features-container bg-light p-3 mt-3 rounded">
+                        <div class="d-flex justify-content-center flex-wrap gap-3">
+                            <a href="https://maps.app.goo.gl/46A2uCC3JZYvkJaJ8" target="_blank" class="badge bg-success text-white px-3 py-2 text-decoration-none">
+                                <i class="fas fa-route me-1"></i>Buka di Google Maps
+                            </a>
+                            <span class="badge bg-light text-dark px-3 py-2">
+                                <i class="fas fa-map-pin me-1"></i>Titik Lokasi
+                            </span>
+                            <span class="badge bg-light text-dark px-3 py-2">
+                                <i class="fas fa-compass me-1"></i>Navigasi
+                            </span>
+                        </div>
                     </div>
                   </div>
                 </div>
