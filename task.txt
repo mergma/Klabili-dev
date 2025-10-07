@@ -1,0 +1,4 @@
+1. makesure all titles across all pages both indonesian & english are green
+2. text below all titles are gray, turn then to black
+3. in the cultures page, specifically the souveniers section,   fix the CSS or, if there arent any, add some
+4. on the village statistics section in the index page for both languages of the website, labels are white, turn them to black

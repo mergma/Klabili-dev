@@ -1076,83 +1076,168 @@
       </section>
 
       <!-- Enhanced Souvenir Section -->
-     <section class="souvenir-section py-5">
-   <div class="container">
-    <!-- Header -->
-    <div class="text-center mb-5">
-      <span class="badge bg-secondary mb-2">Oleh-oleh Khas</span>
-      <h2 class="text-success mb-3">Suvenir Klabili</h2>
-      <p class="text-muted">Bawa pulang kenangan indah dengan berbagai produk khas Klabili yang autentik dan berkualitas</p>
-    </div>
+      <section id="souvenir" class="py-5 bg-light">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 text-center mb-5">
+              <div class="section-header">
+                <span class="section-badge badge bg-success-subtle text-success px-4 py-2 rounded-pill mb-3">
+                  <i class="fas fa-shopping-bag me-2"></i>Produk Lokal
+                </span>
+                <h2 class="display-5 fw-bold text-primary mb-3">Suvenir Klabili</h2>
+                <p class="lead text-muted mx-auto" style="max-width: 600px;">
+                  Bawa pulang kenangan indah dengan berbagai produk khas Klabili yang autentik dan berkualitas
+                </p>
+              </div>
+            </div>
+          </div>
 
-    <!-- Souvenir Grid -->
-    <div class="row g-4">
-      <!-- Kerajinan Tangan -->
-      <div class="col-lg-4 col-md-6">
-        <div class="border rounded p-4 h-100">
-          <h5 class="text-success mb-4">Kerajinan Tangan</h5>
-          <ul class="list-unstyled mb-4">
-            <li class="d-flex justify-content-between align-items-center mb-3">
-              <span>Tas Anyaman Kulit Kayu</span>
-              <span class="text-muted">Rp 75K - 150K</span>
-            </li>
-            <li class="d-flex justify-content-between align-items-center mb-3">
-              <span>Kain Tenun Tradisional</span>
-              <span class="text-muted">Rp 200K - 500K</span>
-            </li>
-            <li class="d-flex justify-content-between align-items-center mb-3">
-              <span>Keramik Lokal</span>
-              <span class="text-muted">Rp 50K - 200K</span>
-            </li>
-          </ul>
-          <div class="mt-auto">
-            <span class="badge bg-success px-3 py-2">Handmade</span>
+          <!-- Souvenirs Categories -->
+          <div class="row g-4 mb-5">
+            <div class="col-lg-4 col-md-6">
+              <div class="souvenir-category-card h-100">
+                <div class="souvenir-category-header">
+                  <div class="souvenir-category-icon">
+                    <i class="fas fa-tools"></i>
+                  </div>
+                  <h5 class="souvenir-category-title">Kerajinan Tangan</h5>
+                </div>
+                <div class="souvenir-category-content">
+                  <p class="souvenir-category-description">
+                    Anyaman bambu tradisional, keramik, dan kerajinan tangan lainnya
+                  </p>
+                  <div class="souvenir-category-items">
+                    <div class="souvenir-item">
+                      <i class="fas fa-check text-success me-2"></i>
+                      <div>
+                        <span class="item-name">Tas Anyaman Kulit Kayu</span>
+                        <div class="souvenir-price">Rp 75K - 150K</div>
+                      </div>
+                    </div>
+                    <div class="souvenir-item">
+                      <i class="fas fa-check text-success me-2"></i>
+                      <div>
+                        <span class="item-name">Kain Tenun Tradisional</span>
+                        <div class="souvenir-price">Rp 200K - 500K</div>
+                      </div>
+                    </div>
+                    <div class="souvenir-item">
+                      <i class="fas fa-check text-success me-2"></i>
+                      <div>
+                        <span class="item-name">Keramik Lokal</span>
+                        <div class="souvenir-price">Rp 50K - 200K</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="souvenir-category-footer">
+                  <span class="souvenir-badge">Handmade</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="souvenir-category-card h-100">
+                <div class="souvenir-category-header">
+                  <div class="souvenir-category-icon">
+                    <i class="fas fa-leaf"></i>
+                  </div>
+                  <h5 class="souvenir-category-title">Produk Alam</h5>
+                </div>
+                <div class="souvenir-category-content">
+                  <p class="souvenir-category-description">
+                    Rempah organik, madu hutan, dan produk alami lainnya dari hutan lokal
+                  </p>
+                  <div class="souvenir-category-items">
+                    <div class="souvenir-item">
+                      <i class="fas fa-check text-success me-2"></i>
+                      <div>
+                        <span class="item-name">Kopi Hutan Arabika</span>
+                        <div class="souvenir-price">Rp 50K - 100K</div>
+                      </div>
+                    </div>
+                    <div class="souvenir-item">
+                      <i class="fas fa-check text-success me-2"></i>
+                      <div>
+                        <span class="item-name">Madu Hutan Murni</span>
+                        <div class="souvenir-price">Rp 75K - 180K</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="souvenir-category-footer">
+                  <span class="souvenir-badge">Organik</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="souvenir-category-card h-100">
+                <div class="souvenir-category-header">
+                  <div class="souvenir-category-icon">
+                    <i class="fas fa-utensils"></i>
+                  </div>
+                  <h5 class="souvenir-category-title">Makanan Olahan</h5>
+                </div>
+                <div class="souvenir-category-content">
+                  <p class="souvenir-category-description">
+                    Camilan tradisional, buah kering, dan kelezatan lokal yang dikemas untuk perjalanan
+                  </p>
+                  <div class="souvenir-category-items">
+                    <div class="souvenir-item">
+                      <i class="fas fa-check text-success me-2"></i>
+                      <div>
+                        <span class="item-name">Kue Tradisional Kering</span>
+                        <div class="souvenir-price">Rp 35K - 75K</div>
+                      </div>
+                    </div>
+                    <div class="souvenir-item">
+                      <i class="fas fa-check text-success me-2"></i>
+                      <div>
+                        <span class="item-name">Keripik Buah Lokal</span>
+                        <div class="souvenir-price">Rp 25K - 50K</div>
+                      </div>
+                    </div>
+                    <div class="souvenir-item">
+                      <i class="fas fa-check text-success me-2"></i>
+                      <div>
+                        <span class="item-name">Sambal Khas</span>
+                        <div class="souvenir-price">Rp 20K - 40K</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="souvenir-category-footer">
+                  <span class="souvenir-badge">Tradisional</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Section -->
+          <div class="row">
+            <div class="col-12">
+              <div class="souvenir-contact-card">
+                <div class="contact-icon">
+                  <i class="fab fa-whatsapp"></i>
+                </div>
+                <h4 class="contact-title">Pesan Suvenir Anda</h4>
+                <p class="contact-description">
+                  Hubungi kami melalui WhatsApp untuk memesan atau mendapatkan informasi lebih lanjut tentang produk kami
+                </p>
+                <div class="contact-buttons">
+                  <a href="https://wa.me/6282236955445?text=Halo%20saya%20ingin%20memesan%20suvenir%20dari%20Desa%20Wisata%20Klabili" class="btn btn-light btn-lg">
+                    <i class="fab fa-whatsapp me-2"></i>Pesan via WhatsApp
+                  </a>
+                  <a href="#" class="btn btn-outline-light btn-lg">
+                    <i class="fas fa-info-circle me-2"></i>Info Lebih Lanjut
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-
-      <!-- Produk Alam -->
-      <div class="col-lg-4 col-md-6">
-        <div class="border rounded p-4 h-100">
-          <h5 class="text-success mb-4">Produk Alam</h5>
-          <ul class="list-unstyled mb-4">
-            <li class="d-flex justify-content-between align-items-center mb-3">
-              <span>Kopi Hutan Arabika</span>
-              <span class="text-muted">Rp 50K - 100K</span>
-            </li>
-          </ul>
-          <div class="mt-auto">
-            <span class="badge bg-success px-3 py-2">Organik</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Makanan Olahan -->
-      <div class="col-lg-4 col-md-6">
-        <div class="border rounded p-4 h-100">
-          <h5 class="text-success mb-4">Makanan Olahan</h5>
-          <ul class="list-unstyled mb-4">
-            <li class="d-flex justify-content-between align-items-center mb-3">
-              <span>Kue Tradisional Kering</span>
-              <span class="text-muted">Rp 35K - 75K</span>
-            </li>
-            <li class="d-flex justify-content-between align-items-center mb-3">
-              <span>Keripik Buah Lokal</span>
-              <span class="text-muted">Rp 25K - 50K</span>
-            </li>
-            <li class="d-flex justify-content-between align-items-center mb-3">
-              <span>Sambal Khas</span>
-              <span class="text-muted">Rp 20K - 40K</span>
-            </li>
-          </ul>
-          <div class="mt-auto">
-            <span class="badge bg-success px-3 py-2">Tahan Lama</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 <!-- End of Souvenir Section -->
   
 

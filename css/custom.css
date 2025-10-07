@@ -301,6 +301,43 @@ h6 {
   color: #198754 !important;
 }
 
+/* Override Bootstrap's text-primary to green */
+.text-primary,
+h1.text-primary,
+h2.text-primary,
+h3.text-primary,
+h4.text-primary,
+h5.text-primary,
+h6.text-primary {
+  color: #198754 !important;
+}
+
+/* Ensure all display classes are green */
+.display-1,
+.display-2,
+.display-3,
+.display-4,
+.display-5,
+.display-6 {
+  color: #198754 !important;
+}
+
+/* Additional specific overrides for common title combinations */
+h1.display-1,
+h1.display-2,
+h1.display-3,
+h1.display-4,
+h1.display-5,
+h1.display-6,
+h2.display-1,
+h2.display-2,
+h2.display-3,
+h2.display-4,
+h2.display-5,
+h2.display-6 {
+  color: #198754 !important;
+}
+
 /* Card titles should be black for readability on white background - only for main cards */
 .card:not(.card .card) .card-title,
 .wisata-card:not(.card .wisata-card) .card-title,
@@ -3772,4 +3809,21 @@ section:not(:last-child)::after {
 
 .map-features-container .badge.bg-success:hover {
     background-color: #198754 !important;
+}
+
+/* Village Statistics Section - Override white text for labels */
+.bg-primary .lead {
+  color: #000000 !important;
+}
+
+/* Change gray text below titles to black for better readability */
+.text-muted {
+  color: #000000 !important;
+}
+
+/* Specific overrides for card text and lead paragraphs */
+.card-text.text-muted,
+.lead.text-muted,
+small.text-muted {
+  color: #000000 !important;
 }
