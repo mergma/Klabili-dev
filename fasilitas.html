@@ -16,13 +16,13 @@
     <div class="container-fluid">
       <!-- Left side: Logo -->
       <div class="navbar-brand-container" style="flex: 1">
-        <a class="navbar-brand" href="index.html"><img src="img/LogoDesaWisata/Logo_Desa_Wisata_Klabili-removebg-preview.png" alt="Logo Desa Wisata Klabili"
-            width="100px" /></a>
+    <a class="navbar-brand" href="index.html"><img src="img/LogoDesaWisata/Logo_Desa_Wisata_Klabili-removebg-preview.png" alt="Logo Desa Wisata Klabili"
+      width="100" /></a>
       </div>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon" aria-hidden="true">&nbsp;</span>
       </button>
 
       
@@ -38,7 +38,7 @@
             <path d="M10 0V15M0 7.5H20" stroke="#fff" stroke-width="3" />
             <path d="M10 0V15M0 7.5H20" stroke="#C8102E" stroke-width="2" />
           </svg>
-          <span class="language-toggle-dot"></span>
+          <span class="language-toggle-dot" aria-hidden="true">&nbsp;</span>
           <svg class="flag-img flag-id active" width="32" height="22" viewBox="0 0 20 15"
             xmlns="http://www.w3.org/2000/svg" onclick="setLanguage('id')">
             <rect width="20" height="7.5" fill="#FF0000" />
@@ -176,9 +176,9 @@
       <div class="row min-vh-50 align-items-center py-5">
         <div class="col-12 text-center text-white">
           <div class="hero-content-wrapper">
-            <div class="hero-badge mb-3">
+                <div class="hero-badge mb-3">
               <span class="badge bg-light text-primary px-4 py-2 rounded-pill fs-6 fw-semibold">
-                <i class="fas fa-cogs me-2"></i>Fasilitas Lengkap
+                <i class="fas fa-cogs me-2" aria-hidden="true">&nbsp;</i>Fasilitas Lengkap
               </span>
             </div>
             <h1 class="display-3 fw-bold text-white mb-4 hero-title">
@@ -231,7 +231,7 @@
                 <div class="col-md-2 text-center">
                   <div class="bg-primary rounded-circle mx-auto d-flex align-items-center justify-content-center"
                     style="width: 80px; height: 80px">
-                    <i class="fas fa-info-circle text-white fa-2x"></i>
+                    <i class="fas fa-info-circle text-white fa-2x" aria-hidden="true">&nbsp;</i>
                   </div>
                 </div>
                 <div class="col-md-10">
@@ -243,18 +243,15 @@
           </div>
         </div>
 
-        <!-- Facility Cards Grid -->
+        <!-- Fasilitas Utama: moved village facilities (keep Gereja if present) -->
         <div class="col-lg-3 col-md-6">
           <div class="card h-100 shadow-sm border-0 facility-card">
             <div class="card-body text-center p-4">
-              <div class="bg-primary rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center facility-icon"
-                style="width: 80px; height: 80px">
-                <i class="fas fa-wifi text-white fa-2x"></i>
+              <div class="bg-warning rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center facility-icon" style="width: 80px; height: 80px">
+        <i class="fas fa-bolt text-white fa-2x" aria-hidden="true">&nbsp;</i>
               </div>
-              <h5 class="card-title fw-bold">WiFi Gratis</h5>
-              <p class="card-text text-muted">
-                Akses internet gratis di seluruh area desa wisata untuk kemudahan komunikasi.
-              </p>
+              <h5 class="card-title fw-bold">Listrik &amp; Air Bersih</h5>
+              <p class="card-text text-muted">Semua rumah tersambung listrik dan akses air bersih untuk kenyamanan wisatawan.</p>
             </div>
           </div>
         </div>
@@ -262,14 +259,11 @@
         <div class="col-lg-3 col-md-6">
           <div class="card h-100 shadow-sm border-0 facility-card">
             <div class="card-body text-center p-4">
-              <div class="bg-success rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center facility-icon"
-                style="width: 80px; height: 80px">
-                <i class="fas fa-utensils text-white fa-2x"></i>
+              <div class="bg-info rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center facility-icon" style="width: 80px; height: 80px">
+                <i class="fas fa-signal text-white fa-2x" aria-hidden="true">&nbsp;</i>
               </div>
-              <h5 class="card-title fw-bold">Area Makan</h5>
-              <p class="card-text text-muted">
-                Tempat makan dengan menu makanan lokal dan fasilitas yang bersih dan nyaman.
-              </p>
+              <h5 class="card-title fw-bold">Sinyal &amp; Internet</h5>
+              <p class="card-text text-muted">Koneksi sinyal dan internet tersedia sehingga pengunjung tetap terhubung.</p>
             </div>
           </div>
         </div>
@@ -277,14 +271,11 @@
         <div class="col-lg-3 col-md-6">
           <div class="card h-100 shadow-sm border-0 facility-card">
             <div class="card-body text-center p-4">
-              <div class="bg-warning rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center facility-icon"
-                style="width: 80px; height: 80px">
-                <i class="fas fa-car text-white fa-2x"></i>
+              <div class="bg-success rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center facility-icon" style="width: 80px; height: 80px">
+                <i class="fas fa-home text-white fa-2x" aria-hidden="true">&nbsp;</i>
               </div>
-              <h5 class="card-title fw-bold">Area Parkir</h5>
-              <p class="card-text text-muted">
-                Area parkir yang luas dan aman untuk kendaraan roda dua maupun roda empat.
-              </p>
+              <h5 class="card-title fw-bold">Homestay Nyaman</h5>
+              <p class="card-text text-muted">Homestay dikelola komunitas dengan fasilitas dasar yang bersih dan pelayanan ramah.</p>
             </div>
           </div>
         </div>
@@ -292,14 +283,11 @@
         <div class="col-lg-3 col-md-6">
           <div class="card h-100 shadow-sm border-0 facility-card">
             <div class="card-body text-center p-4">
-              <div class="bg-info rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center facility-icon"
-                style="width: 80px; height: 80px">
-                <i class="fas fa-restroom text-white fa-2x"></i>
+              <div class="bg-danger rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center facility-icon" style="width: 80px; height: 80px">
+                <i class="fas fa-hospital text-white fa-2x" aria-hidden="true">&nbsp;</i>
               </div>
-              <h5 class="card-title fw-bold">Toilet Umum</h5>
-              <p class="card-text text-muted">
-                Fasilitas toilet umum yang bersih dan terawat dengan standar kebersihan tinggi.
-              </p>
+              <h5 class="card-title fw-bold">Puskesmas Terdekat</h5>
+              <p class="card-text text-muted">Akses layanan kesehatan tersedia di puskesmas di ibu kecamatan terdekat.</p>
             </div>
           </div>
         </div>
@@ -307,14 +295,11 @@
         <div class="col-lg-3 col-md-6">
           <div class="card h-100 shadow-sm border-0 facility-card">
             <div class="card-body text-center p-4">
-              <div class="bg-danger rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center facility-icon"
-                style="width: 80px; height: 80px">
-                <i class="fas fa-first-aid text-white fa-2x"></i>
+              <div class="bg-primary rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center facility-icon" style="width: 80px; height: 80px">
+                <i class="fas fa-shopping-cart text-white fa-2x" aria-hidden="true">&nbsp;</i>
               </div>
-              <h5 class="card-title fw-bold">P3K</h5>
-              <p class="card-text text-muted">
-                Fasilitas pertolongan pertama pada kecelakaan untuk keamanan wisatawan.
-              </p>
+              <h5 class="card-title fw-bold">Kios &amp; BUMDes</h5>
+              <p class="card-text text-muted">Kios warga dan BUMDes menyediakan kebutuhan harian serta produk lokal.</p>
             </div>
           </div>
         </div>
@@ -322,14 +307,11 @@
         <div class="col-lg-3 col-md-6">
           <div class="card h-100 shadow-sm border-0 facility-card">
             <div class="card-body text-center p-4">
-              <div class="bg-secondary rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center facility-icon"
-                style="width: 80px; height: 80px">
-                <i class="fas fa-store text-white fa-2x"></i>
+              <div class="bg-secondary rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center facility-icon" style="width: 80px; height: 80px">
+                <i class="fas fa-tree text-white fa-2x" aria-hidden="true">&nbsp;</i>
               </div>
-              <h5 class="card-title fw-bold">Toko Suvenir</h5>
-              <p class="card-text text-muted">
-                Toko yang menjual berbagai oleh-oleh khas desa dan produk kerajinan lokal.
-              </p>
+              <h5 class="card-title fw-bold">Rumah Singgah Birdwatching</h5>
+              <p class="card-text text-muted">Tempat istirahat bagi pengamat burung dan peserta trekking di kawasan hutan.</p>
             </div>
           </div>
         </div>
@@ -337,29 +319,24 @@
         <div class="col-lg-3 col-md-6">
           <div class="card h-100 shadow-sm border-0 facility-card">
             <div class="card-body text-center p-4">
-              <div class="bg-dark rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center facility-icon"
-                style="width: 80px; height: 80px">
-                <i class="fas fa-info-circle text-white fa-2x"></i>
+              <div class="bg-success rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center facility-icon" style="width: 80px; height: 80px">
+                <i class="fas fa-recycle text-white fa-2x" aria-hidden="true">&nbsp;</i>
               </div>
-              <h5 class="card-title fw-bold">Pusat Informasi</h5>
-              <p class="card-text text-muted">
-                Pusat informasi wisata dengan panduan lengkap dan peta lokasi wisata.
-              </p>
+              <h5 class="card-title fw-bold">Program Kebersihan Desa</h5>
+              <p class="card-text text-muted">Inisiatif kebersihan berkala menjaga lingkungan desa tetap asri dan nyaman bagi wisatawan.</p>
             </div>
           </div>
         </div>
 
+        <!-- Gereja (preserved as requested) -->
         <div class="col-lg-3 col-md-6">
           <div class="card h-100 shadow-sm border-0 facility-card">
             <div class="card-body text-center p-4">
-              <div class="bg-purple rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center facility-icon"
-                style="width: 80px; height: 80px; background-color: #6f42c1 !important;">
-                <i class="fas fa-church text-white fa-2x"></i>
+              <div class="bg-purple rounded-circle mx-auto mb-3 d-flex align-items-center justify-content-center facility-icon" style="width: 80px; height: 80px">
+                <i class="fas fa-church text-white fa-2x" aria-hidden="true">&nbsp;</i>
               </div>
               <h5 class="card-title fw-bold">Gereja</h5>
-              <p class="card-text text-muted">
-                Tempat ibadah yang nyaman untuk wisatawan kristiani dengan fasilitas yang memadai.
-              </p>
+              <p class="card-text text-muted">Tempat ibadah bagi masyarakat setempat yang juga ramah bagi pengunjung.</p>
             </div>
           </div>
         </div>
@@ -376,9 +353,9 @@
           <div class="card border-0 shadow-lg h-100">
             <div class="card-body p-4">
               <div class="d-flex align-items-center mb-3">
-                <div class="bg-primary rounded-circle me-3 d-flex align-items-center justify-content-center"
+                <div class="bg-primary rounded-circle me-3 d-flex align-items-center justify-content-center facility-icon"
                   style="width: 50px; height: 50px">
-                  <i class="fas fa-home text-white"></i>
+                  <i class="fas fa-home text-white" aria-hidden="true">&nbsp;</i>
                 </div>
                 <h5 class="card-title mb-0 fw-bold">Penginapan</h5>
               </div>
@@ -393,9 +370,9 @@
           <div class="card border-0 shadow-lg h-100">
             <div class="card-body p-4">
               <div class="d-flex align-items-center mb-3">
-                <div class="bg-success rounded-circle me-3 d-flex align-items-center justify-content-center"
+                <div class="bg-success rounded-circle me-3 d-flex align-items-center justify-content-center facility-icon"
                   style="width: 50px; height: 50px">
-                  <i class="fas fa-camera text-white"></i>
+                  <i class="fas fa-camera text-white" aria-hidden="true">&nbsp;</i>
                 </div>
                 <h5 class="card-title mb-0 fw-bold">Spot Foto</h5>
               </div>
@@ -410,9 +387,9 @@
           <div class="card border-0 shadow-lg h-100">
             <div class="card-body p-4">
               <div class="d-flex align-items-center mb-3">
-                <div class="bg-warning rounded-circle me-3 d-flex align-items-center justify-content-center"
+                <div class="bg-warning rounded-circle me-3 d-flex align-items-center justify-content-center facility-icon"
                   style="width: 50px; height: 50px">
-                  <i class="fas fa-hiking text-white"></i>
+                  <i class="fas fa-hiking text-white" aria-hidden="true">&nbsp;</i>
                 </div>
                 <h5 class="card-title mb-0 fw-bold">Jalur Trekking</h5>
               </div>
@@ -429,7 +406,7 @@
               <div class="d-flex align-items-center mb-3">
                 <div class="bg-primary rounded-circle me-3 d-flex align-items-center justify-content-center"
                   style="width: 50px; height: 50px" >
-                  <i class="fas fa-campground text-white"></i>
+                  <i class="fas fa-campground text-white" aria-hidden="true">&nbsp;</i>
                 </div>
                 <h5 class="card-title mb-0 fw-bold">Perkemahan</h5>
               </div>
@@ -441,139 +418,7 @@
         </div>
       </div>
 
-      <!-- Detailed Village Facilities Section -->
-      <div class="row mt-5">
-        <div class="col-12 text-center mb-4">
-          <h3 class="text-primary fw-bold">🌟 Fasilitas Desa Klabili</h3>
-          <p class="text-muted">Fasilitas lengkap untuk kenyamanan wisatawan</p>
-        </div>
-
-        <!-- Electricity & Clean Water -->
-        <div class="col-lg-6 mb-4">
-          <div class="card border-0 shadow-lg h-100">
-            <div class="card-body p-4">
-              <div class="d-flex align-items-center mb-3">
-                <div class="bg-warning rounded-circle me-3 d-flex align-items-center justify-content-center"
-                  style="width: 60px; height: 60px">
-                  <i class="fas fa-bolt text-white fa-lg"></i>
-                </div>
-                <h5 class="card-title mb-0 fw-bold">✨ Listrik & Air Bersih</h5>
-              </div>
-              <p class="card-text">
-                Semua rumah sudah terhubung listrik dan air bersih, bikin wisatawan tenang dan nyaman selama tinggal di desa.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Internet & Signal -->
-        <div class="col-lg-6 mb-4">
-          <div class="card border-0 shadow-lg h-100">
-            <div class="card-body p-4">
-              <div class="d-flex align-items-center mb-3">
-                <div class="bg-info rounded-circle me-3 d-flex align-items-center justify-content-center"
-                  style="width: 60px; height: 60px">
-                  <i class="fas fa-signal text-white fa-lg"></i>
-                </div>
-                <h5 class="card-title mb-0 fw-bold">📶 Sinyal & Internet</h5>
-              </div>
-              <p class="card-text">
-                Walau di pedalaman, Klabili sudah ada sinyal dan internet. Jadi tetap bisa update story atau video call keluarga.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Comfortable Homestay -->
-        <div class="col-lg-6 mb-4">
-          <div class="card border-0 shadow-lg h-100">
-            <div class="card-body p-4">
-              <div class="d-flex align-items-center mb-3">
-                <div class="bg-success rounded-circle me-3 d-flex align-items-center justify-content-center"
-                  style="width: 60px; height: 60px">
-                  <i class="fas fa-home text-white fa-lg"></i>
-                </div>
-                <h5 class="card-title mb-0 fw-bold">🏡 Homestay Nyaman</h5>
-              </div>
-              <p class="card-text">
-                Tinggal bersama warga lokal di homestay sederhana tapi hangat. Fasilitas tempat tidur, kelambu, dan toilet siap membuat istirahat tetap nyaman.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Health Center -->
-        <div class="col-lg-6 mb-4">
-          <div class="card border-0 shadow-lg h-100">
-            <div class="card-body p-4">
-              <div class="d-flex align-items-center mb-3">
-                <div class="bg-danger rounded-circle me-3 d-flex align-items-center justify-content-center"
-                  style="width: 60px; height: 60px">
-                  <i class="fas fa-hospital text-white fa-lg"></i>
-                </div>
-                <h5 class="card-title mb-0 fw-bold">🩺 Puskesmas Terdekat</h5>
-              </div>
-              <p class="card-text">
-                Butuh layanan kesehatan? Tenang, ada puskesmas di ibukota distrik yang siap membantu wisatawan maupun warga sekitar.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Village Shops & BUMDes -->
-        <div class="col-lg-6 mb-4">
-          <div class="card border-0 shadow-lg h-100">
-            <div class="card-body p-4">
-              <div class="d-flex align-items-center mb-3">
-                <div class="bg-primary rounded-circle me-3 d-flex align-items-center justify-content-center"
-                  style="width: 60px; height: 60px">
-                  <i class="fas fa-shopping-cart text-white fa-lg"></i>
-                </div>
-                <h5 class="card-title mb-0 fw-bold">🛍 Kios & BUMDes</h5>
-              </div>
-              <p class="card-text">
-                Belanja kebutuhan sehari-hari jadi gampang. Ada kios warga dan BUMDes (Badan Usaha Milik Desa) yang menyediakan camilan hingga barang pokok—belanja sambil mendukung ekonomi lokal.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Birdwatching Rest House -->
-        <div class="col-lg-6 mb-4">
-          <div class="card border-0 shadow-lg h-100">
-            <div class="card-body p-4">
-              <div class="d-flex align-items-center mb-3">
-                <div class="bg-secondary rounded-circle me-3 d-flex align-items-center justify-content-center"
-                  style="width: 60px; height: 60px">
-                  <i class="fas fa-tree text-white fa-lg"></i>
-                </div>
-                <h5 class="card-title mb-0 fw-bold">🌿 Rumah Singgah Birdwatching</h5>
-              </div>
-              <p class="card-text">
-                Saat birdwatching atau trekking, wisatawan bisa istirahat atau berteduh di rumah singgah yang nyaman di tengah hutan tropis.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Village Cleanliness Program -->
-        <div class="col-lg-12 mb-4">
-          <div class="card border-0 shadow-lg">
-            <div class="card-body p-4">
-              <div class="d-flex align-items-center mb-3">
-                <div class="bg-success rounded-circle me-3 d-flex align-items-center justify-content-center"
-                  style="width: 60px; height: 60px">
-                  <i class="fas fa-recycle text-white fa-lg"></i>
-                </div>
-                <h5 class="card-title mb-0 fw-bold">♻ Program Kebersihan Desa</h5>
-              </div>
-              <p class="card-text">
-                Setiap Jumat, warga Klabili mengadakan "Jumat Bersih" dengan tong sampah plastik di tiap rumah. Desa tetap asri, wisatawan pun makin betah. Program ini menunjukkan komitmen desa untuk menjaga lingkungan dan memberikan pengalaman wisata yang bersih dan nyaman.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <!-- Detailed village facilities moved into the Main Facilities grid above -->
     </section>
   </div>
 
@@ -592,7 +437,7 @@
         <!-- Column 1: Logo and Description -->
         <div class="col-lg-3 col-md-6 mb-4">
           <div class="mb-3">
-            <img src="img/LogoDesaWisata/Logo_Desa_Wisata_Klabili-removebg-preview.png" alt="Logo Desa Wisata Klabili" width="150px" />
+            <img src="img/LogoDesaWisata/Logo_Desa_Wisata_Klabili-removebg-preview.png" alt="Logo Desa Wisata Klabili" width="150" />
           </div>
           <p class="text-white-50">
             Desa Wisata Klabili menawarkan pengalaman wisata autentik dengan keindahan alam, budaya lokal, dan keramahan masyarakat Suku Moi.
@@ -616,15 +461,15 @@
           <h5 class="fw-bold mb-3">Kontak Kami</h5>
           <ul class="list-unstyled">
             <li class="mb-2">
-              <i class="fas fa-phone me-2"></i>
+              <i class="fas fa-phone me-2" aria-hidden="true">&nbsp;</i>
               <span>+62 822-3695-5445</span>
             </li>
             <li class="mb-2">
-              <i class="fas fa-map-marker-alt me-2"></i>
+              <i class="fas fa-map-marker-alt me-2" aria-hidden="true">&nbsp;</i>
               <span>Kampung Klabili, Distrik Selemkai, Kabupaten Tambrauw</span>
             </li>
             <li class="mb-2">
-              <i class="fas fa-envelope me-2"></i>
+              <i class="fas fa-envelope me-2" aria-hidden="true">&nbsp;</i>
               <span>desawisataklabili@gmail.com</span>
              </li>
           </ul>
@@ -638,7 +483,7 @@
             <a href="https://www.instagram.com/klabili_bridwhtcing/" target="_blank" rel="noopener noreferrer"
               class="social-link instagram-link" title="Ikuti kami di Instagram">
               <div class="social-icon">
-                <svg viewBox="0 0 24 24" fill="currentColor">
+                <svg viewBox="0 0 24 24" style="fill:currentColor">
                   <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                 </svg>
               </div>
@@ -649,7 +494,7 @@
             <a href="https://www.facebook.com/profile.php?id=100094418988540" target="_blank" rel="noopener noreferrer"
               class="social-link facebook-link" title="Ikuti kami di Facebook">
               <div class="social-icon">
-                <svg viewBox="0 0 24 24" fill="currentColor">
+                <svg viewBox="0 0 24 24" style="fill:currentColor">
                   <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                 </svg>
               </div>
@@ -660,7 +505,7 @@
             <a href="https://wa.me/6282236955445?text=Halo%20saya%20mau%20tanya%20tentang%20Desa%20Wisata%20Klabili" target="_blank"
               rel="noopener noreferrer" class="social-link whatsapp-link" title="Hubungi kami di WhatsApp">
               <div class="social-icon">
-                <svg viewBox="0 0 24 24" fill="currentColor">
+                <svg viewBox="0 0 24 24" style="fill:currentColor">
                   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.893 3.488"/>
                 </svg>
               </div>
@@ -683,9 +528,9 @@
   </footer>
 
   <!-- Scroll to Top Button -->
-  <button id="scrollToTopBtn" class="btn btn-success rounded-circle shadow"
+    <button id="scrollToTopBtn" class="btn btn-success rounded-circle shadow"
     style="position: fixed; bottom: 32px; right: 32px; z-index: 999; display: none; width: 48px; height: 48px; align-items: center; justify-content: center;">
-    <i class="fas fa-leaf"></i>
+    <i class="fas fa-leaf" aria-hidden="true">&nbsp;</i>
   </button>
 
   <script>

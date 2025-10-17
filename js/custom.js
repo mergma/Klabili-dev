@@ -397,8 +397,8 @@ function initModernGallery() {
         <div class="modal-dialog modal-xl modal-dialog-centered">
           <div class="modal-content border-0 rounded-4">
             <div class="modal-header border-0 bg-dark text-white">
-              <h5 class="modal-title" id="galleryModalLabel">
-                <i class="fas fa-image me-2"></i>Gallery Image
+                <h5 class="modal-title" id="galleryModalLabel">
+                <i class="fas fa-image me-2" aria-hidden="true">&nbsp;</i>Gallery Image
               </h5>
               <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
@@ -406,12 +406,12 @@ function initModernGallery() {
               <img id="galleryModalImage" src="" alt="" class="img-fluid w-100" style="max-height: 70vh; object-fit: contain;">
               <div class="modal-image-controls position-absolute top-50 start-0 translate-middle-y">
                 <button class="btn btn-dark btn-sm rounded-circle me-2" id="prevImageBtn">
-                  <i class="fas fa-chevron-left"></i>
+                  <i class="fas fa-chevron-left" aria-hidden="true">&nbsp;</i>
                 </button>
               </div>
               <div class="modal-image-controls position-absolute top-50 end-0 translate-middle-y">
                 <button class="btn btn-dark btn-sm rounded-circle ms-2" id="nextImageBtn">
-                  <i class="fas fa-chevron-right"></i>
+                  <i class="fas fa-chevron-right" aria-hidden="true">&nbsp;</i>
                 </button>
               </div>
             </div>
@@ -423,10 +423,10 @@ function initModernGallery() {
               </div>
               <div class="ms-auto">
                 <button class="btn btn-outline-primary btn-sm" id="shareImageBtn">
-                  <i class="fas fa-share-alt me-1"></i>Share
+                  <i class="fas fa-share-alt me-1" aria-hidden="true">&nbsp;</i>Share
                 </button>
                 <button class="btn btn-primary btn-sm" id="downloadImageBtn">
-                  <i class="fas fa-download me-1"></i>Download
+                  <i class="fas fa-download me-1" aria-hidden="true">&nbsp;</i>Download
                 </button>
               </div>
             </div>
@@ -572,8 +572,8 @@ function showVideoModal() {
         <div class="modal-dialog modal-lg modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header border-0">
-              <h5 class="modal-title" id="videoModalLabel">
-                <i class="fas fa-video text-primary me-2"></i>Video Dokumenter Desa Klabili
+                <h5 class="modal-title" id="videoModalLabel">
+                <i class="fas fa-video text-primary me-2" aria-hidden="true">&nbsp;</i>Video Dokumenter Desa Klabili
               </h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
@@ -581,7 +581,7 @@ function showVideoModal() {
               <div class="row g-3">
                 <div class="col-12">
                   <div class="alert alert-info d-flex align-items-center">
-                    <i class="fas fa-info-circle me-2"></i>
+                    <i class="fas fa-info-circle me-2" aria-hidden="true">&nbsp;</i>
                     <div>
                       <strong>Video dokumenter sedang dalam proses produksi.</strong><br>
                       Sementara ini, Anda dapat menikmati galeri foto yang tersedia di atas.
@@ -591,7 +591,7 @@ function showVideoModal() {
                 <div class="col-md-6">
                   <div class="card h-100 border-0 bg-light">
                     <div class="card-body text-center">
-                      <i class="fas fa-camera text-primary mb-3" style="font-size: 2rem;"></i>
+                      <i class="fas fa-camera text-primary mb-3" style="font-size: 2rem;" aria-hidden="true">&nbsp;</i>
                       <h6 class="card-title">Dokumentasi Foto</h6>
                       <p class="card-text small text-muted">Lihat koleksi foto kegiatan dan pemandangan desa</p>
                       <button class="btn btn-sm btn-outline-primary" onclick="scrollToGallery()">Lihat Galeri</button>
@@ -601,7 +601,7 @@ function showVideoModal() {
                 <div class="col-md-6">
                   <div class="card h-100 border-0 bg-light">
                     <div class="card-body text-center">
-                      <i class="fas fa-play text-success mb-3" style="font-size: 2rem;"></i>
+                      <i class="fas fa-play text-success mb-3" style="font-size: 2rem;" aria-hidden="true">&nbsp;</i>
                       <h6 class="card-title">Video Segera Hadir</h6>
                       <p class="card-text small text-muted">Video dokumenter profesional sedang dalam tahap produksi</p>
                       <button class="btn btn-sm btn-outline-success" disabled>Coming Soon</button>
@@ -642,7 +642,7 @@ function injectBackToTop() {
   btn.className = 'btn btn-success rounded-circle shadow';
   btn.style.cssText = 'position: fixed; bottom: 32px; right: 32px; z-index: 999; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center;';
   btn.setAttribute('aria-label', 'Back to top');
-  btn.innerHTML = '<i class="fas fa-leaf"></i>';
+  btn.innerHTML = '<i class="fas fa-leaf" aria-hidden="true">&nbsp;</i>';
   document.body.appendChild(btn);
 
   // Show/hide on scroll

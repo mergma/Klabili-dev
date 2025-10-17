@@ -355,6 +355,25 @@ h2.display-6 {
   color: #000000 !important;
 }
 
+/* Facility icon helpers */
+.facility-icon {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Utility purple background for special icons like church */
+.bg-purple {
+  background-color: #6f42c1 !important; /* bootstrap purple-ish */
+}
+
+/* Ensure rounded-circle with icon centers correctly */
+.rounded-circle .fa-2x {
+  line-height: 1 !important;
+}
+
 .hero-section h1:hover {
   color: #198754;
   /* Bootstrap primary green */
