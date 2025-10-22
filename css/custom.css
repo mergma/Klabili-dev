@@ -372,6 +372,16 @@ h2.display-6 {
 /* Ensure rounded-circle with icon centers correctly */
 .rounded-circle .fa-2x {
   line-height: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Fix Font Awesome icon centering in circular containers */
+.facility-icon i,
+.rounded-circle i {
+  line-height: 1 !important;
+  vertical-align: baseline !important;
 }
 
 .hero-section h1:hover {
