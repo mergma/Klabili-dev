@@ -1,6 +1,0 @@
-transalate pages into english
-tentang_kami_en.html
-galeri_en.html
-informasi_en.html
-index_en.html
-wisata_budaya_en.html
