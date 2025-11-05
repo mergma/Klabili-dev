@@ -289,7 +289,7 @@ html {
 /* Hover effect for "Desa Wisata Klabili" in hero section */
 .hero-section h1 {
   transition: color 0.3s ease;
-} 
+}
 
 /* Set all titles (h1-h6) and card titles to green theme color */
 h1,
@@ -382,6 +382,39 @@ h2.display-6 {
 .rounded-circle i {
   line-height: 1 !important;
   vertical-align: baseline !important;
+}
+
+
+/* Keep circular icon backgrounds from squishing (common in About/feature rows) */
+/* Enforce square, centered circles for Bootstrap rounded-circle bubbles used with padding */
+.d-flex > .rounded-circle.p-3,
+.d-inline-flex.rounded-circle.p-3 {
+  width: 48px;
+  height: 48px;
+  padding: 0 !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  aspect-ratio: 1 / 1;
+}
+
+.d-flex > .rounded-circle.p-2,
+.d-inline-flex.rounded-circle.p-2 {
+  width: 40px;
+  height: 40px;
+  padding: 0 !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  aspect-ratio: 1 / 1;
+}
+
+/* Make sure FA icons don’t stretch the circle height */
+.d-flex > .rounded-circle i,
+.d-inline-flex.rounded-circle i {
+  line-height: 1 !important;
 }
 
 .hero-section h1:hover {
