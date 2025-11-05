@@ -671,7 +671,7 @@
         box-shadow: 0 15px 35px rgba(116, 185, 255, 0.3);
       }
 
-      .weather-icon {
+      .weather-card .weather-icon {
         font-size: 4rem;
         margin-bottom: 20px;
         text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -721,7 +721,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-right: 15px;
         font-size: 20px;
       }
 
@@ -1536,15 +1535,7 @@
                     Dokumentasi Acara
                   </button>
                 </li>
-                <li>
-                  <button
-                    class="dropdown-item"
-                    type="button"
-                    data-nav-url="galeri.html#kegiatan-masyarakat"
-                  >
-                    Kegiatan Masyarakat
-                  </button>
-                </li>
+                
               </ul>
             </li>
           </ul>
@@ -1568,7 +1559,8 @@
               </span>
             </div>
             <h1 class="hero-title display-3 mb-4 fw-bold">
-              Informasi <span class="text-gradient">Desa Wisata</span>
+              <span style="color: #fff;">Informasi</span> 
+              <span class="text-gradient">Desa Wisata</span>
             </h1>
             <p class="hero-subtitle lead fs-4 mb-4">
               Panduan lengkap tentang lokasi, kontak, dan tips perjalanan untuk pengalaman terbaik di Desa Wisata Klabili
@@ -1738,23 +1730,34 @@
                     </h4>
                     <p class="mb-0">Visualisasi lokasi Desa Wisata Klabili</p>
                   </div>
+
                   <div class="map-container-enhanced">
-                    <div class="map-placeholder text-center py-5">
-                      <div class="map-icon-wrapper mb-4">
-                        <i class="fas fa-map-marked-alt fa-4x text-success"></i>
-                      </div>
-                      <h5 class="text-success mb-3">Peta Interaktif Segera Hadir</h5>
-                      <p class="text-muted mb-4">Peta lokasi detail dengan rute perjalanan akan tersedia di sini</p>
-                      <div class="map-features d-flex justify-content-center flex-wrap gap-3">
-                        <span class="badge bg-light text-dark px-3 py-2">
-                          <i class="fas fa-route me-1"></i>Rute Perjalanan
-                        </span>
-                        <span class="badge bg-light text-dark px-3 py-2">
-                          <i class="fas fa-map-pin me-1"></i>Titik Lokasi
-                        </span>
-                        <span class="badge bg-light text-dark px-3 py-2">
-                          <i class="fas fa-compass me-1"></i>Navigasi
-                        </span>
+                    <!-- Google Maps Embed -->
+                    <div class="map-wrapper">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127271.88037711624!2d132.2975565!3d-0.4741225!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2d5403d823ad1c45%3A0x66e7258d9778f647!2sKlabili%2C%20Selemkai%2C%20Kabupaten%20Tambrauw%2C%20Papua%20Bar.!5e0!3m2!1sid!2sid!4v1707301251801!5m2!1sid!2sid"
+                            width="100%" 
+                            height="450" 
+                            style="border:0; border-radius: 0 0 15px 15px;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                    
+                  <!-- Map Features -->
+                    <div class="bg-light p-4 mt-4 rounded shadow-sm">
+                      <div class="d-flex justify-content-center flex-wrap gap-3">
+                          <a href="https://maps.app.goo.gl/46A2uCC3JZYvkJaJ8" 
+                            target="_blank" 
+                            class="btn btn-success">
+                              <i class="fas fa-route me-2"></i>
+                              Buka di Google Maps
+                          </a>
+                          <button class="btn btn-outline-secondary">
+                              <i class="fas fa-map-marked-alt me-2"></i>
+                              Lihat Peta Lebih Besar
+                          </button>
                       </div>
                     </div>
                   </div>
@@ -1838,7 +1841,7 @@
                   <h5 class="contact-title">Email</h5>
                 </div>
                 <div class="contact-card-body">
-                  <p class="contact-value">desawisataklabili@gmail.co</p>
+                  <p class="contact-value">desawisataklabili@gmail.com</p>
                   <span class="contact-status normal">
                     <i class="fas fa-clock me-1"></i>Respons dalam 24 jam
                   </span>
@@ -1872,11 +1875,11 @@
                         </div>
                         <div class="social-info">
                           <h6 class="social-platform">Instagram</h6>
-                          <p class="social-handle">@klabili_birdwatching</p>
+                          <p class="social-handle">@klabili_bridwhtcing</p>
                           <small class="social-description">Foto dan video kegiatan terbaru</small>
                         </div>
                         <div class="social-action">
-                          <a href="https://www.instagram.com/klabili_birdwatching/" target="_blank"
+                          <a href="https://www.instagram.com/klabili_bridwhtcing/" target="_blank"
                              class="btn btn-instagram btn-sm rounded-pill">
                             <i class="fab fa-instagram me-2"></i>Follow
                           </a>
@@ -2175,7 +2178,7 @@
               </li>
               <li class="mb-2">
                 <i class="fas fa-envelope me-2"></i>
-                <span>info@desaklabili.com</span>
+                <span>desawisataklabili@gmail.com</span>
               </li>
             </ul>
           </div>
@@ -2185,10 +2188,10 @@
             <h5 class="fw-bold mb-3">Ikuti Kami</h5>
             <div class="social-media-links d-flex flex-wrap gap-3">
               <!-- Instagram -->
-              <a href="https://www.instagram.com/klabili_birdwatching/" target="_blank" rel="noopener noreferrer"
+              <a href="https://www.instagram.com/klabili_bridwhtcing/" target="_blank" rel="noopener noreferrer"
                 class="social-link instagram-link" title="Ikuti kami di Instagram">
                 <div class="social-icon">
-                  <svg viewBox="0 0 24 24" fill="currentColor">
+                  <svg viewBox="0 0 24 24" style="fill:currentColor">
                     <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                   </svg>
                 </div>
@@ -2199,7 +2202,7 @@
               <a href="https://www.facebook.com/profile.php?id=100094418988540" target="_blank" rel="noopener noreferrer"
                 class="social-link facebook-link" title="Ikuti kami di Facebook">
                 <div class="social-icon">
-                  <svg viewBox="0 0 24 24" fill="currentColor">
+                  <svg viewBox="0 0 24 24" style="fill:currentColor">
                     <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                   </svg>
                 </div>
@@ -2210,7 +2213,7 @@
               <a href="https://wa.me/6282236955445?text=Halo%20saya%20mau%20tanya%20tentang%20Desa%20Wisata%20Klabili" target="_blank"
                 rel="noopener noreferrer" class="social-link whatsapp-link" title="Hubungi kami di WhatsApp">
                 <div class="social-icon">
-                  <svg viewBox="0 0 24 24" fill="currentColor">
+                  <svg viewBox="0 0 24 24" style="fill:currentColor">
                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.893 3.488"/>
                   </svg>
                 </div>

@@ -10,14 +10,14 @@
     <link rel="stylesheet" href="css/custom.css" />
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+ <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
         <!-- Left side: Logo -->
         <div class="navbar-brand-container" style="flex: 1">
           <a class="navbar-brand" href="index_en.html"
             ><img
               src="img/LogoDesaWisata/Logo_Desa_Wisata_Klabili-removebg-preview.png"
-              alt="Klabili Tourism Village Logo"
+              alt="Logo Desa Wisata Klabili"
               width="100px"
           /></a>
         </div>
@@ -37,7 +37,7 @@
         <!-- Language Toggle Switch - Outside collapsible menu -->
         <div class="navbar-nav d-flex align-items-center">
           <div
-            class="nav-item d-flex align-items-center language-toggle-container en-active"
+            class="nav-item d-flex align-items-center language-toggle-container id-active"
             id="languageToggleContainer"
           >
             <svg
@@ -50,7 +50,11 @@
             >
               <rect width="20" height="15" fill="#012169" />
               <path d="M0 0L20 15M20 0L0 15" stroke="#fff" stroke-width="2" />
-              <path d="M0 0L20 15M20 0L0 15" stroke="#C8102E" stroke-width="1" />
+              <path
+                d="M0 0L20 15M20 0L0 15"
+                stroke="#C8102E"
+                stroke-width="1"
+              />
               <path d="M10 0V15M0 7.5H20" stroke="#fff" stroke-width="3" />
               <path d="M10 0V15M0 7.5H20" stroke="#C8102E" stroke-width="2" />
             </svg>
@@ -76,7 +80,11 @@
             style="flex: 1"
           >
             <li class="nav-item">
-              <button class="btn nav-btn" type="button" data-nav-url="index_en.html">
+              <button
+                class="btn nav-btn"
+                type="button"
+                data-nav-url="index_en.html"
+              >
                 Home
               </button>
             </li>
@@ -128,7 +136,7 @@
                     type="button"
                     data-nav-url="fasilitas_en.html#fasilitas-umum-desa"
                   >
-                    Public Village Facilities
+                    Village Public Facilities
                   </button>
                 </li>
               </ul>
@@ -189,9 +197,7 @@
                     Local Cuisine
                   </button>
                 </li>
-                <li>
-                  <hr class="dropdown-divider" />
-                </li>
+                <li><hr class="dropdown-divider" /></li>
                 <li>
                   <button
                     class="dropdown-item"
@@ -254,14 +260,13 @@
                     Event Documentation
                   </button>
                 </li>
-               
                 <li>
                   <button
                     class="dropdown-item"
                     type="button"
                     data-nav-url="galeri_en.html#pemandangan-alam"
                   >
-                    Scenic Landscapes
+                    Nature Scenery
                   </button>
                 </li>
                 <li>
@@ -302,12 +307,32 @@
                 </span>
               </div>
               <h1 class="display-3 fw-bold text-white mb-4 hero-title">
-                Gallery
-                <span class="text-gradient">Klabili</span>
+                <span style="color: #fff;">Klabili</span>
+                <span class="text-gradient">Gallery</span>
               </h1>
               <p class="lead fs-4 mb-4 hero-subtitle">
-                Visual documentation of beauty and activities in Klabili Village
+                Visual documentation of the beauty and activities in Klabili Village
               </p>
+
+              <!-- Gallery Filter Buttons -->
+              <div class="gallery-filter-buttons mb-4">
+                <button class="btn btn-outline-light btn-lg me-3 mb-2 filter-btn active" data-filter="all">
+                  <i class="fas fa-th me-2"></i>All
+                </button>
+                <button class="btn btn-outline-light btn-lg me-3 mb-2 filter-btn" data-filter="events">
+                  <i class="fas fa-calendar-alt me-2"></i>Events
+                </button>
+                <button class="btn btn-outline-light btn-lg me-3 mb-2 filter-btn" data-filter="community">
+                  <i class="fas fa-users me-2"></i>Community
+                </button>
+                <button class="btn btn-outline-light btn-lg me-3 mb-2 filter-btn" data-filter="nature">
+                  <i class="fas fa-mountain me-2"></i>Nature
+                </button>
+                <button class="btn btn-outline-light btn-lg me-3 mb-2 filter-btn" data-filter="birds">
+                  <i class="fas fa-dove me-2"></i>Birds
+                </button>
+              </div>
+
               <div class="hero-stats d-flex justify-content-center gap-4 flex-wrap">
                 <div class="stat-item">
                   <div class="stat-number">100+</div>
@@ -339,7 +364,7 @@
           <div class="col-12 text-center mb-5">
             <h2 class="display-5 fw-bold text-primary gallery-section-title">Event Documentation</h2>
             <p class="lead text-muted">
-              Memorable moments from various events and celebrations in Klabili Village
+              Memorable moments from various events and festivals
             </p>
           </div>
         </div>
@@ -348,15 +373,34 @@
           <div class="col-lg-4 col-md-6">
             <div class="card border-0 shadow-sm h-100 gallery-card">
               <div class="position-relative overflow-hidden">
-                <img src="img/Masyarakat/masyarakat_1.jpg" class="card-img-top gallery-img" alt="Harvest Festival 2023">
+                <img src="img/Masyarakat/masyarakat_1.jpg" class="card-img-top gallery-img" alt="Festival Panen 2023">
                 <div class="gallery-overlay">
                   <i class="fas fa-search-plus text-white"></i>
                 </div>
               </div>
               <div class="card-body d-flex flex-column">
-                <h6 class="card-title">Harvest Festival 2023</h6>
+                <h6 class="card-title">Festival Panen 2023</h6>
                 <p class="card-text small text-muted flex-grow-1">
-                  Celebration of harvest season with traditional dances and agricultural product exhibitions.
+                  Perayaan hasil panen dengan tarian tradisional dan pameran produk pertanian.
+                </p>
+              </div>
+            </div>
+          </div>
+
+    
+
+          <div class="col-lg-4 col-md-6">
+            <div class="card border-0 shadow-sm h-100 gallery-card">
+              <div class="position-relative overflow-hidden">
+                <img src="img/TarianAdat/tarian adat.jpg" class="card-img-top gallery-img" alt="Festival Budaya">
+                <div class="gallery-overlay">
+                  <i class="fas fa-search-plus text-white"></i>
+                </div>
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h6 class="card-title">Tarian Adat Suku Moi</h6>
+                <p class="card-text small text-muted flex-grow-1">
+                  Pertunjukan tarian adat yang memukau dari Suku Moi dengan kostum tradisional.
                 </p>
               </div>
             </div>
@@ -365,15 +409,15 @@
           <div class="col-lg-4 col-md-6">
             <div class="card border-0 shadow-sm h-100 gallery-card">
               <div class="position-relative overflow-hidden">
-                <img src="img/Masyarakat/masyarakat_2.jpg" class="card-img-top gallery-img" alt="Village Anniversary">
+                <img src="img/unsorted/Aktivitas aktraksi budaya_.jpg" class="card-img-top gallery-img" alt="Atraksi Budaya">
                 <div class="gallery-overlay">
                   <i class="fas fa-search-plus text-white"></i>
                 </div>
               </div>
               <div class="card-body d-flex flex-column">
-                <h6 class="card-title">Village Anniversary</h6>
+                <h6 class="card-title">Atraksi Budaya</h6>
                 <p class="card-text small text-muted flex-grow-1">
-                  Village anniversary celebration with various competitions and cultural performances.
+                  Pertunjukan budaya yang menampilkan kekayaan tradisi lokal Papua.
                 </p>
               </div>
             </div>
@@ -382,15 +426,15 @@
           <div class="col-lg-4 col-md-6">
             <div class="card border-0 shadow-sm h-100 gallery-card">
               <div class="position-relative overflow-hidden">
-                <img src="img/Masyarakat/masyarakat_3.jpg" class="card-img-top gallery-img" alt="Cultural Festival">
+                <img src="img/Masyarakat/masyarakat_5.jpg" class="card-img-top gallery-img" alt="Upacara Adat">
                 <div class="gallery-overlay">
                   <i class="fas fa-search-plus text-white"></i>
                 </div>
               </div>
               <div class="card-body d-flex flex-column">
-                <h6 class="card-title">Cultural Festival</h6>
+                <h6 class="card-title">Upacara Adat</h6>
                 <p class="card-text small text-muted flex-grow-1">
-                  Showcase of local arts and culture that is vibrant and colorful.
+                  Dokumentasi upacara adat yang masih dilestarikan oleh masyarakat.
                 </p>
               </div>
             </div>
@@ -399,49 +443,15 @@
           <div class="col-lg-4 col-md-6">
             <div class="card border-0 shadow-sm h-100 gallery-card">
               <div class="position-relative overflow-hidden">
-                <img src="img/Masyarakat/masyarakat_4.jpg" class="card-img-top gallery-img" alt="Craft Workshop">
+                <img src="img/Tourist/tourist_1.jpg" class="card-img-top gallery-img" alt="Kunjungan Wisatawan">
                 <div class="gallery-overlay">
                   <i class="fas fa-search-plus text-white"></i>
                 </div>
               </div>
               <div class="card-body d-flex flex-column">
-                <h6 class="card-title">Craft Workshop</h6>
+                <h6 class="card-title">Kunjungan Wisatawan</h6>
                 <p class="card-text small text-muted flex-grow-1">
-                  Handicraft making training for tourists and community members.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="card border-0 shadow-sm h-100 gallery-card">
-              <div class="position-relative overflow-hidden">
-                <img src="img/Masyarakat/masyarakat_5.jpg" class="card-img-top gallery-img" alt="Traditional Ceremony">
-                <div class="gallery-overlay">
-                  <i class="fas fa-search-plus text-white"></i>
-                </div>
-              </div>
-              <div class="card-body d-flex flex-column">
-                <h6 class="card-title">Traditional Ceremony</h6>
-                <p class="card-text small text-muted flex-grow-1">
-                  Documentation of traditional ceremonies still preserved by the community.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="card border-0 shadow-sm h-100 gallery-card">
-              <div class="position-relative overflow-hidden">
-                <img src="img/Masyarakat/masyarakat_6.jpg" class="card-img-top gallery-img" alt="Tourist Visit">
-                <div class="gallery-overlay">
-                  <i class="fas fa-search-plus text-white"></i>
-                </div>
-              </div>
-              <div class="card-body d-flex flex-column">
-                <h6 class="card-title">Tourist Visit</h6>
-                <p class="card-text small text-muted flex-grow-1">
-                  Moments of joy when tourists enjoy the beauty of the village.
+                  Momen kegembiraan wisatawan saat menikmati keindahan desa.
                 </p>
               </div>
             </div>
@@ -450,18 +460,17 @@
       </div>
     </section>
 
- 
 
-    <!-- Scenic Landscapes Section -->
+    <!-- Pemandangan Alam Section -->
     <section id="pemandangan-alam" class="py-5">
       <div class="container">
         <div class="row">
           <div class="col-12 text-center mb-5">
             <h2 class="display-5 fw-bold text-primary gallery-section-title">
-              <i class="fas fa-mountain text-primary me-3"></i>Scenic Landscapes
+              <i class="fas fa-mountain text-primary me-3"></i>Nature Scenery
             </h2>
             <p class="lead text-muted">
-              Stunning natural beauty surrounding Klabili Village
+              The breathtaking natural beauty around Klabili Village
             </p>
           </div>
         </div>
@@ -470,15 +479,15 @@
           <div class="col-lg-4 col-md-6">
             <div class="card border-0 shadow-sm h-100 gallery-card">
               <div class="position-relative overflow-hidden">
-                <img src="img/View/view_1.jpg" class="card-img-top gallery-img" alt="Klabili Waterfall">
+                <img src="img/View/klabili_waterfall.jpg" class="card-img-top gallery-img" alt="Air Terjun Klabili">
                 <div class="gallery-overlay">
                   <i class="fas fa-search-plus text-white"></i>
                 </div>
               </div>
               <div class="card-body d-flex flex-column">
-                <h6 class="card-title">Klabili Waterfall</h6>
+                <h6 class="card-title">Air Terjun Klabili</h6>
                 <p class="card-text small text-muted flex-grow-1">
-                  Crystal clear and refreshing waterfall in the middle of tropical forest.
+                  Air terjun yang jernih dan segar di tengah hutan tropis.
                 </p>
               </div>
             </div>
@@ -487,15 +496,15 @@
           <div class="col-lg-4 col-md-6">
             <div class="card border-0 shadow-sm h-100 gallery-card">
               <div class="position-relative overflow-hidden">
-                <img src="img/View/view_2.jpg" class="card-img-top gallery-img" alt="Green Hills">
+                <img src="img/View/forest_view.jpg" class="card-img-top gallery-img" alt="Hutan Tropis">
                 <div class="gallery-overlay">
                   <i class="fas fa-search-plus text-white"></i>
                 </div>
               </div>
               <div class="card-body d-flex flex-column">
-                <h6 class="card-title">Green Hills</h6>
+                <h6 class="card-title">Hutan Tropis Papua</h6>
                 <p class="card-text small text-muted flex-grow-1">
-                  Rolling green hills that are soothing to the eyes.
+                  Keanekaragaman hayati hutan tropis yang eksotis.
                 </p>
               </div>
             </div>
@@ -504,15 +513,66 @@
           <div class="col-lg-4 col-md-6">
             <div class="card border-0 shadow-sm h-100 gallery-card">
               <div class="position-relative overflow-hidden">
-                <img src="img/View/view_1.jpg" class="card-img-top gallery-img" alt="Tropical Forest">
+                <img src="img/View/1749213906594.jpg" class="card-img-top gallery-img" alt="Perbukitan Hijau">
                 <div class="gallery-overlay">
                   <i class="fas fa-search-plus text-white"></i>
                 </div>
               </div>
               <div class="card-body d-flex flex-column">
-                <h6 class="card-title">Tropical Forest</h6>
+                <h6 class="card-title">Perbukitan Hijau</h6>
                 <p class="card-text small text-muted flex-grow-1">
-                  Exotic biodiversity of Papua's tropical forest.
+                  Hamparan perbukitan hijau yang menyejukkan mata.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="card border-0 shadow-sm h-100 gallery-card">
+              <div class="position-relative overflow-hidden">
+                <img src="img/View/view_2.jpg" class="card-img-top gallery-img" alt="Panorama Alam">
+                <div class="gallery-overlay">
+                  <i class="fas fa-search-plus text-white"></i>
+                </div>
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h6 class="card-title">Natural Panorama</h6>
+                <p class="card-text small text-muted flex-grow-1">
+                  Stunning natural scenery with a combination of forests and hills.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="card border-0 shadow-sm h-100 gallery-card">
+              <div class="position-relative overflow-hidden">
+                <img src="img/View/view_1.jpg" class="card-img-top gallery-img" alt="Pemandangan Sungai">
+                <div class="gallery-overlay">
+                  <i class="fas fa-search-plus text-white"></i>
+                </div>
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h6 class="card-title">Pemandangan Sungai</h6>
+                <p class="card-text small text-muted flex-grow-1">
+                  Sungai jernih yang mengalir di tengah hutan Papua.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="card border-0 shadow-sm h-100 gallery-card">
+              <div class="position-relative overflow-hidden">
+                <img src="img/HeroPage/hero_page_img.JPG" class="card-img-top gallery-img" alt="Pemandangan Desa">
+                <div class="gallery-overlay">
+                  <i class="fas fa-search-plus text-white"></i>
+                </div>
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h6 class="card-title">Pemandangan Desa</h6>
+                <p class="card-text small text-muted flex-grow-1">
+                  Suasana asri dan damai di Desa Klabili.
                 </p>
               </div>
             </div>
@@ -521,7 +581,7 @@
       </div>
     </section>
 
-    <!-- Local Birds Section -->
+    <!-- Burung Lokal Section -->
     <section id="local-birds" class="py-5 bg-light">
       <div class="container">
         <div class="row">
@@ -530,7 +590,7 @@
               <i class="fas fa-dove text-primary me-3"></i>Local Birds
             </h2>
             <p class="lead text-muted">
-              Exotic bird diversity inhabiting Papua's tropical forests
+              Diversity of exotic birds inhabiting Papua's tropical forests
             </p>
           </div>
         </div>
@@ -540,15 +600,15 @@
           <div class="col-lg-3 col-md-6">
             <div class="card border-0 shadow-sm h-100 gallery-card">
               <div class="position-relative overflow-hidden">
-                <img src="img/animals/birds/cendrawasih.jpg" class="card-img-top gallery-img" alt="Bird of Paradise">
+                <img src="img/animals/birds/cendrawasih.jpg" class="card-img-top gallery-img" alt="Cendrawasih">
                 <div class="gallery-overlay">
                   <i class="fas fa-search-plus text-white"></i>
                 </div>
               </div>
               <div class="card-body d-flex flex-column">
-                <h6 class="card-title">Bird of Paradise</h6>
+                <h6 class="card-title">Cendrawasih</h6>
                 <p class="card-text small text-muted flex-grow-1">
-                  The iconic bird of Papua with stunning beautiful feathers and captivating colors.
+                  Burung surga yang menjadi ikon Papua dengan bulu yang sangat indah dan warna-warni menawan.
                 </p>
               </div>
             </div>
@@ -557,15 +617,15 @@
           <div class="col-lg-3 col-md-6">
             <div class="card border-0 shadow-sm h-100 gallery-card">
               <div class="position-relative overflow-hidden">
-                <img src="img/animals/birds/cassowary_1.jpg" class="card-img-top gallery-img" alt="Cassowary">
+                <img src="img/animals/birds/Blue_black_kingfisher_(1).jpg" class="card-img-top gallery-img" alt="Raja Udang Biru Hitam">
                 <div class="gallery-overlay">
                   <i class="fas fa-search-plus text-white"></i>
                 </div>
               </div>
               <div class="card-body d-flex flex-column">
-                <h6 class="card-title">Cassowary</h6>
+                <h6 class="card-title">Raja Udang Biru Hitam</h6>
                 <p class="card-text small text-muted flex-grow-1">
-                  Large flightless bird endemic to Papua with distinctive bone helmet on its head.
+                  Burung raja udang dengan warna biru hitam yang menawan, sering terlihat di sekitar sungai.
                 </p>
               </div>
             </div>
@@ -574,15 +634,15 @@
           <div class="col-lg-3 col-md-6">
             <div class="card border-0 shadow-sm h-100 gallery-card">
               <div class="position-relative overflow-hidden">
-                <img src="img/animals/birds/victoria_crowned_pigeon.jpg" class="card-img-top gallery-img" alt="Victoria Crowned Pigeon">
+                <img src="img/animals/birds/victoria_crowned_pigeon.jpg" class="card-img-top gallery-img" alt="Merpati Mahkota Victoria">
                 <div class="gallery-overlay">
                   <i class="fas fa-search-plus text-white"></i>
                 </div>
               </div>
               <div class="card-body d-flex flex-column">
-                <h6 class="card-title">Victoria Crowned Pigeon</h6>
+                <h6 class="card-title">Merpati Mahkota Victoria</h6>
                 <p class="card-text small text-muted flex-grow-1">
-                  Large pigeon with elegant feather crown, one of the most beautiful birds in Papua.
+                  Merpati besar dengan mahkota bulu yang elegan, salah satu burung tercantik di Papua.
                 </p>
               </div>
             </div>
@@ -591,15 +651,15 @@
           <div class="col-lg-3 col-md-6">
             <div class="card border-0 shadow-sm h-100 gallery-card">
               <div class="position-relative overflow-hidden">
-                <img src="img/animals/birds/knobbed_hornbill.jpg" class="card-img-top gallery-img" alt="Knobbed Hornbill">
+                <img src="img/animals/birds/knobbed_hornbill.jpg" class="card-img-top gallery-img" alt="Rangkong Berknob">
                 <div class="gallery-overlay">
                   <i class="fas fa-search-plus text-white"></i>
                 </div>
               </div>
               <div class="card-body d-flex flex-column">
-                <h6 class="card-title">Knobbed Hornbill</h6>
+                <h6 class="card-title">Rangkong Berknob</h6>
                 <p class="card-text small text-muted flex-grow-1">
-                  Large hornbill with distinctive knob on its beak, very important in forest ecosystem.
+                  Rangkong besar dengan tonjolan khas di paruhnya, burung yang sangat penting dalam ekosistem hutan.
                 </p>
               </div>
             </div>
@@ -607,90 +667,19 @@
         </div>
 
         <!-- Second Row -->
-        <div class="row g-4 mb-4">
-          <div class="col-lg-3 col-md-6">
-            <div class="card border-0 shadow-sm h-100 gallery-card">
-              <div class="position-relative overflow-hidden">
-                <img src="img/animals/birds/Blue_black_kingfisher_(1).jpg" class="card-img-top gallery-img" alt="Blue-black Kingfisher">
-                <div class="gallery-overlay">
-                  <i class="fas fa-search-plus text-white"></i>
-                </div>
-              </div>
-              <div class="card-body d-flex flex-column">
-                <h6 class="card-title">Blue-black Kingfisher</h6>
-                <p class="card-text small text-muted flex-grow-1">
-                  Stunning kingfisher with blue-black colors, often seen around rivers and streams.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <div class="card border-0 shadow-sm h-100 gallery-card">
-              <div class="position-relative overflow-hidden">
-                <img src="img/animals/birds/emperor_fairywren_2.jpg" class="card-img-top gallery-img" alt="Emperor Fairywren">
-                <div class="gallery-overlay">
-                  <i class="fas fa-search-plus text-white"></i>
-                </div>
-              </div>
-              <div class="card-body d-flex flex-column">
-                <h6 class="card-title">Emperor Fairywren</h6>
-                <p class="card-text small text-muted flex-grow-1">
-                  Small bird with bright blue colors living in bushes and open areas.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <div class="card border-0 shadow-sm h-100 gallery-card">
-              <div class="position-relative overflow-hidden">
-                <img src="img/animals/birds/blue-breasted-pitta.jpg" class="card-img-top gallery-img" alt="Blue-breasted Pitta">
-                <div class="gallery-overlay">
-                  <i class="fas fa-search-plus text-white"></i>
-                </div>
-              </div>
-              <div class="card-body d-flex flex-column">
-                <h6 class="card-title">Blue-breasted Pitta</h6>
-                <p class="card-text small text-muted flex-grow-1">
-                  Pitta with striking blue breast, living on the moist forest floor.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6">
-            <div class="card border-0 shadow-sm h-100 gallery-card">
-              <div class="position-relative overflow-hidden">
-                <img src="img/animals/birds/black_capped_lory.jpg" class="card-img-top gallery-img" alt="Black-capped Lory">
-                <div class="gallery-overlay">
-                  <i class="fas fa-search-plus text-white"></i>
-                </div>
-              </div>
-              <div class="card-body d-flex flex-column">
-                <h6 class="card-title">Black-capped Lory</h6>
-                <p class="card-text small text-muted flex-grow-1">
-                  Lory with distinctive black cap and bright colors living in forest canopy.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Third Row -->
         <div class="row g-4">
           <div class="col-lg-3 col-md-6">
             <div class="card border-0 shadow-sm h-100 gallery-card">
               <div class="position-relative overflow-hidden">
-                <img src="img/animals/birds/common_emerald_dove.jpg" class="card-img-top gallery-img" alt="Common Emerald Dove">
+                <img src="img/animals/birds/emperor_fairywren_2.jpg" class="card-img-top gallery-img" alt="Ciblek Kaisar">
                 <div class="gallery-overlay">
                   <i class="fas fa-search-plus text-white"></i>
                 </div>
               </div>
               <div class="card-body d-flex flex-column">
-                <h6 class="card-title">Common Emerald Dove</h6>
+                <h6 class="card-title">Ciblek Kaisar</h6>
                 <p class="card-text small text-muted flex-grow-1">
-                  Dove with shimmering emerald green colors, living in dense tropical forests.
+                  Burung kecil dengan warna biru cerah yang hidup di semak-semak dan area terbuka.
                 </p>
               </div>
             </div>
@@ -699,15 +688,15 @@
           <div class="col-lg-3 col-md-6">
             <div class="card border-0 shadow-sm h-100 gallery-card">
               <div class="position-relative overflow-hidden">
-                <img src="img/animals/birds/golden-mynas.jpg" class="card-img-top gallery-img" alt="Golden Mynas">
+                <img src="img/animals/birds/blue-breasted-pitta.jpg" class="card-img-top gallery-img" alt="Pitta Dada Biru">
                 <div class="gallery-overlay">
                   <i class="fas fa-search-plus text-white"></i>
                 </div>
               </div>
               <div class="card-body d-flex flex-column">
-                <h6 class="card-title">Golden Mynas</h6>
+                <h6 class="card-title">Pitta Dada Biru</h6>
                 <p class="card-text small text-muted flex-grow-1">
-                  Golden-colored mynas that live in groups and are very social birds.
+                  Burung pitta dengan dada biru yang mencolok, hidup di lantai hutan yang lembab.
                 </p>
               </div>
             </div>
@@ -716,15 +705,15 @@
           <div class="col-lg-3 col-md-6">
             <div class="card border-0 shadow-sm h-100 gallery-card">
               <div class="position-relative overflow-hidden">
-                <img src="img/animals/birds/laughing_kookaburra.jpg" class="card-img-top gallery-img" alt="Laughing Kookaburra">
+                <img src="img/animals/birds/black_capped_lory.jpg" class="card-img-top gallery-img" alt="Nuri Topi Hitam">
                 <div class="gallery-overlay">
                   <i class="fas fa-search-plus text-white"></i>
                 </div>
               </div>
               <div class="card-body d-flex flex-column">
-                <h6 class="card-title">Laughing Kookaburra</h6>
+                <h6 class="card-title">Nuri Topi Hitam</h6>
                 <p class="card-text small text-muted flex-grow-1">
-                  Bird famous for its distinctive loud laughing call in the morning.
+                  Burung nuri dengan topi hitam khas dan warna-warni cerah yang hidup di kanopi hutan.
                 </p>
               </div>
             </div>
@@ -733,15 +722,15 @@
           <div class="col-lg-3 col-md-6">
             <div class="card border-0 shadow-sm h-100 gallery-card">
               <div class="position-relative overflow-hidden">
-                <img src="img/animals/birds/buff-breasted_paradise-kingfisher.jpg" class="card-img-top gallery-img" alt="Buff-breasted Paradise Kingfisher">
+                <img src="img/animals/birds/common_emerald_dove.jpg" class="card-img-top gallery-img" alt="Merpati Zamrud">
                 <div class="gallery-overlay">
                   <i class="fas fa-search-plus text-white"></i>
                 </div>
               </div>
               <div class="card-body d-flex flex-column">
-                <h6 class="card-title">Buff-breasted Paradise Kingfisher</h6>
+                <h6 class="card-title">Merpati Zamrud</h6>
                 <p class="card-text small text-muted flex-grow-1">
-                  Paradise kingfisher with beautiful buff breast, one of Papua's most stunning birds.
+                  Merpati dengan warna hijau zamrud yang berkilau, hidup di hutan tropis yang rimbun.
                 </p>
               </div>
             </div>
@@ -749,105 +738,217 @@
         </div>
       </div>
     </section>
+      </div>
+    </section>
 
-    
-
-    <!-- Footer -->
-    <footer class="bg-dark text-white py-5">
+    <!-- Video Documentation Section -->
+    <section class="video-section py-5 bg-light" id="video-dokumenter">
       <div class="container">
-        <div class="row">
-          <!-- Column 1: Logo and Description -->
-          <div class="col-lg-3 col-md-6 mb-4">
-            <div class="mb-3">
-              <img src="img/LogoDesaWisata/Logo_Desa_Wisata_Klabili-removebg-preview.png" alt="Klabili Tourism Village Logo" width="150px" />
-            </div>
-            <p class="text-white-50">
-              Klabili Tourism Village offers authentic tourism experiences with natural beauty, local culture, and the warmth of the Moi Tribe community.
-            </p>
-          </div>
-
-          <!-- Column 2: Quick Links -->
-          <div class="col-lg-3 col-md-6 mb-4">
-            <h5 class="fw-bold mb-3">Quick Links</h5>
-            <ul class="list-unstyled">
-              <li class="mb-2"><a href="index_en.html" class="text-white-50 text-decoration-none">Home</a></li>
-              <li class="mb-2"><a href="tentang_kami_en.html" class="text-white-50 text-decoration-none">About Us</a></li>
-              <li class="mb-2"><a href="fasilitas_en.html" class="text-white-50 text-decoration-none">Facilities</a></li>
-              <li class="mb-2"><a href="wisata_budaya_en.html" class="text-white-50 text-decoration-none">Tourism & Culture</a></li>
-              <li class="mb-2"><a href="galeri_en.html" class="text-white-50 text-decoration-none">Gallery</a></li>
-            </ul>
-          </div>
-
-          <!-- Column 3: Contact Info -->
-          <div class="col-lg-3 col-md-6 mb-4">
-            <h5 class="fw-bold mb-3">Contact Us</h5>
-            <ul class="list-unstyled">
-              <li class="mb-2">
-                <i class="fas fa-phone me-2"></i>
-                <span>+62 822-3695-5445</span>
-              </li>
-              <li class="mb-2">
-                <i class="fas fa-map-marker-alt me-2"></i>
-                <span>Klabili Village, Selemkai District, Tambrauw Regency</span>
-              </li>
-              <li class="mb-2">
-                <i class="fas fa-envelope me-2"></i>
-                <span>info@desaklabili.com</span>
-               </li>
-            </ul>
-          </div>
-
-          <!-- Column 4: Social Media -->
-          <div class="col-lg-3 col-md-6 mb-4">
-            <h5 class="fw-bold mb-3">Follow Us</h5>
-            <div class="social-media-links d-flex flex-wrap gap-3">
-              <!-- Instagram -->
-              <a href="https://www.instagram.com/klabili_birdwatching/" target="_blank" rel="noopener noreferrer"
-                class="social-link instagram-link" title="Follow us on Instagram">
-                <div class="social-icon">
-                  <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                  </svg>
-                </div>
-                <span class="social-label">Instagram</span>
-              </a>
-
-              <!-- Facebook -->
-              <a href="https://www.facebook.com/profile.php?id=100094418988540" target="_blank" rel="noopener noreferrer"
-                class="social-link facebook-link" title="Follow us on Facebook">
-                <div class="social-icon">
-                  <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                  </svg>
-                </div>
-                <span class="social-label">Facebook</span>
-              </a>
-
-              <!-- WhatsApp -->
-              <a href="https://wa.me/6282236955445?text=Hello%20I%20want%20to%20ask%20about%20Klabili%20Tourism%20Village" target="_blank"
-                rel="noopener noreferrer" class="social-link whatsapp-link" title="Contact us on WhatsApp">
-                <div class="social-icon">
-                  <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.893 3.488"/>
-                  </svg>
-                </div>
-                <span class="social-label">WhatsApp</span>
-              </a>
+        <div class="row mb-5">
+          <div class="col-12 text-center">
+            <div class="section-header">
+              <h2 class="display-6 fw-bold text-primary mb-3">
+                <i class="fas fa-video me-3"></i>Video Dokumenter
+              </h2>
+              <p class="lead text-muted">
+                Koleksi video dokumenter yang menampilkan kehidupan dan keindahan Desa Klabili
+              </p>
             </div>
           </div>
         </div>
 
-        <!-- Copyright -->
-        <hr class="my-4">
-        <div class="row">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <div class="video-preview-card">
+              <div class="video-thumbnail">
+                <img src="img/Masyarakat/masyarakat_1.jpg" alt="Video Kehidupan Masyarakat" class="img-fluid">
+                <div class="play-overlay">
+                  <div class="play-button">
+                    <i class="fas fa-play"></i>
+                  </div>
+                </div>
+                <div class="video-duration">
+                  <span>5:30</span>
+                </div>
+              </div>
+              <div class="video-content">
+                <h6 class="video-title">Kehidupan Masyarakat Klabili</h6>
+                <p class="video-description">Dokumentasi aktivitas sehari-hari masyarakat dan tradisi yang masih lestari.</p>
+                <div class="video-meta">
+                  <span class="badge bg-primary-subtle text-primary">Segera Hadir</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="video-preview-card">
+              <div class="video-thumbnail">
+                <img src="img/View/view_1.jpg" alt="Video Wisata Alam" class="img-fluid">
+                <div class="play-overlay">
+                  <div class="play-button">
+                    <i class="fas fa-play"></i>
+                  </div>
+                </div>
+                <div class="video-duration">
+                  <span>8:15</span>
+                </div>
+              </div>
+              <div class="video-content">
+                <h6 class="video-title">Keindahan Alam Papua</h6>
+                <p class="video-description">Eksplorasi spot wisata unggulan dengan pemandangan yang memukau.</p>
+                <div class="video-meta">
+                  <span class="badge bg-success-subtle text-success">Segera Hadir</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="video-preview-card">
+              <div class="video-thumbnail">
+                <img src="img/TarianAdat/tarian adat.jpg" alt="Video Budaya Lokal" class="img-fluid">
+                <div class="play-overlay">
+                  <div class="play-button">
+                    <i class="fas fa-play"></i>
+                  </div>
+                </div>
+                <div class="video-duration">
+                  <span>6:45</span>
+                </div>
+              </div>
+              <div class="video-content">
+                <h6 class="video-title">Budaya Suku Moi</h6>
+                <p class="video-description">Dokumentasi tradisi dan budaya Suku Moi yang autentik.</p>
+                <div class="video-meta">
+                  <span class="badge bg-warning-subtle text-warning">Segera Hadir</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="row mt-5">
           <div class="col-12 text-center">
-            <p class="mb-0 text-white-50">
-              &copy; 2025 Klabili Tourism Village. All rights reserved.
-            </p>
+            <div class="cta-section">
+              <h4 class="fw-bold mb-3">Ingin Melihat Lebih Banyak?</h4>
+              <p class="text-muted mb-4">Ikuti media sosial kami untuk mendapatkan update foto dan video terbaru dari Desa Klabili</p>
+              <div class="social-buttons">
+                <a href="https://www.instagram.com/klabili_bridwhtcing/" class="btn btn-outline-primary me-3 mb-2" target="_blank">
+                  <i class="fab fa-instagram me-2"></i>Instagram
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100094418988540" class="btn btn-outline-primary me-3 mb-2" target="_blank">
+                  <i class="fab fa-facebook me-2"></i>Facebook
+                </a>
+                <a href="https://wa.me/6282236955445" class="btn btn-success mb-2" target="_blank">
+                  <i class="fab fa-whatsapp me-2"></i>Contact Us
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </footer>
+    </section>
+    <!-- End of Video Dokumenter Section -->
+     
+    
+<!-- Footer -->
+  <footer class="bg-dark text-white py-5">
+    <div class="container">
+      <div class="row">
+        <!-- Column 1: Logo and Description -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div class="mb-3">
+            <img src="img/LogoDesaWisata/Logo_Desa_Wisata_Klabili-removebg-preview.png" alt="Logo Desa Wisata Klabili" width="150px" />
+          </div>
+          <p class="text-white-50">
+            Desa Wisata Klabili menawarkan pengalaman wisata autentik dengan keindahan alam, budaya lokal, dan keramahan masyarakat Suku Moi.
+          </p>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <h5 class="fw-bold mb-3">Quick Links</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="index_en.html" class="text-white-50 text-decoration-none">Home</a></li>
+            <li class="mb-2"><a href="tentang_kami_en.html" class="text-white-50 text-decoration-none">About Us</a></li>
+            <li class="mb-2"><a href="fasilitas_en.html" class="text-white-50 text-decoration-none">Facilities</a></li>
+            <li class="mb-2"><a href="wisata_budaya_en.html" class="text-white-50 text-decoration-none">Tourism & Culture</a></li>
+            <li class="mb-2"><a href="galeri_en.html" class="text-white-50 text-decoration-none">Gallery</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Contact Info -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <h5 class="fw-bold mb-3">Contact Us</h5>
+          <ul class="list-unstyled">
+            <li class="mb-2">
+              <i class="fas fa-phone me-2"></i>
+              <span>+62 822-3695-5445</span>
+            </li>
+            <li class="mb-2">
+              <i class="fas fa-map-marker-alt me-2"></i>
+              <span>Kampung Klabili, Distrik Selemkai, Kabupaten Tambrauw</span>
+            </li>
+            <li class="mb-2">
+              <i class="fas fa-envelope me-2"></i>
+              <span>desawisataklabili@gmail.com</span>
+             </li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Social Media -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <h5 class="fw-bold mb-3">Follow Us</h5>
+          <div class="social-media-links d-flex flex-wrap gap-3">
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/klabili_bridwhtcing/" target="_blank" rel="noopener noreferrer"
+              class="social-link instagram-link" title="Follow us on Instagram">
+              <div class="social-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+              </div>
+              <span class="social-label">Instagram</span>
+            </a>
+
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/profile.php?id=100094418988540" target="_blank" rel="noopener noreferrer"
+              class="social-link facebook-link" title="Follow us on Facebook">
+              <div class="social-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+              </div>
+              <span class="social-label">Facebook</span>
+            </a>
+
+            <!-- WhatsApp -->
+            <a href="https://wa.me/6282236955445?text=Hello%20I%20want%20to%20ask%20about%20Klabili%20Tourism%20Village" target="_blank"
+              rel="noopener noreferrer" class="social-link whatsapp-link" title="Contact us on WhatsApp">
+              <div class="social-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.893 3.488"/>
+                </svg>
+              </div>
+              <span class="social-label">WhatsApp</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <hr class="my-4">
+      <div class="row">
+        <div class="col-12 text-center">
+          <p class="mb-0 text-white-50">
+            &copy; 2025 Desa Wisata Klabili. Semua hak dilindungi.
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
 
     <!-- Scroll to Top Button -->
     <button
@@ -867,30 +968,15 @@
     >
       <i class="fas fa-leaf"></i>
     </button>
-
     <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
 
     <!-- Bootstrap JS -->
     <script src="js/bootstrap/bootstrap.bundle.js"></script>
     <!-- Custom JS -->
     <script src="js/custom.js"></script>
-
-    <script>
-      // Show/hide button on scroll
-      window.addEventListener('scroll', function () {
-        const btn = document.getElementById('scrollToTopBtn');
-        if (window.scrollY > 200) {
-          btn.classList.add('show');
-        } else {
-          btn.classList.remove('show');
-        }
-      });
-
-      // Scroll to top on click
-      document.getElementById('scrollToTopBtn').onclick = function () {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      };
-    </script>
   </body>
 </html>

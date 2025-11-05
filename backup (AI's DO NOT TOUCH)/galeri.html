@@ -260,7 +260,6 @@
                     Dokumentasi Acara
                   </button>
                 </li>
-
                 <li>
                   <button
                     class="dropdown-item"
@@ -274,7 +273,7 @@
                   <button
                     class="dropdown-item"
                     type="button"
-                    data-nav-url="galeri.html#burung-lokal"
+                    data-nav-url="galeri.html#local-birds"
                   >
                     Burung Lokal
                   </button>
@@ -308,12 +307,32 @@
                 </span>
               </div>
               <h1 class="display-3 fw-bold text-white mb-4 hero-title">
-                Galeri
+                <span style="color: #fff;">Galeri</span>
                 <span class="text-gradient">Klabili</span>
               </h1>
               <p class="lead fs-4 mb-4 hero-subtitle">
                 Dokumentasi visual keindahan dan aktivitas di Desa Klabili
               </p>
+
+              <!-- Gallery Filter Buttons -->
+              <div class="gallery-filter-buttons mb-4">
+                <button class="btn btn-outline-light btn-lg me-3 mb-2 filter-btn active" data-filter="all">
+                  <i class="fas fa-th me-2"></i>Semua
+                </button>
+                <button class="btn btn-outline-light btn-lg me-3 mb-2 filter-btn" data-filter="events">
+                  <i class="fas fa-calendar-alt me-2"></i>Acara
+                </button>
+                <button class="btn btn-outline-light btn-lg me-3 mb-2 filter-btn" data-filter="community">
+                  <i class="fas fa-users me-2"></i>Masyarakat
+                </button>
+                <button class="btn btn-outline-light btn-lg me-3 mb-2 filter-btn" data-filter="nature">
+                  <i class="fas fa-mountain me-2"></i>Alam
+                </button>
+                <button class="btn btn-outline-light btn-lg me-3 mb-2 filter-btn" data-filter="birds">
+                  <i class="fas fa-dove me-2"></i>Burung
+                </button>
+              </div>
+
               <div class="hero-stats d-flex justify-content-center gap-4 flex-wrap">
                 <div class="stat-item">
                   <div class="stat-number">100+</div>
@@ -368,18 +387,20 @@
             </div>
           </div>
 
+    
+
           <div class="col-lg-4 col-md-6">
             <div class="card border-0 shadow-sm h-100 gallery-card">
               <div class="position-relative overflow-hidden">
-                <img src="img/Masyarakat/masyarakat_2.jpg" class="card-img-top gallery-img" alt="Hari Jadi Desa">
+                <img src="img/TarianAdat/tarian adat.jpg" class="card-img-top gallery-img" alt="Festival Budaya">
                 <div class="gallery-overlay">
                   <i class="fas fa-search-plus text-white"></i>
                 </div>
               </div>
               <div class="card-body d-flex flex-column">
-                <h6 class="card-title">Hari Jadi Desa</h6>
+                <h6 class="card-title">Tarian Adat Suku Moi</h6>
                 <p class="card-text small text-muted flex-grow-1">
-                  Peringatan hari jadi desa dengan berbagai lomba dan pertunjukan budaya.
+                  Pertunjukan tarian adat yang memukau dari Suku Moi dengan kostum tradisional.
                 </p>
               </div>
             </div>
@@ -388,32 +409,15 @@
           <div class="col-lg-4 col-md-6">
             <div class="card border-0 shadow-sm h-100 gallery-card">
               <div class="position-relative overflow-hidden">
-                <img src="img/Masyarakat/masyarakat_3.jpg" class="card-img-top gallery-img" alt="Festival Budaya">
+                <img src="img/unsorted/Aktivitas aktraksi budaya_.jpg" class="card-img-top gallery-img" alt="Atraksi Budaya">
                 <div class="gallery-overlay">
                   <i class="fas fa-search-plus text-white"></i>
                 </div>
               </div>
               <div class="card-body d-flex flex-column">
-                <h6 class="card-title">Festival Budaya</h6>
+                <h6 class="card-title">Atraksi Budaya</h6>
                 <p class="card-text small text-muted flex-grow-1">
-                  Showcase kesenian dan budaya lokal yang meriah dan penuh warna.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6">
-            <div class="card border-0 shadow-sm h-100 gallery-card">
-              <div class="position-relative overflow-hidden">
-                <img src="img/Masyarakat/masyarakat_4.jpg" class="card-img-top gallery-img" alt="Workshop Kerajinan">
-                <div class="gallery-overlay">
-                  <i class="fas fa-search-plus text-white"></i>
-                </div>
-              </div>
-              <div class="card-body d-flex flex-column">
-                <h6 class="card-title">Workshop Kerajinan</h6>
-                <p class="card-text small text-muted flex-grow-1">
-                  Pelatihan pembuatan kerajinan tangan untuk wisatawan dan masyarakat.
+                  Pertunjukan budaya yang menampilkan kekayaan tradisi lokal Papua.
                 </p>
               </div>
             </div>
@@ -439,7 +443,7 @@
           <div class="col-lg-4 col-md-6">
             <div class="card border-0 shadow-sm h-100 gallery-card">
               <div class="position-relative overflow-hidden">
-                <img src="img/Masyarakat/masyarakat_6.jpg" class="card-img-top gallery-img" alt="Kunjungan Wisatawan">
+                <img src="img/Tourist/tourist_1.jpg" class="card-img-top gallery-img" alt="Kunjungan Wisatawan">
                 <div class="gallery-overlay">
                   <i class="fas fa-search-plus text-white"></i>
                 </div>
@@ -456,7 +460,7 @@
       </div>
     </section>
 
-   
+
     <!-- Pemandangan Alam Section -->
     <section id="pemandangan-alam" class="py-5">
       <div class="container">
@@ -475,7 +479,7 @@
           <div class="col-lg-4 col-md-6">
             <div class="card border-0 shadow-sm h-100 gallery-card">
               <div class="position-relative overflow-hidden">
-                <img src="img/View/view_1.jpg" class="card-img-top gallery-img" alt="Pemandangan Alam 1">
+                <img src="img/View/klabili_waterfall.jpg" class="card-img-top gallery-img" alt="Air Terjun Klabili">
                 <div class="gallery-overlay">
                   <i class="fas fa-search-plus text-white"></i>
                 </div>
@@ -492,7 +496,24 @@
           <div class="col-lg-4 col-md-6">
             <div class="card border-0 shadow-sm h-100 gallery-card">
               <div class="position-relative overflow-hidden">
-                <img src="img/View/view_2.jpg" class="card-img-top gallery-img" alt="Pemandangan Alam 2">
+                <img src="img/View/forest_view.jpg" class="card-img-top gallery-img" alt="Hutan Tropis">
+                <div class="gallery-overlay">
+                  <i class="fas fa-search-plus text-white"></i>
+                </div>
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h6 class="card-title">Hutan Tropis Papua</h6>
+                <p class="card-text small text-muted flex-grow-1">
+                  Keanekaragaman hayati hutan tropis yang eksotis.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="card border-0 shadow-sm h-100 gallery-card">
+              <div class="position-relative overflow-hidden">
+                <img src="img/View/1749213906594.jpg" class="card-img-top gallery-img" alt="Perbukitan Hijau">
                 <div class="gallery-overlay">
                   <i class="fas fa-search-plus text-white"></i>
                 </div>
@@ -509,15 +530,49 @@
           <div class="col-lg-4 col-md-6">
             <div class="card border-0 shadow-sm h-100 gallery-card">
               <div class="position-relative overflow-hidden">
-                <img src="img/View/view_1.jpg" class="card-img-top gallery-img" alt="Pemandangan Alam 3">
+                <img src="img/View/view_2.jpg" class="card-img-top gallery-img" alt="Panorama Alam">
                 <div class="gallery-overlay">
                   <i class="fas fa-search-plus text-white"></i>
                 </div>
               </div>
               <div class="card-body d-flex flex-column">
-                <h6 class="card-title">Hutan Tropis</h6>
+                <h6 class="card-title">Panorama Alam</h6>
                 <p class="card-text small text-muted flex-grow-1">
-                  Keanekaragaman hayati hutan tropis Papua yang eksotis.
+                  Pemandangan alam yang menakjubkan dengan kombinasi hutan dan bukit.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="card border-0 shadow-sm h-100 gallery-card">
+              <div class="position-relative overflow-hidden">
+                <img src="img/View/view_1.jpg" class="card-img-top gallery-img" alt="Pemandangan Sungai">
+                <div class="gallery-overlay">
+                  <i class="fas fa-search-plus text-white"></i>
+                </div>
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h6 class="card-title">Pemandangan Sungai</h6>
+                <p class="card-text small text-muted flex-grow-1">
+                  Sungai jernih yang mengalir di tengah hutan Papua.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="card border-0 shadow-sm h-100 gallery-card">
+              <div class="position-relative overflow-hidden">
+                <img src="img/HeroPage/hero_page_img.JPG" class="card-img-top gallery-img" alt="Pemandangan Desa">
+                <div class="gallery-overlay">
+                  <i class="fas fa-search-plus text-white"></i>
+                </div>
+              </div>
+              <div class="card-body d-flex flex-column">
+                <h6 class="card-title">Pemandangan Desa</h6>
+                <p class="card-text small text-muted flex-grow-1">
+                  Suasana asri dan damai di Desa Klabili.
                 </p>
               </div>
             </div>
@@ -527,7 +582,7 @@
     </section>
 
     <!-- Burung Lokal Section -->
-    <section id="burung-lokal" class="py-5 bg-light">
+    <section id="local-birds" class="py-5 bg-light">
       <div class="container">
         <div class="row">
           <div class="col-12 text-center mb-5">
@@ -562,15 +617,15 @@
           <div class="col-lg-3 col-md-6">
             <div class="card border-0 shadow-sm h-100 gallery-card">
               <div class="position-relative overflow-hidden">
-                <img src="img/animals/birds/cassowary_1.jpg" class="card-img-top gallery-img" alt="Kasuari">
+                <img src="img/animals/birds/Blue_black_kingfisher_(1).jpg" class="card-img-top gallery-img" alt="Raja Udang Biru Hitam">
                 <div class="gallery-overlay">
                   <i class="fas fa-search-plus text-white"></i>
                 </div>
               </div>
               <div class="card-body d-flex flex-column">
-                <h6 class="card-title">Kasuari</h6>
+                <h6 class="card-title">Raja Udang Biru Hitam</h6>
                 <p class="card-text small text-muted flex-grow-1">
-                  Burung besar yang tidak bisa terbang, endemik Papua dengan helm tulang yang khas di kepalanya.
+                  Burung raja udang dengan warna biru hitam yang menawan, sering terlihat di sekitar sungai.
                 </p>
               </div>
             </div>
@@ -612,24 +667,7 @@
         </div>
 
         <!-- Second Row -->
-        <div class="row g-4 mb-4">
-          <div class="col-lg-3 col-md-6">
-            <div class="card border-0 shadow-sm h-100 gallery-card">
-              <div class="position-relative overflow-hidden">
-                <img src="img/animals/birds/Blue_black_kingfisher_(1).jpg" class="card-img-top gallery-img" alt="Raja Udang Biru Hitam">
-                <div class="gallery-overlay">
-                  <i class="fas fa-search-plus text-white"></i>
-                </div>
-              </div>
-              <div class="card-body d-flex flex-column">
-                <h6 class="card-title">Raja Udang Biru Hitam</h6>
-                <p class="card-text small text-muted flex-grow-1">
-                  Burung raja udang dengan warna biru hitam yang menawan, sering terlihat di sekitar sungai.
-                </p>
-              </div>
-            </div>
-          </div>
-
+        <div class="row g-4">
           <div class="col-lg-3 col-md-6">
             <div class="card border-0 shadow-sm h-100 gallery-card">
               <div class="position-relative overflow-hidden">
@@ -680,10 +718,7 @@
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Third Row -->
-        <div class="row g-4">
           <div class="col-lg-3 col-md-6">
             <div class="card border-0 shadow-sm h-100 gallery-card">
               <div class="position-relative overflow-hidden">
@@ -700,62 +735,123 @@
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+      </div>
+    </section>
 
-          <div class="col-lg-3 col-md-6">
-            <div class="card border-0 shadow-sm h-100 gallery-card">
-              <div class="position-relative overflow-hidden">
-                <img src="img/animals/birds/golden-mynas.jpg" class="card-img-top gallery-img" alt="Jalak Emas">
-                <div class="gallery-overlay">
-                  <i class="fas fa-search-plus text-white"></i>
+    <!-- Video Documentation Section -->
+    <section class="video-section py-5 bg-light" id="video-dokumenter">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12 text-center">
+            <div class="section-header">
+              <h2 class="display-6 fw-bold text-primary mb-3">
+                <i class="fas fa-video me-3"></i>Video Dokumenter
+              </h2>
+              <p class="lead text-muted">
+                Koleksi video dokumenter yang menampilkan kehidupan dan keindahan Desa Klabili
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <div class="video-preview-card">
+              <div class="video-thumbnail">
+                <img src="img/Masyarakat/masyarakat_1.jpg" alt="Video Kehidupan Masyarakat" class="img-fluid">
+                <div class="play-overlay">
+                  <div class="play-button">
+                    <i class="fas fa-play"></i>
+                  </div>
+                </div>
+                <div class="video-duration">
+                  <span>5:30</span>
                 </div>
               </div>
-              <div class="card-body d-flex flex-column">
-                <h6 class="card-title">Jalak Emas</h6>
-                <p class="card-text small text-muted flex-grow-1">
-                  Burung jalak dengan warna emas yang hidup berkelompok dan sangat sosial.
-                </p>
+              <div class="video-content">
+                <h6 class="video-title">Kehidupan Masyarakat Klabili</h6>
+                <p class="video-description">Dokumentasi aktivitas sehari-hari masyarakat dan tradisi yang masih lestari.</p>
+                <div class="video-meta">
+                  <span class="badge bg-primary-subtle text-primary">Segera Hadir</span>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-6">
-            <div class="card border-0 shadow-sm h-100 gallery-card">
-              <div class="position-relative overflow-hidden">
-                <img src="img/animals/birds/laughing_kookaburra.jpg" class="card-img-top gallery-img" alt="Kookaburra Tertawa">
-                <div class="gallery-overlay">
-                  <i class="fas fa-search-plus text-white"></i>
+          <div class="col-lg-4">
+            <div class="video-preview-card">
+              <div class="video-thumbnail">
+                <img src="img/View/view_1.jpg" alt="Video Wisata Alam" class="img-fluid">
+                <div class="play-overlay">
+                  <div class="play-button">
+                    <i class="fas fa-play"></i>
+                  </div>
+                </div>
+                <div class="video-duration">
+                  <span>8:15</span>
                 </div>
               </div>
-              <div class="card-body d-flex flex-column">
-                <h6 class="card-title">Kookaburra Tertawa</h6>
-                <p class="card-text small text-muted flex-grow-1">
-                  Burung yang terkenal dengan suara tawanya yang khas dan keras di pagi hari.
-                </p>
+              <div class="video-content">
+                <h6 class="video-title">Keindahan Alam Papua</h6>
+                <p class="video-description">Eksplorasi spot wisata unggulan dengan pemandangan yang memukau.</p>
+                <div class="video-meta">
+                  <span class="badge bg-success-subtle text-success">Segera Hadir</span>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-6">
-            <div class="card border-0 shadow-sm h-100 gallery-card">
-              <div class="position-relative overflow-hidden">
-                <img src="img/animals/birds/buff-breasted_paradise-kingfisher.jpg" class="card-img-top gallery-img" alt="Raja Udang Surga Dada Kuning">
-                <div class="gallery-overlay">
-                  <i class="fas fa-search-plus text-white"></i>
+          <div class="col-lg-4">
+            <div class="video-preview-card">
+              <div class="video-thumbnail">
+                <img src="img/TarianAdat/tarian adat.jpg" alt="Video Budaya Lokal" class="img-fluid">
+                <div class="play-overlay">
+                  <div class="play-button">
+                    <i class="fas fa-play"></i>
+                  </div>
+                </div>
+                <div class="video-duration">
+                  <span>6:45</span>
                 </div>
               </div>
-              <div class="card-body d-flex flex-column">
-                <h6 class="card-title">Raja Udang Surga Dada Kuning</h6>
-                <p class="card-text small text-muted flex-grow-1">
-                  Raja udang surga dengan dada kuning yang indah, salah satu burung tercantik di Papua.
-                </p>
+              <div class="video-content">
+                <h6 class="video-title">Budaya Suku Moi</h6>
+                <p class="video-description">Dokumentasi tradisi dan budaya Suku Moi yang autentik.</p>
+                <div class="video-meta">
+                  <span class="badge bg-warning-subtle text-warning">Segera Hadir</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="row mt-5">
+          <div class="col-12 text-center">
+            <div class="cta-section">
+              <h4 class="fw-bold mb-3">Ingin Melihat Lebih Banyak?</h4>
+              <p class="text-muted mb-4">Ikuti media sosial kami untuk mendapatkan update foto dan video terbaru dari Desa Klabili</p>
+              <div class="social-buttons">
+                <a href="https://www.instagram.com/klabili_bridwhtcing/" class="btn btn-outline-primary me-3 mb-2" target="_blank">
+                  <i class="fab fa-instagram me-2"></i>Instagram
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100094418988540" class="btn btn-outline-primary me-3 mb-2" target="_blank">
+                  <i class="fab fa-facebook me-2"></i>Facebook
+                </a>
+                <a href="https://wa.me/6282236955445" class="btn btn-success mb-2" target="_blank">
+                  <i class="fab fa-whatsapp me-2"></i>Hubungi Kami
+                </a>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-
-
+    <!-- End of Video Dokumenter Section -->
+     
     
 <!-- Footer -->
   <footer class="bg-dark text-white py-5">
@@ -797,7 +893,7 @@
             </li>
             <li class="mb-2">
               <i class="fas fa-envelope me-2"></i>
-              <span>info@desaklabili.com</span>
+              <span>desawisataklabili@gmail.com</span>
              </li>
           </ul>
         </div>
@@ -807,7 +903,7 @@
           <h5 class="fw-bold mb-3">Ikuti Kami</h5>
           <div class="social-media-links d-flex flex-wrap gap-3">
             <!-- Instagram -->
-            <a href="https://www.instagram.com/klabili_birdwatching/" target="_blank" rel="noopener noreferrer"
+            <a href="https://www.instagram.com/klabili_bridwhtcing/" target="_blank" rel="noopener noreferrer"
               class="social-link instagram-link" title="Ikuti kami di Instagram">
               <div class="social-icon">
                 <svg viewBox="0 0 24 24" fill="currentColor">
